@@ -1,0 +1,45 @@
+ [LOGGER] 2023-11-06 12:46:16.985 AM error : uncaughtException: app is not defined
+ReferenceError: app is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:7:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-06 12:46:29.674 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:50:03.002 AM error : uncaughtException: app is not defined
+ReferenceError: app is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/index.js:9:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-06 12:50:10.303 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:50:52.220 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:50:52.664 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:50:53.563 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:52:05.942 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:52:27.898 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:52:44.207 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:53:04.419 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:53:06.772 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:53:12.255 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:53:17.672 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:55:56.463 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:55:58.630 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:56:33.259 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:56:35.110 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 12:56:48.814 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:04:28.651 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:05:17.618 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:05:49.792 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:05:57.164 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:06:05.366 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:07:11.075 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:08:21.542 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:08:35.140 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:08:41.209 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:12:20.151 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:12:21.123 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:12:38.485 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:12:52.135 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:13:05.734 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:13:06.763 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:13:16.951 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:13:53.431 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:15:29.761 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:15:40.491 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
+ [LOGGER] 2023-11-06 01:17:29.246 AM error : Failed to lookup view "index" in views directory "/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/views"
