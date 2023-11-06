@@ -178,6 +178,9 @@ const getUserById = async (req, res, next) => {
       data: {
         name: user.name,
         email: user.email,
+        country: user.country,
+        phoneNumber: user.phoneNumber,
+        profilPicture: user.profilPicture
       },
     });
   } catch (error) {
@@ -365,6 +368,56 @@ const updateUser = async (req, res, next) => {
   }
 };
 
+const avatarUser = async (req, res, next) => {
+  try {
+    const user_id = req.params.id;
+    const user = await User.findOne({
+      where: {
+        userId: user_id,
+      },
+    });
+    if (!user) {
+      return res.status(404).json({
+        errors: ['User not found'],
+        message: 'Avatar failed to upload',
+        data: null,
+      });
+    }
+
+    const uploadedFileName = req.file.filename;
+    if (uploadedFileName) {
+      const finalName = process.env.BASE_URL + '/images/' + uploadedFileName;
+      const result = await User.update(
+        {
+          profilPicture: finalName,
+        },
+        {
+          where: {
+            userId: user_id,
+          },
+        }
+      )
+      if (result[0] == 0) {
+        return res.status(404).json({
+          errors: ['Failed to save url photo to database'],
+          message: 'Update Failed',
+          data: null,
+        });
+      } else {
+        return res.status(200).json({
+          errors: [],
+          message: 'User updated successfully',
+          data: user.data,
+        });
+      }
+    }
+  } catch (error) {
+    next(
+      new Error('controllers/userController.js:avatarUser - ' + error.message)
+    );
+  }
+}
+
 const deleteUser = async (req, res, next) => {
   try {
     const user_id = req.params.id;
@@ -465,6 +518,7 @@ export {
   setLogin,
   setRefreshToken,
   updateUser,
+  avatarUser,
   deleteUser,
   forgotPassword,
 };
