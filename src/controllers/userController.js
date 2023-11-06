@@ -180,7 +180,7 @@ const getUserById = async (req, res, next) => {
         email: user.email,
         country: user.country,
         phoneNumber: user.phoneNumber,
-        profilPicture: user.profilPicture
+        profilPicture: user.profilPicture,
       },
     });
   } catch (error) {
@@ -251,6 +251,9 @@ const setRefreshToken = async (req, res, next) => {
   try {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
+    console.log('daus');
+    console.log(authHeader);
+    console.log(token);
     if (!token) {
       return res.status(401).json({
         errors: ['Refresh token not found'],
@@ -396,7 +399,7 @@ const avatarUser = async (req, res, next) => {
             userId: user_id,
           },
         }
-      )
+      );
       if (result[0] == 0) {
         return res.status(404).json({
           errors: ['Failed to save url photo to database'],
@@ -416,7 +419,7 @@ const avatarUser = async (req, res, next) => {
       new Error('controllers/userController.js:avatarUser - ' + error.message)
     );
   }
-}
+};
 
 const deleteUser = async (req, res, next) => {
   try {
