@@ -3,7 +3,7 @@ import userRouter from "./userRoute.js";
 import { errorrHandling } from "../controllers/errorHandlingController.js";
 const route = express.Router();
 
-route.use("/", (req, res) => {
+route.use("/home", (req, res) => {
   const data= {
     title: "Home",
     name: "Ini adalah halaman home",

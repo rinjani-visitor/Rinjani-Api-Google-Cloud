@@ -1,37 +1,37 @@
-import sequelize from "../utils/db.js";
-import { dataValid } from "../validation/dataValidation.js";
-import { sendMail, sendPassword } from "../utils/sendMail.js";
-import User from "../models/userModel.js";
-import { Op } from "sequelize";
-import { compare } from "../utils/bcrypt.js";
+import sequelize from '../utils/db.js';
+import { dataValid } from '../validation/dataValidation.js';
+import { sendMail, sendPassword } from '../utils/sendMail.js';
+import User from '../models/userModel.js';
+import { Op } from 'sequelize';
+import { compare } from '../utils/bcrypt.js';
 import {
   generateAccessToken,
   generateRefreshToken,
   parseJWT,
   verifyRefreshToken,
-} from "../utils/jwt.js";
-import { isExists } from "../validation/sanitization.js";
-import { Entropy, charset32 } from "entropy-string";
+} from '../utils/jwt.js';
+import { isExists } from '../validation/sanitization.js';
+import { Entropy, charset32 } from 'entropy-string';
 
 const setUser = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
-    name: "required",
-    email: "required,isEmail",
-    password: "required,isStrongPassword",
-    confirmPassword: "required",
+    name: 'required',
+    email: 'required,isEmail',
+    password: 'required,isStrongPassword',
+    confirmPassword: 'required',
   };
   try {
     // const user = req.body;
     const user = await dataValid(valid, req.body);
     // cek password
     if (user.data.password !== user.data.confirmPassword) {
-      user.message.push("Password does not match");
+      user.message.push('Password does not match');
     }
     if (user.message.length > 0) {
       return res.status(400).json({
         errors: user.message,
-        message: "Register Failed",
+        message: 'Register Failed',
         data: null,
       });
     }
@@ -42,8 +42,8 @@ const setUser = async (req, res, next) => {
     });
     if (userExists.length > 0 && userExists[0].isActive) {
       return res.status(400).json({
-        errors: ["Email already activated"],
-        message: "Register Failed",
+        errors: ['Email already activated'],
+        message: 'Register Failed',
         data: null,
       });
     } else if (
@@ -52,8 +52,8 @@ const setUser = async (req, res, next) => {
       Date.parse(userExists[0].expireTime) > new Date()
     ) {
       return res.status(400).json({
-        errors: ["Email already registered, please check your email"],
-        message: "Register Failed",
+        errors: ['Email already registered, please check your email'],
+        message: 'Register Failed',
         data: null,
       });
     } else {
@@ -81,15 +81,15 @@ const setUser = async (req, res, next) => {
     if (!result) {
       await t.rollback();
       return res.status(500).json({
-        errors: ["Send email failed"],
-        message: "Register Failed",
+        errors: ['Send email failed'],
+        message: 'Register Failed',
         data: null,
       });
     } else {
       await t.commit();
       res.status(201).json({
         errors: null,
-        message: "User created, please check your email",
+        message: 'User created, please check your email',
         data: {
           userId: newUser.userId,
           name: newUser.name,
@@ -100,7 +100,7 @@ const setUser = async (req, res, next) => {
     }
   } catch (error) {
     await t.rollback();
-    next(new Error("controllers/userController.js:setUser - " + error.message));
+    next(new Error('controllers/userController.js:setUser - ' + error.message));
   }
 };
 
@@ -118,8 +118,8 @@ const setActivateUser = async (req, res, next) => {
     });
     if (!user) {
       return res.status(404).json({
-        errors: ["User not found or expired"],
-        message: "Activate User Failed",
+        errors: ['User not found or expired'],
+        message: 'Activate User Failed',
         data: null,
       });
     } else {
@@ -128,7 +128,7 @@ const setActivateUser = async (req, res, next) => {
       await user.save();
       return res.status(200).json({
         errors: [],
-        message: "User activated successfully",
+        message: 'User activated successfully',
         data: {
           name: user.name,
           email: user.email,
@@ -138,7 +138,7 @@ const setActivateUser = async (req, res, next) => {
   } catch (error) {
     next(
       new Error(
-        "controllers/userController.js:setActivateUser - " + error.message
+        'controllers/userController.js:setActivateUser - ' + error.message
       )
     );
   }
@@ -149,11 +149,11 @@ const getUser = async (req, res, next) => {
     const user = await User.findAll();
     res.status(200).json({
       errors: [],
-      message: "User retrieved successfully",
+      message: 'User retrieved successfully',
       data: user,
     });
   } catch (error) {
-    next(new Error("controllers/userController.js:getUser - " + error.message));
+    next(new Error('controllers/userController.js:getUser - ' + error.message));
   }
 };
 
@@ -167,36 +167,38 @@ const getUserById = async (req, res, next) => {
     });
     if (!user) {
       return res.status(404).json({
-        errors: ["User not found"],
-        message: "Get User By Id Failed",
+        errors: ['User not found'],
+        message: 'Get User By Id Failed',
         data: null,
       });
     }
     return res.status(200).json({
       errors: [],
-      message: "Get user by id successfully",
+      message: 'Get user by id successfully',
       data: {
         name: user.name,
         email: user.email,
       },
     });
   } catch (error) {
-    next(new Error("controllers/userController.js:getUserById - " + error.message));
+    next(
+      new Error('controllers/userController.js:getUserById - ' + error.message)
+    );
   }
 };
 
 const setLogin = async (req, res, next) => {
   try {
     const valid = {
-      email: "required,isEmail",
-      password: "required",
+      email: 'required,isEmail',
+      password: 'required',
     };
     const user = await dataValid(valid, req.body);
     const data = user.data;
     if (user.message.length > 0) {
       return res.status(400).json({
         errors: user.message,
-        message: "Login Failed",
+        message: 'Login Failed',
         data: null,
       });
     }
@@ -208,8 +210,8 @@ const setLogin = async (req, res, next) => {
     });
     if (!userExists) {
       return res.status(400).json({
-        errors: ["User not found"],
-        message: "Login Failed",
+        errors: ['User not found'],
+        message: 'Login Failed',
         data: data,
       });
     }
@@ -223,41 +225,41 @@ const setLogin = async (req, res, next) => {
       const refreshToken = generateRefreshToken(usr);
       return res.status(200).json({
         errors: [],
-        message: "Login successfully",
+        message: 'Login successfully',
         data: usr,
         acessToken: token,
         refreshToken: refreshToken,
       });
     } else {
       return res.status(400).json({
-        errors: ["Wrong password"],
-        message: "Login Failed",
+        errors: ['Wrong password'],
+        message: 'Login Failed',
         data: data,
       });
     }
   } catch (error) {
     next(
-      new Error("controllers/userController.js:setLogin - " + error.message)
+      new Error('controllers/userController.js:setLogin - ' + error.message)
     );
   }
 };
 
 const setRefreshToken = async (req, res, next) => {
   try {
-    const authHeader = req.headers["authorization"];
-    const token = authHeader && authHeader.split(" ")[1];
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
     if (!token) {
       return res.status(401).json({
-        errors: ["Refresh token not found"],
-        message: "Refresh Failed",
+        errors: ['Refresh token not found'],
+        message: 'Refresh Failed',
         data: null,
       });
     }
     const verify = verifyRefreshToken(token);
     if (!verify) {
       return res.status(401).json({
-        errors: ["Invalid refresh token"],
-        message: "Refresh Failed",
+        errors: ['Invalid refresh token'],
+        message: 'Refresh Failed',
         data: null,
       });
     }
@@ -270,8 +272,8 @@ const setRefreshToken = async (req, res, next) => {
     });
     if (!user) {
       return res.status(404).json({
-        errors: ["User not found"],
-        message: "Refresh Failed",
+        errors: ['User not found'],
+        message: 'Refresh Failed',
         data: null,
       });
     } else {
@@ -284,7 +286,7 @@ const setRefreshToken = async (req, res, next) => {
       const refreshToken = generateRefreshToken(usr);
       return res.status(200).json({
         errors: [],
-        message: "Refresh successfully",
+        message: 'Refresh successfully',
         data: usr,
         acessToken: token,
         refreshToken: refreshToken,
@@ -293,7 +295,7 @@ const setRefreshToken = async (req, res, next) => {
   } catch (error) {
     next(
       new Error(
-        "controllers/userController.js:setRefreshToken - " + error.message
+        'controllers/userController.js:setRefreshToken - ' + error.message
       )
     );
   }
@@ -304,26 +306,32 @@ const updateUser = async (req, res, next) => {
     const user_id = req.params.id;
     const valid = {};
     if (isExists(req.body.name)) {
-      valid.name = "required";
+      valid.name = 'required';
     }
     if (isExists(req.body.email)) {
-      valid.email = "required,isEmail";
+      valid.email = 'required,isEmail';
     }
     if (isExists(req.body.password)) {
-      valid.password = "required,isStrongPassword";
-      valid.confirmPassword = "required";
+      valid.password = 'required,isStrongPassword';
+      valid.confirmPassword = 'required';
+    }
+    if (isExists(req.body.country)) {
+      valid.country = 'required';
+    }
+    if (isExists(req.body.phoneNumber)) {
+      valid.phoneNumber = 'required';
     }
     const user = await dataValid(valid, req.body);
     if (
       isExists(user.data.password) &&
       user.data.password !== user.data.confirmPassword
     ) {
-      user.message.push("Password not match");
+      user.message.push('Password not match');
     }
     if (user.message.length > 0) {
       return res.status(400).json({
         errors: user.message,
-        message: "Update Failed",
+        message: 'Update Failed',
         data: null,
       });
     }
@@ -339,20 +347,20 @@ const updateUser = async (req, res, next) => {
     );
     if (result[0] == 0) {
       return res.status(404).json({
-        errors: ["User not found"],
-        message: "Update Failed",
+        errors: ['User not found'],
+        message: 'Update Failed',
         data: null,
       });
     } else {
       return res.status(200).json({
         errors: [],
-        message: "User updated successfully",
+        message: 'User updated successfully',
         data: user.data,
       });
     }
   } catch (error) {
     next(
-      new Error("controllers/userController.js:updateUser - " + error.message)
+      new Error('controllers/userController.js:updateUser - ' + error.message)
     );
   }
 };
@@ -367,19 +375,19 @@ const deleteUser = async (req, res, next) => {
     });
     if (!usrDelete) {
       return res.status(404).json({
-        errors: ["User not found"],
-        message: "Delete Failed",
+        errors: ['User not found'],
+        message: 'Delete Failed',
         data: null,
       });
     }
     return res.status(200).json({
       errors: [],
-      message: "User deleted successfully",
+      message: 'User deleted successfully',
       data: null,
     });
   } catch (error) {
     next(
-      new Error("controllers/userController.js:deleteUser - " + error.message)
+      new Error('controllers/userController.js:deleteUser - ' + error.message)
     );
   }
 };
@@ -388,13 +396,13 @@ const forgotPassword = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
     const valid = {
-      email: "required,isEmail",
+      email: 'required,isEmail',
     };
     const userData = await dataValid(valid, req.body);
     if (userData.message.length > 0) {
       return res.status(400).json({
         errors: userData.message,
-        message: "Forgot Password Failed",
+        message: 'Forgot Password Failed',
         data: null,
       });
     }
@@ -405,8 +413,8 @@ const forgotPassword = async (req, res, next) => {
     });
     if (!user) {
       return res.status(404).json({
-        errors: ["User not found"],
-        message: "Forgot Password Failed",
+        errors: ['User not found'],
+        message: 'Forgot Password Failed',
         data: null,
       });
     }
@@ -428,22 +436,22 @@ const forgotPassword = async (req, res, next) => {
     if (!result) {
       await t.rollback();
       return res.status(400).json({
-        errors: ["Email not sent"],
-        message: "Forgot Password Failed",
+        errors: ['Email not sent'],
+        message: 'Forgot Password Failed',
         data: null,
       });
     }
     await t.commit();
     return res.status(200).json({
       errors: [],
-      message: "Forgot Password success, please check your email",
+      message: 'Forgot Password success, please check your email',
       data: null,
     });
   } catch (error) {
     await t.rollback();
     next(
       new Error(
-        "controllers/userController.js:forgotPassword - " + error.message
+        'controllers/userController.js:forgotPassword - ' + error.message
       )
     );
   }
