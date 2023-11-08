@@ -1,0 +1,83 @@
+ [LOGGER] 2023-11-08 10:05:15.597 AM error : controllers/productController.js:setProduct - Expected a string but received a boolean
+ [LOGGER] 2023-11-08 10:05:53.028 AM error : controllers/productController.js:setProduct - Expected a string but received a boolean
+ [LOGGER] 2023-11-08 11:30:57.120 AM error : uncaughtException: Unrecognized datatype for attribute "Product.id"
+Error: Unrecognized datatype for attribute "Product.id"
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:726:15
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13469:38
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13468:7)
+    at Product.init (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:723:28)
+    at Sequelize.define (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:225:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:4:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-08 11:31:24.486 AM error : uncaughtException: Data is not defined
+ReferenceError: Data is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:8:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-08 11:31:27.995 AM error : uncaughtException: Unrecognized datatype for attribute "Product.id"
+Error: Unrecognized datatype for attribute "Product.id"
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:726:15
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13469:38
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13468:7)
+    at Product.init (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:723:28)
+    at Sequelize.define (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:225:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:4:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-08 11:31:30.723 AM error : uncaughtException: Unrecognized datatype for attribute "Product.id"
+Error: Unrecognized datatype for attribute "Product.id"
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:726:15
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13469:38
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13468:7)
+    at Product.init (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:723:28)
+    at Sequelize.define (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:225:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:4:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-08 11:33:59.031 AM error : controllers/productController.js:setProduct - (conn=673, no: 1366, SQLState: HY000) Incorrect integer value: 'GDUKZTJ2' for column 'id' at row 1
+sql: INSERT INTO `product` (`id`,`title`,`status`,`category`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?); - parameters:['GDUKZTJ2','Rinjani Summit Deluxe Program',true,'Rinjani','2023-11-08 11:33:59.023','2023-11-08 11:33:59.023']
+ [LOGGER] 2023-11-08 11:35:14.981 AM error : controllers/productController.js:setProduct - (conn=675, no: 1366, SQLState: HY000) Incorrect integer value: 'M3SB6393' for column 'id' at row 1
+sql: INSERT INTO `product` (`id`,`title`,`status`,`category`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?); - parameters:['M3SB6393','Rinjani Summit Deluxe Program',true,'Rinjani','2023-11-08 11:35:14.971','2023-11-08 11:35:14.971']
+ [LOGGER] 2023-11-08 11:36:02.951 AM error : controllers/productController.js:setProduct - (conn=678, no: 1366, SQLState: HY000) Incorrect integer value: 'E40N910A' for column 'id' at row 1
+sql: INSERT INTO `product` (`id`,`title`,`status`,`category`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?); - parameters:['E40N910A','Rinjani Summit Deluxe Program',true,'Rinjani','2023-11-08 11:36:02.947','2023-11-08 11:36:02.947']
+ [LOGGER] 2023-11-08 11:36:19.181 AM error : controllers/productController.js:setProduct - (conn=682, no: 1366, SQLState: HY000) Incorrect integer value: 'UCNRC884' for column 'id' at row 1
+sql: INSERT INTO `product` (`id`,`title`,`status`,`category`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?); - parameters:['UCNRC884','Rinjani Summit Deluxe Program',true,'Rinjani','2023-11-08 11:36:19.173','2023-11-08 11:36:19.173']
+ [LOGGER] 2023-11-08 11:36:57.694 AM error : uncaughtException: DataTypes is not defined
+ReferenceError: DataTypes is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:8:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-08 11:37:17.674 AM error : controllers/productController.js:setProduct - (conn=693, no: 1265, SQLState: 01000) Data truncated for column 'id' at row 1
+sql: INSERT INTO `product` (`id`,`title`,`status`,`category`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?); - parameters:['229f7e07-13f3-49cb-bbdb-87a4cf1792f5','Rinjani Summit Deluxe Program',true,'Rinjani','2023-11-08 11:37:17.666','2023-11-08 11:37:17.666']
+ [LOGGER] 2023-11-08 11:37:46.230 AM error : controllers/productController.js:setProduct - (conn=694, no: 1146, SQLState: 42S02) Table 'test.product' doesn't exist
+sql: INSERT INTO `product` (`id`,`title`,`status`,`category`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?); - parameters:['01d8943e-5990-4e8d-bc36-f23caba548e8','Rinjani Summit Deluxe Program',true,'Rinjani','2023-11-08 11:37:46.221','2023-11-08 11:37:46.221']
+ [LOGGER] 2023-11-08 11:44:12.439 AM error : controllers/productController.js:setProduct - (conn=713, no: 1146, SQLState: 42S02) Table 'test.product' doesn't exist
+sql: INSERT INTO `product` (`id`,`title`,`status`,`category`,`location`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?,?); - parameters:['5510a752-20c4-4e61-b40b-1f4ab1b0ba42','Rinjani Summit Deluxe Program',true,'Rinjani','https:&#x2F;&#x2F;maps.app.goo.gl&#x2...]
+ [LOGGER] 2023-11-08 12:21:02.768 PM error : controllers/productController.js:setProduct - (conn=749, no: 1364, SQLState: HY000) Field 'title' doesn't have a default value
+sql: INSERT INTO `product` (`id`,`updated_at`,`created_at`) VALUES (?,?,?); - parameters:['05b21dbd-a991-4494-bdc4-2c2cd765a085','2023-11-08 12:21:02.761','2023-11-08 12:21:02.761']
+ [LOGGER] 2023-11-08 12:21:24.501 PM error : controllers/productController.js:setProduct - (conn=751, no: 1364, SQLState: HY000) Field 'title' doesn't have a default value
+sql: INSERT INTO `product` (`id`,`updated_at`,`created_at`) VALUES (?,?,?); - parameters:['d36b172a-6779-43a3-ab5e-8c2017a1bf30','2023-11-08 12:21:24.494','2023-11-08 12:21:24.494']
+ [LOGGER] 2023-11-08 12:22:49.538 PM error : controllers/productController.js:setProduct - (conn=765, no: 1364, SQLState: HY000) Field 'title' doesn't have a default value
+sql: INSERT INTO `product` (`id`,`updated_at`,`created_at`) VALUES (?,?,?); - parameters:['0a341a8c-a0fd-4423-b49d-b9d5c0209e9b','2023-11-08 12:22:49.531','2023-11-08 12:22:49.531']
+ [LOGGER] 2023-11-08 12:30:12.936 PM error : controllers/productController.js:setProduct - (conn=790, no: 1364, SQLState: HY000) Field 'title' doesn't have a default value
+sql: INSERT INTO `product` (`id`,`location`,`updated_at`,`created_at`) VALUES (?,?,?,?); - parameters:['88ed7677-520b-4259-81e8-e984a0b861a8','https:&#x2F;&#x2F;maps.app.goo.gl&#x2F;pH6FLQDVsYaNGDVR6','2023-11-08 12:30:12.924','2023-11-08 12:30:12.924']
+ [LOGGER] 2023-11-08 12:35:08.964 PM error : uncaughtException: DataTypes is not defined
+ReferenceError: DataTypes is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:26:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-08 12:35:16.057 PM error : uncaughtException: Unrecognized datatype for attribute "Product.location"
+Error: Unrecognized datatype for attribute "Product.location"
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:726:15
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13469:38
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13468:7)
+    at Product.init (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:723:28)
+    at Sequelize.define (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:225:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:4:27
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-08 12:46:44.768 PM error : controllers/productController.js:updateProduct - isExists is not defined
+ [LOGGER] 2023-11-08 12:47:21.424 PM error : controllers/productController.js:updateProduct - user is not defined
+ [LOGGER] 2023-11-08 12:48:46.181 PM error : controllers/productController.js:updateProduct - Expected a string but received a number
