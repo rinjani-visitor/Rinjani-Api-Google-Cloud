@@ -26,7 +26,7 @@ userRouter.patch('/users/:id', autenticate, updateUser);
 userRouter.patch(
   '/users/avatar/:id',
   autenticate,
-  upload.single('avatar'),
+  upload('./public/images/avatar').single('avatar'),
   avatarUser
 );
 userRouter.delete('/users/:id', autenticate, deleteUser);

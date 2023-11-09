@@ -81,3 +81,4 @@ Error: Unrecognized datatype for attribute "Product.location"
  [LOGGER] 2023-11-08 12:46:44.768 PM error : controllers/productController.js:updateProduct - isExists is not defined
  [LOGGER] 2023-11-08 12:47:21.424 PM error : controllers/productController.js:updateProduct - user is not defined
  [LOGGER] 2023-11-08 12:48:46.181 PM error : controllers/productController.js:updateProduct - Expected a string but received a number
+ [LOGGER] 2023-11-08 02:33:31.243 PM error : controllers/productController.js:setRinjani - Expected a string but received a number

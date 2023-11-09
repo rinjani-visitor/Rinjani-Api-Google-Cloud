@@ -2,6 +2,7 @@ import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import Product from '../models/productModel.js';
 import { isExists } from '../validation/sanitization.js';
+import Rinjani from '../models/RinjaniModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -89,9 +90,53 @@ const updateProduct = async (req, res, next) => {
     }
   } catch (error) {
     next(
-      new Error('controllers/productController.js:updateProduct - ' + error.message)
+      new Error(
+        'controllers/productController.js:updateProduct - ' + error.message
+      )
     );
   }
 };
 
-export { setProduct, updateProduct };
+const setRinjani = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  const valid = {
+    description: 'required',
+    duration: 'required',
+    program: 'required',
+    lowestPrice: 'required',
+    porter: 'required',
+    guide: 'required',
+    productId: 'required',
+  };
+  try {
+    const rinjani = await dataValid(valid, req.body);
+    if (rinjani.message.length > 0) {
+      return res.status(400).json({
+        errors: rinjani.message,
+        message: 'Set Rinjani Failed',
+        data: null,
+      });
+    }
+    const newRinjani = await Rinjani.create({
+      ...rinjani.data,
+      productId: req.body.productId,
+    }, {
+      transaction: t,
+    });
+    await t.commit();
+    return res.status(201).json({
+      errors: [],
+      message: 'Rinjani created successfully',
+      data: newRinjani,
+    });
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/productController.js:setRinjani - ' + error.message
+      )
+    );
+  }
+};
+
+export { setProduct, updateProduct, setRinjani };

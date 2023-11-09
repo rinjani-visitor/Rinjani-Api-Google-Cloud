@@ -389,7 +389,7 @@ const avatarUser = async (req, res, next) => {
 
     const uploadedFileName = req.file.filename;
     if (uploadedFileName) {
-      const finalName = process.env.BASE_URL + '/images/' + uploadedFileName;
+      const finalName = process.env.BASE_URL + '/images/avatar/' + uploadedFileName;
       const result = await User.update(
         {
           profilPicture: finalName,

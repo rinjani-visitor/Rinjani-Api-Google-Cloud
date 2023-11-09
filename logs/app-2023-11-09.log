@@ -1,0 +1,5 @@
+ [LOGGER] 2023-11-09 10:23:45.575 AM error : uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:17:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-09 10:30:00.381 AM error : Unexpected field
