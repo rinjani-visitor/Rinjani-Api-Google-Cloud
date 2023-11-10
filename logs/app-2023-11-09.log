@@ -3,3 +3,20 @@ ReferenceError: upload is not defined
     at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:17:3
     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
  [LOGGER] 2023-11-09 10:30:00.381 AM error : Unexpected field
+ [LOGGER] 2023-11-09 02:52:21.334 PM error : uncaughtException: upload.sigle is not a function
+TypeError: upload.sigle is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:25:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-09 03:34:05.163 PM error : uncaughtException: test is not defined
+ReferenceError: test is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:29:28
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-09 05:03:50.386 PM error : uncaughtException: (conn=1262, no: 1054, SQLState: 42S22) Unknown column 'Foto.id' in 'where clause'
+sql: SELECT `foto_id` AS `fotoId`, `url`, `original_name` AS `originalName`, `product_id` AS `productId` FROM `foto` AS `Foto` WHERE `Foto`.`id` = '12'; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.select (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async Foto.findAll (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:1140:21)
+    at async test (file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/test.js:6:16)

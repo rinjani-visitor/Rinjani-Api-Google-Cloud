@@ -3,6 +3,7 @@ import { dataValid } from '../validation/dataValidation.js';
 import Product from '../models/productModel.js';
 import { isExists } from '../validation/sanitization.js';
 import Rinjani from '../models/RinjaniModel.js';
+import Foto from '../models/fotoModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -117,12 +118,15 @@ const setRinjani = async (req, res, next) => {
         data: null,
       });
     }
-    const newRinjani = await Rinjani.create({
-      ...rinjani.data,
-      productId: req.body.productId,
-    }, {
-      transaction: t,
-    });
+    const newRinjani = await Rinjani.create(
+      {
+        ...rinjani.data,
+        productId: req.body.productId,
+      },
+      {
+        transaction: t,
+      }
+    );
     await t.commit();
     return res.status(201).json({
       errors: [],
@@ -139,4 +143,8 @@ const setRinjani = async (req, res, next) => {
   }
 };
 
-export { setProduct, updateProduct, setRinjani };
+export {
+  setProduct,
+  updateProduct,
+  setRinjani,
+};

@@ -1,0 +1,45 @@
+ [LOGGER] 2023-11-10 02:35:01.268 PM error : controllers/fotoController.js:updateFotoProduct - user is not defined
+ [LOGGER] 2023-11-10 03:31:59.443 PM error : controllers/productController.js:setRinjani - s.replace is not a function
+ [LOGGER] 2023-11-10 03:33:48.695 PM error : controllers/productController.js:setRinjani - s.replace is not a function
+ [LOGGER] 2023-11-10 03:37:02.058 PM error : controllers/productController.js:setRinjani - Foto is not defined
+ [LOGGER] 2023-11-10 03:37:51.803 PM error : controllers/productController.js:setRinjani - (conn=1954, no: 1054, SQLState: 42S22) Unknown column 'Rinjani.lowestPrice' in 'field list'
+sql: SELECT `Product`.`product_id` AS `productId`, `Product`.`title`, `Product`.`status`, `Product`.`category`, `Product`.`location`, `Product`.`created_at` AS `createdAt`, `Product`.`updated_at` AS `updatedAt`, `Rinjani`.`rinjani_id` AS `Rinjani.rinjaniId`, `Rinjani`.`rating` AS `Rinjani.rating`, `Rinjani`.`lowestPrice` AS `Rinjani.price`, `Fotos`.`foto_id` AS `Fotos.fotoId`, `Fotos`.`url` AS `Fotos.thumbnail` FROM `product` AS `Product` LEFT OUTER JOIN `rinjani` AS `Rinjani` ON `Product`.`product_id` = `Rinjani`.`product_id` LEFT OUTER JOIN `foto` AS `Fotos` ON `Product`.`product_id` = `Fotos`.`product_id`; - parameters:[]
+ [LOGGER] 2023-11-10 03:38:32.610 PM error : controllers/productController.js:setRinjani - s.replace is not a function
+ [LOGGER] 2023-11-10 03:39:13.145 PM error : controllers/productController.js:setRinjani - s.replace is not a function
+ [LOGGER] 2023-11-10 03:39:51.603 PM error : controllers/productController.js:setRinjani - s.replace is not a function
+ [LOGGER] 2023-11-10 03:40:54.056 PM error : controllers/productController.js:setRinjani - Foto is not defined
+ [LOGGER] 2023-11-10 03:41:12.285 PM error : controllers/productController.js:setRinjani - (conn=1987, no: 1054, SQLState: 42S22) Unknown column 'Rinjani.lowestPrice' in 'field list'
+sql: SELECT `Product`.`product_id` AS `productId`, `Product`.`title`, `Product`.`status`, `Product`.`category`, `Product`.`location`, `Product`.`created_at` AS `createdAt`, `Product`.`updated_at` AS `updatedAt`, `Rinjani`.`rinjani_id` AS `Rinjani.rinjaniId`, `Rinjani`.`rating` AS `Rinjani.rating`, `Rinjani`.`lowestPrice` AS `Rinjani.price`, `Fotos`.`foto_id` AS `Fotos.fotoId`, `Fotos`.`url` AS `Fotos.thumbnail` FROM `product` AS `Product` LEFT OUTER JOIN `rinjani` AS `Rinjani` ON `Product`.`product_id` = `Rinjani`.`product_id` LEFT OUTER JOIN `foto` AS `Fotos` ON `Product`.`product_id` = `Fotos`.`product_id`; - parameters:[]
+ [LOGGER] 2023-11-10 03:42:56.744 PM error : controllers/productController.js:setRinjani - s.replace is not a function
+ [LOGGER] 2023-11-10 03:42:58.931 PM error : controllers/productController.js:setRinjani - s.replace is not a function
+ [LOGGER] 2023-11-10 03:45:34.219 PM error : controllers/productController.js:setRinjani - Cannot read properties of null (reading 'rating')
+ [LOGGER] 2023-11-10 03:46:03.646 PM error : controllers/productController.js:setRinjani - Cannot read properties of null (reading 'lowest_price')
+ [LOGGER] 2023-11-10 03:52:43.855 PM error : controllers/productController.js:setRinjani - Cannot read properties of undefined (reading '0')
+ [LOGGER] 2023-11-10 03:53:48.885 PM error : controllers/productController.js:setRinjani - Cannot read properties of undefined (reading '0')
+ [LOGGER] 2023-11-10 03:54:40.072 PM error : controllers/productController.js:setRinjani - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 03:54:57.473 PM error : controllers/productController.js:setRinjani - Cannot read properties of undefined (reading 'url')
+ [LOGGER] 2023-11-10 03:56:45.754 PM error : controllers/productController.js:setRinjani - Cannot read properties of undefined (reading '0')
+ [LOGGER] 2023-11-10 03:57:20.892 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'length')
+ [LOGGER] 2023-11-10 04:04:30.157 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:04:50.948 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:04:53.235 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:05:31.865 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:05:57.078 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:06:18.117 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:07:11.115 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:07:34.881 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:07:35.914 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:07:36.427 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:08:43.475 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:09:02.695 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:09:03.563 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:09:03.596 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:09:03.715 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:09:03.870 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:09:04.001 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:09:48.096 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:27:34.793 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'thumbnail')
+ [LOGGER] 2023-11-10 04:28:52.196 PM error : controllers/productController.js:getAllProducts - formattedProducts is not defined
+ [LOGGER] 2023-11-10 04:30:00.984 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'rating')
+ [LOGGER] 2023-11-10 04:32:06.769 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'rating')
+ [LOGGER] 2023-11-10 04:32:34.952 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'rating')
