@@ -3,7 +3,6 @@ import { dataValid } from '../validation/dataValidation.js';
 import Product from '../models/productModel.js';
 import { isExists } from '../validation/sanitization.js';
 import Rinjani from '../models/RinjaniModel.js';
-import Foto from '../models/fotoModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -11,6 +10,7 @@ const setProduct = async (req, res, next) => {
     title: 'required',
     category: 'required',
     location: 'required',
+    lowestPrice: 'required',
   };
   try {
     const product = await dataValid(valid, req.body);
@@ -21,15 +21,40 @@ const setProduct = async (req, res, next) => {
         data: null,
       });
     }
-    const newProduct = await Product.create(product.data, {
-      transaction: t,
-    });
-    await t.commit();
-    return res.status(201).json({
-      errors: [],
-      message: 'Product created successfully',
-      data: newProduct,
-    });
+
+    const thumbnail = req.file.filename;
+    if (!thumbnail) {
+      return res.status(400).json({
+        errors: ['Thumbnail is required'],
+        message: 'Product Failed',
+        data: null,
+      });
+    } else {
+      const finalName = process.env.BASE_URL + '/images/thumbnail/' + thumbnail;
+      const result = await Product.create(
+        {
+          ...product.data,
+          thumbnail: finalName,
+        },
+        {
+          transaction: t,
+        }
+      );
+      if (result[0] == 0) {
+        return res.status(404).json({
+          errors: ['Failed to save url photo to database'],
+          message: 'Update Failed',
+          data: null,
+        });
+      } else {
+        await t.commit();
+        return res.status(201).json({
+          errors: [],
+          message: 'Product created successfully',
+          data: result,
+        });
+      }
+    }
   } catch (error) {
     await t.rollback();
     next(
@@ -104,7 +129,6 @@ const setRinjani = async (req, res, next) => {
     description: 'required',
     duration: 'required',
     program: 'required',
-    lowestPrice: 'required',
     porter: 'required',
     guide: 'required',
     productId: 'required',
@@ -143,8 +167,48 @@ const setRinjani = async (req, res, next) => {
   }
 };
 
-export {
-  setProduct,
-  updateProduct,
-  setRinjani,
+const getAllProducts = async (req, res, next) => {
+  try {
+    const products = await Product.findAll({
+      include: [
+        {
+          model: Rinjani,
+          attributes: ['rating'],
+        },
+      ],
+    });
+
+    if (!products) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Get All Product Failed',
+        data: null,
+      });
+    }
+
+    const formattedProducts = products.map(product => ({
+      productId: product.productId,
+      title: product.title,
+      status: product.status,
+      location: product.location,
+      rating: product.Rinjani ? product.Rinjani.rating : null,
+      thumbnail: product.thumbnail,
+      lowestPrice: product.lowestPrice,
+    }));
+
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get All Product Success',
+      data: formattedProducts,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:getAllProducts - ' + error.message
+      )
+    );
+  }
 };
+
+export { setProduct, updateProduct, setRinjani, getAllProducts };

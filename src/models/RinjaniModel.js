@@ -27,10 +27,6 @@ const Rinjani = sequelize.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    lowestPrice: {
-      type: Sequelize.INTEGER,
-      allowNull: false,
-    },
     porter: {
       type: Sequelize.STRING,
       allowNull: false,

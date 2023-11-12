@@ -43,3 +43,31 @@ sql: SELECT `Product`.`product_id` AS `productId`, `Product`.`title`, `Product`.
  [LOGGER] 2023-11-10 04:30:00.984 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'rating')
  [LOGGER] 2023-11-10 04:32:06.769 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'rating')
  [LOGGER] 2023-11-10 04:32:34.952 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'rating')
+ [LOGGER] 2023-11-10 05:01:53.504 PM error : controllers/productController.js:setProduct - Expected a string but received a number
+ [LOGGER] 2023-11-10 05:02:02.573 PM error : controllers/productController.js:setProduct - Cannot read properties of undefined (reading 'filename')
+ [LOGGER] 2023-11-10 05:03:41.496 PM error : controllers/productController.js:setProduct - (conn=2713, no: 1366, SQLState: HY000) Incorrect integer value: '&quot;120&quot;' for column 'lowest_price' at row 1
+sql: INSERT INTO `product` (`product_id`,`title`,`status`,`category`,`location`,`lowest_price`,`thumbnail`,`created_at`,`updated_at`) VALUES (?,?,?,?,?,?,?,?,?); - parameters:['1330a80e-e343-4768-9c2f-b5f6abf2451f','&quot;Rinjani Summit Standart Program&quot;',...]
+ [LOGGER] 2023-11-10 05:13:05.087 PM error : uncaughtException: async is not defined
+ReferenceError: async is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/productController.js:170:24
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-10 05:18:38.621 PM error : uncaughtException: Cannot read properties of undefined (reading 'get')
+TypeError: Cannot read properties of undefined (reading 'get')
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:44:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-10 05:18:40.889 PM error : uncaughtException: Cannot read properties of undefined (reading 'get')
+TypeError: Cannot read properties of undefined (reading 'get')
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:44:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-10 05:18:46.298 PM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as get] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:42:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-10 05:19:05.161 PM error : uncaughtException: getA is not defined
+ReferenceError: getA is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:42:45
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)

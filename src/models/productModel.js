@@ -26,6 +26,14 @@ const Product = sequelize.define(
         type: Sequelize.STRING,
         allowNull: false,
       },
+      lowestPrice: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      thumbnail: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
     },
     {
       tableName: 'product',
