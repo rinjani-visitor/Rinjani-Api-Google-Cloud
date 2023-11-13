@@ -1,0 +1,1 @@
+ [LOGGER] 2023-11-13 10:03:24.874 AM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'url')

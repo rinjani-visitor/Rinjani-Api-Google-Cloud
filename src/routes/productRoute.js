@@ -2,6 +2,7 @@ import express from 'express';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import {
   getAllProducts,
+  getRinjaniDetail,
   setProduct,
   setRinjani,
   updateProduct,
@@ -41,6 +42,7 @@ productRouter.patch(
 ); //admin
 
 productRouter.get('/products', autenticate, getAllProducts);
+productRouter.get('/products/rinjani/:product_id', autenticate, getRinjaniDetail);
 
 productRouter.get('/products/foto/:id', test);
 

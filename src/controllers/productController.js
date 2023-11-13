@@ -3,6 +3,7 @@ import { dataValid } from '../validation/dataValidation.js';
 import Product from '../models/productModel.js';
 import { isExists } from '../validation/sanitization.js';
 import Rinjani from '../models/RinjaniModel.js';
+import Foto from '../models/fotoModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -186,7 +187,7 @@ const getAllProducts = async (req, res, next) => {
       });
     }
 
-    const formattedProducts = products.map(product => ({
+    const formattedProducts = products.map((product) => ({
       productId: product.productId,
       title: product.title,
       status: product.status,
@@ -195,7 +196,6 @@ const getAllProducts = async (req, res, next) => {
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
     }));
-
 
     return res.status(200).json({
       errors: [],
@@ -211,4 +211,78 @@ const getAllProducts = async (req, res, next) => {
   }
 };
 
-export { setProduct, updateProduct, setRinjani, getAllProducts };
+const getRinjaniDetail = async (req, res, next) => {
+  try {
+    const id = req.params.product_id;
+    const rinjani = await Product.findOne({
+      where: {
+        productId: id,
+      },
+      include: [
+        {
+          model: Rinjani,
+          attributes: [
+            'rating',
+            'description',
+            'duration',
+            'program',
+            'porter',
+            'guide',
+            'note',
+          ],
+        },
+        {
+          model: Foto
+        },
+      ],
+    });
+
+    if (!rinjani) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Get Product Rinjani Detail Failed',
+        data: null,
+      });
+    }
+
+    const formattedRinjani = {
+      productId: rinjani.productId,
+      title: rinjani.title,
+      status: rinjani.status,
+      location: rinjani.location,
+      rating: rinjani.Rinjani ? rinjani.Rinjani.rating : null,
+      thumbnail: rinjani.thumbnail,
+      lowestPrice: rinjani.lowestPrice,
+      description: rinjani.Rinjani.description,
+      duration: rinjani.Rinjani.duration,
+      program: rinjani.Rinjani.program,
+      porter: rinjani.Rinjani.porter,
+      guide: rinjani.Rinjani.guide,
+      note: rinjani.Rinjani ? rinjani.Rinjani.note : null,
+      fotos: rinjani.Fotos.map((foto) => ({
+        url: foto.url,
+        originalName: foto.originalName,
+      })),
+    };
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get Product Rinjani Detail Success',
+      data: formattedRinjani,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:getRinjaniDetail - ' + error.message
+      )
+    );
+  }
+};
+
+export {
+  setProduct,
+  updateProduct,
+  setRinjani,
+  getAllProducts,
+  getRinjaniDetail,
+};
