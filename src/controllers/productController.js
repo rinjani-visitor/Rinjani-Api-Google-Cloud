@@ -2,8 +2,9 @@ import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import Product from '../models/productModel.js';
 import { isExists } from '../validation/sanitization.js';
-import Rinjani from '../models/RinjaniModel.js';
+import Rinjani from '../models/rinjaniModel.js';
 import Foto from '../models/fotoModel.js';
+import HomeStay from '../models/HomeStayModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -124,50 +125,6 @@ const updateProduct = async (req, res, next) => {
   }
 };
 
-const setRinjani = async (req, res, next) => {
-  const t = await sequelize.transaction();
-  const valid = {
-    description: 'required',
-    duration: 'required',
-    program: 'required',
-    porter: 'required',
-    guide: 'required',
-    productId: 'required',
-  };
-  try {
-    const rinjani = await dataValid(valid, req.body);
-    if (rinjani.message.length > 0) {
-      return res.status(400).json({
-        errors: rinjani.message,
-        message: 'Set Rinjani Failed',
-        data: null,
-      });
-    }
-    const newRinjani = await Rinjani.create(
-      {
-        ...rinjani.data,
-        productId: req.body.productId,
-      },
-      {
-        transaction: t,
-      }
-    );
-    await t.commit();
-    return res.status(201).json({
-      errors: [],
-      message: 'Rinjani created successfully',
-      data: newRinjani,
-    });
-  } catch (error) {
-    await t.rollback();
-    next(
-      new Error(
-        'controllers/productController.js:setRinjani - ' + error.message
-      )
-    );
-  }
-};
-
 const getAllProducts = async (req, res, next) => {
   try {
     const products = await Product.findAll({
@@ -211,6 +168,63 @@ const getAllProducts = async (req, res, next) => {
   }
 };
 
+const setRinjani = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  const valid = {
+    description: 'required',
+    duration: 'required',
+    program: 'required',
+    porter: 'required',
+    guide: 'required',
+    productId: 'required',
+  };
+  try {
+    const rinjani = await dataValid(valid, req.body);
+    if (rinjani.message.length > 0) {
+      return res.status(400).json({
+        errors: rinjani.message,
+        message: 'Set Rinjani Failed',
+        data: null,
+      });
+    }
+    const product_id = req.body.productId;
+    const cekProductId = await Product.findOne({
+      where: {
+        productId: product_id,
+      },
+    })
+    if(!cekProductId){
+      return res.status(404).json({
+        errors: ['Product Id not found'],
+        message: 'Set Rinjani Failed',
+        data: null,
+      });
+    }
+    const newRinjani = await Rinjani.create(
+      {
+        ...rinjani.data,
+        productId: req.body.productId,
+      },
+      {
+        transaction: t,
+      }
+    );
+    await t.commit();
+    return res.status(201).json({
+      errors: [],
+      message: 'Rinjani created successfully',
+      data: newRinjani,
+    });
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/productController.js:setRinjani - ' + error.message
+      )
+    );
+  }
+};
+
 const getRinjaniDetail = async (req, res, next) => {
   try {
     const id = req.params.product_id;
@@ -232,7 +246,7 @@ const getRinjaniDetail = async (req, res, next) => {
           ],
         },
         {
-          model: Foto
+          model: Foto,
         },
       ],
     });
@@ -279,10 +293,107 @@ const getRinjaniDetail = async (req, res, next) => {
   }
 };
 
+const setHomeStay = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  const valid = {
+    description: 'required',
+    productId: 'required',
+  };
+  try {
+    const homestay = await dataValid(valid, req.body);
+    if (homestay.message.length > 0) {
+      return res.status(400).json({
+        errors: homestay.message,
+        message: 'Set HomeStay Failed',
+        data: null,
+      });
+    }
+    const newhomestay = await HomeStay.create(
+      {
+        ...homestay.data,
+        productId: req.body.productId,
+      },
+      {
+        transaction: t,
+      }
+    );
+    await t.commit();
+    return res.status(201).json({
+      errors: [],
+      message: 'Home Stay created successfully',
+      data: newhomestay,
+    });
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/productController.js:setHomeStay - ' + error.message
+      )
+    );
+  }
+};
+
+const getHomeStayDetail = async (req, res, next) => {
+  try {
+    const id = req.params.product_id;
+    const homestay = await Product.findOne({
+      where: {
+        productId: id,
+      },
+      include: [
+        {
+          model: HomeStay,
+          attributes: ['rating', 'description'],
+        },
+        {
+          model: Foto,
+        },
+      ],
+    });
+
+    if (!homestay) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Get Product HomeStay Detail Failed',
+        data: null,
+      });
+    }
+
+    const formattedHomeStay = {
+      productId: homestay.productId,
+      title: homestay.title,
+      status: homestay.status,
+      location: homestay.location,
+      rating: homestay.HomeStay ? homestay.HomeStay.rating : null,
+      thumbnail: homestay.thumbnail,
+      lowestPrice: homestay.lowestPrice,
+      description: homestay.HomeStay.description,
+      fotos: homestay.Fotos.map((foto) => ({
+        url: foto.url,
+        originalName: foto.originalName,
+      })),
+    };
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get Home Stay Product Detail Success',
+      data: formattedHomeStay,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:getHomeStayDetail - ' + error.message
+      )
+    );
+  }
+};
+
 export {
   setProduct,
   updateProduct,
   setRinjani,
   getAllProducts,
   getRinjaniDetail,
+  setHomeStay,
+  getHomeStayDetail,
 };

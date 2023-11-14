@@ -72,6 +72,7 @@ const setFotoProduct = async (req, res, next) => {
       });
     }
   } catch (error) {
+    await t.rollback();
     next(
       new Error(
         'controllers/fotoController.js:setFotoProduct - ' + error.message

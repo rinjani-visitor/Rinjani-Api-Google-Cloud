@@ -1,1 +1,13 @@
  [LOGGER] 2023-11-13 10:03:24.874 AM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'url')
+ [LOGGER] 2023-11-13 02:40:10.378 PM error : uncaughtException: set is not defined
+ReferenceError: set is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:30:55
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-13 03:01:50.472 PM error : uncaughtException: imp is not defined
+ReferenceError: imp is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/productController.js:7:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-13 03:25:30.461 PM error : uncaughtException: Product.has is not a function
+TypeError: Product.has is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/HomeStayModel.js:34:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)

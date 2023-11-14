@@ -2,6 +2,7 @@ import express from "express";
 import userRouter from "./userRoute.js";
 import { errorrHandling } from "../controllers/errorHandlingController.js";
 import productRouter from "./productRoute.js";
+import categoryRouter from "./categoryRoute.js";
 const route = express.Router();
 
 route.use("/home", (req, res) => {
@@ -14,6 +15,7 @@ route.use("/home", (req, res) => {
 
 route.use("/api", userRouter);
 route.use("/api", productRouter);
+route.use("/api", categoryRouter);
 
 route.use("*", errorrHandling);
 route.use("*", (req, res) => {

@@ -2,7 +2,9 @@ import express from 'express';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import {
   getAllProducts,
+  getHomeStayDetail,
   getRinjaniDetail,
+  setHomeStay,
   setProduct,
   setRinjani,
   updateProduct,
@@ -27,6 +29,8 @@ productRouter.patch('/products/:id', autenticate, updateProduct); //admin
 
 productRouter.post('/products/rinjani', autenticate, setRinjani); //admin
 
+productRouter.post('/products/homestay', autenticate, setHomeStay); //admin
+
 productRouter.post(
   '/products/foto/:product_id',
   autenticate,
@@ -42,7 +46,17 @@ productRouter.patch(
 ); //admin
 
 productRouter.get('/products', autenticate, getAllProducts);
-productRouter.get('/products/rinjani/:product_id', autenticate, getRinjaniDetail);
+
+productRouter.get(
+  '/products/rinjani/:product_id',
+  autenticate,
+  getRinjaniDetail
+);
+productRouter.get(
+  '/products/homestay/:product_id',
+  autenticate,
+  getHomeStayDetail
+);
 
 productRouter.get('/products/foto/:id', test);
 

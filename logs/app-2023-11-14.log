@@ -1,0 +1,104 @@
+ [LOGGER] 2023-11-14 05:30:50.410 AM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at BelongsTo._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/belongs-to.js:86:13)
+    at Product.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:52:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:31:36.751 AM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at BelongsTo._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/belongs-to.js:86:13)
+    at Product.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:52:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:31:38.179 AM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at BelongsTo._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/belongs-to.js:86:13)
+    at Product.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:52:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:34:33.336 AM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at BelongsTo._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/belongs-to.js:86:13)
+    at Product.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:53:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:34:41.104 AM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at BelongsTo._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/belongs-to.js:86:13)
+    at Product.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:53:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:35:02.830 AM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model Product. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at BelongsTo._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/belongs-to.js:86:13)
+    at Product.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:52:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:37:44.721 AM error : uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:462:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:17:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:37:46.815 AM error : uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:462:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:17:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:37:52.878 AM error : uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:462:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:17:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:37:56.700 AM error : uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:462:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:17:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 05:57:19.886 AM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as post] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/categoryRoute.js:8:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 06:01:09.595 AM error : controllers/categoryController.js:setSubCategory - isExists is not defined
+ [LOGGER] 2023-11-14 06:17:58.308 AM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as get] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/categoryRoute.js:9:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 06:18:08.103 AM error : uncaughtException: get is not defined
+ReferenceError: get is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/categoryRoute.js:9:48
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 06:18:10.555 AM error : uncaughtException: getAll is not defined
+ReferenceError: getAll is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/categoryRoute.js:9:48
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 06:18:13.136 AM error : uncaughtException: getA is not defined
+ReferenceError: getA is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/categoryRoute.js:9:48
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 06:18:14.367 AM error : uncaughtException: get is not defined
+ReferenceError: get is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/categoryRoute.js:9:48
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 06:18:20.419 AM error : uncaughtException: get is not defined
+ReferenceError: get is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/categoryRoute.js:9:48
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 06:19:32.083 AM error : controllers/categoryController.js:setSubCategory - WHERE parameter "category_id" has invalid "undefined" value
+ [LOGGER] 2023-11-14 06:20:43.155 AM error : controllers/categoryController.js:setSubCategory - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-14 06:23:06.758 AM error : controllers/categoryController.js:setSubCategory - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-14 06:23:39.693 AM error : controllers/categoryController.js:setSubCategory - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-14 06:27:47.944 AM error : controllers/categoryController.js:setSubCategory - Cannot read properties of undefined (reading 'map')
