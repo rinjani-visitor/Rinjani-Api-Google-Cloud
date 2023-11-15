@@ -8,6 +8,7 @@ import HomeStay from '../models/HomeStayModel.js';
 import Favorites from '../models/favoritesModel.js';
 import Category from '../models/categoryModel.js';
 import SubCategory from '../models/subCategoryModel.js';
+import Facility from '../models/facilityModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -247,7 +248,7 @@ const setRinjani = async (req, res, next) => {
 const getRinjaniDetail = async (req, res, next) => {
   try {
     const product_id = req.params.product_id;
-    const rinjani = await Product.findOne({
+    const rinjaniResult = await Product.findOne({
       where: {
         productId: product_id,
       },
@@ -272,10 +273,15 @@ const getRinjaniDetail = async (req, res, next) => {
         {
           model: SubCategory,
         },
+        {
+          model: Facility,
+          attributes: ['facilityName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
       ],
     });
 
-    if (!rinjani) {
+    if (!rinjaniResult) {
       return res.status(404).json({
         errors: ['Product not found'],
         message: 'Get Product Rinjani Detail Failed',
@@ -289,33 +295,49 @@ const getRinjaniDetail = async (req, res, next) => {
       },
     });
 
-    const formattedRinjani = {
-      productId: rinjani.productId,
-      title: rinjani.title,
-      status: rinjani.status,
-      location: rinjani.location,
-      rating: rinjani.rating,
-      thumbnail: rinjani.thumbnail,
-      category: rinjani.category ? rinjani.category.category : null,
-      subCategory: rinjani.subCategory ? rinjani.subCategory.subCategory : null,
+    const {
+      productId,
+      title,
+      status,
+      rating,
+      location,
+      lowestPrice,
+      thumbnail,
+      createdAt,
+      updatedAt,
+      Fotos,
+      category,
+      subCategory,
+      facilities,
+    } = rinjaniResult;
+
+    const newFormat = {
+      productId,
+      title,
+      status,
+      rating,
+      location,
+      lowestPrice,
+      thumbnail,
+      description: rinjaniResult.Rinjani?.description || null,
+      duration: rinjaniResult.Rinjani?.duration || null,
+      program: rinjaniResult.Rinjani?.program || null,
+      porter: rinjaniResult.Rinjani?.porter || null,
+      guide: rinjaniResult.Rinjani?.guide || null,
+      category: category ? category.category : null,
+      subCategory: subCategory ? subCategory.subCategory : null,
       favoritedCount: favoriteCount ? favoriteCount.count : 0,
-      lowestPrice: rinjani.lowestPrice,
-      description: rinjani.Rinjani.description,
-      duration: rinjani.Rinjani.duration,
-      program: rinjani.Rinjani.program,
-      porter: rinjani.Rinjani.porter,
-      guide: rinjani.Rinjani.guide,
-      note: rinjani.Rinjani ? rinjani.Rinjani.note : null,
-      fotos: rinjani.Fotos.map((foto) => ({
-        url: foto.url,
-        originalName: foto.originalName,
-      })),
+      facilities: facilities.map((facility) => facility.facilityName),
+      note: rinjaniResult.Rinjani?.note || null,
+      Fotos,
+      createdAt,
+      updatedAt,
     };
 
     return res.status(200).json({
       errors: [],
       message: 'Get Product Rinjani Detail Success',
-      data: formattedRinjani,
+      data: newFormat,
     });
   } catch (error) {
     next(
@@ -369,14 +391,14 @@ const setHomeStay = async (req, res, next) => {
 const getHomeStayDetail = async (req, res, next) => {
   try {
     const id = req.params.product_id;
-    const homestay = await Product.findOne({
+    const homeStayResult = await Product.findOne({
       where: {
         productId: id,
       },
       include: [
         {
           model: HomeStay,
-          attributes: ['description'],
+          attributes: ['description', 'note'],
         },
         {
           model: Foto,
@@ -387,10 +409,15 @@ const getHomeStayDetail = async (req, res, next) => {
         {
           model: SubCategory,
         },
+        {
+          model: Facility,
+          attributes: ['facilityName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
       ],
     });
 
-    if (!homestay) {
+    if (!homeStayResult) {
       return res.status(404).json({
         errors: ['Product not found'],
         message: 'Get Product HomeStay Detail Failed',
@@ -398,29 +425,51 @@ const getHomeStayDetail = async (req, res, next) => {
       });
     }
 
-    const formattedHomeStay = {
-      productId: homestay.productId,
-      title: homestay.title,
-      status: homestay.status,
-      location: homestay.location,
-      rating: homestay.rating,
-      thumbnail: homestay.thumbnail,
-      category: homestay.category ? homestay.category.category : null,
-      subCategory: homestay.subCategory
-        ? homestay.subCategory.subCategory
-        : null,
-      lowestPrice: homestay.lowestPrice,
-      description: homestay.HomeStays.description,
-      fotos: homestay.Fotos.map((foto) => ({
-        url: foto.url,
-        originalName: foto.originalName,
-      })),
+    const favoriteCount = await Favorites.findAndCountAll({
+      where: {
+        productId: id,
+      },
+    });
+
+    const {
+      productId,
+      title,
+      status,
+      location,
+      rating,
+      thumbnail,
+      createdAt,
+      updatedAt,
+      category,
+      subCategory,
+      HomeStays,
+      Fotos,
+      facilities,
+    } = homeStayResult;
+
+    const newFormat = {
+      productId,
+      title,
+      status,
+      lowestPrice: homeStayResult.lowestPrice,
+      rating,
+      location,
+      thumbnail,
+      category: category ? category.category : null,
+      subCategory: subCategory ? subCategory.subCategory : null,
+      description: HomeStays.length > 0 ? HomeStays[0].description : null,
+      favoritedCount: favoriteCount ? favoriteCount.count : 0,
+      facilities: facilities.map((facility) => facility.facilityName),
+      note: HomeStays.length > 0 ? HomeStays[0].note : null,
+      fotos: Fotos,
+      createdAt,
+      updatedAt,
     };
 
     return res.status(200).json({
       errors: [],
       message: 'Get Home Stay Product Detail Success',
-      data: formattedHomeStay,
+      data: newFormat,
     });
   } catch (error) {
     next(

@@ -23,18 +23,24 @@ const Facility = sequelize.define(
   }
 );
 
+Product.belongsToMany(Facility, {
+  through: 'product_facility',
+  foreignKey: 'productId',
+  otherKey: 'facilityId',
+  onUpdate: 'RESTRICT',
+  onDelete: 'RESTRICT',
+  timestamps: false,
+});
+
+Facility.belongsToMany(Product, {
+  through: 'product_facility',
+  foreignKey: 'facilityId',
+  otherKey: 'productId',
+  onUpdate: 'RESTRICT',
+  onDelete: 'RESTRICT',
+  timestamps: false,
+});
+
 sequelize.sync();
-
-Product.hasMany(Facility, {
-  foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
-});
-
-Facility.belongsTo(Facility, {
-  foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
-});
 
 export default Facility;

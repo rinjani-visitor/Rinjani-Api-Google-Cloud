@@ -1,0 +1,108 @@
+ [LOGGER] 2023-11-16 12:00:10.711 AM error : controllers/productController.js:getRinjaniDetail - Product_Facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:23:28.891 AM error : uncaughtException: addFacility is not defined
+ReferenceError: addFacility is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:11:53
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-16 12:23:58.708 AM error : controllers/facilityController.js:setFacility - Class constructor model cannot be invoked without 'new'
+ [LOGGER] 2023-11-16 12:24:38.507 AM error : controllers/facilityController.js:addFacility - Class constructor model cannot be invoked without 'new'
+ [LOGGER] 2023-11-16 12:25:01.427 AM error : controllers/facilityController.js:addFacility - sequelize.model.product_facility is not a function
+ [LOGGER] 2023-11-16 12:25:17.090 AM error : controllers/facilityController.js:addFacility - Class constructor model cannot be invoked without 'new'
+ [LOGGER] 2023-11-16 12:32:32.785 AM error : controllers/facilityController.js:addFacility - (conn=4550, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:33:36.976 AM error : controllers/facilityController.js:addFacility - (conn=4590, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:36:33.456 AM error : controllers/facilityController.js:addFacility - WHERE parameter "product_id" has invalid "undefined" value
+ [LOGGER] 2023-11-16 12:37:09.228 AM error : controllers/facilityController.js:addFacility - WHERE parameter "product_id" has invalid "undefined" value
+ [LOGGER] 2023-11-16 12:38:47.575 AM error : controllers/facilityController.js:addFacility - (conn=4648, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:38:55.269 AM error : controllers/facilityController.js:addFacility - (conn=4648, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:41:24.616 AM error : controllers/facilityController.js:addFacility - (conn=4653, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:43:10.716 AM error : controllers/facilityController.js:addFacility - (conn=4676, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:44:43.277 AM error : controllers/facilityController.js:addFacility - (conn=4704, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:45:37.938 AM error : controllers/facilityController.js:addFacility - (conn=4740, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:49:04.057 AM error : controllers/facilityController.js:addFacility - (conn=4761, no: 1146, SQLState: 42S02) Table 'test.product_facility' doesn't exist
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:49:24.349 AM error : controllers/facilityController.js:addFacility - (conn=4770, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:51:30.832 AM error : controllers/facilityController.js:addFacility - (conn=4802, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:53:49.658 AM error : controllers/facilityController.js:addFacility - (conn=4842, no: 1048, SQLState: 23000) Column 'product_product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_product_id`,`facility_facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 12:53:56.960 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:00.304 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:00.339 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:00.513 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:00.986 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:01.718 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:01.917 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:02.083 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:02.266 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:02.430 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:02.580 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:02.749 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:02.902 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:03.049 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:03.215 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 12:54:03.364 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 01:00:08.501 AM error : controllers/facilityController.js:addFacility - (conn=4860, no: 1048, SQLState: 23000) Column 'product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_id`,`facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 01:01:23.207 AM error : controllers/facilityController.js:addFacility - WHERE parameter "product_id" has invalid "undefined" value
+ [LOGGER] 2023-11-16 01:03:07.840 AM error : controllers/facilityController.js:addFacility - (conn=4951, no: 1048, SQLState: 23000) Column 'product_id' cannot be null
+sql: INSERT INTO `product_facility` (`product_id`,`facility_id`) VALUES (?,?); - parameters:[null,null]
+ [LOGGER] 2023-11-16 01:10:12.792 AM error : controllers/productController.js:getRinjaniDetail - product_facility is not associated to Product!
+ [LOGGER] 2023-11-16 01:22:58.664 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:24:49.517 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:26:47.124 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:27:16.564 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:30:06.830 AM error : controllers/productController.js:getHomeStayDetail - homestay is not defined
+ [LOGGER] 2023-11-16 01:30:35.676 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:31:08.813 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:31:49.329 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:32:07.338 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:34:35.753 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:35:26.241 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:35:44.984 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:36:20.372 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:36:21.575 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:36:21.720 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:36:40.039 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:04.341 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:47.672 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:48.624 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:48.784 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:48.948 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:49.121 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:49.300 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:49.448 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:49.616 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:49.779 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:49.949 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:50.116 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:37:50.284 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:38:08.473 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:39:30.613 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-16 01:43:02.542 AM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'note')
+ [LOGGER] 2023-11-16 01:57:29.944 AM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'length')
+ [LOGGER] 2023-11-16 02:04:54.295 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:05:27.589 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:05:29.230 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:05:29.409 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:05:29.574 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:05:29.741 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:05:29.890 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:05:51.453 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:06:23.117 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:06:42.864 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:06:44.227 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:07:13.317 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:07:15.061 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:07:15.843 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:07:16.026 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:12:50.617 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:13:57.850 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 02:15:52.034 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
