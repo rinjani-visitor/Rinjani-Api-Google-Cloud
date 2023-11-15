@@ -10,6 +10,8 @@ import {
   avatarUser,
   deleteUser,
   forgotPassword,
+  favorite,
+  getAllFavorite,
 } from '../controllers/userController.js';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import upload from '../middleware/multer.js';
@@ -31,5 +33,8 @@ userRouter.patch(
 );
 userRouter.delete('/users/:id', autenticate, deleteUser);
 userRouter.get('/users/forgot-password', forgotPassword);
+
+userRouter.post('/users/favorite', autenticate, favorite);
+userRouter.get('/users/favorite/all', autenticate, getAllFavorite);
 
 export default userRouter;

@@ -5,12 +5,15 @@ import { isExists } from '../validation/sanitization.js';
 import Rinjani from '../models/rinjaniModel.js';
 import Foto from '../models/fotoModel.js';
 import HomeStay from '../models/HomeStayModel.js';
+import Favorites from '../models/favoritesModel.js';
+import Category from '../models/categoryModel.js';
+import SubCategory from '../models/subCategoryModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
     title: 'required',
-    category: 'required',
+    categoryId: 'required, isDecimal',
     location: 'required',
     lowestPrice: 'required',
   };
@@ -22,6 +25,11 @@ const setProduct = async (req, res, next) => {
         message: 'Product Failed',
         data: null,
       });
+    }
+
+    let subCategoryId = req.body.subCategoryId;
+    if(!subCategoryId){
+      subCategoryId = null
     }
 
     const thumbnail = req.file.filename;
@@ -36,6 +44,7 @@ const setProduct = async (req, res, next) => {
       const result = await Product.create(
         {
           ...product.data,
+          subCategoryId,
           thumbnail: finalName,
         },
         {
@@ -127,14 +136,7 @@ const updateProduct = async (req, res, next) => {
 
 const getAllProducts = async (req, res, next) => {
   try {
-    const products = await Product.findAll({
-      include: [
-        {
-          model: Rinjani,
-          attributes: ['rating'],
-        },
-      ],
-    });
+    const products = await Product.findAll();
 
     if (!products) {
       return res.status(404).json({
@@ -148,8 +150,8 @@ const getAllProducts = async (req, res, next) => {
       productId: product.productId,
       title: product.title,
       status: product.status,
+      rating: product.rating ? product.rating : "no ratings yet",
       location: product.location,
-      rating: product.Rinjani ? product.Rinjani.rating : null,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
     }));
@@ -227,16 +229,15 @@ const setRinjani = async (req, res, next) => {
 
 const getRinjaniDetail = async (req, res, next) => {
   try {
-    const id = req.params.product_id;
+    const product_id = req.params.product_id;
     const rinjani = await Product.findOne({
       where: {
-        productId: id,
+        productId: product_id,
       },
       include: [
         {
           model: Rinjani,
           attributes: [
-            'rating',
             'description',
             'duration',
             'program',
@@ -248,6 +249,12 @@ const getRinjaniDetail = async (req, res, next) => {
         {
           model: Foto,
         },
+        {
+          model: Category,
+        },
+        {
+          model: SubCategory,
+        }
       ],
     });
 
@@ -257,15 +264,24 @@ const getRinjaniDetail = async (req, res, next) => {
         message: 'Get Product Rinjani Detail Failed',
         data: null,
       });
-    }
+    };
+
+    const favoriteCount = await Favorites.findAndCountAll({
+      where: {
+        productId: product_id,
+      },
+    })
 
     const formattedRinjani = {
       productId: rinjani.productId,
       title: rinjani.title,
       status: rinjani.status,
       location: rinjani.location,
-      rating: rinjani.Rinjani ? rinjani.Rinjani.rating : null,
+      rating: rinjani.rating,
       thumbnail: rinjani.thumbnail,
+      category: rinjani.category ? rinjani.category.category : null,
+      subCategory: rinjani.subCategory ? rinjani.subCategory.subCategory : null,
+      favoritedCount: favoriteCount ? favoriteCount.count : 0,
       lowestPrice: rinjani.lowestPrice,
       description: rinjani.Rinjani.description,
       duration: rinjani.Rinjani.duration,
@@ -343,7 +359,7 @@ const getHomeStayDetail = async (req, res, next) => {
       include: [
         {
           model: HomeStay,
-          attributes: ['rating', 'description'],
+          attributes: ['description'],
         },
         {
           model: Foto,
@@ -364,7 +380,7 @@ const getHomeStayDetail = async (req, res, next) => {
       title: homestay.title,
       status: homestay.status,
       location: homestay.location,
-      rating: homestay.HomeStay ? homestay.HomeStay.rating : null,
+      rating: homestay.rating,
       thumbnail: homestay.thumbnail,
       lowestPrice: homestay.lowestPrice,
       description: homestay.HomeStay.description,

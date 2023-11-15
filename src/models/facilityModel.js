@@ -2,43 +2,39 @@ import sequelize from '../utils/db.js';
 import { Sequelize } from 'sequelize';
 import Product from './productModel.js';
 
-const HomeStay = sequelize.define(
-  'HomeStay',
+const Facility = sequelize.define(
+  'facility',
   {
-    homeStayId: {
+    facilityId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true,
       allowNull: false,
     },
-    description: {
+    facilityName: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    note: {
-      type: Sequelize.STRING,
-      allowNull: true,
-    },
   },
   {
-    tableName: 'homestay',
+    tableName: 'facility',
     underscored: true,
     timestamps: false,
   }
 );
 
-Product.hasMany(HomeStay, {
-  foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
-});
-
-HomeStay.belongsTo(Product, {
-  foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
-});
-
 sequelize.sync();
 
-export default HomeStay;
+Product.hasMany(Facility, {
+  foreignKey: 'productId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
+
+Facility.belongsTo(Facility, {
+  foreignKey: 'productId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
+
+export default Facility;

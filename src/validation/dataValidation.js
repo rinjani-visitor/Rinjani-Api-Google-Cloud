@@ -27,6 +27,11 @@ const dataValid = async (valid, dt) => {
                 msg.push(key + ' is invalid email');
               }
               break;
+            case 'isDecimal':
+              if (isExists(data[key]) && !validator.isDecimal(data[key])) {
+                msg.push(key + ' is invalid number');
+              }
+              break;
             case 'isStrongPassword':
               if (
                 isExists(data[key]) &&

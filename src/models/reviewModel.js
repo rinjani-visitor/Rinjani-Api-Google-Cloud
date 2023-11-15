@@ -1,44 +1,57 @@
 import sequelize from '../utils/db.js';
 import { Sequelize } from 'sequelize';
 import Product from './productModel.js';
+import User from './userModel.js';
 
-const HomeStay = sequelize.define(
-  'HomeStay',
+const Review = sequelize.define(
+  'Review',
   {
-    homeStayId: {
+    reviewId: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true,
       allowNull: false,
     },
-    description: {
+    review: {
       type: Sequelize.STRING,
       allowNull: false,
     },
-    note: {
-      type: Sequelize.STRING,
-      allowNull: true,
+    rating: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
     },
   },
   {
-    tableName: 'homestay',
+    tableName: 'review',
     underscored: true,
-    timestamps: false,
+    timestamps: true,
   }
 );
 
-Product.hasMany(HomeStay, {
+Product.hasMany(Review, {
   foreignKey: 'productId',
   onDelete: 'RESTRICT',
   onUpdate: 'RESTRICT',
 });
 
-HomeStay.belongsTo(Product, {
+Review.belongsTo(Product, {
   foreignKey: 'productId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
+
+User.hasMany(Review, {
+  foreignKey: 'userId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
+
+Review.belongsTo(User, {
+  foreignKey: 'userId',
   onDelete: 'RESTRICT',
   onUpdate: 'RESTRICT',
 });
 
 sequelize.sync();
 
-export default HomeStay;
+export default Review;

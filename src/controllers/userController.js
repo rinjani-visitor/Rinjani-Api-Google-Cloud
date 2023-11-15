@@ -12,6 +12,10 @@ import {
 } from '../utils/jwt.js';
 import { isExists } from '../validation/sanitization.js';
 import { Entropy, charset32 } from 'entropy-string';
+import Favorites from '../models/favoritesModel.js';
+import Product from '../models/productModel.js';
+import Rinjani from '../models/rinjaniModel.js';
+import HomeStay from '../models/HomeStayModel.js';
 
 const setUser = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -389,7 +393,8 @@ const avatarUser = async (req, res, next) => {
 
     const uploadedFileName = req.file.filename;
     if (uploadedFileName) {
-      const finalName = process.env.BASE_URL + '/images/avatar/' + uploadedFileName;
+      const finalName =
+        process.env.BASE_URL + '/images/avatar/' + uploadedFileName;
       const result = await User.update(
         {
           profilPicture: finalName,
@@ -513,6 +518,134 @@ const forgotPassword = async (req, res, next) => {
   }
 };
 
+const favorite = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  try {
+    const user_id = req.body.userId;
+    const product_id = req.body.productId;
+
+    if (!user_id || !product_id) {
+      return res.status(400).json({
+        errors: ['userId and productId is required'],
+        message: 'Favorite Failed',
+        data: null,
+      });
+    }
+
+    const checkFavorite = await Favorites.findOne({
+      where: {
+        userId: user_id,
+        productId: product_id,
+      },
+    });
+
+    if (checkFavorite) {
+      await Favorites.destroy({
+        where: {
+          userId: user_id,
+          productId: product_id,
+        },
+        transaction: t,
+      });
+      await t.commit();
+      return res.status(200).json({
+        errors: [],
+        message: 'Unfavorite successfully',
+        data: null,
+      });
+    }
+
+    const result = await Favorites.create(
+      {
+        userId: user_id,
+        productId: product_id,
+      },
+      {
+        transaction: t,
+      }
+    );
+
+    if (result[0] == 0) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Failed to save favorite to database'],
+        message: 'Favorite Failed',
+        data: null,
+      });
+    }
+
+    await t.commit();
+
+    return res.status(201).json({
+      errors: [],
+      message: 'Favorite successfully',
+      data: result,
+    });
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error('controllers/userController.js:favorite - ' + error.message)
+    );
+  }
+};
+
+const getAllFavorite = async (req, res, next) => {
+  try {
+    const user_id = req.body.userId;
+    const checkUser = await User.findOne({
+      where: {
+        userId: user_id,
+      },
+    });
+
+    if (!checkUser) {
+      return res.status(404).json({
+        errors: ['User not found'],
+        message: 'Get All Favorite Failed',
+        data: null,
+      });
+    }
+
+    const result = await Favorites.findAll({
+      where: {
+        userId: user_id,
+      },
+    });
+
+    const productIds = result.map((favorite) => favorite.productId);
+
+    const favoriteProducts = await Product.findAll({
+      where: {
+        productId: {
+          [Op.in]: productIds,
+        },
+      },
+    });
+
+    const formattedProducts = favoriteProducts.map((product) => ({
+      productId: product.productId,
+      title: product.title,
+      status: product.status,
+      rating: product.rating ? product.rating : 'no ratings yet',
+      location: product.location,
+      thumbnail: product.thumbnail,
+      lowestPrice: product.lowestPrice,
+    }));
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get All Favorite successfully',
+      data: formattedProducts,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/userController.js:getAllFavorite - ' + error.message
+      )
+    );
+  }
+};
+
 export {
   setUser,
   setActivateUser,
@@ -524,4 +657,6 @@ export {
   avatarUser,
   deleteUser,
   forgotPassword,
+  favorite,
+  getAllFavorite,
 };

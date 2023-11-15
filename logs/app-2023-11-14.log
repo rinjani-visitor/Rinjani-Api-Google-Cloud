@@ -102,3 +102,275 @@ ReferenceError: get is not defined
  [LOGGER] 2023-11-14 06:23:06.758 AM error : controllers/categoryController.js:setSubCategory - Cannot read properties of undefined (reading 'map')
  [LOGGER] 2023-11-14 06:23:39.693 AM error : controllers/categoryController.js:setSubCategory - Cannot read properties of undefined (reading 'map')
  [LOGGER] 2023-11-14 06:27:47.944 AM error : controllers/categoryController.js:setSubCategory - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-14 11:32:25.484 AM error : uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:462:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:19:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 11:32:26.909 AM error : uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:462:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:19:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 01:59:57.773 PM error : uncaughtException: setFacility is not defined
+ReferenceError: setFacility is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:7:49
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:35:44.014 PM error : uncaughtException: Product.has is not a function
+TypeError: Product.has is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:42:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:35:48.996 PM error : uncaughtException: (conn=2263, no: 1213, SQLState: 40001) Deadlock found when trying to get lock; try restarting transaction
+sql: ALTER TABLE `product` CHANGE `title` `title` VARCHAR(255) NOT NULL; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:984:11)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.061 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.083 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.091 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.095 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.102 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.108 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.112 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:49.118 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:35:55.107 PM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model category. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model category. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at BelongsTo._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/belongs-to.js:86:13)
+    at category.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:48:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:37:01.644 PM error : uncaughtException: Sub is not defined
+ReferenceError: Sub is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:54:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:42:02.379 PM error : uncaughtException: Naming collision between attribute 'category' and association 'category' on model category. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'category' and association 'category' on model category. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at HasOne._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/has-one.js:87:13)
+    at category.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:43:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:42:03.280 PM error : uncaughtException: Category.has is not a function
+TypeError: Category.has is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:43:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:42:07.734 PM error : uncaughtException: (conn=2362, no: 1213, SQLState: 40001) Deadlock found when trying to get lock; try restarting transaction
+sql: ALTER TABLE `subCategory` CHANGE `sub_category` `sub_category` VARCHAR(255) NOT NULL; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:984:11)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.746 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.748 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.750 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.751 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.752 PM error : uncaughtException: (conn=2364, no: 1091, SQLState: 42000) Can't DROP 'subcategory_ibfk_1'; check that column/key exists
+sql: ALTER TABLE `subCategory` DROP FOREIGN KEY `subcategory_ibfk_1`; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:67:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.752 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.753 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:07.781 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:42:54.668 PM error : uncaughtException: Naming collision between attribute 'subCategory' and association 'subCategory' on model subCategory. To remedy this, change either foreignKey or as in your association definition
+Error: Naming collision between attribute 'subCategory' and association 'subCategory' on model subCategory. To remedy this, change either foreignKey or as in your association definition
+    at Object.checkNamingCollision (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/helpers.js:4:11)
+    at HasOne._injectAttributes (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/has-one.js:87:13)
+    at subCategory.<anonymous> (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:72:17)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:55:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:42:55.931 PM error : uncaughtException: SubCategory.has is not a function
+TypeError: SubCategory.has is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:55:13
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:43:03.015 PM error : uncaughtException: (conn=2394, no: 1213, SQLState: 40001) Deadlock found when trying to get lock; try restarting transaction
+sql: ALTER TABLE `subCategory` CHANGE `sub_category` `sub_category` VARCHAR(255) NOT NULL; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:984:11)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.029 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.031 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.032 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.032 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.033 PM error : uncaughtException: (conn=2397, no: 1091, SQLState: 42000) Can't DROP 'subcategory_ibfk_1'; check that column/key exists
+sql: ALTER TABLE `subCategory` DROP FOREIGN KEY `subcategory_ibfk_1`; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:67:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.033 PM error : uncaughtException: (conn=2396, no: 1091, SQLState: 42000) Can't DROP 'subcategory_ibfk_1'; check that column/key exists
+sql: ALTER TABLE `subCategory` DROP FOREIGN KEY `subcategory_ibfk_1`; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:67:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.034 PM error : uncaughtException: Constraint subcategory_ibfk_1 on table subCategory does not exist
+SequelizeUnknownConstraintError: Constraint subcategory_ibfk_1 on table subCategory does not exist
+    at MySQLQueryInterface.removeConstraint (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:56:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:979:17)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:03.076 PM error : uncaughtException: Cannot delete property 'meta' of [object Array]
+TypeError: Cannot delete property 'meta' of [object Array]
+    at Query.formatResults (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:110:7)
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:73:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:16
+    at async MySQLQueryInterface.removeColumn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query-interface.js:27:23)
+    at async Product.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:967:13)
+    at async Sequelize._syncModelsWithCyclicReferences (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:398:7)
+ [LOGGER] 2023-11-14 03:43:09.632 PM error : uncaughtException: Sub is not defined
+ReferenceError: Sub is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/productModel.js:61:19
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-14 03:49:02.124 PM error : controllers/productController.js:setProduct - (conn=2462, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `product` (`product_id`,`title`,`status`,`location`,`lowest_price`,`thumbnail`,`created_at`,`updated_at`,`category_id`,`sub_category_id`) VALUES (?,?,?,?,?,?,?,?,?,?); - parameters:['5c8ef7f9-ab9b-4359-b984-15777a5a58fa','Rinjani Summit Package...]
+ [LOGGER] 2023-11-14 03:50:35.164 PM error : controllers/productController.js:setProduct - (conn=2463, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `product` (`product_id`,`title`,`status`,`location`,`lowest_price`,`thumbnail`,`created_at`,`updated_at`,`category_id`,`sub_category_id`) VALUES (?,?,?,?,?,?,?,?,?,?); - parameters:['4bf55c9a-4a60-4c6c-9624-d7edecdeaf26','Rinjani Summit Package...]
+ [LOGGER] 2023-11-14 03:52:26.514 PM error : controllers/productController.js:setProduct - (conn=2524, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `product` (`product_id`,`title`,`status`,`location`,`lowest_price`,`thumbnail`,`created_at`,`updated_at`,`category_id`,`sub_category_id`) VALUES (?,?,?,?,?,?,?,?,?,?); - parameters:['5df7e9ef-f231-41b6-90a4-1a63e9c8baba','Rinjani Summit Package...]
+ [LOGGER] 2023-11-14 03:52:32.878 PM error : controllers/productController.js:setProduct - (conn=2524, no: 1366, SQLState: HY000) Incorrect integer value: 'Rinjani' for column 'category_id' at row 1
+sql: INSERT INTO `product` (`product_id`,`title`,`status`,`location`,`lowest_price`,`thumbnail`,`created_at`,`updated_at`,`category_id`,`sub_category_id`) VALUES (?,?,?,?,?,?,?,?,?,?); - parameters:['04741bf9-e1f5-4087-a152-862354bbeb56','Rinjani Summit Package...]
+ [LOGGER] 2023-11-14 03:52:53.978 PM error : controllers/productController.js:setProduct - (conn=2525, no: 1364, SQLState: HY000) Field 'category' doesn't have a default value
+sql: INSERT INTO `product` (`product_id`,`title`,`status`,`location`,`lowest_price`,`thumbnail`,`created_at`,`updated_at`,`category_id`,`sub_category_id`) VALUES (?,?,?,?,?,?,?,?,?,?); - parameters:['f14688a6-35a1-4799-95b9-b1310373c22c','Rinjani Summit Package...]

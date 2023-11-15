@@ -11,10 +11,6 @@ const Wisata = sequelize.define(
       primaryKey: true,
       allowNull: false,
     },
-    rating: {
-      type: Sequelize.FLOAT,
-      allowNull: true,
-    },
     description: {
       type: Sequelize.STRING,
       allowNull: false,

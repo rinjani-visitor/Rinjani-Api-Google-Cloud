@@ -1,6 +1,7 @@
 import sequelize from '../utils/db.js';
 import { Sequelize } from 'sequelize';
 import Category from './categoryModel.js';
+import SubCategory from './subCategoryModel.js';
 
 const Product = sequelize.define(
   'Product',
@@ -18,6 +19,10 @@ const Product = sequelize.define(
     status: {
       type: Sequelize.BOOLEAN,
       defaultValue: true,
+    },
+    rating: {
+      type: Sequelize.FLOAT,
+      allowNull: true,
     },
     location: {
       type: Sequelize.STRING,
@@ -50,6 +55,18 @@ Product.belongsTo(Category, {
   onDelete: 'RESTRICT',
   onUpdate: 'RESTRICT',
 });
+
+SubCategory.hasMany(Product, {
+  foreignKey: 'subCategoryId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
+
+Product.belongsTo(SubCategory, {
+  foreignKey: 'subCategoryId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+})
 
 sequelize.sync();
 
