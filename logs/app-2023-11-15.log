@@ -467,3 +467,8 @@ sql: SELECT `Product`.`product_id` AS `productId`, `Product`.`title`, `Product`.
  [LOGGER] 2023-11-15 03:25:26.642 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'category')
  [LOGGER] 2023-11-15 03:28:59.075 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'category')
  [LOGGER] 2023-11-15 03:29:30.820 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'category')
+ [LOGGER] 2023-11-15 04:27:17.209 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-15 04:29:50.981 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-15 04:30:43.169 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-15 04:31:02.812 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-15 10:50:51.197 PM error : controllers/productController.js:getAllProducts - category is associated to Product using an alias. You've included an alias (Categories), but it does not match the alias(es) defined in your association (category).

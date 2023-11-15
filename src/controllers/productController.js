@@ -28,8 +28,8 @@ const setProduct = async (req, res, next) => {
     }
 
     let subCategoryId = req.body.subCategoryId;
-    if(!subCategoryId){
-      subCategoryId = null
+    if (!subCategoryId) {
+      subCategoryId = null;
     }
 
     const thumbnail = req.file.filename;
@@ -136,7 +136,24 @@ const updateProduct = async (req, res, next) => {
 
 const getAllProducts = async (req, res, next) => {
   try {
-    const products = await Product.findAll();
+    const categoryName = req.query.category;
+
+    let products;
+
+    if (categoryName) {
+      products = await Product.findAll({
+        include: [
+          {
+            model: Category,
+            where: {
+              category: categoryName,
+            },
+          },
+        ],
+      });
+    } else {
+      products = await Product.findAll();
+    }
 
     if (!products) {
       return res.status(404).json({
@@ -150,7 +167,7 @@ const getAllProducts = async (req, res, next) => {
       productId: product.productId,
       title: product.title,
       status: product.status,
-      rating: product.rating ? product.rating : "no ratings yet",
+      rating: product.rating ? product.rating : 'no ratings yet',
       location: product.location,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
@@ -194,8 +211,8 @@ const setRinjani = async (req, res, next) => {
       where: {
         productId: product_id,
       },
-    })
-    if(!cekProductId){
+    });
+    if (!cekProductId) {
       return res.status(404).json({
         errors: ['Product Id not found'],
         message: 'Set Rinjani Failed',
@@ -254,7 +271,7 @@ const getRinjaniDetail = async (req, res, next) => {
         },
         {
           model: SubCategory,
-        }
+        },
       ],
     });
 
@@ -264,13 +281,13 @@ const getRinjaniDetail = async (req, res, next) => {
         message: 'Get Product Rinjani Detail Failed',
         data: null,
       });
-    };
+    }
 
     const favoriteCount = await Favorites.findAndCountAll({
       where: {
         productId: product_id,
       },
-    })
+    });
 
     const formattedRinjani = {
       productId: rinjani.productId,
@@ -364,6 +381,12 @@ const getHomeStayDetail = async (req, res, next) => {
         {
           model: Foto,
         },
+        {
+          model: Category,
+        },
+        {
+          model: SubCategory,
+        },
       ],
     });
 
@@ -382,8 +405,12 @@ const getHomeStayDetail = async (req, res, next) => {
       location: homestay.location,
       rating: homestay.rating,
       thumbnail: homestay.thumbnail,
+      category: homestay.category ? homestay.category.category : null,
+      subCategory: homestay.subCategory
+        ? homestay.subCategory.subCategory
+        : null,
       lowestPrice: homestay.lowestPrice,
-      description: homestay.HomeStay.description,
+      description: homestay.HomeStays.description,
       fotos: homestay.Fotos.map((foto) => ({
         url: foto.url,
         originalName: foto.originalName,

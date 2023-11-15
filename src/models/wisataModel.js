@@ -15,6 +15,10 @@ const Wisata = sequelize.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
+    route: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
     note: {
       type: Sequelize.STRING,
       allowNull: true,
