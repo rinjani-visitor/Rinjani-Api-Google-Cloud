@@ -106,3 +106,31 @@ sql: INSERT INTO `product_facility` (`product_id`,`facility_id`) VALUES (?,?); -
  [LOGGER] 2023-11-16 02:12:50.617 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
  [LOGGER] 2023-11-16 02:13:57.850 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
  [LOGGER] 2023-11-16 02:15:52.034 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-16 10:44:20.567 AM error : uncaughtException: Cannot read properties of undefined (reading 'get')
+TypeError: Cannot read properties of undefined (reading 'get')
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:14:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-16 10:44:25.285 AM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as patch] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:13:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-16 10:50:59.873 AM error : uncaughtException: deleteFacility is not defined
+ReferenceError: deleteFacility is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:15:51
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-16 10:51:01.809 AM error : uncaughtException: d is not defined
+ReferenceError: d is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:14:50
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-16 10:51:02.936 AM error : uncaughtException: deleteFacility is not defined
+ReferenceError: deleteFacility is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:15:51
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-16 10:51:04.502 AM error : uncaughtException: de is not defined
+ReferenceError: de is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/facilityRoute.js:15:51
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
