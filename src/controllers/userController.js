@@ -14,14 +14,13 @@ import { isExists } from '../validation/sanitization.js';
 import { Entropy, charset32 } from 'entropy-string';
 import Favorites from '../models/favoritesModel.js';
 import Product from '../models/productModel.js';
-import Rinjani from '../models/rinjaniModel.js';
-import HomeStay from '../models/HomeStayModel.js';
 
 const setUser = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
     name: 'required',
     email: 'required,isEmail',
+    country: 'required',
     password: 'required,isStrongPassword',
     confirmPassword: 'required',
   };

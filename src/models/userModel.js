@@ -50,7 +50,7 @@ const User = sequelize.define(
     },
     country: {
       type: Sequelize.STRING,
-      allowNull: true,
+      allowNull: false,
     },
     phoneNumber: {
       type: Sequelize.STRING,

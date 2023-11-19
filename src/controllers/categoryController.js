@@ -146,4 +146,5 @@ const getAllCategoriesandSubCategories = async (req, res, next) => {
     );
   }
 };
+
 export { setCategory, setSubCategory, getAllCategoriesandSubCategories };

@@ -1,0 +1,20 @@
+ [LOGGER] 2023-11-18 02:00:27.574 PM error : uncaughtException: get is not defined
+ReferenceError: get is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:10:44
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-18 02:00:30.675 PM error : uncaughtException: getAl is not defined
+ReferenceError: getAl is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:10:44
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-18 02:49:10.509 PM error : uncaughtException: get is not defined
+ReferenceError: get is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:11:55
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-18 03:03:05.612 PM error : controllers/bookingController.js:getAllBooking - Product is not defined
+ [LOGGER] 2023-11-18 03:03:21.281 PM error : controllers/bookingController.js:getAllBooking - Product is not associated to Booking!
+ [LOGGER] 2023-11-18 03:05:22.499 PM error : controllers/bookingController.js:getAllBooking - Product is not associated to Booking!
+ [LOGGER] 2023-11-18 03:08:22.904 PM error : controllers/bookingController.js:getAllBooking - Product is not associated to Booking!
+ [LOGGER] 2023-11-18 03:10:56.688 PM error : controllers/bookingController.js:getAllBooking - Booking is not associated to Product!
+ [LOGGER] 2023-11-18 04:10:53.432 PM error : controllers/bookingController.js:getAllBooking - Product is not associated to Product!
+ [LOGGER] 2023-11-18 04:11:44.139 PM error : controllers/bookingController.js:getAllBooking - Product is not associated to Product!
+ [LOGGER] 2023-11-18 04:25:31.284 PM error : controllers/bookingController.js:getAllBooking - bookingId is not defined

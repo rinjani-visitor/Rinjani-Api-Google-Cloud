@@ -1,0 +1,24 @@
+ [LOGGER] 2023-11-17 02:20:54.071 PM error : uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/application.js:635:24)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/index.js:23:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-17 02:21:23.626 PM error : uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/application.js:635:24)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/index.js:23:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-17 02:21:50.801 PM error : uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.listen (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/application.js:635:24)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/index.js:23:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
