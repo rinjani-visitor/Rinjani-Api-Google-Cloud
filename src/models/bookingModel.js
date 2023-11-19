@@ -37,6 +37,10 @@ const Booking = sequelize.define(
       defaultValue: 'Offering',
       allowNull: false,
     },
+    adminMessage: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: 'booking',

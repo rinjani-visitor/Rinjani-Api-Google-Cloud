@@ -4,6 +4,9 @@ import Booking from '../models/bookingModel.js';
 import Product from '../models/productModel.js';
 import User from '../models/userModel.js';
 import { Op } from 'sequelize';
+import { isExists } from '../validation/sanitization.js';
+import Payment from '../models/paymentModel.js';
+import 'dotenv/config';
 
 const note = {
   offering:
@@ -29,7 +32,7 @@ const status = [
 const getNote = async (booking_id) => {
   try {
     const booking = await Booking.findByPk(booking_id);
-    
+
     if (!booking) {
       return 'Booking not found';
     }
@@ -148,8 +151,8 @@ const getAllBooking = async (req, res, next) => {
         {
           model: Product,
           attributes: ['title', 'thumbnail'],
-        }
-      ]
+        },
+      ],
     });
 
     if (!result) {
@@ -162,8 +165,8 @@ const getAllBooking = async (req, res, next) => {
 
     const formattedBooking = result.map((booking) => ({
       bookingId: booking.bookingId,
-      title: booking.Product? booking.Product.title : null,
-      thumbnail: booking.Product? booking.Product.thumbnail : null,
+      title: booking.Product ? booking.Product.title : null,
+      thumbnail: booking.Product ? booking.Product.thumbnail : null,
       bookingStatus: booking.bookingStatus,
     }));
 
@@ -209,8 +212,8 @@ const getAllBookingAdmin = async (req, res, next) => {
           {
             model: User,
             attributes: ['name'],
-          }
-        ]
+          },
+        ],
       });
     } else {
       result = await Booking.findAll({
@@ -222,8 +225,8 @@ const getAllBookingAdmin = async (req, res, next) => {
           {
             model: User,
             attributes: ['name', 'country'],
-          }
-        ]
+          },
+        ],
       });
     }
 
@@ -237,11 +240,11 @@ const getAllBookingAdmin = async (req, res, next) => {
 
     const formattedBooking = result.map((booking) => ({
       bookingId: booking.bookingId,
-      title: booking.Product? booking.Product.title : null,
-      thumbnail: booking.Product? booking.Product.thumbnail : null,
+      title: booking.Product ? booking.Product.title : null,
+      thumbnail: booking.Product ? booking.Product.thumbnail : null,
       bookingStatus: booking.bookingStatus,
-      customerName: booking.User? booking.User.name : null,
-      customerCountry: booking.User? booking.User.country : null,
+      customerName: booking.User ? booking.User.name : null,
+      customerCountry: booking.User ? booking.User.country : null,
     }));
 
     return res.status(200).json({
@@ -286,6 +289,8 @@ const getBookingDetail = async (req, res, next) => {
       createdAt: result.createdAt,
       updatedAt: result.updatedAt,
       bookingStatus: result.bookingStatus,
+      adminMessage:
+        result.adminMessage !== null ? result.adminMessage : undefined,
       note: bookingNote,
     };
 
@@ -297,10 +302,217 @@ const getBookingDetail = async (req, res, next) => {
   } catch (error) {
     next(
       new Error(
-        'controllers/bookingController.js:getBookingDetailAdmin - ' + error.message
+        'controllers/bookingController.js:getBookingDetailAdmin - ' +
+          error.message
       )
     );
   }
 };
 
-export { setBooking, getAllBooking, getBookingDetail, getAllBookingAdmin};
+const updateBookingAdmin = async (req, res, next) => {
+  try {
+    const idBooking = req.params.bookingId;
+
+    const check = await Booking.findByPk(idBooking);
+
+    if (!check) {
+      return res.status(404).json({
+        errors: ['No booking found'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
+
+    const valid = {};
+
+    if (isExists(req.body.bookingStatus)) {
+      valid.bookingStatus = 'required';
+    }
+
+    if (isExists(req.body.adminMessage)) {
+      valid.adminMessage = 'required';
+    }
+
+    const booking = await dataValid(valid, req.body);
+
+    if (booking.message.length > 0) {
+      return res.status(400).json({
+        errors: booking.message,
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
+
+    const result = await Booking.update(
+      {
+        ...booking.data,
+      },
+      {
+        where: {
+          bookingId: idBooking,
+        },
+      }
+    );
+
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['Booking not found'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
+
+    const checkBookingStatus = await Booking.findOne({
+      attributes: ['bookingStatus', 'offeringPrice'],
+      where: {
+        bookingId: idBooking,
+      },
+    });
+
+    if(checkBookingStatus.bookingStatus == 'Waiting for Payment'){
+      const checkBookinginPayment = await Payment.findOne({
+        where: {
+          bookingId: idBooking,
+        }
+      });
+
+      if (checkBookinginPayment){
+        return res.status(404).json({
+          errors: ['Payment already created'],
+          message: 'Update Booking Admin Failed',
+          data: null,
+        });
+      };
+
+      const payment = await Payment.create({
+        bookingId: idBooking,
+        tax: process.env.TAX,
+        subTotal: checkBookingStatus.offeringPrice,
+        total: checkBookingStatus.offeringPrice + (checkBookingStatus.offeringPrice * (process.env.TAX/100)),
+      });
+
+      if(!payment){
+        return res.status(404).json({
+          errors: ['Payment failed to create'],
+          message: 'Update Booking Admin Failed',
+          data: null,
+        });
+      }
+
+      return res.status(200).json({
+        errors: [],
+        message: 'Update Booking Admin successfully. Payment has been send to customer.',
+        data: {
+          ...booking.data,
+          paymentId: payment.paymentId,
+          tax: `${payment.tax}%`,
+          subTotal: payment.subTotal,
+          total: payment.total,
+        },
+      });
+    }
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Update Booking Admin successfully',
+      data: booking.data,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/bookingController.js:updateBookingAdmin - ' + error.message
+      )
+    );
+  }
+};
+
+const updateBooking = async (req, res, next) => {
+  try {
+    const idBooking = req.params.bookingId;
+
+    const check = await Booking.findByPk(idBooking);
+
+    if (!check) {
+      return res.status(404).json({
+        errors: ['No booking found'],
+        message: 'Update Booking Failed',
+        data: null,
+      });
+    }
+
+    const valid = {};
+
+    if (isExists(req.body.startDateTime)) {
+      valid.startDateTime = 'required';
+    }
+
+    if (isExists(req.body.adminMessage)) {
+      valid.endDateTime = 'required';
+    }
+
+    if (isExists(req.body.addOns)) {
+      valid.addOns = 'required';
+    }
+
+    if (isExists(req.body.offeringPrice)) {
+      valid.offeringPrice = 'required';
+    }
+
+    if (isExists(req.body.totalPersons)) {
+      valid.totalPersons = 'required';
+    }
+
+    const booking = await dataValid(valid, req.body);
+
+    if (booking.message.length > 0) {
+      return res.status(400).json({
+        errors: booking.message,
+        message: 'Update Booking Failed',
+        data: null,
+      });
+    }
+
+    const result = await Booking.update(
+      {
+        ...booking.data,
+        bookingStatus: status[0],
+        adminMessage: null,
+      },
+      {
+        where: {
+          bookingId: idBooking,
+        },
+      }
+    );
+
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['Booking not found'],
+        message: 'Update Booking Failed',
+        data: null,
+      });
+    }
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Update Booking successfully',
+      data: booking.data,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/bookingController.js:updateBooking - ' + error.message
+      )
+    );
+  }
+};
+
+export {
+  setBooking,
+  getAllBooking,
+  getBookingDetail,
+  getAllBookingAdmin,
+  updateBookingAdmin,
+  updateBooking,
+  status,
+};

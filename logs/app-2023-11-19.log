@@ -3,3 +3,70 @@
 sql: SELECT `Booking`.`booking_id` AS `bookingId`, `Booking`.`start_date_time` AS `startDateTime`, `Booking`.`end_date_time` AS `endDateTime`, `Booking`.`offering_price` AS `offeringPrice`, `Booking`.`add_ons` AS `addOns`, `Booking`.`total_persons` AS `totalPersons`, `Booking`.`booking_status` AS `bookingStatus`, `Booking`.`created_at` AS `createdAt`, `Booking`.`updated_at` AS `updatedAt`, `Booking`.`product_id` AS `productId`, `Booking`.`user_id` AS `userId`, `Product`.`product_id` AS `Product.productId`, `Product`.`title` AS `Product.title`, `Product`.`thumbnail` AS `Product.thumbnail`, `Product`.`lowest_price` AS `Product.lowestPrice`, `User`.`user_id` AS `User.userId`, `User`.`name` AS `User.name` FROM `booking` AS `Booking` LEFT OUTER JOIN `product` AS `Product` ON `Booking`.`product_id` = `Product`.`product_id` LEFT OUTER JOIN `user` AS `User` ON `Booking`.`user_id` = `User`.`user_id` WHERE `Booking`.`booking_status` ILIKE 'Success'; - parameters:[]
  [LOGGER] 2023-11-19 09:30:53.489 AM error : controllers/bookingController.js:getAllBookingAdmin - (conn=8788, no: 1064, SQLState: 42000) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ILIKE 'success'' at line 1
 sql: SELECT `Booking`.`booking_id` AS `bookingId`, `Booking`.`start_date_time` AS `startDateTime`, `Booking`.`end_date_time` AS `endDateTime`, `Booking`.`offering_price` AS `offeringPrice`, `Booking`.`add_ons` AS `addOns`, `Booking`.`total_persons` AS `totalPersons`, `Booking`.`booking_status` AS `bookingStatus`, `Booking`.`created_at` AS `createdAt`, `Booking`.`updated_at` AS `updatedAt`, `Booking`.`product_id` AS `productId`, `Booking`.`user_id` AS `userId`, `Product`.`product_id` AS `Product.productId`, `Product`.`title` AS `Product.title`, `Product`.`thumbnail` AS `Product.thumbnail`, `Product`.`lowest_price` AS `Product.lowestPrice`, `User`.`user_id` AS `User.userId`, `User`.`name` AS `User.name` FROM `booking` AS `Booking` LEFT OUTER JOIN `product` AS `Product` ON `Booking`.`product_id` = `Product`.`product_id` LEFT OUTER JOIN `user` AS `User` ON `Booking`.`user_id` = `User`.`user_id` WHERE `Booking`.`booking_status` ILIKE 'success'; - parameters:[]
+ [LOGGER] 2023-11-19 10:20:56.575 AM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as patch] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:11:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 10:21:16.000 AM error : uncaughtException: updateBookingAdmin is not defined
+ReferenceError: updateBookingAdmin is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:11:57
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 10:21:19.245 AM error : uncaughtException: up is not defined
+ReferenceError: up is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:11:57
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 10:21:23.387 AM error : uncaughtException: updateBoo is not defined
+ReferenceError: updateBoo is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:11:57
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 10:21:31.227 AM error : uncaughtException: updateBoo is not defined
+ReferenceError: updateBoo is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/bookingRoute.js:11:57
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 10:30:42.673 AM error : uncaughtException: up is not defined
+ReferenceError: up is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/bookingController.js:307:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 02:01:55.622 PM error : controllers/bookingController.js:updateBookingAdmin - notNull Violation: Payment.subTotal cannot be null,
+notNull Violation: Payment.total cannot be null
+ [LOGGER] 2023-11-19 02:17:27.410 PM error : controllers/bookingController.js:updateBookingAdmin - Validation error
+ [LOGGER] 2023-11-19 04:57:19.914 PM error : controllers/bookingController.js:setBankPayment - Validation error
+ [LOGGER] 2023-11-19 04:59:39.457 PM error : controllers/bookingController.js:setBankPayment - Validation error
+ [LOGGER] 2023-11-19 04:59:53.376 PM error : controllers/bookingController.js:setBankPayment - Validation error
+ [LOGGER] 2023-11-19 05:13:46.033 PM error : controllers/bookingController.js:setBankPayment - (conn=10579, no: 1205, SQLState: HY000) Lock wait timeout exceeded; try restarting transaction
+sql: UPDATE `payment` SET `payment_status`=? WHERE `booking_id` = ? - parameters:['Need a Review','b8fb8c83-f687-403d-8665-c3bb8691576e']
+ [LOGGER] 2023-11-19 05:16:56.694 PM error : controllers/bookingController.js:setBankPayment - (conn=10585, no: 1205, SQLState: HY000) Lock wait timeout exceeded; try restarting transaction
+sql: UPDATE `payment` SET `payment_status`=? WHERE `booking_id` = ? - parameters:['Need a Review','b8fb8c83-f687-403d-8665-c3bb8691576e']
+ [LOGGER] 2023-11-19 05:17:52.881 PM error : controllers/bookingController.js:setBankPayment - updatePaymentStatus is not defined
+ [LOGGER] 2023-11-19 05:38:59.330 PM error : uncaughtException: set is not defined
+ReferenceError: set is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:10:114
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 05:40:24.617 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 05:51:25.169 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 05:53:04.512 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 05:53:29.502 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 05:56:00.577 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 05:56:56.699 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 05:57:56.636 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 05:58:35.519 PM error : controllers/bookingController.js:setWisePayment - (conn=11156, no: 1364, SQLState: HY000) Field 'wise_email' doesn't have a default value
+sql: INSERT INTO `wisePayment` (`wise_payment_id`,`image_proof_transfer`,`wise_account_name`,`payment_id`,`created_at`,`updated_at`) VALUES (DEFAULT,?,?,?,?,?); - parameters:['http://localhost:3000/images/payment/wise/1700387915481-218444902.jpeg','Firdaus','d3...]
+ [LOGGER] 2023-11-19 06:00:19.994 PM error : controllers/bookingController.js:setWisePayment - (conn=11165, no: 1364, SQLState: HY000) Field 'wise_email' doesn't have a default value
+sql: INSERT INTO `wisePayment` (`wise_payment_id`,`image_proof_transfer`,`wise_account_name`,`payment_id`,`created_at`,`updated_at`) VALUES (DEFAULT,?,?,?,?,?); - parameters:['http://localhost:3000/images/payment/wise/1700388019975-599480615.jpeg','Firdaus','d3...]
+ [LOGGER] 2023-11-19 06:03:40.821 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 06:06:31.720 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 06:08:09.503 PM error : controllers/bookingController.js:setWisePayment - (conn=11275, no: 1146, SQLState: 42S02) Table 'test.wisepayment' doesn't exist
+sql: SELECT `wise_payment_id` AS `wisePaymentId`, `image_proof_transfer` AS `imageProofTransfer`, `wise_email` AS `wiseEmail`, `wise_account_name` AS `wiseAccountName`, `payment_id` AS `paymentId`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `wisePayment` AS `WisePayment` WHERE `WisePayment`.`payment_id` = 'd3d8999e-f244-4dc1-9a5f-90b4b638d603'; - parameters:[]
+ [LOGGER] 2023-11-19 06:08:41.249 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 06:10:35.339 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 06:11:58.772 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 06:13:19.356 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseEmail cannot be null
+ [LOGGER] 2023-11-19 06:21:30.518 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.wiseAccountName cannot be null
+ [LOGGER] 2023-11-19 06:27:10.553 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.emailWise cannot be null
+ [LOGGER] 2023-11-19 06:27:42.122 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.emailWise cannot be null
+ [LOGGER] 2023-11-19 06:27:45.030 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.emailWise cannot be null
+ [LOGGER] 2023-11-19 06:31:05.874 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.emailWise cannot be null
