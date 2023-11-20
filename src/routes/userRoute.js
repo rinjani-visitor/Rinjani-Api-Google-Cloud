@@ -19,10 +19,12 @@ const userRouter = express.Router();
 
 userRouter.post('/users', setUser);
 userRouter.get('/users/refresh', setRefreshToken);
-userRouter.get('/users', autenticate, getUser); //admin
+userRouter.get('/admin/users', autenticate, getUser); //admin get all user
 userRouter.get('/users/:id', autenticate, getUserById);
 userRouter.get('/users/activate/:id', setActivateUser);
 userRouter.post('/users/login', setLogin);
+
+userRouter.post('/admin/users/login', setLogin); //admin
 
 userRouter.patch('/users/:id', autenticate, updateUser);
 userRouter.patch(

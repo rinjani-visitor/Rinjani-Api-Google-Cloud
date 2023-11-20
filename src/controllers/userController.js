@@ -226,7 +226,15 @@ const setLogin = async (req, res, next) => {
         userId: userExists.userId,
         name: userExists.name,
         email: userExists.email,
+        role: 'user', //default role user
       };
+
+      //khusus admin login
+      const adminEmail = 'muhfirdaus0805@gmail.com';
+      if (req.url.includes('/admin') && usr.email === adminEmail) {
+        usr.role = 'admin';
+      }
+
       const token = generateAccessToken(usr);
       const refreshToken = generateRefreshToken(usr);
       return res.status(200).json({

@@ -17,6 +17,8 @@ const note = {
     'Your offer has been declined by admin, you can make another offer to admin or make another booking.',
   paymentsend:
     'Your payment has been sent to the admin. We will inform you once the transaction has been accepted by admin.',
+  paymentfailed:
+    'Sorry, your payment failed to process. Please double-check your payment information or contact our customer service for further assistance.',
   success:
     'Your payment has been recieved and we will send you the trip detail through email. Thank you.',
 };
@@ -26,6 +28,7 @@ const status = [
   'Waiting for Payment',
   'Declined',
   'Payment Reviewing',
+  'Payment Failed',
   'Success',
 ];
 
@@ -44,7 +47,8 @@ const getNote = async (booking_id) => {
       [status[1]]: note.waiting,
       [status[2]]: note.declined,
       [status[3]]: note.paymentsend,
-      [status[4]]: note.success,
+      [status[4]]: note.paymentfailed,
+      [status[5]]: note.success,
     };
 
     return statusToNote[statusBook] || 'Status not found';
@@ -143,14 +147,14 @@ const getAllBooking = async (req, res, next) => {
     const user_id = req.params.userId;
 
     const result = await Booking.findAll({
-      attributes: ['bookingId', 'bookingStatus'],
+      attributes: ['bookingId', 'bookingStatus', 'createdAt'],
       where: {
         userId: user_id,
       },
       include: [
         {
           model: Product,
-          attributes: ['title', 'thumbnail'],
+          attributes: ['title', 'rating', 'location'],
         },
       ],
     });
@@ -163,11 +167,16 @@ const getAllBooking = async (req, res, next) => {
       });
     }
 
+    const noteBooking = await getNote(result[0].bookingId);
+
     const formattedBooking = result.map((booking) => ({
       bookingId: booking.bookingId,
-      title: booking.Product ? booking.Product.title : null,
-      thumbnail: booking.Product ? booking.Product.thumbnail : null,
+      bookingDate: booking.createdAt,
       bookingStatus: booking.bookingStatus,
+      bookingNote: noteBooking,
+      title: booking.Product ? booking.Product.title : null,
+      rating: booking.Product ? booking.Product.rating : null,
+      location: booking.Product ? booking.Product.location : null,
     }));
 
     return res.status(200).json({
@@ -198,7 +207,7 @@ const getAllBookingAdmin = async (req, res, next) => {
       }
 
       result = await Booking.findAll({
-        attributes: ['bookingId', 'bookingStatus'],
+        attributes: ['bookingId', 'bookingStatus', 'createdAt'],
         where: {
           bookingStatus: {
             [Op.like]: `%${statusName}%`,
@@ -207,20 +216,21 @@ const getAllBookingAdmin = async (req, res, next) => {
         include: [
           {
             model: Product,
-            attributes: ['title', 'thumbnail', 'lowestPrice'],
+            attributes: ['title', 'rating', 'location'],
           },
           {
             model: User,
-            attributes: ['name'],
+            attributes: ['name', 'country'],
           },
         ],
       });
     } else {
       result = await Booking.findAll({
+        attributes: ['bookingId', 'bookingStatus', 'createdAt'],
         include: [
           {
             model: Product,
-            attributes: ['title', 'thumbnail', 'lowestPrice'],
+            attributes: ['title', 'rating', 'location'],
           },
           {
             model: User,
@@ -240,9 +250,11 @@ const getAllBookingAdmin = async (req, res, next) => {
 
     const formattedBooking = result.map((booking) => ({
       bookingId: booking.bookingId,
-      title: booking.Product ? booking.Product.title : null,
-      thumbnail: booking.Product ? booking.Product.thumbnail : null,
+      bookingDate: booking.createdAt,
       bookingStatus: booking.bookingStatus,
+      title: booking.Product ? booking.Product.title : null,
+      rating: booking.Product ? booking.Product.rating : null,
+      location: booking.Product ? booking.Product.location : null,
       customerName: booking.User ? booking.User.name : null,
       customerCountry: booking.User ? booking.User.country : null,
     }));
@@ -369,29 +381,31 @@ const updateBookingAdmin = async (req, res, next) => {
       },
     });
 
-    if(checkBookingStatus.bookingStatus == 'Waiting for Payment'){
+    if (checkBookingStatus.bookingStatus == 'Waiting for Payment') {
       const checkBookinginPayment = await Payment.findOne({
         where: {
           bookingId: idBooking,
-        }
+        },
       });
 
-      if (checkBookinginPayment){
+      if (checkBookinginPayment) {
         return res.status(404).json({
           errors: ['Payment already created'],
           message: 'Update Booking Admin Failed',
           data: null,
         });
-      };
+      }
 
       const payment = await Payment.create({
         bookingId: idBooking,
         tax: process.env.TAX,
         subTotal: checkBookingStatus.offeringPrice,
-        total: checkBookingStatus.offeringPrice + (checkBookingStatus.offeringPrice * (process.env.TAX/100)),
+        total:
+          checkBookingStatus.offeringPrice +
+          checkBookingStatus.offeringPrice * (process.env.TAX / 100),
       });
 
-      if(!payment){
+      if (!payment) {
         return res.status(404).json({
           errors: ['Payment failed to create'],
           message: 'Update Booking Admin Failed',
@@ -401,7 +415,8 @@ const updateBookingAdmin = async (req, res, next) => {
 
       return res.status(200).json({
         errors: [],
-        message: 'Update Booking Admin successfully. Payment has been send to customer.',
+        message:
+          'Update Booking Admin successfully. Payment has been send to customer.',
         data: {
           ...booking.data,
           paymentId: payment.paymentId,

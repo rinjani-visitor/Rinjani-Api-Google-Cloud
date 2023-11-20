@@ -14,32 +14,31 @@ import {
   setFotoProduct,
 } from '../controllers/fotoController.js';
 import upload from '../middleware/multer.js';
-import test from '../controllers/test.js';
 
 const productRouter = express.Router();
 
 productRouter.post(
-  '/products',
+  '/admin/products',
   autenticate,
   upload('./public/images/thumbnail').single('thumbnail'),
   setProduct
 ); //admin
 
-productRouter.patch('/products/:id', autenticate, updateProduct); //admin
+productRouter.patch('/admin/products/:id', autenticate, updateProduct); //admin
 
-productRouter.post('/products/rinjani', autenticate, setRinjani); //admin
+productRouter.post('/admin/products/rinjani', autenticate, setRinjani); //admin
 
-productRouter.post('/products/homestay', autenticate, setHomeStay); //admin
+productRouter.post('/admin/products/homestay', autenticate, setHomeStay); //admin
 
 productRouter.post(
-  '/products/foto/:product_id',
+  '/admin/products/foto/:product_id',
   autenticate,
   upload('./public/images/fotoproduct').array('fotoproduct', 5),
   setFotoProduct
 ); //admin
 
 productRouter.patch(
-  '/products/foto/:product_id/:foto_id',
+  '/admin/products/foto/:product_id/:foto_id',
   autenticate,
   upload('./public/images/fotoproduct').single('fotoproduct'),
   updateFotoProduct
@@ -57,7 +56,5 @@ productRouter.get(
   autenticate,
   getHomeStayDetail
 );
-
-productRouter.get('/products/foto/:id', test);
 
 export default productRouter;

@@ -1,0 +1,20 @@
+ [LOGGER] 2023-11-20 12:00:01.549 AM error : uncaughtException: getPaymentDetailAdmin is not defined
+ReferenceError: getPaymentDetailAdmin is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:12:72
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-20 12:00:06.425 AM error : uncaughtException: getPaymentDetailAdmin is not defined
+ReferenceError: getPaymentDetailAdmin is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:12:61
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-20 12:00:09.433 AM error : uncaughtException: get is not defined
+ReferenceError: get is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:12:61
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-20 10:33:52.329 AM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as post] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:27:12
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)

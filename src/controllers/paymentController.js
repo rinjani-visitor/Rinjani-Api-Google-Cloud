@@ -5,6 +5,8 @@ import BankPayment from '../models/bankPaymentModel.js';
 import Booking from '../models/bookingModel.js';
 import { status } from './bookingController.js';
 import WisePayment from '../models/wisePaymentModel.js';
+import User from '../models/userModel.js';
+import Product from '../models/productModel.js';
 
 const updateBankWiseMethodPayment = async (req, res, next) => {
   const valid = {
@@ -352,4 +354,171 @@ const setWisePayment = async (req, res, next) => {
   }
 };
 
-export { updateBankWiseMethodPayment, setBankPayment, setWisePayment };
+const getAllPaymentAdmin = async (req, res, next) => {
+  try {
+    const result = await Payment.findAll({
+      attributes: ['paymentId', 'total', 'method', 'paymentStatus'],
+      include: [
+        {
+          model: Booking,
+          attributes: ['productId', 'userId'],
+          include: [
+            {
+              model: User,
+              attributes: ['name', 'country'],
+            },
+            {
+              model: Product,
+              attributes: ['title'],
+            },
+          ],
+        },
+      ],
+    });
+
+    if (!result) {
+      return res.status(404).json({
+        errors: ['No payment found'],
+        message: 'Get All Payment Failed',
+        data: null,
+      });
+    }
+
+    const formattedPayment = result.map((payment) => ({
+      paymentId: payment.paymentId,
+      title: payment.Booking.Product ? payment.Booking.Product.title : null,
+      total: payment.total,
+      method: payment.method,
+      paymentStatus: payment.paymentStatus,
+      customerName: payment.Booking.User ? payment.Booking.User.name : null,
+      customerCountry: payment.Booking.User
+        ? payment.Booking.User.country
+        : null,
+    }));
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get All Payment Admin Success',
+      data: formattedPayment,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/paymentController.js:getAllPaymentAdmin - ' + error.message
+      )
+    );
+  }
+};
+
+const getPaymentDetailAdmin = async (req, res, next) => {
+  try {
+    const idPayment = req.params.paymentId;
+
+    const resultPayment = await Payment.findOne({
+      where: {
+        paymentId: idPayment,
+      },
+      attributes: [
+        'paymentId',
+        'tax',
+        'subTotal',
+        'total',
+        'method',
+        'paymentStatus',
+      ],
+      include: [
+        {
+          model: Booking,
+          attributes: ['productId', 'userId'],
+          include: [
+            {
+              model: User,
+              attributes: ['name', 'country'],
+            },
+            {
+              model: Product,
+              attributes: ['title'],
+            },
+          ],
+        },
+      ],
+    });
+
+    if (!resultPayment) {
+      return res.status(404).json({
+        errors: ['No payment found'],
+        message: 'Get Payment Detail Failed',
+        data: null,
+      });
+    }
+
+    let resultPaymentMethod;
+
+    if (resultPayment.method == 'Bank') {
+      resultPaymentMethod = await BankPayment.findOne({
+        attributes: [
+          'bankName',
+          'bankAccountName',
+          'imageProofTransfer',
+          'createdAt',
+        ],
+        where: {
+          paymentId: resultPayment.paymentId,
+        },
+      });
+    } else if (resultPayment.method == 'Wise') {
+      resultPaymentMethod = await WisePayment.findOne({
+        attributes: [
+          'wiseEmail',
+          'wiseAccountName',
+          'imageProofTransfer',
+          'createdAt',
+        ],
+        where: {
+          paymentId: resultPayment.paymentId,
+        },
+      });
+    }
+
+    const formattedPayment = {
+      paymentId: resultPayment.paymentId,
+      paymentStatus: resultPayment.paymentStatus,
+      tax: resultPayment.tax,
+      subTotal: resultPayment.subTotal,
+      total: resultPayment.total,
+      method: resultPayment.method,
+      bankNameOrWiseEmail: resultPaymentMethod.bankName
+        ? resultPaymentMethod.bankName
+        : resultPaymentMethod.wiseEmail,
+      bankAccountNameOrWiseAccountName: resultPaymentMethod.bankAccountName
+        ? resultPaymentMethod.bankAccountName
+        : resultPaymentMethod.wiseAccountName,
+      imageProofTransfer: resultPaymentMethod.imageProofTransfer,
+      paymentDate: resultPaymentMethod.createdAt,
+      title: resultPayment.Booking.Product.title,
+      customerName: resultPayment.Booking.User.name,
+      customerCountry: resultPayment.Booking.User.country,
+    };
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get Payment Detail Admin Success',
+      data: formattedPayment,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/paymentController.js:getPaymentDetailAdmin - ' +
+          error.message
+      )
+    );
+  }
+};
+
+export {
+  updateBankWiseMethodPayment,
+  setBankPayment,
+  setWisePayment,
+  getAllPaymentAdmin,
+  getPaymentDetailAdmin,
+};

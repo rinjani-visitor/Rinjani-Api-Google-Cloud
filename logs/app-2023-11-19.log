@@ -70,3 +70,22 @@ sql: SELECT `wise_payment_id` AS `wisePaymentId`, `image_proof_transfer` AS `ima
  [LOGGER] 2023-11-19 06:27:42.122 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.emailWise cannot be null
  [LOGGER] 2023-11-19 06:27:45.030 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.emailWise cannot be null
  [LOGGER] 2023-11-19 06:31:05.874 PM error : controllers/bookingController.js:setWisePayment - notNull Violation: WisePayment.emailWise cannot be null
+ [LOGGER] 2023-11-19 11:13:37.790 PM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as get] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:11:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 11:13:54.251 PM error : uncaughtException: getAll is not defined
+ReferenceError: getAll is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:11:50
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-19 11:15:04.933 PM error : controllers/paymentController.js:getAllPaymentAdmin - User is not defined
+ [LOGGER] 2023-11-19 11:21:37.099 PM error : controllers/paymentController.js:getAllPaymentAdmin - (conn=11898, no: 1054, SQLState: 42S22) Unknown column 'Booking.' in 'field list'
+sql: SELECT `Payment`.`payment_id` AS `paymentId`, `Payment`.`total`, `Payment`.`method`, `Payment`.`payment_status` AS `paymentStatus`, `Booking`.`booking_id` AS `Booking.bookingId`, `Booking`.`` AS `Booking.`, `Booking->User`.`user_id` AS `Booking.User.userId`, `Booking->User`.`name` AS `Booking.User.name`, `Booking->User`.`country` AS `Booking.User.country`, `Booking->Product`.`product_id` AS `Booking.Product.productId`, `Booking->Product`.`title` AS `Booking.Product.title` FROM `payment` AS `Payment` LEFT OUTER JOIN `booking` AS `Booking` ON `Payment`.`booking_id` = `Booking`.`booking_id` LEFT OUTER JOIN `user` AS `Booking->User` ON `Booking`.`user_id` = `Booking->User`.`user_id` LEFT OUTER JOIN `product` AS `Booking->Product` ON `Booking`.`product_id` = `Booking->Product`.`product_id`; - parameters:[]
+ [LOGGER] 2023-11-19 11:59:57.855 PM error : uncaughtException: getPaymentDetailAdmin is not defined
+ReferenceError: getPaymentDetailAdmin is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:12:71
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)

@@ -8,8 +8,8 @@ import {
 
 const categoryRouter = express.Router();
 
-categoryRouter.post('/categories', autenticate, setCategory); //admin
-categoryRouter.post('/subcategories', autenticate, setSubCategory); //admin
+categoryRouter.post('/admin/categories', autenticate, setCategory); //admin
+categoryRouter.post('/admin/subcategories', autenticate, setSubCategory); //admin
 categoryRouter.get(
   '/categories',
   autenticate,
