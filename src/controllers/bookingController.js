@@ -21,7 +21,7 @@ const note = {
   paymentfailed:
     'Sorry, your payment failed to process. Please double-check your payment information or contact our customer service for further assistance.',
   success:
-    'Your payment has been recieved and we will send you the trip detail through email. Thank you.',
+    'Your payment has been recieved and we will contact you to start the journey. Thank you.',
 };
 
 const status = [
@@ -168,22 +168,30 @@ const getAllBooking = async (req, res, next) => {
       });
     }
 
-    const noteBooking = await getNote(result[0].bookingId);
-
-    const formattedBooking = result.map((booking) => ({
-      bookingId: booking.bookingId,
-      bookingDate: booking.createdAt,
-      bookingStatus: booking.bookingStatus,
-      bookingNote: noteBooking,
-      title: booking.Product ? booking.Product.title : null,
-      rating: booking.Product ? booking.Product.rating : null,
-      location: booking.Product ? booking.Product.location : null,
-    }));
+    const formattedBooking = async () => {
+      const bookings = await Promise.all(result.map(async (booking) => {
+        const bookingNote = await getNote(booking.bookingId);
+    
+        return {
+          bookingId: booking.bookingId,
+          bookingDate: booking.createdAt,
+          bookingStatus: booking.bookingStatus,
+          bookingNote: bookingNote,
+          title: booking.Product ? booking.Product.title : null,
+          rating: booking.Product ? booking.Product.rating : null,
+          location: booking.Product ? booking.Product.location : null,
+        };
+      }));
+    
+      return bookings;
+    };
+    
+    const resultFormattedBooking = await formattedBooking();
 
     return res.status(200).json({
       errors: [],
       message: 'Get All Booking Successfully',
-      data: formattedBooking,
+      data: resultFormattedBooking,
     });
   } catch (error) {
     next(

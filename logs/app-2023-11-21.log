@@ -1,0 +1,2 @@
+ [LOGGER] 2023-11-21 05:19:37.481 AM error : controllers/paymentController.js:updatePaymentAdmin - (conn=14278, no: 1451, SQLState: 23000) Cannot delete or update a parent row: a foreign key constraint fails (`test`.`wisepayment`, CONSTRAINT `wisepayment_ibfk_1` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+sql: DELETE FROM `payment` WHERE `payment_id` = 'dc4ce199-42f5-4a2f-b8ab-8df829ee6abb' - parameters:[]

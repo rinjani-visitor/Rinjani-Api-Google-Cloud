@@ -45,13 +45,13 @@ const WisePayment = sequelize.define(
 
 Payment.hasOne(WisePayment, {
   foreignKey: 'paymentId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 WisePayment.belongsTo(Payment, {
   foreignKey: 'paymentId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 

@@ -572,6 +572,10 @@ const updatePaymentAdmin = async (req, res, next) => {
           model: User,
           attributes: ['userId', 'name', 'email'],
         },
+        {
+          model: Product,
+          attributes: ['title'],
+        }
       ],
     });
 
@@ -626,9 +630,10 @@ const updatePaymentAdmin = async (req, res, next) => {
       const email = getDataUserBooking.User.email;
       const dataUserBooking = {
         name: getDataUserBooking.User.name,
+        title: getDataUserBooking.Product.title,
         bookingId: getDataUserBooking.bookingId,
         bookingDate: getDataUserBooking.createdAt,
-        bookingStatus: getDataUserBooking.bookingStatus,
+        bookingStatus: statusBooking[4],
       };
 
       const sendBookingFailedMail = await sendBookingFailed(
@@ -734,6 +739,7 @@ const updatePaymentAdmin = async (req, res, next) => {
       const email = getDataUserBooking.User.email;
       const dataUserBooking = {
         name: getDataUserBooking.User.name,
+        title: getDataUserBooking.Product.title,
         bookingId: getDataUserBooking.bookingId,
         bookingDate: getDataUserBooking.createdAt,
         bookingStart: getDataUserBooking.startDateTime,

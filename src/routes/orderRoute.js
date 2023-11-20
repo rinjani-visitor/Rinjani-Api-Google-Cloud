@@ -4,6 +4,6 @@ import { updatePaymentAdmin } from '../controllers/paymentController.js';
 
 const orderRouter = express.Router();
 
-orderRouter.post('/admin/order/:paymentId', autenticate, updatePaymentAdmin); //admin
+
 
 export default orderRouter;

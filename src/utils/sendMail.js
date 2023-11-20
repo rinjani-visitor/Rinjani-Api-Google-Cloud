@@ -70,7 +70,7 @@ const contentPwd = (email, password) => {
 };
 
 const bookingSuccess = (email, bookingDetails) => {
-  const { name, bookingId, bookingDate, bookingStart, bookingEnd } =
+  const { name, title, bookingId, bookingDate, bookingStart, bookingEnd } =
     bookingDetails;
 
   return {
@@ -86,6 +86,7 @@ const bookingSuccess = (email, bookingDetails) => {
         <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 20px;">
           <h3>Booking Details:</h3>
           <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Product Title:</strong> ${title}</li>
             <li><strong>Booking ID:</strong> ${bookingId}</li>
             <li><strong>Booking Date:</strong> ${bookingDate}</li>
             <li><strong>Journey Start:</strong> ${bookingStart}</li>
@@ -106,7 +107,7 @@ const bookingSuccess = (email, bookingDetails) => {
 };
 
 const bookingFailed = (email, bookingDetails) => {
-  const { name, bookingId, bookingDate, bookingStatus } = bookingDetails;
+  const { name, title, bookingId, bookingDate, bookingStatus } = bookingDetails;
 
   return {
     from: process.env.MAIL_FROM,
@@ -126,6 +127,7 @@ const bookingFailed = (email, bookingDetails) => {
         <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
           <h3>Booking Details:</h3>
           <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Product Title:</strong> ${title}</li>
             <li><strong>Booking ID:</strong> ${bookingId}</li>
             <li><strong>Booking Date:</strong> ${bookingDate}</li>
             <li><strong>Booking Status:</strong> ${bookingStatus}</li>
@@ -136,7 +138,7 @@ const bookingFailed = (email, bookingDetails) => {
 
         <p style="margin-top: 20px;">If you have any questions or need further assistance, feel free to contact our customer service team.</p>
 
-        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Your Company Name</p>
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
       </div>
     `,
   };
@@ -255,16 +257,25 @@ const sendBookingFailed = (email, bookingDetails) => {
 
 const sendPayment = (email, paymentDetails) => {
   return new Promise((resolve, reject) => {
-    transporter.sendMail(waitingForPaymentMail(email, paymentDetails), (err, info) => {
-      if (err) {
-        console.log(err);
-        reject(err);
-      } else {
-        console.log('Email sent (sendPayment): ' + info.response);
-        resolve(true);
+    transporter.sendMail(
+      waitingForPaymentMail(email, paymentDetails),
+      (err, info) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log('Email sent (sendPayment): ' + info.response);
+          resolve(true);
+        }
       }
-    });
-  })
-}
+    );
+  });
+};
 
-export { sendMail, sendPassword, sendBookingSuccess, sendBookingFailed, sendPayment };
+export {
+  sendMail,
+  sendPassword,
+  sendBookingSuccess,
+  sendBookingFailed,
+  sendPayment,
+};
