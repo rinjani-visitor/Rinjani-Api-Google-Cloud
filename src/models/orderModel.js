@@ -3,6 +3,7 @@ import { Sequelize } from 'sequelize';
 import Payment from './paymentModel.js';
 import 'dotenv/config';
 import User from './userModel.js';
+import Product from './productModel.js';
 
 const Order = sequelize.define(
   'Order',
@@ -55,6 +56,18 @@ Order.belongsTo(User, {
   onDelete: 'RESTRICT',
   onUpdate: 'RESTRICT',
 })
+
+Product.hasMany(Order, {
+  foreignKey: 'productId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
+
+Order.belongsTo(Product, {
+  foreignKey: 'productId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
 
 sequelize.sync();
 

@@ -1,2 +1,35 @@
  [LOGGER] 2023-11-21 05:19:37.481 AM error : controllers/paymentController.js:updatePaymentAdmin - (conn=14278, no: 1451, SQLState: 23000) Cannot delete or update a parent row: a foreign key constraint fails (`test`.`wisepayment`, CONSTRAINT `wisepayment_ibfk_1` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
 sql: DELETE FROM `payment` WHERE `payment_id` = 'dc4ce199-42f5-4a2f-b8ab-8df829ee6abb' - parameters:[]
+ [LOGGER] 2023-11-21 07:03:35.111 AM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as delete] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:47:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 07:03:40.288 AM error : uncaughtException: deleteProduct is not defined
+ReferenceError: deleteProduct is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:47:58
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 07:03:43.866 AM error : uncaughtException: del is not defined
+ReferenceError: del is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:47:58
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 07:04:09.774 AM error : controllers/productController.js:deleteProduct - Booking is not defined
+ [LOGGER] 2023-11-21 07:29:18.067 AM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as post] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:34:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 07:29:28.813 AM error : uncaughtException: set is not defined
+ReferenceError: set is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:34:59
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 07:31:44.788 AM error : controllers/productController.js:getWisataDetail - Cannot read properties of undefined (reading 'length')
+ [LOGGER] 2023-11-21 07:32:23.515 AM error : controllers/productController.js:getWisataDetail - Cannot read properties of undefined (reading 'length')
+ [LOGGER] 2023-11-21 07:32:34.877 AM error : controllers/productController.js:getWisataDetail - Cannot read properties of undefined (reading 'length')
+ [LOGGER] 2023-11-21 07:37:44.335 AM error : controllers/productController.js:getWisataDetail - Cannot access 'Wisata' before initialization

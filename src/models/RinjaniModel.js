@@ -45,15 +45,15 @@ const Rinjani = sequelize.define(
 
 Product.hasOne(Rinjani, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
-})
+});
 
 Rinjani.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
-})
+});
 
 sequelize.sync();
 

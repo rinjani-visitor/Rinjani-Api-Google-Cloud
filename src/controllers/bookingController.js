@@ -68,21 +68,6 @@ const setBooking = async (req, res, next) => {
     totalPersons: 'required, isDecimal',
   };
   try {
-    const check = await Booking.findOne({
-      where: {
-        userId: req.body.userId,
-        productId: req.body.productId,
-      },
-    });
-
-    if (check) {
-      await t.rollback();
-      return res.status(400).json({
-        errors: ['Already booked'],
-        message: 'Booking Failed',
-        data: null,
-      });
-    }
 
     const booking = await dataValid(valid, req.body);
 
@@ -169,23 +154,25 @@ const getAllBooking = async (req, res, next) => {
     }
 
     const formattedBooking = async () => {
-      const bookings = await Promise.all(result.map(async (booking) => {
-        const bookingNote = await getNote(booking.bookingId);
-    
-        return {
-          bookingId: booking.bookingId,
-          bookingDate: booking.createdAt,
-          bookingStatus: booking.bookingStatus,
-          bookingNote: bookingNote,
-          title: booking.Product ? booking.Product.title : null,
-          rating: booking.Product ? booking.Product.rating : null,
-          location: booking.Product ? booking.Product.location : null,
-        };
-      }));
-    
+      const bookings = await Promise.all(
+        result.map(async (booking) => {
+          const bookingNote = await getNote(booking.bookingId);
+
+          return {
+            bookingId: booking.bookingId,
+            bookingDate: booking.createdAt,
+            bookingStatus: booking.bookingStatus,
+            bookingNote: bookingNote,
+            title: booking.Product ? booking.Product.title : null,
+            rating: booking.Product ? booking.Product.rating : null,
+            location: booking.Product ? booking.Product.location : null,
+          };
+        })
+      );
+
       return bookings;
     };
-    
+
     const resultFormattedBooking = await formattedBooking();
 
     return res.status(200).json({
@@ -197,6 +184,62 @@ const getAllBooking = async (req, res, next) => {
     next(
       new Error(
         'controllers/bookingController.js:getAllBooking - ' + error.message
+      )
+    );
+  }
+};
+
+const deleteBooking = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  try {
+    const user_id = req.params.userId;
+    const booking_id = req.body.bookingId;
+
+    const checkBooking = await Booking.findOne({
+      where: {
+        bookingId: booking_id,
+        userId: user_id,
+        bookingStatus: {
+          [Op.or]: [status[0], status[2], status[4]],
+        },
+      },
+    });
+
+    if (!checkBooking) {
+      return res.status(404).json({
+        errors: ['No booking found or cannot delete booking with status waiting for payment, payment reviewing or success'],
+        message: 'Delete Booking Failed',
+        data: null,
+      });
+    }
+
+    const deleteABooking = await Booking.destroy({
+      where: {
+        bookingId: booking_id,
+      },
+      transaction: t,
+    });
+
+    if (!deleteABooking) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Failed to delete booking from database'],
+        message: 'Delete Booking Failed',
+        data: null,
+      });
+    }
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Delete Booking Successfully',
+      data: null,
+    })
+
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/bookingController.js:deleteBooking - ' + error.message
       )
     );
   }
@@ -584,6 +627,7 @@ const updateBooking = async (req, res, next) => {
 export {
   setBooking,
   getAllBooking,
+  deleteBooking,
   getBookingDetail,
   getAllBookingAdmin,
   updateBookingAdmin,

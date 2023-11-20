@@ -29,13 +29,13 @@ const HomeStay = sequelize.define(
 
 Product.hasMany(HomeStay, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 HomeStay.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 

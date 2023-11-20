@@ -9,6 +9,8 @@ import Favorites from '../models/favoritesModel.js';
 import Category from '../models/categoryModel.js';
 import SubCategory from '../models/subCategoryModel.js';
 import Facility from '../models/facilityModel.js';
+import Booking from '../models/bookingModel.js';
+import Wisata from '../models/wisataModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -188,6 +190,67 @@ const getAllProducts = async (req, res, next) => {
   }
 };
 
+const deleteProduct = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  try {
+    const product_id = req.params.id;
+
+    const checkBooking = await Booking.findOne({
+      where: {
+        productId: product_id,
+      },
+    });
+
+    if (checkBooking) {
+      return res.status(400).json({
+        errors: ['Product has booking'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    };
+
+    const checkProduct = await Product.findByPk(product_id);
+
+    if (!checkProduct) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    }
+
+    const result = await Product.destroy({
+      where: {
+        productId: product_id,
+      },
+      transaction: t,
+    });
+
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    }
+
+    await t.commit();
+
+    return res.status(201).json({
+      errors: [],
+      message: 'Product deleted successfully',
+      data: result,
+    })
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/productController.js:deleteProduct - ' + error.message
+      )
+    );
+  }
+};
+
 const setRinjani = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
@@ -215,7 +278,7 @@ const setRinjani = async (req, res, next) => {
     });
     if (!cekProductId) {
       return res.status(404).json({
-        errors: ['Product Id not found'],
+        errors: ['Product not found'],
         message: 'Set Rinjani Failed',
         data: null,
       });
@@ -480,12 +543,161 @@ const getHomeStayDetail = async (req, res, next) => {
   }
 };
 
+const setWisata = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  const valid = {
+    description: 'required',
+    productId: 'required',
+  };
+  try {
+    const wisata = await dataValid(valid, req.body);
+    if (wisata.message.length > 0) {
+      return res.status(400).json({
+        errors: wisata.message,
+        message: 'Set Wisata Failed',
+        data: null,
+      });
+    }
+    const product_id = req.body.productId;
+    const cekProductId = await Product.findOne({
+      where: {
+        productId: product_id,
+      },
+    });
+    if (!cekProductId) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Set Wisata Failed',
+        data: null,
+      });
+    }
+    const newWisata = await Wisata.create(
+      {
+        ...wisata.data,
+        productId: req.body.productId,
+      },
+      {
+        transaction: t,
+      }
+    );
+    await t.commit();
+    return res.status(201).json({
+      errors: [],
+      message: 'Wisata created successfully',
+      data: newWisata,
+    });
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/productController.js:setWisata - ' + error.message
+      )
+    );
+  }
+};
+
+const getWisataDetail = async (req, res, next) => {
+  try {
+    const id = req.params.product_id;
+    const wisataResult = await Product.findOne({
+      where: {
+        productId: id,
+      },
+      include: [
+        {
+          model: Wisata,
+          attributes: ['description', 'route', 'note'],
+        },
+        {
+          model: Foto,
+        },
+        {
+          model: Category,
+        },
+        {
+          model: SubCategory,
+        },
+        {
+          model: Facility,
+          attributes: ['facilityName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
+      ],
+    });
+
+    if (!wisataResult) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Get Product Wisata Detail Failed',
+        data: null,
+      });
+    }
+
+    const favoriteCount = await Favorites.findAndCountAll({
+      where: {
+        productId: id,
+      },
+    });
+
+    const {
+      productId,
+      title,
+      status,
+      location,
+      rating,
+      thumbnail,
+      createdAt,
+      updatedAt,
+      category,
+      subCategory,
+      Wisata: WisataAtributs,
+      Fotos,
+      facilities,
+    } = wisataResult;
+
+    const newFormat = {
+      productId,
+      title,
+      status,
+      lowestPrice: wisataResult.lowestPrice,
+      rating,
+      location,
+      thumbnail,
+      category: category ? category.category : null,
+      subCategory: subCategory ? subCategory.subCategory : null,
+      description: WisataAtributs.length > 0 ? WisataAtributs[0].description : null,
+      favoritedCount: favoriteCount ? favoriteCount.count : 0,
+      facilities: facilities.map((facility) => facility.facilityName),
+      note: WisataAtributs.length > 0 ? WisataAtributs[0].note : null,
+      route: WisataAtributs.length > 0 ? WisataAtributs[0].route : null,
+      fotos: Fotos,
+      createdAt,
+      updatedAt,
+    };
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get Wisata Product Detail Success',
+      data: newFormat,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:getWisataDetail - ' + error.message
+      )
+    );
+  }
+};
+
 export {
   setProduct,
   updateProduct,
   setRinjani,
   getAllProducts,
+  deleteProduct,
   getRinjaniDetail,
   setHomeStay,
   getHomeStayDetail,
+  setWisata,
+  getWisataDetail
 };

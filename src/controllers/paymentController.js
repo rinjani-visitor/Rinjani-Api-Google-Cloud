@@ -574,7 +574,7 @@ const updatePaymentAdmin = async (req, res, next) => {
         },
         {
           model: Product,
-          attributes: ['title'],
+          attributes: ['productId', 'title'],
         }
       ],
     });
@@ -721,6 +721,7 @@ const updatePaymentAdmin = async (req, res, next) => {
         {
           paymentId: idPayment,
           userId: getDataUserBooking.User.userId,
+          productId: getDataUserBooking.Product.productId,
         },
         {
           transaction: t,

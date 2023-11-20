@@ -1,6 +1,7 @@
 import Review from '../models/reviewModel.js';
 import User from '../models/userModel.js';
 import Product from '../models/productModel.js';
+import Order from '../models/orderModel.js';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 

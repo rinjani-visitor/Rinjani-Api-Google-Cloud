@@ -33,13 +33,13 @@ const Wisata = sequelize.define(
 
 Product.hasMany(Wisata, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 Wisata.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 

@@ -1,12 +1,15 @@
 import express from 'express';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import {
+  deleteProduct,
   getAllProducts,
   getHomeStayDetail,
   getRinjaniDetail,
+  getWisataDetail,
   setHomeStay,
   setProduct,
   setRinjani,
+  setWisata,
   updateProduct,
 } from '../controllers/productController.js';
 import {
@@ -30,6 +33,8 @@ productRouter.post('/admin/products/rinjani', autenticate, setRinjani); //admin
 
 productRouter.post('/admin/products/homestay', autenticate, setHomeStay); //admin
 
+productRouter.post('/admin/products/wisata', autenticate, setWisata); //admin
+
 productRouter.post(
   '/admin/products/foto/:product_id',
   autenticate,
@@ -44,6 +49,8 @@ productRouter.patch(
   updateFotoProduct
 ); //admin
 
+productRouter.delete('/admin/products/:id', autenticate, deleteProduct);//admin
+
 productRouter.get('/products', autenticate, getAllProducts);
 
 productRouter.get(
@@ -51,10 +58,17 @@ productRouter.get(
   autenticate,
   getRinjaniDetail
 );
+
 productRouter.get(
   '/products/homestay/:product_id',
   autenticate,
   getHomeStayDetail
+);
+
+productRouter.get(
+  '/products/wisata/:product_id',
+  autenticate,
+  getWisataDetail
 );
 
 export default productRouter;
