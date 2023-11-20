@@ -3,10 +3,12 @@ import { dataValid } from '../validation/dataValidation.js';
 import Payment from '../models/paymentModel.js';
 import BankPayment from '../models/bankPaymentModel.js';
 import Booking from '../models/bookingModel.js';
-import { status } from './bookingController.js';
+import { status as statusBooking } from './bookingController.js';
 import WisePayment from '../models/wisePaymentModel.js';
 import User from '../models/userModel.js';
 import Product from '../models/productModel.js';
+import Order from '../models/orderModel.js';
+import { sendBookingSuccess, sendBookingFailed } from '../utils/sendMail.js';
 
 const updateBankWiseMethodPayment = async (req, res, next) => {
   const valid = {
@@ -515,10 +517,266 @@ const getPaymentDetailAdmin = async (req, res, next) => {
   }
 };
 
+const updatePaymentAdmin = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  try {
+    const idPayment = req.params.paymentId;
+
+    const cekPayment = await Payment.findOne({
+      where: {
+        paymentId: idPayment,
+      },
+    });
+
+    if (!cekPayment) {
+      return res.status(404).json({
+        errors: ['No payment found'],
+        message: 'Update Payment Failed',
+        data: null,
+      });
+    }
+
+    const status = req.body.paymentStatus;
+
+    if (!status) {
+      return res.status(400).json({
+        errors: ['Payment status is required'],
+        message: 'Update Payment Failed',
+        data: null,
+      });
+    }
+
+    const getBookingId = await Payment.findOne({
+      where: {
+        paymentId: idPayment,
+      },
+      attributes: ['bookingId'],
+    });
+
+    if (!getBookingId) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['No booking found'],
+        message: 'Update Payment Failed',
+        data: null,
+      });
+    }
+
+    const getDataUserBooking = await Booking.findOne({
+      attributes: ['bookingId', 'createdAt', 'startDateTime', 'endDateTime'],
+      where: {
+        bookingId: getBookingId.bookingId,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ['userId', 'name', 'email'],
+        },
+      ],
+    });
+
+    if (!getDataUserBooking) {
+      return res.status(404).json({
+        errors: ['No booking found'],
+        message: 'Send email confirmation failed',
+        data: null,
+      });
+    }
+
+    if (status == 'Rejected') {
+      const updateBooking = await Booking.update(
+        {
+          bookingStatus: statusBooking[4],
+        },
+        {
+          where: {
+            bookingId: getBookingId.bookingId,
+          },
+        },
+        {
+          transaction: t,
+        }
+      );
+
+      if (!updateBooking) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['No booking found'],
+          message: 'Update Payment Failed',
+          data: null,
+        });
+      }
+
+      const destroyPayment = await Payment.destroy({
+        where: {
+          paymentId: idPayment,
+        },
+        transaction: t,
+      });
+
+      if (!destroyPayment) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['No payment found'],
+          message: 'Update Payment Failed',
+          data: null,
+        });
+      }
+
+      const email = getDataUserBooking.User.email;
+      const dataUserBooking = {
+        name: getDataUserBooking.User.name,
+        bookingId: getDataUserBooking.bookingId,
+        bookingDate: getDataUserBooking.createdAt,
+        bookingStatus: getDataUserBooking.bookingStatus,
+      };
+
+      const sendBookingFailedMail = await sendBookingFailed(
+        email,
+        dataUserBooking
+      );
+
+      if (!sendBookingFailedMail) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Failed to send email'],
+          message: 'Send email confirmation failed',
+          data: null,
+        });
+      }
+
+      await t.commit();
+
+      return res.status(200).json({
+        errors: [],
+        message: 'Payment has been rejected and destroyed. Email confirmation has been sent to the customer.',
+        data: null,
+      });
+    } else if (status == 'Approved') {
+      const updateBooking = await Booking.update(
+        {
+          bookingStatus: statusBooking[5],
+        },
+        {
+          where: {
+            bookingId: getBookingId.bookingId,
+          },
+        },
+        {
+          transaction: t,
+        }
+      );
+
+      if (!updateBooking) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['No booking found'],
+          message: 'Update Payment Failed',
+          data: null,
+        });
+      }
+
+      const updatePayment = await Payment.update(
+        {
+          paymentStatus: status,
+        },
+        {
+          where: {
+            paymentId: idPayment,
+          },
+          transaction: t,
+        }
+      );
+
+      if (!updatePayment) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['No payment found'],
+          message: 'Update Payment Failed',
+          data: null,
+        });
+      }
+
+      const checkOrder = await Order.findOne({
+        where: {
+          paymentId: idPayment,
+        },
+      });
+
+      if (checkOrder) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Order already created'],
+          message: 'Update Payment Failed',
+          data: null,
+        });
+      }
+
+      const makeOrder = await Order.create(
+        {
+          paymentId: idPayment,
+          userId: getDataUserBooking.User.userId,
+        },
+        {
+          transaction: t,
+        }
+      );
+
+      if (!makeOrder) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['No order found'],
+          message: 'Update Payment Failed',
+          data: null,
+        });
+      }
+
+      const email = getDataUserBooking.User.email;
+      const dataUserBooking = {
+        name: getDataUserBooking.User.name,
+        bookingId: getDataUserBooking.bookingId,
+        bookingDate: getDataUserBooking.createdAt,
+        bookingStart: getDataUserBooking.startDateTime,
+        bookingEnd: getDataUserBooking.endDateTime,
+      };
+
+      const sendBookingSuccesMail = await sendBookingSuccess(
+        email,
+        dataUserBooking
+      );
+
+      if (!sendBookingSuccesMail) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Failed to send email'],
+          message: 'Send email confirmation failed',
+          data: null,
+        });
+      }
+
+      await t.commit();
+
+      return res.status(200).json({
+        errors: [],
+        message: 'Update Payment Success to Approved',
+        data: null,
+      });
+    }
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/paymentController.js:updatePaymentAdmin - ' + error.message
+      )
+    );
+  }
+};
+
 export {
   updateBankWiseMethodPayment,
   setBankPayment,
   setWisePayment,
   getAllPaymentAdmin,
   getPaymentDetailAdmin,
+  updatePaymentAdmin,
 };

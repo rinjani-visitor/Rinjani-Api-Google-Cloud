@@ -38,13 +38,13 @@ const BankPayment = sequelize.define(
 
 Payment.hasOne(BankPayment, {
   foreignKey: 'paymentId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 BankPayment.belongsTo(Payment, {
   foreignKey: 'paymentId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 

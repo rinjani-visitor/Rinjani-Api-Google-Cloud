@@ -34,7 +34,7 @@ userRouter.patch(
   avatarUser
 );
 userRouter.delete('/users/:id', autenticate, deleteUser);
-userRouter.get('/users/forgot-password', forgotPassword);
+userRouter.post('/users/forgot-password', forgotPassword);
 
 userRouter.post('/users/favorite', autenticate, favorite);
 userRouter.get('/users/favorite/all', autenticate, getAllFavorite);

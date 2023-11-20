@@ -7,6 +7,7 @@ import { Op } from 'sequelize';
 import { isExists } from '../validation/sanitization.js';
 import Payment from '../models/paymentModel.js';
 import 'dotenv/config';
+import { sendPayment } from '../utils/sendMail.js';
 
 const note = {
   offering:
@@ -322,6 +323,7 @@ const getBookingDetail = async (req, res, next) => {
 };
 
 const updateBookingAdmin = async (req, res, next) => {
+  const t = await sequelize.transaction();
   try {
     const idBooking = req.params.bookingId;
 
@@ -396,16 +398,22 @@ const updateBookingAdmin = async (req, res, next) => {
         });
       }
 
-      const payment = await Payment.create({
-        bookingId: idBooking,
-        tax: process.env.TAX,
-        subTotal: checkBookingStatus.offeringPrice,
-        total:
-          checkBookingStatus.offeringPrice +
-          checkBookingStatus.offeringPrice * (process.env.TAX / 100),
-      });
+      const payment = await Payment.create(
+        {
+          bookingId: idBooking,
+          tax: process.env.TAX,
+          subTotal: checkBookingStatus.offeringPrice,
+          total:
+            checkBookingStatus.offeringPrice +
+            checkBookingStatus.offeringPrice * (process.env.TAX / 100),
+        },
+        {
+          transaction: t,
+        }
+      );
 
       if (!payment) {
+        await t.rollback();
         return res.status(404).json({
           errors: ['Payment failed to create'],
           message: 'Update Booking Admin Failed',
@@ -413,10 +421,53 @@ const updateBookingAdmin = async (req, res, next) => {
         });
       }
 
+      const userData = await Booking.findOne({
+        attributes: ['userId', 'productId', 'createdAt'],
+        where: {
+          bookingId: idBooking,
+        },
+        include: [
+          {
+            model: User,
+            attributes: ['name', 'email'],
+          },
+          {
+            model: Product,
+            attributes: ['title'],
+          },
+        ],
+      });
+
+      const dataPaymentsDetail = {
+        name: userData.User.name,
+        title: userData.Product.title,
+        bookingId: idBooking,
+        bookingDate: userData.createdAt,
+        tax: payment.tax,
+        subTotal: payment.subTotal,
+        total: payment.total,
+      };
+
+      const sendPaymentMail = await sendPayment(
+        userData.User.email,
+        dataPaymentsDetail
+      );
+
+      if (!sendPaymentMail) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Email payment confirmation failed to send to Customer'],
+          message: 'Update Booking Admin Failed',
+          data: null,
+        });
+      }
+
+      await t.commit();
+
       return res.status(200).json({
         errors: [],
         message:
-          'Update Booking Admin successfully. Payment has been send to customer.',
+          'Update Booking Admin successfully. Email payment confirmation has been send to customer.',
         data: {
           ...booking.data,
           paymentId: payment.paymentId,

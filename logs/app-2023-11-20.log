@@ -18,3 +18,152 @@ TypeError: Cannot read properties of undefined (reading 'length')
     at proto.<computed> [as post] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
     at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:27:12
     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-20 11:59:31.737 AM error : uncaughtException: (conn=12527, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.739 AM error : uncaughtException: (conn=12527, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.739 AM error : uncaughtException: (conn=12528, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.740 AM error : uncaughtException: (conn=12529, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.740 AM error : uncaughtException: (conn=12530, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.741 AM error : uncaughtException: (conn=12531, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.742 AM error : uncaughtException: (conn=12528, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.742 AM error : uncaughtException: (conn=12529, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.743 AM error : uncaughtException: (conn=12530, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.745 AM error : uncaughtException: (conn=12527, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.747 AM error : uncaughtException: (conn=12528, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.748 AM error : uncaughtException: (conn=12529, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.748 AM error : uncaughtException: (conn=12530, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.749 AM error : uncaughtException: (conn=12531, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 11:59:31.750 AM error : uncaughtException: (conn=12527, no: 3780, SQLState: HY000) Referencing column 'payment_id' and referenced column 'payment_id' in foreign key constraint 'order_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `order` (`order_id` CHAR(36) BINARY NOT NULL , `order_status` VARCHAR(255) NOT NULL DEFAULT 'On Journey', `payment_id` VARCHAR(255) NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, PRIMARY KEY (`order_id`), FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Order.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-20 12:13:20.134 PM error : controllers/paymentController.js:updatePaymentAdmin - Missing where attribute in the options parameter
+ [LOGGER] 2023-11-20 12:23:03.870 PM error : controllers/paymentController.js:updatePaymentAdmin - Cannot access 'status' before initialization
+ [LOGGER] 2023-11-20 12:39:30.850 PM error : controllers/paymentController.js:updatePaymentAdmin - Cannot read properties of undefined (reading 'User')
+ [LOGGER] 2023-11-20 01:35:59.064 PM error : uncaughtException: connect ECONNREFUSED 172.217.194.109:465
+Error: connect ECONNREFUSED 172.217.194.109:465
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+ [LOGGER] 2023-11-20 01:38:05.522 PM error : uncaughtException: queryA ETIMEOUT smtp.gmail.com
+Error: queryA ETIMEOUT smtp.gmail.com
+    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/callback_resolver:47:19)
+ [LOGGER] 2023-11-20 01:49:34.883 PM error : uncaughtException: connect ECONNREFUSED 64.233.170.108:465
+Error: connect ECONNREFUSED 64.233.170.108:465
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+ [LOGGER] 2023-11-20 03:58:29.737 PM error : controllers/paymentController.js:updatePaymentAdmin - (conn=13780, no: 1451, SQLState: 23000) Cannot delete or update a parent row: a foreign key constraint fails (`test`.`bankpayment`, CONSTRAINT `bankpayment_ibfk_1` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+sql: DELETE FROM `payment` WHERE `payment_id` = '62d4f3b6-db22-4392-af4d-254e3d4f9609' - parameters:[]
