@@ -153,7 +153,7 @@ const setBankPayment = async (req, res, next) => {
 
         const updateBookingStatus = await Booking.update(
           {
-            bookingStatus: status[3],
+            bookingStatus: statusBooking[3],
           },
           {
             where: {
@@ -295,7 +295,7 @@ const setWisePayment = async (req, res, next) => {
 
         const updateBookingStatus = await Booking.update(
           {
-            bookingStatus: status[3],
+            bookingStatus: statusBooking[3],
           },
           {
             where: {
