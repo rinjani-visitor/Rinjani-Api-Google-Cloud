@@ -212,8 +212,6 @@ const getAllProducts = async (req, res, next) => {
   }
 };
 
-
-
 const deleteProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
@@ -396,7 +394,7 @@ const getRinjaniDetail = async (req, res, next) => {
       });
     }
 
-    const favoriteCount = await Favorites.findAndCountAll({
+    const favoriteCount = await Favorites.count({
       where: {
         productId: product_id,
       },
@@ -434,7 +432,7 @@ const getRinjaniDetail = async (req, res, next) => {
       guide: rinjaniResult.Rinjani?.guide || null,
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
-      favoritedCount: favoriteCount ? favoriteCount.count : 0,
+      favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
       note: rinjaniResult.Rinjani?.note || null,
       createdAt,
@@ -596,7 +594,7 @@ const getHomeStayDetail = async (req, res, next) => {
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
       description: HomeStays.length > 0 ? HomeStays[0].description : null,
-      favoritedCount: favoriteCount ? favoriteCount.count : 0,
+      favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
       note: HomeStays.length > 0 ? HomeStays[0].note : null,
       createdAt,
@@ -770,7 +768,7 @@ const getWisataDetail = async (req, res, next) => {
       subCategory: subCategory ? subCategory.subCategory : null,
       description:
         WisataAtributs.length > 0 ? WisataAtributs[0].description : null,
-      favoritedCount: favoriteCount ? favoriteCount.count : 0,
+      favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
       note: WisataAtributs.length > 0 ? WisataAtributs[0].note : null,
       route: WisataAtributs.length > 0 ? WisataAtributs[0].route : null,
@@ -946,7 +944,7 @@ const getEventDetail = async (req, res, next) => {
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
       description: eventData.length > 0 ? eventData[0].description : null,
-      favoritedCount: favoriteCount ? favoriteCount.count : 0,
+      favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
       note: eventData.length > 0 ? eventData[0].note : null,
       date: eventData.length > 0 ? eventData[0].date : null,
