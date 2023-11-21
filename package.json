@@ -5,6 +5,7 @@
   "main": "./src/index.js",
   "scripts": {
     "start-dev": "nodemon ./src/index.js",
+    "prod": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -26,6 +27,7 @@
     "nodemailer": "^6.9.6",
     "sequelize": "^6.33.0",
     "sequelize-cli": "^6.6.2",
+    "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "validator": "^13.11.0",
     "winston": "^3.11.0",
