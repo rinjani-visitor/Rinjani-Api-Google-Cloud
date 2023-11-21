@@ -26,6 +26,7 @@
     "nodemailer": "^6.9.6",
     "sequelize": "^6.33.0",
     "sequelize-cli": "^6.6.2",
+    "swagger-ui-express": "^5.0.0",
     "validator": "^13.11.0",
     "winston": "^3.11.0",
     "winston-daily-rotate-file": "^4.7.1"

@@ -8,6 +8,8 @@ import reviewRouter from './reviewRoute.js';
 import bookingRouter from './bookingRoute.js';
 import paymentRouter from './paymentRoute.js';
 import orderRouter from './orderRoute.js';
+import docRoute from '../api-docs/docRoute.js';
+
 const route = express.Router();
 
 route.use('/home', (req, res) => {
@@ -26,6 +28,7 @@ route.use('/api', bookingRouter);
 route.use('/api', paymentRouter);
 route.use('/api', orderRouter);
 route.use('/api', reviewRouter);
+route.use('/api', docRoute);
 
 route.use('*', errorrHandling);
 route.use('*', (req, res) => {
