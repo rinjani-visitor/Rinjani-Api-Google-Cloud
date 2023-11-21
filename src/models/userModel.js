@@ -2,6 +2,7 @@ import sequelize from '../utils/db.js';
 import { Sequelize } from 'sequelize';
 import { encript } from '../utils/bcrypt.js';
 import moment from 'moment';
+import 'dotenv/config';
 
 const User = sequelize.define(
   'User',
@@ -59,6 +60,7 @@ const User = sequelize.define(
     profilPicture: {
       type: Sequelize.STRING,
       allowNull: true,
+      defaultValue: process.env.USER_PROFILE_PICTURE,
     },
   },
   {

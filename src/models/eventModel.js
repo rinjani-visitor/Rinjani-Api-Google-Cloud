@@ -2,7 +2,7 @@ import sequelize from '../utils/db.js';
 import { Sequelize } from 'sequelize';
 import Product from './productModel.js';
 
-const Event = sequelize.define(
+const EventModel = sequelize.define(
   'Event',
   {
     eventId: {
@@ -35,18 +35,18 @@ const Event = sequelize.define(
   }
 );
 
-Product.hasMany(Event, {
+Product.hasMany(EventModel, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
-Event.belongsTo(Product, {
+EventModel.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 sequelize.sync();
 
-export default Event;
+export default EventModel;

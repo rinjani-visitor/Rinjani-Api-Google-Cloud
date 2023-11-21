@@ -3,9 +3,11 @@ import { autenticate } from '../controllers/errorHandlingController.js';
 import {
   deleteProduct,
   getAllProducts,
+  getEventDetail,
   getHomeStayDetail,
   getRinjaniDetail,
   getWisataDetail,
+  setEvent,
   setHomeStay,
   setProduct,
   setRinjani,
@@ -34,6 +36,8 @@ productRouter.post('/admin/products/rinjani', autenticate, setRinjani); //admin
 productRouter.post('/admin/products/homestay', autenticate, setHomeStay); //admin
 
 productRouter.post('/admin/products/wisata', autenticate, setWisata); //admin
+
+productRouter.post('/admin/products/event', autenticate, setEvent); //admin
 
 productRouter.post(
   '/admin/products/foto/:product_id',
@@ -69,6 +73,12 @@ productRouter.get(
   '/products/wisata/:product_id',
   autenticate,
   getWisataDetail
+);
+
+productRouter.get(
+  '/products/event/:product_id',
+  autenticate,
+  getEventDetail
 );
 
 export default productRouter;

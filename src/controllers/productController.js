@@ -11,6 +11,9 @@ import SubCategory from '../models/subCategoryModel.js';
 import Facility from '../models/facilityModel.js';
 import Booking from '../models/bookingModel.js';
 import Wisata from '../models/wisataModel.js';
+import EventModel from '../models/eventModel.js';
+import Review from '../models/reviewModel.js';
+import User from '../models/userModel.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -207,7 +210,7 @@ const deleteProduct = async (req, res, next) => {
         message: 'Delete Failed',
         data: null,
       });
-    };
+    }
 
     const checkProduct = await Product.findByPk(product_id);
 
@@ -240,7 +243,7 @@ const deleteProduct = async (req, res, next) => {
       errors: [],
       message: 'Product deleted successfully',
       data: result,
-    })
+    });
   } catch (error) {
     await t.rollback();
     next(
@@ -292,6 +295,16 @@ const setRinjani = async (req, res, next) => {
         transaction: t,
       }
     );
+
+    if (!newRinjani) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Rinjani not found'],
+        message: 'Set Rinjani Failed',
+        data: null,
+      });
+    }
+
     await t.commit();
     return res.status(201).json({
       errors: [],
@@ -341,6 +354,16 @@ const getRinjaniDetail = async (req, res, next) => {
           attributes: ['facilityName'],
           through: { attributes: [] }, // Exclude join table attributes
         },
+        {
+          model: Review,
+          attributes: ['rating', 'messageReview', 'createdAt'],
+          include: [
+            {
+              model: User,
+              attributes: ['name', 'profilPicture'],
+            },
+          ],
+        },
       ],
     });
 
@@ -368,10 +391,11 @@ const getRinjaniDetail = async (req, res, next) => {
       thumbnail,
       createdAt,
       updatedAt,
-      Fotos,
       category,
       subCategory,
       facilities,
+      Fotos,
+      Reviews,
     } = rinjaniResult;
 
     const newFormat = {
@@ -392,9 +416,16 @@ const getRinjaniDetail = async (req, res, next) => {
       favoritedCount: favoriteCount ? favoriteCount.count : 0,
       facilities: facilities.map((facility) => facility.facilityName),
       note: rinjaniResult.Rinjani?.note || null,
-      Fotos,
       createdAt,
       updatedAt,
+      Fotos,
+      Reviews: Review ? Reviews.map((review) => ({
+        rating: review.rating,
+        messageReview: review.messageReview,
+        createdAt: review.createdAt,
+        name: review.User.name,
+        profilPicture: review.User.profilPicture,
+      })) : Reviews,
     };
 
     return res.status(200).json({
@@ -435,6 +466,16 @@ const setHomeStay = async (req, res, next) => {
         transaction: t,
       }
     );
+
+    if (!newhomestay) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Home Stay not found'],
+        message: 'Set Home Stay Failed',
+        data: null,
+      });
+    }
+
     await t.commit();
     return res.status(201).json({
       errors: [],
@@ -477,6 +518,16 @@ const getHomeStayDetail = async (req, res, next) => {
           attributes: ['facilityName'],
           through: { attributes: [] }, // Exclude join table attributes
         },
+        {
+          model: Review,
+          attributes: ['rating', 'messageReview', 'createdAt'],
+          include: [
+            {
+              model: User,
+              attributes: ['name', 'profilPicture'],
+            },
+          ],
+        },
       ],
     });
 
@@ -506,8 +557,9 @@ const getHomeStayDetail = async (req, res, next) => {
       category,
       subCategory,
       HomeStays,
-      Fotos,
       facilities,
+      Fotos,
+      Reviews,
     } = homeStayResult;
 
     const newFormat = {
@@ -524,9 +576,16 @@ const getHomeStayDetail = async (req, res, next) => {
       favoritedCount: favoriteCount ? favoriteCount.count : 0,
       facilities: facilities.map((facility) => facility.facilityName),
       note: HomeStays.length > 0 ? HomeStays[0].note : null,
-      fotos: Fotos,
       createdAt,
       updatedAt,
+      Fotos,
+      Reviews: Review ? Reviews.map((review) => ({
+        rating: review.rating,
+        messageReview: review.messageReview,
+        createdAt: review.createdAt,
+        name: review.User.name,
+        profilPicture: review.User.profilPicture,
+      })) : Reviews,
     };
 
     return res.status(200).json({
@@ -580,6 +639,16 @@ const setWisata = async (req, res, next) => {
         transaction: t,
       }
     );
+
+    if (!newWisata) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Wisata not found'],
+        message: 'Set Wisata Failed',
+        data: null,
+      });
+    }
+
     await t.commit();
     return res.status(201).json({
       errors: [],
@@ -589,9 +658,7 @@ const setWisata = async (req, res, next) => {
   } catch (error) {
     await t.rollback();
     next(
-      new Error(
-        'controllers/productController.js:setWisata - ' + error.message
-      )
+      new Error('controllers/productController.js:setWisata - ' + error.message)
     );
   }
 };
@@ -621,6 +688,16 @@ const getWisataDetail = async (req, res, next) => {
           model: Facility,
           attributes: ['facilityName'],
           through: { attributes: [] }, // Exclude join table attributes
+        },
+        {
+          model: Review,
+          attributes: ['rating', 'messageReview', 'createdAt'],
+          include: [
+            {
+              model: User,
+              attributes: ['name', 'profilPicture'],
+            },
+          ],
         },
       ],
     });
@@ -652,6 +729,7 @@ const getWisataDetail = async (req, res, next) => {
       subCategory,
       Wisata: WisataAtributs,
       Fotos,
+      Reviews,
       facilities,
     } = wisataResult;
 
@@ -665,14 +743,22 @@ const getWisataDetail = async (req, res, next) => {
       thumbnail,
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
-      description: WisataAtributs.length > 0 ? WisataAtributs[0].description : null,
+      description:
+        WisataAtributs.length > 0 ? WisataAtributs[0].description : null,
       favoritedCount: favoriteCount ? favoriteCount.count : 0,
       facilities: facilities.map((facility) => facility.facilityName),
       note: WisataAtributs.length > 0 ? WisataAtributs[0].note : null,
       route: WisataAtributs.length > 0 ? WisataAtributs[0].route : null,
-      fotos: Fotos,
       createdAt,
       updatedAt,
+      Fotos,
+      Reviews: Review ? Reviews.map((review) => ({
+        rating: review.rating,
+        messageReview: review.messageReview,
+        createdAt: review.createdAt,
+        name: review.User.name,
+        profilPicture: review.User.profilPicture,
+      })) : Reviews,
     };
 
     return res.status(200).json({
@@ -689,6 +775,180 @@ const getWisataDetail = async (req, res, next) => {
   }
 };
 
+const setEvent = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  const valid = {
+    description: 'required',
+    date: 'required',
+    productId: 'required',
+  };
+  try {
+    const eventProduct = await dataValid(valid, req.body);
+    if (eventProduct.message.length > 0) {
+      return res.status(400).json({
+        errors: eventProduct.message,
+        message: 'Set Event Failed',
+        data: null,
+      });
+    }
+    const product_id = req.body.productId;
+    const cekProductId = await Product.findOne({
+      where: {
+        productId: product_id,
+      },
+    });
+    if (!cekProductId) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Set Event Failed',
+        data: null,
+      });
+    }
+
+    const newEvent = await EventModel.create(
+      {
+        ...eventProduct.data,
+        productId: product_id,
+      },
+      {
+        transaction: t,
+      }
+    );
+
+    if (!newEvent) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Event not found'],
+        message: 'Set Event Failed',
+        data: null,
+      });
+    }
+
+    await t.commit();
+
+    return res.status(201).json({
+      errors: [],
+      message: 'Event created successfully',
+      data: newEvent,
+    });
+  } catch (error) {
+    next(
+      new Error('controllers/productController.js:setEvent - ' + error.message)
+    );
+  }
+};
+
+const getEventDetail = async (req, res, next) => {
+  try {
+    const id = req.params.product_id;
+    const eventResult = await Product.findOne({
+      where: {
+        productId: id,
+      },
+      include: [
+        {
+          model: EventModel,
+          attributes: ['description', 'date', 'note'],
+        },
+        {
+          model: Foto,
+        },
+        {
+          model: Category,
+        },
+        {
+          model: SubCategory,
+        },
+        {
+          model: Facility,
+          attributes: ['facilityName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
+        {
+          model: Review,
+          attributes: ['rating', 'messageReview', 'createdAt'],
+          include: [
+            {
+              model: User,
+              attributes: ['name', 'profilPicture'],
+            },
+          ],
+        },
+      ],
+    });
+
+    if (!eventResult) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Get Product Event Detail Failed',
+        data: null,
+      });
+    }
+
+    const favoriteCount = await Favorites.findAndCountAll({
+      where: {
+        productId: id,
+      },
+    });
+
+    const {
+      productId,
+      title,
+      status,
+      location,
+      rating,
+      thumbnail,
+      createdAt,
+      updatedAt,
+      category,
+      subCategory,
+      Events: eventData,
+      Fotos,
+      Reviews,
+      facilities,
+    } = eventResult;
+
+    const newFormat = {
+      productId,
+      title,
+      status,
+      lowestPrice: eventResult.lowestPrice,
+      rating,
+      location,
+      thumbnail,
+      category: category ? category.category : null,
+      subCategory: subCategory ? subCategory.subCategory : null,
+      description: eventData.length > 0 ? eventData[0].description : null,
+      favoritedCount: favoriteCount ? favoriteCount.count : 0,
+      facilities: facilities.map((facility) => facility.facilityName),
+      note: eventData.length > 0 ? eventData[0].note : null,
+      date: eventData.length > 0 ? eventData[0].date : null,
+      createdAt,
+      updatedAt,
+      Fotos,
+      Reviews: Review ? Reviews.map((review) => ({
+        rating: review.rating,
+        messageReview: review.messageReview,
+        createdAt: review.createdAt,
+        name: review.User.name,
+        profilPicture: review.User.profilPicture,
+      })) : Reviews,
+    };
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get Event Product Detail Success',
+      data: newFormat,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:getEventDetail - ' + error.message
+      )
+    );
+  }
+};
+
 export {
   setProduct,
   updateProduct,
@@ -699,5 +959,7 @@ export {
   setHomeStay,
   getHomeStayDetail,
   setWisata,
-  getWisataDetail
+  getWisataDetail,
+  setEvent,
+  getEventDetail,
 };

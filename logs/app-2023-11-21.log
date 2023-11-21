@@ -33,3 +33,641 @@ ReferenceError: set is not defined
  [LOGGER] 2023-11-21 07:32:23.515 AM error : controllers/productController.js:getWisataDetail - Cannot read properties of undefined (reading 'length')
  [LOGGER] 2023-11-21 07:32:34.877 AM error : controllers/productController.js:getWisataDetail - Cannot read properties of undefined (reading 'length')
  [LOGGER] 2023-11-21 07:37:44.335 AM error : controllers/productController.js:getWisataDetail - Cannot access 'Wisata' before initialization
+ [LOGGER] 2023-11-21 08:35:24.537 AM error : uncaughtException: Cannot access 'Review' before initialization
+ReferenceError: Cannot access 'Review' before initialization
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/orderModel.js:37:14
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 08:35:48.136 AM error : uncaughtException: Cannot access 'Review' before initialization
+ReferenceError: Cannot access 'Review' before initialization
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/orderModel.js:37:14
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 08:40:30.025 AM error : controllers/orderController.js:cancelOrder - WHERE parameter "order_id" has invalid "undefined" value
+ [LOGGER] 2023-11-21 08:47:51.667 AM error : controllers/orderController.js:getAllOrderAdmin - user_id is not defined
+ [LOGGER] 2023-11-21 08:54:16.811 AM error : uncaughtException: Cannot access 'Review' before initialization
+ReferenceError: Cannot access 'Review' before initialization
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/orderModel.js:37:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 08:55:26.705 AM error : uncaughtException: Cannot access 'Review' before initialization
+ReferenceError: Cannot access 'Review' before initialization
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/orderModel.js:37:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 08:58:05.092 AM error : uncaughtException: Review is not defined
+ReferenceError: Review is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/orderModel.js:36:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 08:58:09.570 AM error : uncaughtException: Cannot access 'Review' before initialization
+ReferenceError: Cannot access 'Review' before initialization
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/orderModel.js:38:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 09:09:00.304 AM error : uncaughtException: (conn=15850, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.306 AM error : uncaughtException: (conn=15850, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.307 AM error : uncaughtException: (conn=15849, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.307 AM error : uncaughtException: (conn=15846, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.308 AM error : uncaughtException: (conn=15848, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.308 AM error : uncaughtException: (conn=15850, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.309 AM error : uncaughtException: (conn=15847, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.309 AM error : uncaughtException: (conn=15849, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.312 AM error : uncaughtException: (conn=15849, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.313 AM error : uncaughtException: (conn=15846, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.314 AM error : uncaughtException: (conn=15848, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.314 AM error : uncaughtException: (conn=15847, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.315 AM error : uncaughtException: (conn=15849, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.316 AM error : uncaughtException: (conn=15850, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.316 AM error : uncaughtException: (conn=15846, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:09:00.317 AM error : uncaughtException: (conn=15848, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) BINARY NOT NULL UNIQUE, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.518 AM error : uncaughtException: (conn=15867, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.519 AM error : uncaughtException: (conn=15864, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.521 AM error : uncaughtException: (conn=15868, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.521 AM error : uncaughtException: (conn=15865, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.533 AM error : uncaughtException: (conn=15864, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.534 AM error : uncaughtException: (conn=15864, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.534 AM error : uncaughtException: (conn=15866, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.535 AM error : uncaughtException: (conn=15868, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.536 AM error : uncaughtException: (conn=15865, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.537 AM error : uncaughtException: (conn=15867, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.537 AM error : uncaughtException: (conn=15864, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.538 AM error : uncaughtException: (conn=15866, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.539 AM error : uncaughtException: (conn=15868, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.539 AM error : uncaughtException: (conn=15865, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.539 AM error : uncaughtException: (conn=15867, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:22.540 AM error : uncaughtException: (conn=15864, no: 3734, SQLState: HY000) Failed to add the foreign key constraint. Missing column 'orderId' for constraint 'review_ibfk_1' in the referenced table 'order'
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`orderId`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.875 AM error : uncaughtException: (conn=15874, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.878 AM error : uncaughtException: (conn=15871, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.878 AM error : uncaughtException: (conn=15873, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.879 AM error : uncaughtException: (conn=15874, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.880 AM error : uncaughtException: (conn=15871, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.880 AM error : uncaughtException: (conn=15870, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.881 AM error : uncaughtException: (conn=15873, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.881 AM error : uncaughtException: (conn=15874, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.882 AM error : uncaughtException: (conn=15871, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.883 AM error : uncaughtException: (conn=15870, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.884 AM error : uncaughtException: (conn=15873, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.884 AM error : uncaughtException: (conn=15872, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.884 AM error : uncaughtException: (conn=15874, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.885 AM error : uncaughtException: (conn=15871, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.885 AM error : uncaughtException: (conn=15870, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:51.885 AM error : uncaughtException: (conn=15873, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.512 AM error : uncaughtException: (conn=15876, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.514 AM error : uncaughtException: (conn=15876, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.515 AM error : uncaughtException: (conn=15878, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.515 AM error : uncaughtException: (conn=15879, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.516 AM error : uncaughtException: (conn=15880, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.517 AM error : uncaughtException: (conn=15878, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.518 AM error : uncaughtException: (conn=15879, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.518 AM error : uncaughtException: (conn=15880, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.520 AM error : uncaughtException: (conn=15876, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.520 AM error : uncaughtException: (conn=15877, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.521 AM error : uncaughtException: (conn=15878, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.521 AM error : uncaughtException: (conn=15879, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.522 AM error : uncaughtException: (conn=15880, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.522 AM error : uncaughtException: (conn=15877, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.523 AM error : uncaughtException: (conn=15878, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:27:56.524 AM error : uncaughtException: (conn=15876, no: 3780, SQLState: HY000) Referencing column 'order_id' and referenced column 'order_id' in foreign key constraint 'review_ibfk_1' are incompatible.
+sql: CREATE TABLE IF NOT EXISTS `review` (`review_id` INTEGER NOT NULL auto_increment , `review` VARCHAR(255) NOT NULL, `rating` INTEGER NOT NULL, `order_id` CHAR(36) DEFAULT NULL, `created_at` DATETIME NOT NULL, `updated_at` DATETIME NOT NULL, `product_id` CHAR(36) BINARY, `user_id` CHAR(36) BINARY, PRIMARY KEY (`review_id`), FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async Review.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-21 09:29:22.495 AM error : uncaughtException: Order.has is not a function
+TypeError: Order.has is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/reviewModel.js:32:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 10:05:27.081 AM error : controllers/raviewController.js:setReview - (conn=16209, no: 1305, SQLState: 42000) FUNCTION test.UNESCAPE does not exist
+sql: INSERT INTO `review` (`review_id`,`message_review`,`rating`,`created_at`,`updated_at`,`order_id`,`product_id`,`user_id`) VALUES (DEFAULT,UNESCAPE('it&#x27;s nice'),?,?,?,?,?,?); - parameters:['4','2023-11-21 10:05:27.061','2023-11-21 10:05:27.061','e44c166...]
+ [LOGGER] 2023-11-21 10:32:35.496 AM error : uncaughtException: Product.hasMany called with something that's not a subclass of Sequelize.Model
+Error: Product.hasMany called with something that's not a subclass of Sequelize.Model
+    at Product.hasMany (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/associations/mixin.js:13:13)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/eventModel.js:38:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 10:33:18.557 AM error : uncaughtException: Mode is not defined
+ReferenceError: Mode is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/eventModel.js:38:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 10:33:20.145 AM error : uncaughtException: Event.belongsTo is not a function
+TypeError: Event.belongsTo is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/eventModel.js:44:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 10:33:22.230 AM error : uncaughtException: Mod is not defined
+ReferenceError: Mod is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/eventModel.js:44:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-21 10:52:20.106 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:57:13.018 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:57:35.842 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:57:37.059 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:57:37.085 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:57:37.236 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:57:37.402 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:57:37.578 AM error : controllers/productController.js:getEventDetail - Cannot access 'EventModel' before initialization
+ [LOGGER] 2023-11-21 10:58:27.442 AM error : controllers/productController.js:getEventDetail - Cannot read properties of undefined (reading 'length')
+ [LOGGER] 2023-11-21 11:10:43.943 AM error : controllers/raviewController.js:setReview - Missing where attribute in the options parameter
+ [LOGGER] 2023-11-21 11:54:33.119 AM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-21 11:55:56.533 AM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-21 11:58:47.241 AM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')

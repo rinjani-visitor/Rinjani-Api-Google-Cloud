@@ -2,6 +2,7 @@ import sequelize from '../utils/db.js';
 import { Sequelize } from 'sequelize';
 import Product from './productModel.js';
 import User from './userModel.js';
+import Order from './orderModel.js';
 
 const Review = sequelize.define(
   'Review',
@@ -12,7 +13,7 @@ const Review = sequelize.define(
       primaryKey: true,
       allowNull: false,
     },
-    review: {
+    messageReview: {
       type: Sequelize.STRING,
       allowNull: false,
     },
@@ -27,6 +28,18 @@ const Review = sequelize.define(
     timestamps: true,
   }
 );
+
+Order.hasOne(Review, {
+  foreignKey: 'orderId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+});
+
+Review.belongsTo(Order, {
+  foreignKey: 'orderId',
+  onDelete: 'RESTRICT',
+  onUpdate: 'RESTRICT',
+})
 
 Product.hasMany(Review, {
   foreignKey: 'productId',

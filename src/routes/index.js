@@ -23,9 +23,9 @@ route.use('/api', productRouter);
 route.use('/api', categoryRouter);
 route.use('/api', facilityRouter);
 route.use('/api', bookingRouter);
-route.use('/api', reviewRouter);
 route.use('/api', paymentRouter);
 route.use('/api', orderRouter);
+route.use('/api', reviewRouter);
 
 route.use('*', errorrHandling);
 route.use('*', (req, res) => {
