@@ -14,6 +14,7 @@ import Wisata from '../models/wisataModel.js';
 import EventModel from '../models/eventModel.js';
 import Review from '../models/reviewModel.js';
 import User from '../models/userModel.js';
+import { Op } from 'sequelize';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -142,26 +143,48 @@ const updateProduct = async (req, res, next) => {
 
 const getAllProducts = async (req, res, next) => {
   try {
-    const categoryName = req.query.category;
+    const { category: categoryName, rating: ratingFilter, status: statusProduct } = req.query;
 
-    let products;
+    let whereCondition = {};
 
     if (categoryName) {
-      products = await Product.findAll({
-        include: [
-          {
-            model: Category,
-            where: {
-              category: categoryName,
-            },
-          },
-        ],
-      });
-    } else {
-      products = await Product.findAll();
+      whereCondition = {
+        ...whereCondition,
+        '$category.category$': categoryName,
+      };
     }
 
-    if (!products) {
+    if (ratingFilter) {
+      const lowerThan = parseInt(ratingFilter, 10) + 1;
+      whereCondition = {
+        ...whereCondition,
+        '$Product.rating$': {
+          [Op.lt]: lowerThan,
+          [Op.gte]: ratingFilter,
+        },
+      };
+    }
+
+    if (statusProduct) {
+      whereCondition = {
+        ...whereCondition,
+        '$Product.status$': statusProduct === 'true',
+      };
+    }
+
+    const products = await Product.findAll({
+      include: [
+        {
+          model: Category,
+          attributes: [], // Exclude category attributes from result
+          as: 'category', // Adjust alias to match the association
+          where: whereCondition,
+        },
+      ],
+      where: whereCondition,
+    });
+
+    if (!products || products.length === 0) {
       return res.status(404).json({
         errors: ['Product not found'],
         message: 'Get All Product Failed',
@@ -173,7 +196,7 @@ const getAllProducts = async (req, res, next) => {
       productId: product.productId,
       title: product.title,
       status: product.status,
-      rating: product.rating ? product.rating : 'no ratings yet',
+      rating: product.rating || 0,
       location: product.location,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
@@ -185,13 +208,11 @@ const getAllProducts = async (req, res, next) => {
       data: formattedProducts,
     });
   } catch (error) {
-    next(
-      new Error(
-        'controllers/productController.js:getAllProducts - ' + error.message
-      )
-    );
+    next(new Error('controllers/productController.js:getAllProducts - ' + error.message));
   }
 };
+
+
 
 const deleteProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -419,13 +440,15 @@ const getRinjaniDetail = async (req, res, next) => {
       createdAt,
       updatedAt,
       Fotos,
-      Reviews: Review ? Reviews.map((review) => ({
-        rating: review.rating,
-        messageReview: review.messageReview,
-        createdAt: review.createdAt,
-        name: review.User.name,
-        profilPicture: review.User.profilPicture,
-      })) : Reviews,
+      Reviews: Review
+        ? Reviews.map((review) => ({
+            rating: review.rating,
+            messageReview: review.messageReview,
+            createdAt: review.createdAt,
+            name: review.User.name,
+            profilPicture: review.User.profilPicture,
+          }))
+        : Reviews,
     };
 
     return res.status(200).json({
@@ -579,13 +602,15 @@ const getHomeStayDetail = async (req, res, next) => {
       createdAt,
       updatedAt,
       Fotos,
-      Reviews: Review ? Reviews.map((review) => ({
-        rating: review.rating,
-        messageReview: review.messageReview,
-        createdAt: review.createdAt,
-        name: review.User.name,
-        profilPicture: review.User.profilPicture,
-      })) : Reviews,
+      Reviews: Review
+        ? Reviews.map((review) => ({
+            rating: review.rating,
+            messageReview: review.messageReview,
+            createdAt: review.createdAt,
+            name: review.User.name,
+            profilPicture: review.User.profilPicture,
+          }))
+        : Reviews,
     };
 
     return res.status(200).json({
@@ -752,13 +777,15 @@ const getWisataDetail = async (req, res, next) => {
       createdAt,
       updatedAt,
       Fotos,
-      Reviews: Review ? Reviews.map((review) => ({
-        rating: review.rating,
-        messageReview: review.messageReview,
-        createdAt: review.createdAt,
-        name: review.User.name,
-        profilPicture: review.User.profilPicture,
-      })) : Reviews,
+      Reviews: Review
+        ? Reviews.map((review) => ({
+            rating: review.rating,
+            messageReview: review.messageReview,
+            createdAt: review.createdAt,
+            name: review.User.name,
+            profilPicture: review.User.profilPicture,
+          }))
+        : Reviews,
     };
 
     return res.status(200).json({
@@ -926,13 +953,15 @@ const getEventDetail = async (req, res, next) => {
       createdAt,
       updatedAt,
       Fotos,
-      Reviews: Review ? Reviews.map((review) => ({
-        rating: review.rating,
-        messageReview: review.messageReview,
-        createdAt: review.createdAt,
-        name: review.User.name,
-        profilPicture: review.User.profilPicture,
-      })) : Reviews,
+      Reviews: Review
+        ? Reviews.map((review) => ({
+            rating: review.rating,
+            messageReview: review.messageReview,
+            createdAt: review.createdAt,
+            name: review.User.name,
+            profilPicture: review.User.profilPicture,
+          }))
+        : Reviews,
     };
 
     return res.status(200).json({
