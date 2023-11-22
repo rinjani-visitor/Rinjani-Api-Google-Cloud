@@ -6,11 +6,12 @@ import swaggerUI from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
 import path from 'path';
 import url from 'url';
+// import http from 'http';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,6 +49,13 @@ app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs, options2));
 //route utama
 app.use(appMiddleware);
 
+
+//FOR DEV
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
+//FOR PROD
+// http.createServer(app).listen(PORT);
