@@ -456,3 +456,925 @@ SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
 ReferenceError: PORT is not defined
     at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/index.js:34:34
     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-22 12:13:01.861 PM error : uncaughtException: PORT is not defined
+ReferenceError: PORT is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/index.js:34:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-22 12:15:02.304 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.308 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.310 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.311 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.311 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.312 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.313 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.316 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.320 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.322 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.323 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.324 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.324 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.325 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.325 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.326 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:15:02.327 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.271 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.274 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.275 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.276 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.276 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.277 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.277 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.278 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.279 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.280 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.281 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.281 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.282 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.282 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.282 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.283 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:21:26.283 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.762 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.765 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.766 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.766 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.767 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.768 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.768 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.769 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.772 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.773 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.773 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.773 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.774 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.774 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.775 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.775 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:22:37.775 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.318 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.320 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.321 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.321 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.322 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.322 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.322 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.323 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.324 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.324 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.325 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.325 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.325 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.326 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.326 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.326 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:47.326 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.391 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.394 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.394 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.395 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.395 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.396 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.396 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.396 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.398 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.399 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.399 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.399 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.399 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.400 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.400 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.401 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:30:58.401 PM error : uncaughtException: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:94:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.768 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.771 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.772 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.773 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.773 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.774 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.775 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.775 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.777 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.778 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.778 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.779 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.779 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.780 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.781 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.781 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:33:02.781 PM error : uncaughtException: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=-1, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.524 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.525 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.526 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.526 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.527 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.527 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.528 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.528 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.529 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.530 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.530 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.530 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.531 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.531 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.531 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.532 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:26.532 PM error : uncaughtException: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=546, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.234 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.236 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.236 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.237 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.237 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.237 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.238 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.238 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.239 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.240 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.240 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.240 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.241 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.241 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.242 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.242 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:35:33.242 PM error : uncaughtException: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=548, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.312 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.314 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.314 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.314 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.315 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.315 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.315 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.316 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.317 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.317 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.317 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.318 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.318 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.318 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.319 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.319 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 12:43:26.319 PM error : uncaughtException: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+SequelizeAccessDeniedError: (conn=648, no: 1045, SQLState: 28000) Access denied for user 'rinjani-user-db'@'103.133.160.63' (using password: YES)
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:90:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32

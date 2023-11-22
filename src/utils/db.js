@@ -14,7 +14,7 @@ const sequelize = new Sequelize(
         ? (...msg) => console.log(msg)
         : false,
     dialectOptions: {
-      requestTimeout: 30000,
+      requestTimeout: 3000000,
       encrypt: true,
       useUTC: false, // for reading from database
       dateStrings: true,
