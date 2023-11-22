@@ -2,7 +2,7 @@ import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import Product from '../models/productModel.js';
 import { isExists } from '../validation/sanitization.js';
-import Rinjani from '../models/rinjaniModel.js';
+import Rinjani from '../models/RinjaniModel.js';
 import Foto from '../models/fotoModel.js';
 import HomeStay from '../models/HomeStayModel.js';
 import Favorites from '../models/favoritesModel.js';
@@ -47,7 +47,7 @@ const setProduct = async (req, res, next) => {
         data: null,
       });
     } else {
-      const finalName = process.env.BASE_URL + '/images/thumbnail/' + thumbnail;
+      const finalName = process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL + '/images/thumbnail/' + thumbnail;
       const result = await Product.create(
         {
           ...product.data,

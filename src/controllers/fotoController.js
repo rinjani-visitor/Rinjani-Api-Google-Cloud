@@ -29,7 +29,7 @@ const setFotoProduct = async (req, res, next) => {
         const suffixName = file.filename;
         const originalName = file.originalname;
         const finalName =
-          process.env.BASE_URL + '/images/fotoproduct/' + suffixName;
+          process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL + '/images/fotoproduct/' + suffixName;
 
         uploadedFilesData.push({
           url: finalName,

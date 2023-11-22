@@ -129,7 +129,9 @@ const setBankPayment = async (req, res, next) => {
       });
     } else {
       const finalName =
-        process.env.BASE_URL + '/images/payment/bank/' + proofTransfer;
+        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
+        '/images/payment/bank/' +
+        proofTransfer;
       const result = await BankPayment.create(
         {
           bankName: bankPayment.data.bankName,
@@ -271,7 +273,9 @@ const setWisePayment = async (req, res, next) => {
       });
     } else {
       const finalName =
-        process.env.BASE_URL + '/images/payment/wise/' + proofTransfer;
+        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
+        '/images/payment/wise/' +
+        proofTransfer;
       const result = await WisePayment.create(
         {
           wiseEmail: wisePayment.data.wiseEmail,
@@ -575,7 +579,7 @@ const updatePaymentAdmin = async (req, res, next) => {
         {
           model: Product,
           attributes: ['productId', 'title'],
-        }
+        },
       ],
     });
 
@@ -654,7 +658,8 @@ const updatePaymentAdmin = async (req, res, next) => {
 
       return res.status(200).json({
         errors: [],
-        message: 'Payment has been rejected and destroyed. Email confirmation has been sent to the customer.',
+        message:
+          'Payment has been rejected and destroyed. Email confirmation has been sent to the customer.',
         data: null,
       });
     } else if (status == 'Approved') {

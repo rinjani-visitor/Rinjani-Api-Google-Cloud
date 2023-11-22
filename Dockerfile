@@ -1,23 +1,20 @@
-# Image nodejs
-FROM node:18.16.0
+# Use the official Node.js image as the base image
+FROM node:18
 
-# create directori
-WORKDIR /app
+# Set the working directory inside the container
+WORKDIR /usr/src/app
 
-# # copy file package json
-# COPY /middleware/service.json ./
-
-# copy file package json
+# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# install dependensi
+# Install dependencies
 RUN npm install
 
-# copy all file
+# Copy the rest of the application code to the working directory
 COPY . .
 
-# expose port
-EXPOSE 9000
+# Expose the port that the app will run on
+EXPOSE 8080
 
-# running app
-CMD [ "npm", "prod" ]
+# Command to run your application
+CMD ["npm", "run", "prod"]

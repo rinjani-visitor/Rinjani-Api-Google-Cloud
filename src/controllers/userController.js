@@ -398,7 +398,9 @@ const avatarUser = async (req, res, next) => {
     const uploadedFileName = req.file.filename;
     if (uploadedFileName) {
       const finalName =
-        process.env.BASE_URL + '/images/avatar/' + uploadedFileName;
+        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
+        '/images/avatar/' +
+        uploadedFileName;
       const result = await User.update(
         {
           profilPicture: finalName,

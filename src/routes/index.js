@@ -1,4 +1,6 @@
 import express from 'express';
+import { fileURLToPath } from 'url'; // Import the fileURLToPath function
+import path from 'path'; // Import the path module
 import userRouter from './userRoute.js';
 import { errorrHandling } from '../controllers/errorHandlingController.js';
 import productRouter from './productRoute.js';
@@ -9,14 +11,15 @@ import bookingRouter from './bookingRoute.js';
 import paymentRouter from './paymentRoute.js';
 import orderRouter from './orderRoute.js';
 
+// Convert import.meta.url to the file path and then get the directory name
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 const route = express.Router();
 
-route.use('/home', (req, res) => {
-  const data = {
-    title: 'Home',
-    name: 'Ini adalah halaman home',
-  };
-  res.render('index', data);
+route.use('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../views/html/index.html'));
 });
 
 route.use('/api', userRouter);
