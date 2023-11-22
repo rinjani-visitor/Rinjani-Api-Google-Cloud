@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import 'dotenv/config';
-const base_url = process.env.BASE_URL;
+const base_url = process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL;
 
 const transporter = nodemailer.createTransport({
   service: process.env.MAIL_SERVICE,

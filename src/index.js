@@ -43,7 +43,6 @@ const options2 = {
 };
 
 const specs = swaggerJsDoc(options);
-
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(specs, options2));
 
 //route utama

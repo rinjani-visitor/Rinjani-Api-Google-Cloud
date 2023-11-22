@@ -1,3 +1,4 @@
+import moment from 'moment-timezone';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import { sendMail, sendPassword } from '../utils/sendMail.js';
@@ -24,13 +25,15 @@ const setUser = async (req, res, next) => {
     password: 'required,isStrongPassword',
     confirmPassword: 'required',
   };
+
   try {
-    // const user = req.body;
     const user = await dataValid(valid, req.body);
-    // cek password
+
+    // Cek password
     if (user.data.password !== user.data.confirmPassword) {
       user.message.push('Password does not match');
     }
+
     if (user.message.length > 0) {
       return res.status(400).json({
         errors: user.message,
@@ -38,11 +41,13 @@ const setUser = async (req, res, next) => {
         data: null,
       });
     }
+
     const userExists = await User.findAll({
       where: {
         email: user.data.email,
       },
     });
+
     if (userExists.length > 0 && userExists[0].isActive) {
       return res.status(400).json({
         errors: ['Email already activated'],
@@ -52,7 +57,7 @@ const setUser = async (req, res, next) => {
     } else if (
       userExists.length > 0 &&
       !userExists[0].isActive &&
-      Date.parse(userExists[0].expireTime) > new Date()
+      moment(userExists[0].expireTime).isAfter(moment())
     ) {
       return res.status(400).json({
         errors: ['Email already registered, please check your email'],
@@ -71,16 +76,28 @@ const setUser = async (req, res, next) => {
         }
       );
     }
+
     const newUser = await User.create(
       {
         ...user.data,
-        expireTime: new Date(),
+        expireTime: moment().tz('Asia/Makassar').toDate(),
       },
       {
         transaction: t,
       }
     );
+
+    if (!newUser) {
+      await t.rollback();
+      return res.status(500).json({
+        errors: ['User not created in the database'],
+        message: 'Register Failed',
+        data: null,
+      });
+    }
+
     const result = await sendMail(newUser.email, newUser.userId);
+
     if (!result) {
       await t.rollback();
       return res.status(500).json({
@@ -97,7 +114,7 @@ const setUser = async (req, res, next) => {
           userId: newUser.userId,
           name: newUser.name,
           email: newUser.email,
-          expireTime: newUser.expireTime.toString(),
+          expireTime: moment(newUser.expireTime).format(),
         },
       });
     }
@@ -115,7 +132,7 @@ const setActivateUser = async (req, res, next) => {
         userId: user_id,
         isActive: false,
         expireTime: {
-          [Op.gte]: new Date(),
+          [Op.gte]: moment().tz('Asia/Makassar').toDate(),
         },
       },
     });
@@ -146,6 +163,7 @@ const setActivateUser = async (req, res, next) => {
     );
   }
 };
+
 
 const getUser = async (req, res, next) => {
   try {
