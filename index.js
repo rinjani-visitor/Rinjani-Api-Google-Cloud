@@ -1,6 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
-import appMiddleware from './middleware/index.js';
+import appMiddleware from './src/middleware/index.js';
 import bodyParser from 'body-parser';
 import swaggerUI from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';

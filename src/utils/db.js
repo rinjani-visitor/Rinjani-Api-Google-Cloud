@@ -26,9 +26,36 @@ const sequelize = new Sequelize(
         return next();
       },
     },
-    timezone: 'Asia/Makassar',
+    // timezone: 'Asia/Makassar',
     insecureAuth: true,
   }
 );
 
 export default sequelize;
+
+// const sequelize = new Sequelize({
+//   dialect: process.env.DB_DIALECT, 
+//   host: process.env.DB_HOST,    
+//   username: process.env.DB_USER,
+//   password: process.env.DB_PASSWORD, 
+//   database: process.env.DB_NAME, 
+//   port: process.env.DB_PORT,           
+//   define: {
+//     timestamps: true,    
+//     underscored: true,   
+//   },
+//   dialectOptions: {
+//     requestTimeout: 3000000,
+//     encrypt: true, 
+//     dateStrings: true,
+//     typeCast(field, next) {
+//       // for reading from database
+//       if (field.type === 'DATETIME') {
+//         return field.string();
+//       }
+//       return next();
+//     },
+//   }
+// });
+
+// export default sequelize;

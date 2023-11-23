@@ -22,11 +22,7 @@ route.use('/api', reviewRouter);
 
 route.use('*', errorrHandling);
 route.use('*', (req, res) => {
-  res.status(404).json({
-    errors: ['Page Not Found'],
-    message: 'Internal Server Error',
-    data: null,
-  });
+  res.send('Hello World!')
 });
 
 export default route;

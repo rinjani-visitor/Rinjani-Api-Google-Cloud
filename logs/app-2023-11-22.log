@@ -1400,3 +1400,585 @@ Error: listen EADDRINUSE: address already in use :::8080
 ReferenceError: fileURLToPath is not defined
     at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:13:20
     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-22 08:13:22.251 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.254 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.254 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.255 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.255 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.256 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.256 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.256 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.258 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.258 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.259 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.259 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.259 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.262 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.262 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.262 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 08:13:22.263 PM error : uncaughtException: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+SequelizeConnectionError: (conn=7057, no: 45012, SQLState: 08S01) Connection timeout: failed to create socket after 1002ms
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:100:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.182 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.183 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.184 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.184 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.184 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.185 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.185 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.185 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.186 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.186 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.186 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.187 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.187 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.187 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.187 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.187 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:22.187 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.971 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.972 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.973 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.973 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.973 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.973 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.974 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.974 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.975 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.975 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.975 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.975 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.976 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.976 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.976 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.976 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:05:58.976 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/connection-manager.js:87:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.929 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.930 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.930 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.931 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.931 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.931 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.931 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.932 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.932 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.933 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.933 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.933 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.933 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.933 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.934 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.934 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 09:07:14.934 PM error : uncaughtException: connect ECONNREFUSED ::1:3306
+SequelizeConnectionRefusedError: connect ECONNREFUSED ::1:3306
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.334 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.335 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.336 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.336 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.336 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.336 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.337 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.337 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.338 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.338 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.338 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.338 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.338 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.339 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.339 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.339 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:17.339 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.672 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.673 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.673 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.673 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.674 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.674 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.674 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.674 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.675 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.676 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.676 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.676 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.676 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.676 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.677 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.677 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 10:55:23.677 PM error : uncaughtException: SSL profile must be an object, instead it's a boolean
+SequelizeConnectionError: SSL profile must be an object, instead it's a boolean
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2023-11-22 11:01:50.292 PM error : uncaughtException: Sequelize is not defined
+ReferenceError: Sequelize is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/utils/db.js:36:19
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
