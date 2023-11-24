@@ -24,7 +24,7 @@ userRouter.get('/users/:id', autenticate, getUserById);
 userRouter.get('/users/activate/:id', setActivateUser);
 userRouter.post('/users/login', setLogin);
 
-userRouter.post('/admin/users/login', setLogin); //admin
+userRouter.post('/admin/login', setLogin); //admin
 
 userRouter.patch('/users/:id', autenticate, updateUser);
 userRouter.patch(

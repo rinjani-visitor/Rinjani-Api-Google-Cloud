@@ -9,14 +9,15 @@ const sequelize = new Sequelize(
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     dialect: process.env.DB_DIALECT,
-    logging:
-      process.env.NODE_ENV === 'development'
-        ? (...msg) => console.log(msg)
-        : false,
+    // logging:
+    //   process.env.NODE_ENV === 'development'
+    //     ? (...msg) => console.log(msg)
+    //     : false,
+    logging: false,
     dialectOptions: {
-      requestTimeout: 3000000,
-      encrypt: true,
-      useUTC: false, // for reading from database
+      // requestTimeout: 3000000,
+      // encrypt: true,
+      // useUTC: false, // for reading from database
       dateStrings: true,
       typeCast(field, next) {
         // for reading from database
@@ -26,7 +27,7 @@ const sequelize = new Sequelize(
         return next();
       },
     },
-    // timezone: 'Asia/Makassar',
+    // timezone: 'Asia/Jakarta',
     insecureAuth: true,
   }
 );

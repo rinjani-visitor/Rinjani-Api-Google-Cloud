@@ -8,6 +8,7 @@ import reviewRouter from './reviewRoute.js';
 import bookingRouter from './bookingRoute.js';
 import paymentRouter from './paymentRoute.js';
 import orderRouter from './orderRoute.js';
+import addOnsRouter from './addOnsRoute.js';
 
 const route = express.Router();
 
@@ -15,6 +16,7 @@ route.use('/api', userRouter);
 route.use('/api', productRouter);
 route.use('/api', categoryRouter);
 route.use('/api', facilityRouter);
+route.use('/api', addOnsRouter);
 route.use('/api', bookingRouter);
 route.use('/api', paymentRouter);
 route.use('/api', orderRouter);

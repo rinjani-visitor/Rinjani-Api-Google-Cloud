@@ -55,29 +55,25 @@ productRouter.patch(
 
 productRouter.delete('/admin/products/:id', autenticate, deleteProduct);//admin
 
-productRouter.get('/products', autenticate, getAllProducts);
+productRouter.get('/products', getAllProducts);
 
 productRouter.get(
   '/products/rinjani/:product_id',
-  autenticate,
   getRinjaniDetail
 );
 
 productRouter.get(
   '/products/homestay/:product_id',
-  autenticate,
   getHomeStayDetail
 );
 
 productRouter.get(
   '/products/wisata/:product_id',
-  autenticate,
   getWisataDetail
 );
 
 productRouter.get(
   '/products/event/:product_id',
-  autenticate,
   getEventDetail
 );
 

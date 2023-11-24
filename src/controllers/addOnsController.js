@@ -1,26 +1,26 @@
-import Facility from '../models/facilityModel.js';
+import AddOns from '../models/addOnsModel.js';
 import Product from '../models/productModel.js';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 
-const setFacility = async (req, res, next) => {
+const setAddOns = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
-    facilityName: 'required',
+    addOnsName: 'required',
   };
   try {
-    const facility = await dataValid(valid, req.body);
-    if (facility.message.length > 0) {
+    const addOnsData = await dataValid(valid, req.body);
+    if (addOnsData.message.length > 0) {
       return res.status(400).json({
-        errors: facility.message,
-        message: 'Facility Failed',
+        errors: addOnsData.message,
+        message: 'AddOns Failed',
         data: null,
       });
     }
 
-    const result = await Facility.create(
+    const result = await AddOns.create(
       {
-        ...facility.data,
+        ...addOnsData.data,
       },
       {
         transaction: t,
@@ -29,7 +29,7 @@ const setFacility = async (req, res, next) => {
 
     if (result[0] == 0) {
       return res.status(404).json({
-        errors: ['Failed to save facility to database'],
+        errors: ['Failed to save addOns to database'],
         message: 'Update Failed',
         data: null,
       });
@@ -37,7 +37,7 @@ const setFacility = async (req, res, next) => {
       await t.commit();
       return res.status(201).json({
         errors: [],
-        message: 'Facility created successfully',
+        message: 'addOns created successfully',
         data: result,
       });
     }
@@ -45,40 +45,40 @@ const setFacility = async (req, res, next) => {
     await t.rollback();
     next(
       new Error(
-        'controllers/facilityController.js:setFacility - ' + error.message
+        'controllers/facilityController.js:setAddOns - ' + error.message
       )
     );
   }
 };
 
-const getAllFacility = async (req, res, next) => {
+const getAllAddOns = async (req, res, next) => {
   try {
-    const result = await Facility.findAll();
+    const result = await AddOns.findAll();
     if (!result) {
       return res.status(404).json({
-        errors: ['Facility not found'],
-        message: 'Get Facility Failed',
+        errors: ['AddOns not found'],
+        message: 'Get AddOns Failed',
         data: null,
       });
     }
     return res.status(200).json({
       errors: [],
-      message: 'Get Facility Success',
+      message: 'Get AddOns Success',
       data: result,
     });
   } catch (error) {
     next(
       new Error(
-        'controllers/facilityController.js:getAllFacility - ' + error.message
+        'controllers/facilityController.js:getAllAddOns - ' + error.message
       )
     );
   }
 };
 
-const addFacility = async (req, res, next) => {
+const addAddOns = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idfacility } = req.body;
+    const { idproduct, idaddons } = req.body;
 
     const checkProduct = await Product.findOne({
       where: {
@@ -94,39 +94,39 @@ const addFacility = async (req, res, next) => {
       });
     }
 
-    const checkFacility = await Facility.findOne({
+    const checkAddOns = await AddOns.findOne({
       where: {
-        facilityId: idfacility,
+        addOnsId: idaddons,
       },
     });
 
-    if (!checkFacility) {
+    if (!checkAddOns) {
       return res.status(404).json({
-        errors: ['Facility not found'],
-        message: 'Get Facility Failed',
+        errors: ['AddOns not found'],
+        message: 'Get AddOns Failed',
         data: null,
       });
     }
 
-    const checkProductFacility = await sequelize.models.product_facility.findOne({
+    const checkProductAddOns = await sequelize.models.product_addons.findOne({
       where: {
         productId: idproduct,
-        facilityId: idfacility,
+        addOnsId: idaddons,
       },
     });
 
-    if (checkProductFacility) {
+    if (checkProductAddOns) {
       return res.status(400).json({
-        errors: ['Facility already exists'],
-        message: 'Update Failed',
+        errors: ['AddOns already exist'],
+        message: 'AddOns Failed',
         data: null,
       });
     };
 
-    const result = await sequelize.models.product_facility.create(
+    const result = await sequelize.models.product_addons.create(
       {
         productId: idproduct,
-        facilityId: idfacility,
+        addOnsId: idaddons,
       },
       {
         transaction: t,
@@ -136,7 +136,7 @@ const addFacility = async (req, res, next) => {
     if (result[0] == 0) {
       await t.rollback();
       return res.status(404).json({
-        errors: ['Failed to save facility to database'],
+        errors: ['Failed to save AddOns to database'],
         message: 'Update Failed',
         data: null,
       });
@@ -146,33 +146,33 @@ const addFacility = async (req, res, next) => {
 
     return res.status(201).json({
       errors: [],
-      message: 'Facility created successfully',
+      message: 'AddOns created successfully',
       data: result,
     });
   } catch (error) {
     await t.rollback();
     next(
       new Error(
-        'controllers/facilityController.js:addFacility - ' + error.message
+        'controllers/facilityController.js:addAddOns - ' + error.message
       )
     );
   }
 };
 
-const updateFacility = async (req, res, next) => {
+const updateAddOns = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idfacility, updateidfacility } = req.body;
+    const { idproduct, idaddons, updateidaddons } = req.body;
 
-    const result = await sequelize.models.product_facility.update(
+    const result = await sequelize.models.product_addons.update(
       {
         productId: idproduct,
-        facilityId: updateidfacility,
+        idaddons: updateidaddons,
       },
       {
         where: {
           productId: idproduct,
-          facilityId: idfacility,
+          idaddons: idaddons,
         },
         transaction: t,
       }
@@ -181,7 +181,7 @@ const updateFacility = async (req, res, next) => {
     if (result[0] == 0) {
       await t.rollback();
       return res.status(404).json({
-        errors: ['Failed to save facility to database'],
+        errors: ['Failed to save addOns to database'],
         message: 'Update Failed',
         data: null,
       });
@@ -191,27 +191,27 @@ const updateFacility = async (req, res, next) => {
 
     return res.status(201).json({
       errors: [],
-      message: 'Update facility successfully',
+      message: 'Update addOns successfully',
       data: result,
     });
   } catch (error) {
     next(
       new Error(
-        'controllers/facilityController.js:updateFacility - ' + error.message
+        'controllers/facilityController.js:updateaddOns - ' + error.message
       )
     );
   }
 };
 
-const deleteFacility = async (req, res, next) => {
+const deleteAddOns = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idfacility } = req.body;
+    const { idproduct, idaddons } = req.body;
 
-    const result = await sequelize.models.product_facility.destroy({
+    const result = await sequelize.models.product_addons.destroy({
       where: {
         productId: idproduct,
-        facilityId: idfacility,
+        facilityId: idaddons,
       },
       transaction: t,
     });
@@ -219,7 +219,7 @@ const deleteFacility = async (req, res, next) => {
     if (result[0] == 0) {
       await t.rollback();
       return res.status(404).json({
-        errors: ['Failed to delete facility from database'],
+        errors: ['Failed to delete addOns from database'],
         message: 'Delete Failed',
         data: null,
       });
@@ -229,22 +229,22 @@ const deleteFacility = async (req, res, next) => {
 
     return res.status(201).json({
       errors: [],
-      message: 'Delete facility successfully',
+      message: 'Delete addOns successfully',
       data: result,
     });
   } catch (error) {
     next(
       new Error(
-        'controllers/facilityController.js:deleteFacility - ' + error.message
+        'controllers/facilityController.js:deleteAddOns - ' + error.message
       )
     );
   }
 };
 
 export {
-  setFacility,
-  getAllFacility,
-  addFacility,
-  updateFacility,
-  deleteFacility,
+  setAddOns,
+  getAllAddOns,
+  addAddOns,
+  updateAddOns,
+  deleteAddOns,
 };

@@ -51,7 +51,7 @@ app.use(appMiddleware);
 //FOR DEV
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on ${process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL}:${PORT}`);
 });
 
 //FOR PROD

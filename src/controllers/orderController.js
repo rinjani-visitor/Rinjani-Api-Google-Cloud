@@ -4,7 +4,7 @@ import User from '../models/userModel.js';
 
 const getAllOrder = async (req, res, next) => {
   try {
-    const user_id = req.params.userId;
+    const user_id = req.query.userId;
 
     const order = await Order.findAll({
       where: {
@@ -98,13 +98,11 @@ const getAllOrderAdmin = async (req, res, next) => {
 const cancelOrder = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const order_id = req.body.orderId;
-    const user_id = req.params.userId;
+    const order_id = req.params.orderId;
 
     const order = await Order.findOne({
       where: {
         orderId: order_id,
-        userId: user_id,
       },
     });
 

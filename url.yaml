@@ -1,0 +1,12 @@
+cmd: node app.js
+cwd: /home/rinjaniv/test.rinjanivisitor.com
+env:
+  port: 3129
+log:
+  file: /home/rinjaniv/test.rinjanivisitor.com/nodejs.log
+  age: 86400
+  num: 3
+  size: 10
+  timestamp: true
+wait: 60
+retries: 3

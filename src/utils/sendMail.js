@@ -10,6 +10,17 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+// const transporter = nodemailer.createTransport({
+//   service: process.env.MAIL_SERVICE,
+//   host: process.env.MAIL_HOST,
+//   port: process.env.MAIL_PORT,
+//   secure: true, // Gunakan true jika menggunakan TLS
+//   auth: {
+//     user: process.env.MAIL_USER,
+//     pass: process.env.MAIL_PASS,
+//   },
+// });
+
 const createEmail = (email, token) => {
   return {
     from: process.env.MAIL_FROM,

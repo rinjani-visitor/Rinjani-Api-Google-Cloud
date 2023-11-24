@@ -23,14 +23,6 @@ const Rinjani = sequelize.define(
       type: Sequelize.STRING,
       allowNull: false,
     },
-    porter: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    guide: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
     note: {
       type: Sequelize.STRING,
       allowNull: true,

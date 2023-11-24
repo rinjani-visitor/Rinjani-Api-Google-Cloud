@@ -5,8 +5,8 @@ import { cancelOrder, getAllOrder, getAllOrderAdmin } from '../controllers/order
 
 const orderRouter = express.Router();
 
-orderRouter.get('/order/:userId', autenticate, getAllOrder);
+orderRouter.get('/order/', autenticate, getAllOrder);
 orderRouter.get('/admin/order', autenticate, getAllOrderAdmin); //admin
-orderRouter.patch('/order/:userId', autenticate, cancelOrder); 
+orderRouter.patch('/order/:orderId', autenticate, cancelOrder); 
 
 export default orderRouter;

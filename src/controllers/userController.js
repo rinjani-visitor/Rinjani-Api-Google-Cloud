@@ -57,7 +57,7 @@ const setUser = async (req, res, next) => {
     } else if (
       userExists.length > 0 &&
       !userExists[0].isActive &&
-      moment(userExists[0].expireTime).isAfter(moment())
+      moment(userExists[0].expireTime).isAfter(moment().tz('Asia/Makassar'))
     ) {
       return res.status(400).json({
         errors: ['Email already registered, please check your email'],
@@ -95,6 +95,8 @@ const setUser = async (req, res, next) => {
         data: null,
       });
     }
+
+    console.log("id user" + newUser.userId);
 
     const result = await sendMail(newUser.email, newUser.userId);
 

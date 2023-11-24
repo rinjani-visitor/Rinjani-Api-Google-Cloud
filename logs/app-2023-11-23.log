@@ -3,3 +3,23 @@
  [LOGGER] 2023-11-23 11:36:57.475 AM error : controllers/userController.js:setUser - connect ECONNREFUSED 142.251.10.108:465
  [LOGGER] 2023-11-23 11:37:37.514 AM error : controllers/userController.js:setUser - connect ECONNREFUSED 142.251.10.108:465
  [LOGGER] 2023-11-23 11:38:57.013 AM error : controllers/userController.js:setUser - connect ECONNREFUSED 142.251.10.108:465
+ [LOGGER] 2023-11-23 11:54:48.555 AM error : controllers/userController.js:setUser - connect ECONNREFUSED 74.125.130.109:465
+ [LOGGER] 2023-11-23 11:58:51.889 AM error : controllers/userController.js:setUser - connect ECONNREFUSED 74.125.130.109:465
+ [LOGGER] 2023-11-23 12:06:26.882 PM error : uncaughtException: Lock wait timeout exceeded; try restarting transaction
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.bulkDelete (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:403:12)
+    at async User.destroy (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:1838:16)
+ [LOGGER] 2023-11-23 12:06:26.957 PM error : controllers/userController.js:setUser - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-11-23 12:08:52.374 PM error : uncaughtException: Lock wait timeout exceeded; try restarting transaction
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.bulkDelete (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:403:12)
+    at async User.destroy (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:1838:16)
+ [LOGGER] 2023-11-23 12:08:52.444 PM error : controllers/userController.js:setUser - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-11-23 02:57:03.058 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'category')
+ [LOGGER] 2023-11-23 02:58:14.523 PM error : controllers/productController.js:getAllProducts - Cannot read properties of undefined (reading 'category')

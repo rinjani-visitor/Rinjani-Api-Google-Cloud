@@ -130,7 +130,7 @@ const setBooking = async (req, res, next) => {
 
 const getAllBooking = async (req, res, next) => {
   try {
-    const user_id = req.params.userId;
+    const user_id = req.query.userId;
 
     const result = await Booking.findAll({
       attributes: ['bookingId', 'bookingStatus', 'createdAt'],
@@ -192,8 +192,8 @@ const getAllBooking = async (req, res, next) => {
 const deleteBooking = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const user_id = req.params.userId;
-    const booking_id = req.body.bookingId;
+
+    const booking_id = req.params.bookingId;
 
     const checkBooking = await Booking.findOne({
       where: {

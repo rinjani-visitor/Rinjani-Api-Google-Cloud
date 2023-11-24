@@ -1,0 +1,44 @@
+ [LOGGER] 2023-11-24 03:34:31.770 PM error : uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:462:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/index.js:18:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-24 04:09:32.579 PM error : controllers/facilityController.js:addFacility - Unknown column 'add_ons_id' in 'field list'
+ [LOGGER] 2023-11-24 04:12:29.305 PM error : controllers/facilityController.js:addFacility - Unknown column 'add_ons_id' in 'field list'
+ [LOGGER] 2023-11-24 04:13:11.890 PM error : controllers/facilityController.js:addFacility - Unknown column 'add_ons_id' in 'field list'
+ [LOGGER] 2023-11-24 04:23:04.367 PM error : uncaughtException: add is not defined
+ReferenceError: add is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/addOnsRoute.js:13:53
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-24 04:23:12.492 PM error : uncaughtException: add is not defined
+ReferenceError: add is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/addOnsRoute.js:14:53
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-24 04:23:15.115 PM error : uncaughtException: add is not defined
+ReferenceError: add is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/addOnsRoute.js:14:53
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-24 04:25:13.648 PM error : controllers/productController.js:getRinjaniDetail - Unknown column 'AddOns.addOnName' in 'field list'
+ [LOGGER] 2023-11-24 04:32:28.844 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:33:07.099 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:33:08.342 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:33:08.508 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:33:08.670 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:33:08.821 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:33:53.952 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:35:51.739 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'AddOns' before initialization
+ [LOGGER] 2023-11-24 04:45:24.796 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:46:25.443 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:47:29.519 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:47:45.372 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:49:39.815 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:49:40.782 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:49:40.946 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:50:13.280 PM error : controllers/facilityController.js:addAddOns - Cannot add or update a child row: a foreign key constraint fails (`rinjani_db`.`product_addons`, CONSTRAINT `product_addons_ibfk_2` FOREIGN KEY (`add_ons_id`) REFERENCES `addons` (`add_ons_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-24 04:51:01.491 PM error : controllers/facilityController.js:addAddOns - Cannot add or update a child row: a foreign key constraint fails (`rinjani_db`.`product_addons`, CONSTRAINT `product_addons_ibfk_2` FOREIGN KEY (`add_ons_id`) REFERENCES `addons` (`add_ons_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-24 04:51:24.351 PM error : controllers/facilityController.js:addAddOns - Cannot add or update a child row: a foreign key constraint fails (`rinjani_db`.`product_addons`, CONSTRAINT `product_addons_ibfk_2` FOREIGN KEY (`add_ons_id`) REFERENCES `addons` (`add_ons_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-24 04:52:02.517 PM error : controllers/facilityController.js:addAddOns - Validation error
+ [LOGGER] 2023-11-24 04:54:23.068 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-24 04:55:16.633 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-24 04:55:25.397 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-24 04:55:57.300 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')

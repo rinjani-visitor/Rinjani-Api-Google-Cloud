@@ -13,6 +13,7 @@ import Booking from '../models/bookingModel.js';
 import Wisata from '../models/wisataModel.js';
 import EventModel from '../models/eventModel.js';
 import Review from '../models/reviewModel.js';
+import AddOnsModel from '../models/addOnsModel.js';
 import User from '../models/userModel.js';
 import { Op } from 'sequelize';
 
@@ -47,7 +48,10 @@ const setProduct = async (req, res, next) => {
         data: null,
       });
     } else {
-      const finalName = process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL + '/images/thumbnail/' + thumbnail;
+      const finalName =
+        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
+        '/images/thumbnail/' +
+        thumbnail;
       const result = await Product.create(
         {
           ...product.data,
@@ -143,7 +147,12 @@ const updateProduct = async (req, res, next) => {
 
 const getAllProducts = async (req, res, next) => {
   try {
-    const { category: categoryName, rating: ratingFilter, status: statusProduct } = req.query;
+    const {
+      category: categoryName,
+      rating: ratingFilter,
+      status: statusProduct,
+      title: titleFilter,
+    } = req.query;
 
     let whereCondition = {};
 
@@ -172,11 +181,20 @@ const getAllProducts = async (req, res, next) => {
       };
     }
 
+    if (titleFilter) {
+      whereCondition = {
+        ...whereCondition,
+        '$Product.title$': {
+          [Op.iLike]: `${titleFilter}%`, // Case-insensitive LIKE query
+        },
+      };
+    }
+
     const products = await Product.findAll({
       include: [
         {
           model: Category,
-          attributes: [], // Exclude category attributes from result
+          attributes: ['category'], // Exclude category attributes from result
           as: 'category', // Adjust alias to match the association
           where: whereCondition,
         },
@@ -200,6 +218,7 @@ const getAllProducts = async (req, res, next) => {
       location: product.location,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
+      category: product.category.category,
     }));
 
     return res.status(200).json({
@@ -208,7 +227,11 @@ const getAllProducts = async (req, res, next) => {
       data: formattedProducts,
     });
   } catch (error) {
-    next(new Error('controllers/productController.js:getAllProducts - ' + error.message));
+    next(
+      new Error(
+        'controllers/productController.js:getAllProducts - ' + error.message
+      )
+    );
   }
 };
 
@@ -279,8 +302,6 @@ const setRinjani = async (req, res, next) => {
     description: 'required',
     duration: 'required',
     program: 'required',
-    porter: 'required',
-    guide: 'required',
     productId: 'required',
   };
   try {
@@ -350,14 +371,7 @@ const getRinjaniDetail = async (req, res, next) => {
       include: [
         {
           model: Rinjani,
-          attributes: [
-            'description',
-            'duration',
-            'program',
-            'porter',
-            'guide',
-            'note',
-          ],
+          attributes: ['description', 'duration', 'program', 'note'],
         },
         {
           model: Foto,
@@ -371,6 +385,11 @@ const getRinjaniDetail = async (req, res, next) => {
         {
           model: Facility,
           attributes: ['facilityName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
+        {
+          model: AddOnsModel,
+          attributes: ['addOnsName'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
@@ -413,6 +432,7 @@ const getRinjaniDetail = async (req, res, next) => {
       category,
       subCategory,
       facilities,
+      AddOnsModels,
       Fotos,
       Reviews,
     } = rinjaniResult;
@@ -428,12 +448,11 @@ const getRinjaniDetail = async (req, res, next) => {
       description: rinjaniResult.Rinjani?.description || null,
       duration: rinjaniResult.Rinjani?.duration || null,
       program: rinjaniResult.Rinjani?.program || null,
-      porter: rinjaniResult.Rinjani?.porter || null,
-      guide: rinjaniResult.Rinjani?.guide || null,
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
       favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
+      addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: rinjaniResult.Rinjani?.note || null,
       createdAt,
       updatedAt,
@@ -540,6 +559,11 @@ const getHomeStayDetail = async (req, res, next) => {
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
+          model: AddOnsModel,
+          attributes: ['addOnsName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
+        {
           model: Review,
           attributes: ['rating', 'messageReview', 'createdAt'],
           include: [
@@ -579,6 +603,7 @@ const getHomeStayDetail = async (req, res, next) => {
       subCategory,
       HomeStays,
       facilities,
+      AddOnsModels,
       Fotos,
       Reviews,
     } = homeStayResult;
@@ -596,6 +621,7 @@ const getHomeStayDetail = async (req, res, next) => {
       description: HomeStays.length > 0 ? HomeStays[0].description : null,
       favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
+      addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: HomeStays.length > 0 ? HomeStays[0].note : null,
       createdAt,
       updatedAt,
@@ -713,6 +739,11 @@ const getWisataDetail = async (req, res, next) => {
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
+          model: AddOnsModel,
+          attributes: ['addOnsName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
+        {
           model: Review,
           attributes: ['rating', 'messageReview', 'createdAt'],
           include: [
@@ -754,6 +785,7 @@ const getWisataDetail = async (req, res, next) => {
       Fotos,
       Reviews,
       facilities,
+      AddOnsModels,
     } = wisataResult;
 
     const newFormat = {
@@ -770,6 +802,7 @@ const getWisataDetail = async (req, res, next) => {
         WisataAtributs.length > 0 ? WisataAtributs[0].description : null,
       favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
+      addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: WisataAtributs.length > 0 ? WisataAtributs[0].note : null,
       route: WisataAtributs.length > 0 ? WisataAtributs[0].route : null,
       createdAt,
@@ -890,6 +923,11 @@ const getEventDetail = async (req, res, next) => {
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
+          model: AddOnsModel,
+          attributes: ['addOnsName'],
+          through: { attributes: [] }, // Exclude join table attributes
+        },
+        {
           model: Review,
           attributes: ['rating', 'messageReview', 'createdAt'],
           include: [
@@ -931,6 +969,7 @@ const getEventDetail = async (req, res, next) => {
       Fotos,
       Reviews,
       facilities,
+      AddOnsModels,
     } = eventResult;
 
     const newFormat = {
@@ -946,6 +985,7 @@ const getEventDetail = async (req, res, next) => {
       description: eventData.length > 0 ? eventData[0].description : null,
       favoritedCount: favoriteCount,
       facilities: facilities.map((facility) => facility.facilityName),
+      addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: eventData.length > 0 ? eventData[0].note : null,
       date: eventData.length > 0 ? eventData[0].date : null,
       createdAt,
