@@ -18,7 +18,7 @@ const Favorites = sequelize.define(
         model: User,
         key: 'user_id',
       },
-      onDelete: 'RESTRICT',
+      onDelete: 'CASCADE',
       onUpdate: 'RESTRICT',
     },
     productId: {
@@ -27,7 +27,7 @@ const Favorites = sequelize.define(
         model: Product,
         key: 'product_id',
       },
-      onDelete: 'RESTRICT',
+      onDelete: 'CASCADE',
       onUpdate: 'RESTRICT',
     },
   },

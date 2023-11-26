@@ -1,4 +1,4 @@
 node_modules/
 Docker
-.env
+.env_last
 .dockerignore

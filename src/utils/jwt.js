@@ -33,10 +33,20 @@ const verifyAccessToken = (token) => {
   }
 };
 
+const getUserIdFromAccessToken = (token) => {
+  try {
+    const decodedToken = jsonWebToken.verify(token, process.env.JWT_SECERET);
+    return decodedToken;
+  } catch (error) {
+    return null;
+  }
+};
+
 export {
   generateAccessToken,
   generateRefreshToken,
   verifyRefreshToken,
   parseJWT,
   verifyAccessToken,
+  getUserIdFromAccessToken,
 };

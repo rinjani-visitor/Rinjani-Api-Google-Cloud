@@ -42,3 +42,17 @@ ReferenceError: add is not defined
  [LOGGER] 2023-11-24 04:55:16.633 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
  [LOGGER] 2023-11-24 04:55:25.397 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
  [LOGGER] 2023-11-24 04:55:57.300 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'map')
+ [LOGGER] 2023-11-24 10:27:44.790 PM error : uncaughtException: Dialect needs to be explicitly supplied as of v4.0.0
+Error: Dialect needs to be explicitly supplied as of v4.0.0
+    at new Sequelize (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:136:13)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/utils/db.js:4:19
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-24 10:28:09.892 PM error : uncaughtException: (conn=1350, no: 1213, SQLState: 40001) Deadlock found when trying to get lock; try restarting transaction
+sql: CREATE TABLE IF NOT EXISTS `product_addons` (`product_id` CHAR(36) BINARY , `add_ons_id` INTEGER , PRIMARY KEY (`product_id`, `add_ons_id`), FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE RESTRICT ON UPDATE RESTRICT, FOREIGN KEY (`add_ons_id`) REFERENCES `addOnsModel` (`add_ons_id`) ON DELETE RESTRICT ON UPDATE RESTRICT) ENGINE=InnoDB; - parameters:[]
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mariadb/query.js:53:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async product_addons.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)

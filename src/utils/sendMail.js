@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 //   service: process.env.MAIL_SERVICE,
 //   host: process.env.MAIL_HOST,
 //   port: process.env.MAIL_PORT,
-//   secure: true, // Gunakan true jika menggunakan TLS
+//   secure: true, 
 //   auth: {
 //     user: process.env.MAIL_USER,
 //     pass: process.env.MAIL_PASS,
@@ -28,11 +28,11 @@ const createEmail = (email, token) => {
     subject: 'Account Activation - Confirmation',
     html: `
       <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #3498db;">Account Activation</h2>
+        <h2 style="color: #32823A;">Account Activation</h2>
         <p>Welcome to Rinjani Visitor! To activate your account, please click the link below:</p>
 
         <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
-          <a href="${base_url}/api/users/activate/${token}" style="display: inline-block; padding: 10px 20px; background-color: #3498db; color: #ffffff; text-decoration: none; border-radius: 3px;">Activate Your Account</a>
+          <a href="${base_url}/api/users/activate/${token}" style="display: inline-block; padding: 10px 20px; background-color: #32823A; color: #ffffff; text-decoration: none; border-radius: 3px;">Activate Your Account</a>
         </div>
 
         <p style="margin-top: 20px;">If the button above does not work, you can also activate your account by copying and pasting the following link into your browser:</p>
@@ -54,7 +54,7 @@ const contentPwd = (email, password) => {
     subject: 'Password Reset Confirmation',
     html: `
       <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #3498db;">Password Reset Confirmation</h2>
+        <h2 style="color: #32823A;">Password Reset Confirmation</h2>
         <p>We received a request to reset your account password. Below are your new login details:</p>
 
         <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
@@ -90,7 +90,7 @@ const bookingSuccess = (email, bookingDetails) => {
     subject: 'Booking Confirmation - Payment Successful',
     html: `
       <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #3498db;">Booking Confirmation</h2>
+        <h2 style="color: #32823A;">Booking Confirmation</h2>
         <p>Dear ${name},</p>
         <p>Congratulations! Your payment has been successfully processed, and your booking is confirmed.</p>
 
@@ -168,7 +168,7 @@ const waitingForPaymentMail = (email, paymentDetails) => {
     subject: 'Waiting for Payment',
     html: `
       <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #3498db;">Payment Status Update</h2>
+        <h2 style="color: #32823A;">Payment Status Update</h2>
         <p>Hi ${name},</p>
         <p>Your offering has been approved. Please proceed with the payment to complete this booking.</p>
 
@@ -214,7 +214,7 @@ const sendMail = (email, token) => {
   return new Promise((resolve, reject) => {
     transporter.sendMail(createEmail(email, token), (err, info) => {
       if (err) {
-        console.log(err);
+        console.error('Error sending email:', err);
         reject(err);
       } else {
         console.log('Email sent (sendMail): ' + info.response);

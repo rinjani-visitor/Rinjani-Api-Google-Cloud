@@ -8,9 +8,14 @@ import { compare } from '../utils/bcrypt.js';
 import {
   generateAccessToken,
   generateRefreshToken,
+  getUserIdFromAccessToken,
   parseJWT,
   verifyRefreshToken,
 } from '../utils/jwt.js';
+import {
+  userActivatedHtml,
+  userNotFoundHtml,
+} from '../utils/responActivation.js';
 import { isExists } from '../validation/sanitization.js';
 import { Entropy, charset32 } from 'entropy-string';
 import Favorites from '../models/favoritesModel.js';
@@ -80,7 +85,7 @@ const setUser = async (req, res, next) => {
     const newUser = await User.create(
       {
         ...user.data,
-        expireTime: moment().tz('Asia/Makassar').toDate(),
+        expireTime: moment().add(1, 'hours').tz('Asia/Makassar').toDate(),
       },
       {
         transaction: t,
@@ -96,7 +101,7 @@ const setUser = async (req, res, next) => {
       });
     }
 
-    console.log("id user" + newUser.userId);
+    console.log('id user' + newUser.userId);
 
     const result = await sendMail(newUser.email, newUser.userId);
 
@@ -139,23 +144,18 @@ const setActivateUser = async (req, res, next) => {
       },
     });
     if (!user) {
-      return res.status(404).json({
-        errors: ['User not found or expired'],
-        message: 'Activate User Failed',
-        data: null,
-      });
+      return res.status(404).send(userNotFoundHtml);
     } else {
+      const userName = user.name;
+      const userEmail = user.email;
+
       user.isActive = true;
       user.expireTime = null;
       await user.save();
-      return res.status(200).json({
-        errors: [],
-        message: 'User activated successfully',
-        data: {
-          name: user.name,
-          email: user.email,
-        },
-      });
+
+      const userActivatedResponse = userActivatedHtml(userName, userEmail);
+
+      return res.status(200).send(userActivatedResponse);
     }
   } catch (error) {
     next(
@@ -165,7 +165,6 @@ const setActivateUser = async (req, res, next) => {
     );
   }
 };
-
 
 const getUser = async (req, res, next) => {
   try {
@@ -315,7 +314,14 @@ const setRefreshToken = async (req, res, next) => {
         userId: user.userId,
         name: user.name,
         email: user.email,
+        role: 'user', //default role user 
       };
+
+      const adminEmail = 'muhfirdaus0805@gmail.com';
+      if (req.url.includes('/admin') && usr.email === adminEmail) {
+        usr.role = 'admin';
+      }
+
       const token = generateAccessToken(usr);
       const refreshToken = generateRefreshToken(usr);
       return res.status(200).json({
@@ -547,7 +553,7 @@ const forgotPassword = async (req, res, next) => {
 const favorite = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const user_id = req.body.userId;
+    const user_id = req.params.userId;
     const product_id = req.body.productId;
 
     if (!user_id || !product_id) {
@@ -605,7 +611,7 @@ const favorite = async (req, res, next) => {
     return res.status(201).json({
       errors: [],
       message: 'Favorite successfully',
-      data: result,
+      data: result
     });
   } catch (error) {
     await t.rollback();
@@ -617,7 +623,7 @@ const favorite = async (req, res, next) => {
 
 const getAllFavorite = async (req, res, next) => {
   try {
-    const user_id = req.body.userId;
+    const user_id = req.params.userId;
     const checkUser = await User.findOne({
       where: {
         userId: user_id,

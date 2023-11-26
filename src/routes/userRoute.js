@@ -25,6 +25,7 @@ userRouter.get('/users/activate/:id', setActivateUser);
 userRouter.post('/users/login', setLogin);
 
 userRouter.post('/admin/login', setLogin); //admin
+userRouter.get('/admin/refresh', setRefreshToken); //admin
 
 userRouter.patch('/users/:id', autenticate, updateUser);
 userRouter.patch(
@@ -36,7 +37,7 @@ userRouter.patch(
 userRouter.delete('/users/:id', autenticate, deleteUser);
 userRouter.post('/users/forgot-password', forgotPassword);
 
-userRouter.post('/users/favorite', autenticate, favorite);
-userRouter.get('/users/favorite/all', autenticate, getAllFavorite);
+userRouter.post('/users/:userId/favorite', autenticate, favorite);
+userRouter.get('/users/:userId/favorite', autenticate, getAllFavorite);
 
 export default userRouter;

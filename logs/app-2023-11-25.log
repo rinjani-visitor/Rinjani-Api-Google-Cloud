@@ -1,0 +1,2 @@
+ [LOGGER] 2023-11-25 04:14:51.713 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization
+ [LOGGER] 2023-11-25 04:15:25.870 AM error : controllers/productController.js:getRinjaniDetail - Cannot access 'Rinjani' before initialization

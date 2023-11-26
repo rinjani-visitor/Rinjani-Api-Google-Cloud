@@ -1,0 +1,87 @@
+ [LOGGER] 2023-11-26 12:28:08.454 AM error : uncaughtException: Dialect needs to be explicitly supplied as of v4.0.0
+Error: Dialect needs to be explicitly supplied as of v4.0.0
+    at new Sequelize (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:136:13)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/utils/db.js:4:19
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-26 12:38:02.996 AM error : controllers/productController.js:setProduct - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`product`, CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-26 02:34:21.992 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:34:35.083 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:36:08.606 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:36:31.376 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:38:39.459 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:40:15.969 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:40:17.453 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:40:17.695 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:40:56.693 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-11-26 02:40:59.593 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-11-26 02:45:44.421 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:47:31.116 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 172.217.194.109:465
+ [LOGGER] 2023-11-26 02:52:39.604 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 64.233.170.108:465
+ [LOGGER] 2023-11-26 03:25:44.126 PM error : controllers/userController.js:setUser - connect ECONNREFUSED 74.125.24.109:465
+ [LOGGER] 2023-11-26 03:30:50.247 PM error : controllers/productController.js:setProduct - Cannot read properties of undefined (reading 'filename')
+ [LOGGER] 2023-11-26 03:41:23.184 PM error : controllers/userController.js:avatarUser - Cannot read properties of undefined (reading 'filename')
+ [LOGGER] 2023-11-26 03:47:19.172 PM error : controllers/userController.js:favorite - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`favorites`, CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-26 03:48:37.138 PM error : controllers/userController.js:favorite - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`favorites`, CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-26 03:57:03.965 PM error : controllers/userController.js:favorite - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`favorites`, CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-26 04:09:35.036 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:10:43.025 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:11:22.440 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:11:23.756 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:14:33.890 PM error : controllers/productController.js:setRinjani - Data too long for column 'description' at row 1
+ [LOGGER] 2023-11-26 04:16:11.650 PM error : uncaughtException: Unrecognized datatype for attribute "Wisata.description"
+Error: Unrecognized datatype for attribute "Wisata.description"
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:726:15
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13469:38
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:4967:15
+    at baseForOwn (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:3032:24)
+    at Function.mapValues (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/lodash/lodash.js:13468:7)
+    at Wisata.init (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:723:28)
+    at Sequelize.define (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:225:11)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/wisataModel.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-26 04:19:06.815 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:19:52.701 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:20:22.765 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:20:24.255 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-26 04:21:41.008 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'RinjaniModel' before initialization
+ [LOGGER] 2023-11-26 04:22:05.852 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'RinjaniModel' before initialization
+ [LOGGER] 2023-11-26 04:22:40.060 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'RinjaniModel' before initialization
+ [LOGGER] 2023-11-26 04:25:02.984 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'RinjaniModel' before initialization
+ [LOGGER] 2023-11-26 04:27:19.243 PM error : uncaughtException: Rin is not defined
+ReferenceError: Rin is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/productController.js:364:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-26 04:28:05.655 PM error : uncaughtException: RinjaniModel is not defined
+ReferenceError: RinjaniModel is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/productController.js:364:22
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-26 04:33:56.148 PM error : uncaughtException: setRefreshTokenAdmin is not defined
+ReferenceError: setRefreshTokenAdmin is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:28:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-26 05:30:26.061 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'slice')
+ [LOGGER] 2023-11-26 05:32:22.499 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'slice')
+ [LOGGER] 2023-11-26 05:32:43.029 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'slice')
+ [LOGGER] 2023-11-26 05:33:25.855 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'slice')
+ [LOGGER] 2023-11-26 05:35:01.004 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'slice')
+ [LOGGER] 2023-11-26 05:37:13.179 PM error : controllers/productController.js:getRinjaniDetail - getUserIdFromAccessToken is not defined
+ [LOGGER] 2023-11-26 05:44:59.287 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 05:45:55.145 PM error : controllers/productController.js:getHomeStayDetail - id is not defined
+ [LOGGER] 2023-11-26 05:46:16.712 PM error : controllers/productController.js:getHomeStayDetail - id is not defined
+ [LOGGER] 2023-11-26 05:46:35.106 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 05:47:13.519 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 05:47:14.816 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 05:48:17.242 PM error : controllers/productController.js:getHomeStayDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:03:25.078 PM error : controllers/productController.js:getHomeStayDetail - product_id is not defined
+ [LOGGER] 2023-11-26 06:05:07.486 PM error : controllers/productController.js:getHomeStayDetail - WHERE parameter "product_id" has invalid "undefined" value
+ [LOGGER] 2023-11-26 06:07:36.928 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:08:44.861 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:12:39.057 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:12:40.784 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:12:47.764 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:12:49.486 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:13:58.160 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:14:09.132 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:14:10.342 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:14:35.573 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')
+ [LOGGER] 2023-11-26 06:16:12.122 PM error : controllers/productController.js:getWisataDetail - Cannot read properties of null (reading 'userId')

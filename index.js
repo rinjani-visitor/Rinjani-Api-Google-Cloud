@@ -11,7 +11,7 @@ import url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 9001;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use('/images', express.static(path.join(__dirname, './public/images')));
 
 //open API docs
 const options = {
@@ -51,7 +51,7 @@ app.use(appMiddleware);
 //FOR DEV
 
 app.listen(PORT, () => {
-  console.log(`Server running on ${process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL}:${PORT}`);
+  console.log(`Server running on ${process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL}`);
 });
 
 //FOR PROD

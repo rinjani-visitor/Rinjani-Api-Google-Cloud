@@ -1,8 +1,8 @@
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
-import Product from '../models/productModel.js';
 import { isExists } from '../validation/sanitization.js';
-import Rinjani from '../models/RinjaniModel.js';
+import Product from '../models/productModel.js';
+import RinjaniModel from '../models/rinjaniPackageModel.js';
 import Foto from '../models/fotoModel.js';
 import HomeStay from '../models/HomeStayModel.js';
 import Favorites from '../models/favoritesModel.js';
@@ -16,6 +16,9 @@ import Review from '../models/reviewModel.js';
 import AddOnsModel from '../models/addOnsModel.js';
 import User from '../models/userModel.js';
 import { Op } from 'sequelize';
+import { getUserIdFromAccessToken, verifyAccessToken } from '../utils/jwt.js';
+
+const modelRinjani = RinjaniModel;
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -185,7 +188,7 @@ const getAllProducts = async (req, res, next) => {
       whereCondition = {
         ...whereCondition,
         '$Product.title$': {
-          [Op.iLike]: `${titleFilter}%`, // Case-insensitive LIKE query
+          [Op.like]: `${titleFilter}%`, // Case-insensitive LIKE query
         },
       };
     }
@@ -203,7 +206,7 @@ const getAllProducts = async (req, res, next) => {
     });
 
     if (!products || products.length === 0) {
-      return res.status(404).json({
+      return res.status(200).json({
         errors: ['Product not found'],
         message: 'Get All Product Failed',
         data: null,
@@ -326,7 +329,7 @@ const setRinjani = async (req, res, next) => {
         data: null,
       });
     }
-    const newRinjani = await Rinjani.create(
+    const newRinjani = await RinjaniModel.create(
       {
         ...rinjani.data,
         productId: req.body.productId,
@@ -363,14 +366,29 @@ const setRinjani = async (req, res, next) => {
 
 const getRinjaniDetail = async (req, res, next) => {
   try {
-    const product_id = req.params.product_id;
+    const id_product = req.params.product_id;
+
+    const checkRinjani = await modelRinjani.findOne({
+      where: {
+        productId: id_product,
+      },
+    });
+
+    if (!checkRinjani) {
+      return res.status(404).json({
+        errors: ['Rinjani Product not found'],
+        message: 'Get Rinjani Detail Failed',
+        data: null,
+      });
+    }
+
     const rinjaniResult = await Product.findOne({
       where: {
-        productId: product_id,
+        productId: id_product,
       },
       include: [
         {
-          model: Rinjani,
+          model: modelRinjani,
           attributes: ['description', 'duration', 'program', 'note'],
         },
         {
@@ -413,9 +431,31 @@ const getRinjaniDetail = async (req, res, next) => {
       });
     }
 
+    const authHeader = req.headers['authorization'];
+    let favorited;
+    if (!authHeader) {
+      favorited = null;
+    } else {
+      const token = authHeader && authHeader.split(' ')[1];
+      const user = verifyAccessToken(token);
+      if (!user) {
+        favorited = null;
+      } else {
+        const tokenInfo = getUserIdFromAccessToken(token);
+        const id_user = tokenInfo.userId;
+        const checkFavoritedUser = await Favorites.findOne({
+          where: {
+            productId: id_product,
+            userId: id_user,
+          },
+        });
+        checkFavoritedUser ? (favorited = true) : (favorited = false);
+      }
+    }
+
     const favoriteCount = await Favorites.count({
       where: {
-        productId: product_id,
+        productId: id_product,
       },
     });
 
@@ -432,6 +472,7 @@ const getRinjaniDetail = async (req, res, next) => {
       category,
       subCategory,
       facilities,
+      RinjaniModel,
       AddOnsModels,
       Fotos,
       Reviews,
@@ -445,15 +486,16 @@ const getRinjaniDetail = async (req, res, next) => {
       location,
       lowestPrice,
       thumbnail,
-      description: rinjaniResult.Rinjani?.description || null,
-      duration: rinjaniResult.Rinjani?.duration || null,
-      program: rinjaniResult.Rinjani?.program || null,
+      description: RinjaniModel.description,
+      duration: RinjaniModel.duration,
+      program: RinjaniModel.program,
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
       favoritedCount: favoriteCount,
+      userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
-      note: rinjaniResult.Rinjani?.note || null,
+      note: RinjaniModel.note,
       createdAt,
       updatedAt,
       Fotos,
@@ -534,10 +576,25 @@ const setHomeStay = async (req, res, next) => {
 
 const getHomeStayDetail = async (req, res, next) => {
   try {
-    const id = req.params.product_id;
+    const id_product = req.params.product_id;
+
+    const checkHomeStay = await HomeStay.findOne({
+      where: {
+        productId: id_product,
+      },
+    });
+
+    if (!checkHomeStay) {
+      return res.status(404).json({
+        errors: ['Home Stay Product not found'],
+        message: 'Get Home Stay Detail Failed',
+        data: null,
+      });
+    }
+
     const homeStayResult = await Product.findOne({
       where: {
-        productId: id,
+        productId: id_product,
       },
       include: [
         {
@@ -584,9 +641,31 @@ const getHomeStayDetail = async (req, res, next) => {
       });
     }
 
+    const authHeader = req.headers['authorization'];
+    let favorited;
+    if (!authHeader) {
+      favorited = null;
+    } else {
+      const token = authHeader && authHeader.split(' ')[1];
+      const user = verifyAccessToken(token);
+      if (!user) {
+        favorited = null;
+      } else {
+        const tokenInfo = getUserIdFromAccessToken(token);
+        const id_user = tokenInfo.userId;
+        const checkFavoritedUser = await Favorites.findOne({
+          where: {
+            productId: id_product,
+            userId: id_user,
+          },
+        });
+        checkFavoritedUser ? (favorited = true) : (favorited = false);
+      }
+    }
+
     const favoriteCount = await Favorites.findAndCountAll({
       where: {
-        productId: id,
+        productId: id_product,
       },
     });
 
@@ -619,7 +698,8 @@ const getHomeStayDetail = async (req, res, next) => {
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
       description: HomeStays.length > 0 ? HomeStays[0].description : null,
-      favoritedCount: favoriteCount,
+      favoritedCount: favoriteCount.count,
+      userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: HomeStays.length > 0 ? HomeStays[0].note : null,
@@ -714,10 +794,25 @@ const setWisata = async (req, res, next) => {
 
 const getWisataDetail = async (req, res, next) => {
   try {
-    const id = req.params.product_id;
+    const id_product = req.params.product_id;
+
+    const checkWisata = await Wisata.findOne({
+      where: {
+        productId: id_product,
+      },
+    });
+
+    if (!checkWisata) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Get Product Wisata Detail Failed',
+        data: null,
+      });
+    }
+
     const wisataResult = await Product.findOne({
       where: {
-        productId: id,
+        productId: id_product,
       },
       include: [
         {
@@ -764,9 +859,31 @@ const getWisataDetail = async (req, res, next) => {
       });
     }
 
+    const authHeader = req.headers['authorization'];
+    let favorited;
+    if (!authHeader) {
+      favorited = null;
+    } else {
+      const token = authHeader && authHeader.split(' ')[1];
+      const user = verifyAccessToken(token);
+      if (!user) {
+        favorited = null;
+      } else {
+        const tokenInfo = getUserIdFromAccessToken(token);
+        const id_user = tokenInfo.userId;
+        const checkFavoritedUser = await Favorites.findOne({
+          where: {
+            productId: id_product,
+            userId: id_user,
+          },
+        });
+        checkFavoritedUser ? (favorited = true) : (favorited = false);
+      }
+    }
+
     const favoriteCount = await Favorites.findAndCountAll({
       where: {
-        productId: id,
+        productId: id_product,
       },
     });
 
@@ -800,7 +917,8 @@ const getWisataDetail = async (req, res, next) => {
       subCategory: subCategory ? subCategory.subCategory : null,
       description:
         WisataAtributs.length > 0 ? WisataAtributs[0].description : null,
-      favoritedCount: favoriteCount,
+      favoritedCount: favoriteCount.count,
+      userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: WisataAtributs.length > 0 ? WisataAtributs[0].note : null,
@@ -837,7 +955,8 @@ const setEvent = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
     description: 'required',
-    date: 'required',
+    startDate: 'required',
+    endDate: 'required',
     productId: 'required',
   };
   try {
@@ -898,15 +1017,15 @@ const setEvent = async (req, res, next) => {
 
 const getEventDetail = async (req, res, next) => {
   try {
-    const id = req.params.product_id;
+    const id_product = req.params.product_id;
     const eventResult = await Product.findOne({
       where: {
-        productId: id,
+        productId: id_product,
       },
       include: [
         {
           model: EventModel,
-          attributes: ['description', 'date', 'note'],
+          attributes: ['description', 'startDate', 'endDate', 'note'],
         },
         {
           model: Foto,
@@ -948,9 +1067,31 @@ const getEventDetail = async (req, res, next) => {
       });
     }
 
+    const authHeader = req.headers['authorization'];
+    let favorited;
+    if (!authHeader) {
+      favorited = null;
+    } else {
+      const token = authHeader && authHeader.split(' ')[1];
+      const user = verifyAccessToken(token);
+      if (!user) {
+        favorited = null;
+      } else {
+        const tokenInfo = getUserIdFromAccessToken(token);
+        const id_user = tokenInfo.userId;
+        const checkFavoritedUser = await Favorites.findOne({
+          where: {
+            productId: id_product,
+            userId: id_user,
+          },
+        });
+        checkFavoritedUser ? (favorited = true) : (favorited = false);
+      }
+    }
+
     const favoriteCount = await Favorites.findAndCountAll({
       where: {
-        productId: id,
+        productId: id_product,
       },
     });
 
@@ -984,6 +1125,7 @@ const getEventDetail = async (req, res, next) => {
       subCategory: subCategory ? subCategory.subCategory : null,
       description: eventData.length > 0 ? eventData[0].description : null,
       favoritedCount: favoriteCount,
+      userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: eventData.length > 0 ? eventData[0].note : null,

@@ -16,10 +16,6 @@ const Booking = sequelize.define(
       type: Sequelize.DATE,
       allowNull: false,
     },
-    endDateTime: {
-      type: Sequelize.DATE,
-      allowNull: true,
-    },
     offeringPrice: {
       type: Sequelize.FLOAT,
       allowNull: false,

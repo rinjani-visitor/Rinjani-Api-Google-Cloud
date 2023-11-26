@@ -12,7 +12,7 @@ const Wisata = sequelize.define(
       allowNull: false,
     },
     description: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: false,
     },
     route: {
@@ -20,7 +20,7 @@ const Wisata = sequelize.define(
       allowNull: true,
     },
     note: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: true,
     },
   },

@@ -1,9 +1,9 @@
 cmd: node app.js
-cwd: /home/rinjaniv/test.rinjanivisitor.com
+cwd: /home/rinjaniv/api-v5.rinjanivisitor.com
 env:
-  port: 3129
+  port: 8080
 log:
-  file: /home/rinjaniv/test.rinjanivisitor.com/nodejs.log
+  file: /home/rinjaniv/api-v5.rinjanivisitor.com/nodejs.log
   age: 86400
   num: 3
   size: 10
