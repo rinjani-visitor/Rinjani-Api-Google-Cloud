@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 //   service: process.env.MAIL_SERVICE,
 //   host: process.env.MAIL_HOST,
 //   port: process.env.MAIL_PORT,
-//   secure: true, 
+//   secure: true,
 //   auth: {
 //     user: process.env.MAIL_USER,
 //     pass: process.env.MAIL_PASS,
@@ -155,6 +155,106 @@ const bookingFailed = (email, bookingDetails) => {
   };
 };
 
+const bookingConfirmationAdmin = (emailTo, bookingDetails) => {
+  const {
+    title,
+    name,
+    country,
+    email,
+    phoneNumber,
+    bookingId,
+    startDateTime,
+    endDateTime,
+    offeringPrice,
+    addOns,
+    totalPersons,
+    createdAt,
+    updatedAt,
+    bookingStatus,
+    note,
+  } = bookingDetails;
+
+  return {
+    from: process.env.MAIL_FROM,
+    to: emailTo,
+    subject: 'Booking Confirmation - Reservation Successful',
+    html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #32823A;">Booking Confirmation (Offering)</h2>
+        <p>Dear Admin,</p>
+        <p>Booking has been successfully confirmed. Please find the details below:</p>
+
+        <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 20px;">
+          <h3>Booking Details:</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Product Title:</strong> ${title}</li>
+            <li><strong>Customer Name:</strong> ${name}</li>
+            <li><strong>Customer Country:</strong> ${country}</li>
+            <li><strong>Customer Email:</strong> ${email}</li>
+            <li><strong>Customer Phone Number:</strong> ${phoneNumber}</li>
+            <li><strong>Booking ID:</strong> ${bookingId}</li>
+            <li><strong>Start Date and Time:</strong> ${startDateTime}</li>
+            <li><strong>End Date and Time:</strong> ${endDateTime}</li>
+            <li><strong>Offering Price:</strong> ${offeringPrice}</li>
+            <li><strong>AddOns:</strong> ${addOns}</li>
+            <li><strong>Total Persons:</strong> ${totalPersons}</li>
+            <li><strong>Created At:</strong> ${createdAt}</li>
+            <li><strong>Updated At:</strong> ${updatedAt}</li>
+            <li><strong>Booking Status:</strong> ${bookingStatus}</li>
+            <li><strong>Note:</strong> ${note}</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 20px;">Thank you for reading this email. If you have any questions or need further assistance, feel free to contact us.</p>
+
+        <p style="margin-top: 20px;">Customer Service Team!</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+  };
+};
+
+const updateBookingConfirmation = (emailTo, updatedBookingDetails) => {
+  const { title, name, country, email, phoneNumber, startDateTime, endDateTime, addOns, offeringPrice, totalPersons } =
+    updatedBookingDetails;
+
+  return {
+    from: process.env.MAIL_FROM,
+    to: emailTo,
+    subject: 'Booking Update Confirmation - Changes Successful',
+    html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #32823A;">Booking Update Confirmation</h2>
+        <p>Dear Admin,</p>
+        <p>Booking has been successfully updated. Please find the updated details below:</p>
+
+        <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 20px;">
+          <h3>Updated Booking Details:</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Product Title:</strong> ${title}</li>
+            <li><strong>Customer Name:</strong> ${name}</li>
+            <li><strong>Customer Country:</strong> ${country}</li>
+            <li><strong>Customer Email:</strong> ${email}</li>
+            <li><strong>Customer Phone Number:</strong> ${phoneNumber}</li>
+            <li><strong>Start Date and Time:</strong> ${startDateTime}</li>
+            <li><strong>End Date and Time:</strong> ${endDateTime}</li>
+            <li><strong>AddOns:</strong> ${addOns}</li>
+            <li><strong>Offering Price:</strong> ${offeringPrice}</li>
+            <li><strong>Total Persons:</strong> ${totalPersons}</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 20px;">Thank you for reading this update. If you have any questions or need further assistance, feel free to contact us.</p>
+
+        <p style="margin-top: 20px;">Customer Service Team!</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+  };
+};
+
 const waitingForPaymentMail = (email, paymentDetails) => {
   const { name, title, bookingId, bookingDate, tax, subTotal, total } =
     paymentDetails;
@@ -203,6 +303,94 @@ const waitingForPaymentMail = (email, paymentDetails) => {
         <p style="margin-top: 20px;">You can also check your payment details in your profile.</p>
 
         <p style="margin-top: 20px;">Thank you for choosing our service. If you have any questions, feel free to contact us.</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+  };
+};
+
+const wisePaymentConfirmation = (email, paymentDetails) => {
+  const {
+    paymentId,
+    bookingId,
+    method,
+    wiseEmail,
+    wiseAccountName,
+    imageProofTransfer,
+    createdAt,
+  } = paymentDetails;
+
+  return {
+    from: process.env.MAIL_FROM,
+    to: email,
+    subject: 'Payment Confirmation - Wise Transfer (Need Review)',
+    html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #32823A;">Payment Confirmation (Need Review)</h2>
+        <p>Dear Admin,</p>
+        <p>Payment via Wise has been successfully transfered. Please find the details below to review:</p>
+
+        <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 20px;">
+          <h3>Payment Details:</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Payment ID:</strong> ${paymentId}</li>
+            <li><strong>Booking ID:</strong> ${bookingId}</li>
+            <li><strong>Method:</strong> ${method}</li>
+            <li><strong>Wise Email:</strong> ${wiseEmail}</li>
+            <li><strong>Wise Account Name:</strong> ${wiseAccountName}</li>
+            <li><strong>Image Proof of Transfer:</strong> ${imageProofTransfer}</li>
+            <li><strong>Created At:</strong> ${createdAt}</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 20px;">Thank you for reading. If you have any questions or need further assistance, feel free to contact us.</p>
+
+        <p style="margin-top: 20px;">Customer Service Team!</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+  };
+};
+
+const bankPaymentConfirmation = (email, paymentDetails) => {
+  const {
+    paymentId,
+    bookingId,
+    method,
+    bankName,
+    bankAccountName,
+    imageProofTransfer,
+    createdAt,
+  } = paymentDetails;
+
+  return {
+    from: process.env.MAIL_FROM,
+    to: email,
+    subject: 'Payment Confirmation - Bank Transfer (Need Review)',
+    html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #32823A;">Payment Confirmation (Need Review)</h2>
+        <p>Dear Admin,</p>
+        <p>Payment via Bank has been successfully transfered. Please find the details below to review:</p>
+
+        <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 20px;">
+          <h3>Payment Details:</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Payment ID:</strong> ${paymentId}</li>
+            <li><strong>Booking ID:</strong> ${bookingId}</li>
+            <li><strong>Method:</strong> ${method}</li>
+            <li><strong>Bank Name:</strong> ${bankName}</li>
+            <li><strong>Bank Account Name:</strong> ${bankAccountName}</li>
+            <li><strong>Image Proof of Transfer:</strong> ${imageProofTransfer}</li>
+            <li><strong>Created At:</strong> ${createdAt}</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 20px;">Thank you for reading. If you have any questions or need further assistance, feel free to contact us.</p>
+
+        <p style="margin-top: 20px;">Customer Service Team!</p>
 
         <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
       </div>
@@ -283,10 +471,82 @@ const sendPayment = (email, paymentDetails) => {
   });
 };
 
+const sendWisePaymentToAdmin = (email, paymentDetails) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(
+      wisePaymentConfirmation(email, paymentDetails),
+      (err, info) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log('Email sent (sendPayment): ' + info.response);
+          resolve(true);
+        }
+      }
+    );
+  });
+};
+
+const sendBankPaymentToAdmin = (email, paymentDetails) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(
+      bankPaymentConfirmation(email, paymentDetails),
+      (err, info) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log('Email sent (sendPayment): ' + info.response);
+          resolve(true);
+        }
+      }
+    );
+  });
+};
+
+const sendBookingOfferingToAdmin = (email, paymentDetails) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(
+      bookingConfirmationAdmin(email, paymentDetails),
+      (err, info) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log('Email sent (sendPayment): ' + info.response);
+          resolve(true);
+        }
+      }
+    );
+  });
+};
+
+const sendUpdateBookingOfferingToAdmin = (email, paymentDetails) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(
+      updateBookingConfirmation(email, paymentDetails),
+      (err, info) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log('Email sent (sendPayment): ' + info.response);
+          resolve(true);
+        }
+      }
+    );
+  });
+};
+
 export {
   sendMail,
   sendPassword,
   sendBookingSuccess,
   sendBookingFailed,
   sendPayment,
+  sendWisePaymentToAdmin,
+  sendBankPaymentToAdmin,
+  sendBookingOfferingToAdmin,
+  sendUpdateBookingOfferingToAdmin,
 };

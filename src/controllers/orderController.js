@@ -1,10 +1,14 @@
 import Order from '../models/orderModel.js';
 import Product from '../models/productModel.js';
 import User from '../models/userModel.js';
+import { getUserIdFromAccessToken } from '../utils/jwt.js';
 
 const getAllOrder = async (req, res, next) => {
   try {
-    const user_id = req.query.userId;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
 
     const order = await Order.findAll({
       where: {

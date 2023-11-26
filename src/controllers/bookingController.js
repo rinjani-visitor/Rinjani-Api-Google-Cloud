@@ -7,7 +7,12 @@ import { Op } from 'sequelize';
 import { isExists } from '../validation/sanitization.js';
 import Payment from '../models/paymentModel.js';
 import 'dotenv/config';
-import { sendPayment } from '../utils/sendMail.js';
+import {
+  sendBookingOfferingToAdmin,
+  sendPayment,
+  sendUpdateBookingOfferingToAdmin,
+} from '../utils/sendMail.js';
+import { getUserIdFromAccessToken } from '../utils/jwt.js';
 
 const note = {
   offering:
@@ -68,7 +73,6 @@ const setBooking = async (req, res, next) => {
     totalPersons: 'required, isDecimal',
   };
   try {
-
     const booking = await dataValid(valid, req.body);
 
     if (booking.message.length > 0) {
@@ -99,12 +103,29 @@ const setBooking = async (req, res, next) => {
 
     await t.commit();
 
+    const user = await User.findOne({
+      where: {
+        userId: newBooking.userId,
+      },
+      attributes: ['name', 'country', 'email', 'phoneNumber'],
+    });
+
+    const product = await Product.findOne({
+      where: {
+        productId: newBooking.productId,
+      },
+      attributes: ['title'],
+    });
+
     const formatBooking = {
-      productId: newBooking.productId,
-      userId: newBooking.userId,
+      title: product.title,
+      name: user.name,
+      country: user.country ? user.country : null,
+      email: user.email,
+      phoneNumber: user.phoneNumber ? user.phoneNumber : null,
       bookingId: newBooking.bookingId,
       startDateTime: newBooking.startDateTime,
-      endDateTime: newBooking.endDateTime,
+      endDateTime: newBooking.endDateTime ? newBooking.endDateTime : null,
       offeringPrice: newBooking.offeringPrice,
       addOns: newBooking.addOns,
       totalPersons: newBooking.totalPersons,
@@ -114,9 +135,24 @@ const setBooking = async (req, res, next) => {
       note: note.offering,
     };
 
+    const sendPaymentMail = await sendBookingOfferingToAdmin(
+      process.env.ADMIN_EMAIL,
+      formatBooking
+    );
+
+    if (!sendPaymentMail) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Email booking confirmation failed to send to Admin'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
+
     return res.status(200).json({
       errors: [],
-      message: 'Booking successfully',
+      message:
+        'Booking successfully, email confirmation has been sent to Admin',
       data: formatBooking,
     });
   } catch (error) {
@@ -130,7 +166,10 @@ const setBooking = async (req, res, next) => {
 
 const getAllBooking = async (req, res, next) => {
   try {
-    const user_id = req.query.userId;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
 
     const result = await Booking.findAll({
       attributes: ['bookingId', 'bookingStatus', 'createdAt'],
@@ -192,13 +231,11 @@ const getAllBooking = async (req, res, next) => {
 const deleteBooking = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-
     const booking_id = req.params.bookingId;
 
     const checkBooking = await Booking.findOne({
       where: {
         bookingId: booking_id,
-        userId: user_id,
         bookingStatus: {
           [Op.or]: [status[0], status[2], status[4]],
         },
@@ -207,7 +244,9 @@ const deleteBooking = async (req, res, next) => {
 
     if (!checkBooking) {
       return res.status(404).json({
-        errors: ['No booking found or cannot delete booking with status waiting for payment, payment reviewing or success'],
+        errors: [
+          'No booking found or cannot delete booking with status waiting for payment, payment reviewing or success',
+        ],
         message: 'Delete Booking Failed',
         data: null,
       });
@@ -229,12 +268,13 @@ const deleteBooking = async (req, res, next) => {
       });
     }
 
+    await t.commit();
+
     return res.status(200).json({
       errors: [],
       message: 'Delete Booking Successfully',
       data: null,
-    })
-
+    });
   } catch (error) {
     await t.rollback();
     next(
@@ -347,6 +387,7 @@ const getBookingDetail = async (req, res, next) => {
       bookingId: result.bookingId,
       startDateTime: result.startDateTime,
       endDateTime: result.endDateTime,
+      endDateTime: result.endDateTime !== null ? result.endDateTime : undefined,
       offeringPrice: result.offeringPrice,
       addOns: result.addOns,
       totalPersons: result.totalPersons,
@@ -544,6 +585,7 @@ const updateBookingAdmin = async (req, res, next) => {
 };
 
 const updateBooking = async (req, res, next) => {
+  const t = await sequelize.transaction();
   try {
     const idBooking = req.params.bookingId;
 
@@ -599,10 +641,14 @@ const updateBooking = async (req, res, next) => {
         where: {
           bookingId: idBooking,
         },
+      },
+      {
+        transaction: t,
       }
     );
 
     if (result[0] == 0) {
+      await t.rollback();
       return res.status(404).json({
         errors: ['Booking not found'],
         message: 'Update Booking Failed',
@@ -610,12 +656,60 @@ const updateBooking = async (req, res, next) => {
       });
     }
 
+    await t.commit();
+
+    const data = await Booking.findOne({
+      where: {
+        bookingId: idBooking,
+      },
+      include: [
+        {
+          model: Product,
+          attributes: ['title'],
+        },
+        {
+          model: User,
+          attributes: ['name', 'country', 'phoneNumber', 'email'],
+        },
+      ],
+    });
+
+    const formatBooking = {
+      title: data.Product.title,
+      name: data.User.name,
+      country: data.User.country ? data.User.country : null,
+      email: data.User.email,
+      phoneNumber: data.User.phoneNumber ? data.User.phoneNumber : null,
+      bookingId: data.bookingId,
+      startDateTime: data.startDateTime,
+      endDateTime: data.endDateTime ? data.endDateTime : null,
+      offeringPrice: data.offeringPrice,
+      addOns: data.addOns,
+      totalPersons: data.totalPersons,
+    };
+
+    const sendPaymentMail = await sendUpdateBookingOfferingToAdmin(
+      process.env.ADMIN_EMAIL,
+      formatBooking
+    );
+
+    if (!sendPaymentMail) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Email payment confirmation failed to send to Admin'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
+
     return res.status(200).json({
       errors: [],
-      message: 'Update Booking successfully',
+      message:
+        'Update Booking successfully, email confirmation has been sent to admin.',
       data: booking.data,
     });
   } catch (error) {
+    await t.rollback();
     next(
       new Error(
         'controllers/bookingController.js:updateBooking - ' + error.message

@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import Payment from '../models/paymentModel.js';
@@ -8,7 +9,12 @@ import WisePayment from '../models/wisePaymentModel.js';
 import User from '../models/userModel.js';
 import Product from '../models/productModel.js';
 import Order from '../models/orderModel.js';
-import { sendBookingSuccess, sendBookingFailed } from '../utils/sendMail.js';
+import {
+  sendBookingSuccess,
+  sendBookingFailed,
+  sendWisePaymentToAdmin,
+  sendBankPaymentToAdmin,
+} from '../utils/sendMail.js';
 
 const updateBankWiseMethodPayment = async (req, res, next) => {
   const valid = {
@@ -85,7 +91,7 @@ const setBankPayment = async (req, res, next) => {
     if (bankPayment.message.length > 0) {
       return res.status(400).json({
         errors: bankPayment.message,
-        message: 'Payment via Bank Failed',
+        message: 'Payment via Bank Failed, please Set Method Bank first',
         data: null,
       });
     }
@@ -191,19 +197,35 @@ const setBankPayment = async (req, res, next) => {
           });
         }
 
+        const formattedPayment = {
+          paymentId: result.paymentId,
+          bookingId: bankPayment.data.bookingId,
+          method: 'Bank',
+          bankName: result.bankName,
+          bankAccountName: result.bankAccountName,
+          imageProofTransfer: result.imageProofTransfer,
+          createAt: result.createAt,
+        };
+
+        const sendPaymentMail = await sendBankPaymentToAdmin(
+          process.env.ADMIN_EMAIL,
+          formattedPayment
+        );
+
+        if (!sendPaymentMail) {
+          await t.rollback();
+          return res.status(404).json({
+            errors: ['Email payment confirmation failed to send to Admin'],
+            message: 'Update Booking Admin Failed',
+            data: null,
+          });
+        }
+
         return res.status(201).json({
           errors: [],
           message:
             'Payment via Bank has been send successfully, please check booking details',
-          data: {
-            paymentId: result.paymentId,
-            bookingId: bankPayment.data.bookingId,
-            method: 'Bank',
-            bankName: result.bankName,
-            bankAccountName: result.bankAccountName,
-            imageProofTransfer: result.imageProofTransfer,
-            createAt: result.createAt,
-          },
+          data: formattedPayment,
         });
       }
     }
@@ -243,7 +265,7 @@ const setWisePayment = async (req, res, next) => {
 
     if (!getPaymentId) {
       return res.status(404).json({
-        errors: ['Get Payment ID fail'],
+        errors: ['Get Payment ID fail, please Set Method Wise First'],
         message: 'Payment via Wise Failed',
         data: null,
       });
@@ -335,19 +357,35 @@ const setWisePayment = async (req, res, next) => {
           });
         }
 
+        const formattedPayment = {
+          paymentId: result.paymentId,
+          bookingId: wisePayment.data.bookingId,
+          method: 'Wise',
+          wiseEmail: result.wiseEmail,
+          wiseAccountName: result.wiseAccountName,
+          imageProofTransfer: result.imageProofTransfer,
+          createdAt: result.createdAt,
+        };
+
+        const sendPaymentMail = await sendWisePaymentToAdmin(
+          process.env.ADMIN_EMAIL,
+          formattedPayment
+        );
+
+        if (!sendPaymentMail) {
+          await t.rollback();
+          return res.status(404).json({
+            errors: ['Email payment confirmation failed to send to Admin'],
+            message: 'Update Booking Admin Failed',
+            data: null,
+          });
+        }
+
         return res.status(201).json({
           errors: [],
           message:
             'Payment via Wise has been send successfully, please check booking details',
-          data: {
-            paymentId: result.paymentId,
-            bookingId: wisePayment.data.bookingId,
-            method: 'Wise',
-            wiseEmail: result.wiseEmail,
-            wiseAccountName: result.wiseAccountName,
-            imageProofTransfer: result.imageProofTransfer,
-            createdAt: result.createdAt,
-          },
+          data: formattedPayment,
         });
       }
     }
@@ -455,6 +493,31 @@ const getPaymentDetailAdmin = async (req, res, next) => {
         errors: ['No payment found'],
         message: 'Get Payment Detail Failed',
         data: null,
+      });
+    }
+
+    if (!resultPayment.method) {
+      const formattedPayment = {
+        paymentId: resultPayment.paymentId,
+        title: resultPayment.Booking.Product
+          ? resultPayment.Booking.Product.title
+          : null,
+        total: resultPayment.total,
+        method: resultPayment.method,
+        paymentStatus: resultPayment.paymentStatus,
+        customerName: resultPayment.Booking.User
+          ? resultPayment.Booking.User.name
+          : null,
+        customerCountry: resultPayment.Booking.User
+          ? resultPayment.Booking.User.country
+          : null,
+      };
+
+      return res.status(200).json({
+        errors: [],
+        message:
+          'Get Payment Detail Success, But Customer Not Already Set for Method Payment',
+        data: formattedPayment,
       });
     }
 
@@ -770,7 +833,8 @@ const updatePaymentAdmin = async (req, res, next) => {
 
       return res.status(200).json({
         errors: [],
-        message: 'Update Payment Success to Approved',
+        message:
+          'Update Payment Success to Approved, Order created and email confirmation has been sent to the customer.',
         data: null,
       });
     }

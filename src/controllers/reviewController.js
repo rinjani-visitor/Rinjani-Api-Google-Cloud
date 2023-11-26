@@ -4,19 +4,22 @@ import Product from '../models/productModel.js';
 import Order from '../models/orderModel.js';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
+import { getUserIdFromAccessToken } from '../utils/jwt.js';
 
 const setReview = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
     messageReview: 'required',
     rating: 'required, isDecimal',
-    productId: 'required',
-    userId: 'required',
     orderId: 'required',
   };
   try {
-    const product_id = req.body.productId;
-    const user_id = req.body.userId;
+
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
+
     const order_id = req.body.orderId;
 
     const review = await dataValid(valid, req.body);
@@ -28,15 +31,23 @@ const setReview = async (req, res, next) => {
       });
     }
 
-    if (!product_id || !user_id) {
+    if (!order_id) {
       return res.status(400).json({
-        errors: ['productId, userId and/or orderId is required'],
+        errors: ['orderId is required'],
         message: 'Create Review Failed',
         data: null,
       });
     }
 
-    const product = await Product.findByPk(product_id);
+    const getProductId = await Order.findOne({
+      where: {
+        orderId: order_id,
+      },
+      attributes: ['productId'],
+      transaction: t,
+    });
+
+    const product = await Product.findByPk(getProductId.productId);
     const user = await User.findByPk(user_id);
 
     if (!product || !user) {
@@ -66,7 +77,7 @@ const setReview = async (req, res, next) => {
       {
         messageReview: review.data.messageReview,
         rating: review.data.rating,
-        productId: product_id,
+        productId: getProductId.productId,
         userId: user_id,
         orderId: order_id,
       },
@@ -107,7 +118,7 @@ const setReview = async (req, res, next) => {
 
     await t.commit();
 
-    const ratingAll = await countRating(product_id);
+    const ratingAll = await countRating(getProductId.productId);
     console.log('ratingAll', ratingAll);
 
     return res.status(201).json({

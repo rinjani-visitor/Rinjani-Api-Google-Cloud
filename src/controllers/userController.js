@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import moment from 'moment-timezone';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
@@ -249,7 +250,7 @@ const setLogin = async (req, res, next) => {
       };
 
       //khusus admin login
-      const adminEmail = 'muhfirdaus0805@gmail.com';
+      const adminEmail = process.env.ADMIN_EMAIL;
       if (req.url.includes('/admin') && usr.email === adminEmail) {
         usr.role = 'admin';
       }
