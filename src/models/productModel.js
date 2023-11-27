@@ -22,7 +22,7 @@ const Product = sequelize.define(
     },
     rating: {
       type: Sequelize.FLOAT,
-      allowNull: true,
+      defaultValue: 0,
     },
     location: {
       type: Sequelize.STRING,

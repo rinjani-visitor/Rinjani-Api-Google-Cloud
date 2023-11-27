@@ -1,4 +1,4 @@
-import AddOns from '../models/addOnsModel.js';
+import AddOnsModel from '../models/addOnsModel.js';
 import Product from '../models/productModel.js';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
@@ -18,7 +18,7 @@ const setAddOns = async (req, res, next) => {
       });
     }
 
-    const result = await AddOns.create(
+    const result = await AddOnsModel.create(
       {
         ...addOnsData.data,
       },
@@ -53,7 +53,7 @@ const setAddOns = async (req, res, next) => {
 
 const getAllAddOns = async (req, res, next) => {
   try {
-    const result = await AddOns.findAll();
+    const result = await AddOnsModel.findAll();
     if (!result) {
       return res.status(404).json({
         errors: ['AddOns not found'],
@@ -94,7 +94,7 @@ const addAddOns = async (req, res, next) => {
       });
     }
 
-    const checkAddOns = await AddOns.findOne({
+    const checkAddOns = await AddOnsModel.findOne({
       where: {
         addOnsId: idaddons,
       },
@@ -121,7 +121,7 @@ const addAddOns = async (req, res, next) => {
         message: 'AddOns Failed',
         data: null,
       });
-    };
+    }
 
     const result = await sequelize.models.product_addons.create(
       {
@@ -164,15 +164,26 @@ const updateAddOns = async (req, res, next) => {
   try {
     const { idproduct, idaddons, updateidaddons } = req.body;
 
-    const result = await sequelize.models.product_addons.update(
-      {
+    const checkProduct = await sequelize.models.product_addons.findOne({
+      where: {
         productId: idproduct,
-        idaddons: updateidaddons,
+        addOnsId: idaddons,
       },
+    });
+
+    if (!checkProduct) {
+      return res.status(404).json({
+        errors: ['AddOns not found'],
+        message: 'Get AddOns Failed',
+        data: null,
+      });
+    }
+
+    const result = await sequelize.models.product_addons.destroy(
       {
         where: {
           productId: idproduct,
-          idaddons: idaddons,
+          addOnsId: idaddons,
         },
         transaction: t,
       }
@@ -211,7 +222,7 @@ const deleteAddOns = async (req, res, next) => {
     const result = await sequelize.models.product_addons.destroy({
       where: {
         productId: idproduct,
-        facilityId: idaddons,
+        addOnsId: idaddons,
       },
       transaction: t,
     });
@@ -241,10 +252,4 @@ const deleteAddOns = async (req, res, next) => {
   }
 };
 
-export {
-  setAddOns,
-  getAllAddOns,
-  addAddOns,
-  updateAddOns,
-  deleteAddOns,
-};
+export { setAddOns, getAllAddOns, addAddOns, updateAddOns, deleteAddOns };
