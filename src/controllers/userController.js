@@ -665,7 +665,7 @@ const getAllFavoriteUser = async (req, res, next) => {
       productId: product.productId,
       title: product.title,
       status: product.status,
-      rating: product.rating ? product.rating : 'no ratings yet',
+      rating: product.rating ? product.rating : 0,
       location: product.location,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,

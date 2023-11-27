@@ -330,7 +330,7 @@ const setRinjani = async (req, res, next) => {
     const newRinjani = await ModelRinjani.create(
       {
         ...rinjani.data,
-        productId: req.body.productId,
+        productId: product_id,
       },
       {
         transaction: t,
@@ -538,10 +538,11 @@ const setHomeStay = async (req, res, next) => {
         data: null,
       });
     }
+    const product_id = req.body.productId;
     const newhomestay = await HomeStay.create(
       {
         ...homestay.data,
-        productId: req.body.productId,
+        productId: product_id,
       },
       {
         transaction: t,
@@ -762,7 +763,7 @@ const setWisata = async (req, res, next) => {
     const newWisata = await Wisata.create(
       {
         ...wisata.data,
-        productId: req.body.productId,
+        productId: product_id,
       },
       {
         transaction: t,
@@ -1125,12 +1126,13 @@ const getEventDetail = async (req, res, next) => {
       category: category ? category.category : null,
       subCategory: subCategory ? subCategory.subCategory : null,
       description: eventData.length > 0 ? eventData[0].description : null,
-      favoritedCount: favoriteCount,
+      favoritedCount: favoriteCount.count,
       userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: eventData.length > 0 ? eventData[0].note : null,
-      date: eventData.length > 0 ? eventData[0].date : null,
+      startDate: eventData.length > 0 ? eventData[0].startDate : null,
+      endDate: eventData.length > 0 ? eventData[0].endDate : null,
       includeEndDateTime: false,
       createdAt,
       updatedAt,
