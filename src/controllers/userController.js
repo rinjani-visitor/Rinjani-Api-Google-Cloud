@@ -420,18 +420,6 @@ const avatarUser = async (req, res, next) => {
     const token = authHeader && authHeader.split(' ')[1];
     const tokenInfo = getUserIdFromAccessToken(token);
     const user_id = tokenInfo.userId;
-    const user = await User.findOne({
-      where: {
-        userId: user_id,
-      },
-    });
-    if (!user) {
-      return res.status(404).json({
-        errors: ['User not found'],
-        message: 'Avatar failed to upload',
-        data: null,
-      });
-    }
 
     const uploadedFileName = req.file.filename;
     if (uploadedFileName) {
@@ -458,8 +446,8 @@ const avatarUser = async (req, res, next) => {
       } else {
         return res.status(200).json({
           errors: [],
-          message: 'User updated successfully',
-          data: user.data,
+          message: 'User avatar updated successfully',
+          data: [],
         });
       }
     }

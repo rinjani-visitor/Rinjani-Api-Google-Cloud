@@ -66,17 +66,13 @@ const getNote = async (booking_id) => {
 const setBooking = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
+    userId: 'required',
     productId: 'required',
     startDateTime: 'required',
     offeringPrice: 'required, isDecimal',
     totalPersons: 'required, isDecimal',
   };
   try {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1];
-    const tokenInfo = getUserIdFromAccessToken(token);
-    const user_id = tokenInfo.userId;
-
     const booking = await dataValid(valid, req.body);
 
     if (booking.message.length > 0) {
@@ -90,7 +86,6 @@ const setBooking = async (req, res, next) => {
     const newBooking = await Booking.create(
       {
         ...booking.data,
-        userId: user_id,
       },
       {
         transaction: t,
@@ -184,7 +179,7 @@ const getAllBooking = async (req, res, next) => {
       include: [
         {
           model: Product,
-          attributes: ['title', 'rating', 'location', 'thumbnail'],
+          attributes: ['title', 'rating', 'location'],
         },
       ],
     });
@@ -210,7 +205,6 @@ const getAllBooking = async (req, res, next) => {
             title: booking.Product ? booking.Product.title : null,
             rating: booking.Product ? booking.Product.rating : null,
             location: booking.Product ? booking.Product.location : null,
-            thumbnail: booking.Product ? booking.Product.thumbnail : null,
           };
         })
       );
@@ -243,7 +237,7 @@ const deleteBooking = async (req, res, next) => {
       where: {
         bookingId: booking_id,
         bookingStatus: {
-          [Op.or]: [status[0], status[2]],
+          [Op.or]: [status[0], status[2], status[4]],
         },
       },
     });
@@ -375,17 +369,7 @@ const getBookingDetail = async (req, res, next) => {
   try {
     const idBooking = req.params.bookingId;
 
-    const result = await Booking.findOne({
-      where: {
-        bookingId: idBooking,
-      },
-      include: [
-        {
-          model: Product,
-          attributes: ['title', 'rating', 'location', 'thumbnail'],
-        },
-      ],
-    });
+    const result = await Booking.findByPk(idBooking);
 
     if (!result) {
       return res.status(404).json({
@@ -413,10 +397,6 @@ const getBookingDetail = async (req, res, next) => {
       adminMessage:
         result.adminMessage !== null ? result.adminMessage : undefined,
       note: bookingNote,
-      title: result.Product ? result.Product.title : null,
-      rating: result.Product ? result.Product.rating : null,
-      location: result.Product ? result.Product.location : null,
-      thumbnail: result.Product ? result.Product.thumbnail : null,
     };
 
     return res.status(200).json({
@@ -476,9 +456,6 @@ const updateBookingAdmin = async (req, res, next) => {
       {
         where: {
           bookingId: idBooking,
-          bookingStatus: {
-            [Op.or]: [status[0], status[2]],
-          },
         },
       }
     );

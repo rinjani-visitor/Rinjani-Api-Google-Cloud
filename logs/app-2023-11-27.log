@@ -88,3 +88,4 @@ ReferenceError: RinjaniModel is not defined
  [LOGGER] 2023-11-27 07:47:34.563 PM error : controllers/bookingController.js:setBooking - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
  [LOGGER] 2023-11-27 07:49:31.945 PM error : controllers/bookingController.js:setBooking - Lock wait timeout exceeded; try restarting transaction
  [LOGGER] 2023-11-27 07:58:03.861 PM error : controllers/bookingController.js:setBooking - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-27 10:36:39.552 PM error : controllers/userController.js:avatarUser - user is not defined

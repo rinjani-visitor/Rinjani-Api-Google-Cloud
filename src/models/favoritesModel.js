@@ -12,24 +12,6 @@ const Favorites = sequelize.define(
       primaryKey: true,
       allowNull: false,
     },
-    userId: {
-      type: Sequelize.UUID,
-      references: {
-        model: User,
-        key: 'user_id',
-      },
-      onDelete: 'CASCADE',
-      onUpdate: 'RESTRICT',
-    },
-    productId: {
-      type: Sequelize.UUID,
-      references: {
-        model: Product,
-        key: 'product_id',
-      },
-      onDelete: 'CASCADE',
-      onUpdate: 'RESTRICT',
-    },
   },
   {
     tableName: 'favorites',
@@ -37,6 +19,30 @@ const Favorites = sequelize.define(
     timestamps: true,
   }
 );
+
+Product.hasMany(Favorites, {
+  foreignKey: 'productId',
+  onDelete: 'CASCADE',
+  onUpdate: 'RESTRICT',
+});
+
+Favorites.belongsTo(Product, {
+  foreignKey: 'productId',
+  onDelete: 'CASCADE',
+  onUpdate: 'RESTRICT',
+});
+
+User.hasMany(Favorites, {
+  foreignKey: 'userId',
+  onDelete: 'CASCADE',
+  onUpdate: 'RESTRICT',
+});
+
+Favorites.belongsTo(User, {
+  foreignKey: 'userId',
+  onDelete: 'CASCADE',
+  onUpdate: 'RESTRICT',
+});
 
 sequelize.sync();
 
