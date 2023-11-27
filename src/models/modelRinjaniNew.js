@@ -2,8 +2,8 @@ import sequelize from '../utils/db.js';
 import { Sequelize } from 'sequelize';
 import Product from './productModel.js';
 
-const RinjaniModel = sequelize.define(
-  'RinjaniModel',
+const ModelRinjani = sequelize.define(
+  'ModelRinjani',
   {
     rinjaniId: {
       type: Sequelize.INTEGER,
@@ -29,19 +29,19 @@ const RinjaniModel = sequelize.define(
     },
   },
   {
-    tableName: 'rinjaniModel',
+    tableName: 'modelRinjani',
     underscored: true,
     timestamps: false,
   }
 );
 
-Product.hasOne(RinjaniModel, {
+Product.hasOne(ModelRinjani, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
-RinjaniModel.belongsTo(Product, {
+ModelRinjani.belongsTo(Product, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
@@ -49,4 +49,4 @@ RinjaniModel.belongsTo(Product, {
 
 sequelize.sync();
 
-export default RinjaniModel;
+export default ModelRinjani;

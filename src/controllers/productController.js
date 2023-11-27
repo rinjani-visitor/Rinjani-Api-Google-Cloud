@@ -2,7 +2,7 @@ import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import { isExists } from '../validation/sanitization.js';
 import Product from '../models/productModel.js';
-import RinjaniModel from '../models/rinjaniPackageModel.js';
+import ModelRinjani from '../models/modelRinjaniNew.js';
 import Foto from '../models/fotoModel.js';
 import HomeStay from '../models/HomeStayModel.js';
 import Favorites from '../models/favoritesModel.js';
@@ -17,8 +17,6 @@ import AddOnsModel from '../models/addOnsModel.js';
 import User from '../models/userModel.js';
 import { Op } from 'sequelize';
 import { getUserIdFromAccessToken, verifyAccessToken } from '../utils/jwt.js';
-
-const modelRinjani = RinjaniModel;
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -217,7 +215,7 @@ const getAllProducts = async (req, res, next) => {
       productId: product.productId,
       title: product.title,
       status: product.status,
-      rating: product.rating || 0,
+      rating: product.rating? product.rating : 0,
       location: product.location,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
@@ -329,7 +327,7 @@ const setRinjani = async (req, res, next) => {
         data: null,
       });
     }
-    const newRinjani = await RinjaniModel.create(
+    const newRinjani = await ModelRinjani.create(
       {
         ...rinjani.data,
         productId: req.body.productId,
@@ -368,7 +366,7 @@ const getRinjaniDetail = async (req, res, next) => {
   try {
     const id_product = req.params.product_id;
 
-    const checkRinjani = await modelRinjani.findOne({
+    const checkRinjani = await ModelRinjani.findOne({
       where: {
         productId: id_product,
       },
@@ -388,7 +386,7 @@ const getRinjaniDetail = async (req, res, next) => {
       },
       include: [
         {
-          model: modelRinjani,
+          model: ModelRinjani,
           attributes: ['description', 'duration', 'program', 'note'],
         },
         {
@@ -472,7 +470,7 @@ const getRinjaniDetail = async (req, res, next) => {
       category,
       subCategory,
       facilities,
-      RinjaniModel,
+      ModelRinjani: RinjaniModel,
       AddOnsModels,
       Fotos,
       Reviews,
@@ -496,6 +494,7 @@ const getRinjaniDetail = async (req, res, next) => {
       facilities: facilities.map((facility) => facility.facilityName),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: RinjaniModel.note,
+      includeEndDateTime: false,
       createdAt,
       updatedAt,
       Fotos,
@@ -703,6 +702,7 @@ const getHomeStayDetail = async (req, res, next) => {
       facilities: facilities.map((facility) => facility.facilityName),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: HomeStays.length > 0 ? HomeStays[0].note : null,
+      includeEndDateTime: true,
       createdAt,
       updatedAt,
       Fotos,
@@ -923,6 +923,7 @@ const getWisataDetail = async (req, res, next) => {
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: WisataAtributs.length > 0 ? WisataAtributs[0].note : null,
       route: WisataAtributs.length > 0 ? WisataAtributs[0].route : null,
+      includeEndDateTime: false,
       createdAt,
       updatedAt,
       Fotos,
@@ -1130,6 +1131,7 @@ const getEventDetail = async (req, res, next) => {
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
       note: eventData.length > 0 ? eventData[0].note : null,
       date: eventData.length > 0 ? eventData[0].date : null,
+      includeEndDateTime: false,
       createdAt,
       updatedAt,
       Fotos,

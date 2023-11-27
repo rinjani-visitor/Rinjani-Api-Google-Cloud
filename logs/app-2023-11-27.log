@@ -39,3 +39,52 @@ ReferenceError: dele is not defined
  [LOGGER] 2023-11-27 02:35:09.890 AM error : controllers/facilityController.js:addAddOns - WHERE parameter "add_ons_id" has invalid "undefined" value
  [LOGGER] 2023-11-27 02:43:55.979 AM error : controllers/facilityController.js:setAddOns - AddOns is not defined
  [LOGGER] 2023-11-27 02:45:55.780 AM error : controllers/facilityController.js:getAllAddOns - AddOns is not defined
+ [LOGGER] 2023-11-27 11:08:08.855 AM error : controllers/userController.js:favorite - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`favorites`, CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE CASCADE ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-27 11:08:24.099 AM error : controllers/userController.js:favorite - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`favorites`, CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE CASCADE ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-27 11:15:16.660 AM error : uncaughtException: get is not defined
+ReferenceError: get is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:40:48
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 11:15:18.235 AM error : uncaughtException: getAl is not defined
+ReferenceError: getAl is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:40:48
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 12:10:09.138 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'RinjaniModel' before initialization
+ [LOGGER] 2023-11-27 12:10:58.525 PM error : uncaughtException: RinjaniModelBaru is not defined
+ReferenceError: RinjaniModelBaru is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/rinjaniPackageModel.js:52:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 12:11:00.684 PM error : uncaughtException: RinjaniModelBaru is not defined
+ReferenceError: RinjaniModelBaru is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/rinjaniPackageModel.js:44:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 12:11:06.817 PM error : uncaughtException: RinjaniModel is not defined
+ReferenceError: RinjaniModel is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/rinjaniPackageModel.js:38:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 12:11:17.648 PM error : uncaughtException: RinjaniModel is not defined
+ReferenceError: RinjaniModel is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/rinjaniPackageModel.js:38:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 12:11:20.954 PM error : uncaughtException: RinjaniModel is not defined
+ReferenceError: RinjaniModel is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/rinjaniPackageModel.js:38:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 12:11:45.933 PM error : uncaughtException: RinjaniModel is not defined
+ReferenceError: RinjaniModel is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/rinjaniPackageModel.js:38:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-27 12:16:23.601 PM error : controllers/productController.js:setRinjani - RinjaniModel is not defined
+ [LOGGER] 2023-11-27 12:17:28.839 PM error : controllers/productController.js:getRinjaniDetail - Cannot read properties of undefined (reading 'description')
+ [LOGGER] 2023-11-27 12:18:17.578 PM error : controllers/productController.js:getRinjaniDetail - Cannot access 'ModelRinjani' before initialization
+ [LOGGER] 2023-11-27 03:06:45.285 PM error : controllers/userController.js:updateUser - user_id is not defined
+ [LOGGER] 2023-11-27 03:39:17.542 PM error : controllers/userController.js:forgotPassword - Cannot read properties of null (reading 'email')
+ [LOGGER] 2023-11-27 03:39:52.411 PM error : controllers/userController.js:forgotPassword - Cannot read properties of null (reading 'email')
+ [LOGGER] 2023-11-27 03:40:10.655 PM error : controllers/userController.js:forgotPassword - user_email is not defined
+ [LOGGER] 2023-11-27 03:41:07.878 PM error : controllers/userController.js:forgotPassword - Cannot read properties of null (reading 'email')
+ [LOGGER] 2023-11-27 03:41:12.534 PM error : controllers/userController.js:forgotPassword - Cannot read properties of null (reading 'email')
+ [LOGGER] 2023-11-27 07:45:38.463 PM error : controllers/bookingController.js:setBooking - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-27 07:46:33.431 PM error : controllers/bookingController.js:setBooking - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-27 07:47:34.563 PM error : controllers/bookingController.js:setBooking - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-11-27 07:49:31.945 PM error : controllers/bookingController.js:setBooking - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-11-27 07:58:03.861 PM error : controllers/bookingController.js:setBooking - Cannot add or update a child row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)

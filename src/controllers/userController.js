@@ -182,7 +182,11 @@ const getUser = async (req, res, next) => {
 
 const getUserById = async (req, res, next) => {
   try {
-    const user_id = req.params.id;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
+
     const user = await User.findOne({
       where: {
         userId: user_id,
@@ -261,7 +265,7 @@ const setLogin = async (req, res, next) => {
         errors: [],
         message: 'Login successfully',
         data: usr,
-        acessToken: token,
+        accessToken: token,
         refreshToken: refreshToken,
       });
     } else {
@@ -315,7 +319,7 @@ const setRefreshToken = async (req, res, next) => {
         userId: user.userId,
         name: user.name,
         email: user.email,
-        role: 'user', //default role user 
+        role: 'user', //default role user
       };
 
       const adminEmail = 'muhfirdaus0805@gmail.com';
@@ -329,7 +333,7 @@ const setRefreshToken = async (req, res, next) => {
         errors: [],
         message: 'Refresh successfully',
         data: usr,
-        acessToken: token,
+        accessToken: token,
         refreshToken: refreshToken,
       });
     }
@@ -344,7 +348,11 @@ const setRefreshToken = async (req, res, next) => {
 
 const updateUser = async (req, res, next) => {
   try {
-    const user_id = req.params.id;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
+
     const valid = {};
     if (isExists(req.body.name)) {
       valid.name = 'required';
@@ -408,7 +416,10 @@ const updateUser = async (req, res, next) => {
 
 const avatarUser = async (req, res, next) => {
   try {
-    const user_id = req.params.id;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
     const user = await User.findOne({
       where: {
         userId: user_id,
@@ -554,7 +565,10 @@ const forgotPassword = async (req, res, next) => {
 const favorite = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const user_id = req.params.userId;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
     const product_id = req.body.productId;
 
     if (!user_id || !product_id) {
@@ -612,7 +626,7 @@ const favorite = async (req, res, next) => {
     return res.status(201).json({
       errors: [],
       message: 'Favorite successfully',
-      data: result
+      data: result,
     });
   } catch (error) {
     await t.rollback();
@@ -622,9 +636,13 @@ const favorite = async (req, res, next) => {
   }
 };
 
-const getAllFavorite = async (req, res, next) => {
+const getAllFavoriteUser = async (req, res, next) => {
   try {
-    const user_id = req.params.userId;
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
+
     const checkUser = await User.findOne({
       where: {
         userId: user_id,
@@ -691,5 +709,5 @@ export {
   deleteUser,
   forgotPassword,
   favorite,
-  getAllFavorite,
+  getAllFavoriteUser,
 };

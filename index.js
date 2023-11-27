@@ -6,7 +6,6 @@ import swaggerUI from 'swagger-ui-express';
 import swaggerJsDoc from 'swagger-jsdoc';
 import path from 'path';
 import url from 'url';
-// import http from 'http';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
