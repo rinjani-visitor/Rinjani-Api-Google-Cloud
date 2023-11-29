@@ -1,0 +1,332 @@
+ [LOGGER] 2023-11-29 09:52:00.626 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.630 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.633 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.634 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.634 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.635 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.636 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.637 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.637 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.638 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.638 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.638 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.638 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.639 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.639 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.639 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.639 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 09:52:00.640 AM error : uncaughtException: Unknown SSL profile '{"rejectUnauthorized":true}'
+SequelizeConnectionError: Unknown SSL profile '{"rejectUnauthorized":true}'
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:305:26
+    at async Sequelize.authenticate (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:457:5)
+ [LOGGER] 2023-11-29 10:09:00.010 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.023 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.025 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.042 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.077 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.079 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.080 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.081 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.087 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.120 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.122 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.122 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.123 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.127 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.161 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.164 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.165 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:09:00.167 AM error : uncaughtException: VT10001: foreign key constraints are not allowed
+Error
+    at Query.run (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async MySQLQueryInterface.createTable (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/query-interface.js:98:12)
+    at async subCategory.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/model.js:942:7)
+    at async Sequelize.sync (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:377:9)
+ [LOGGER] 2023-11-29 10:11:59.625 AM error : controllers/bookingController.js:updateBookingAdmin - connect ECONNREFUSED 74.125.200.108:465
+ [LOGGER] 2023-11-29 10:13:47.241 AM error : controllers/bookingController.js:updateBookingAdmin - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-11-29 10:33:52.925 AM error : uncaughtException: sequelize is not defined
+ReferenceError: sequelize is not defined
+    at cancelOrder (file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/orderController.js:103:13)
+    at Layer.handle [as handle_request] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/route.js:144:13)
+    at autenticate (file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/errorHandlingController.js:48:3)
+    at Layer.handle [as handle_request] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:95:5)
+    at next (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:95:5)
+    at /Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:284:15
+    at param (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:365:14)
+ [LOGGER] 2023-11-29 10:37:02.901 AM error : uncaughtException: impo is not defined
+ReferenceError: impo is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/orderController.js:5:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-11-29 11:10:38.633 AM error : controllers/bookingController.js:updateBookingAdmin - Operation timeout
+ [LOGGER] 2023-11-29 11:16:07.853 AM error : controllers/orderController.js:cancelOrder - orderCancelConfirmation is not defined
+ [LOGGER] 2023-11-29 11:18:40.694 AM error : controllers/orderController.js:cancelOrder - Cannot destructure property 'orderId' of 'cancelOrderDetails' as it is undefined.
+ [LOGGER] 2023-11-29 11:22:47.205 AM error : controllers/orderController.js:cancelOrder - Cannot destructure property 'orderId' of 'cancelOrderDetails' as it is undefined.
+ [LOGGER] 2023-11-29 11:22:48.662 AM error : controllers/orderController.js:cancelOrder - Cannot destructure property 'orderId' of 'cancelOrderDetails' as it is undefined.
+ [LOGGER] 2023-11-29 11:22:49.183 AM error : controllers/orderController.js:cancelOrder - Cannot destructure property 'orderId' of 'cancelOrderDetails' as it is undefined.
+ [LOGGER] 2023-11-29 11:24:10.485 AM error : controllers/orderController.js:cancelOrder - WHERE parameter "user_id" has invalid "undefined" value
+ [LOGGER] 2023-11-29 11:30:25.016 AM error : controllers/orderController.js:cancelOrder - Cannot destructure property 'orderId' of 'cancelOrderDetails' as it is undefined.
+ [LOGGER] 2023-11-29 11:33:46.362 AM error : controllers/orderController.js:cancelOrder - Cannot destructure property 'orderId' of 'cancelOrderDetails' as it is undefined.
+ [LOGGER] 2023-11-29 11:37:49.835 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:38:41.268 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:38:42.660 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:42:19.340 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:42:20.538 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:42:21.437 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:42:21.964 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:42:23.680 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:42:24.628 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:26.357 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:27.522 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:29.053 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:37.347 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:38.293 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:38.917 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:39.230 AM error : controllers/raviewController.js:setReview - Expected a string but received a number
+ [LOGGER] 2023-11-29 11:44:41.512 AM error : controllers/raviewController.js:setReview - Expected a string but received a number

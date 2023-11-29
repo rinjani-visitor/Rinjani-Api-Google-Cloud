@@ -140,19 +140,19 @@ const setBooking = async (req, res, next) => {
       note: note.offering,
     };
 
-    // const sendPaymentMail = await sendBookingOfferingToAdmin(
-    //   process.env.ADMIN_EMAIL,
-    //   formatBooking
-    // );
+    const sendPaymentMail = await sendBookingOfferingToAdmin(
+      process.env.ADMIN_EMAIL,
+      formatBooking
+    );
 
-    // if (!sendPaymentMail) {
-    //   await t.rollback();
-    //   return res.status(404).json({
-    //     errors: ['Email booking confirmation failed to send to Admin'],
-    //     message: 'Update Booking Admin Failed',
-    //     data: null,
-    //   });
-    // }
+    if (!sendPaymentMail) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Email booking confirmation failed to send to Admin'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
 
     return res.status(200).json({
       errors: [],

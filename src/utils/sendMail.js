@@ -10,17 +10,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// const transporter = nodemailer.createTransport({
-//   service: process.env.MAIL_SERVICE,
-//   host: process.env.MAIL_HOST,
-//   port: process.env.MAIL_PORT,
-//   secure: true,
-//   auth: {
-//     user: process.env.MAIL_USER,
-//     pass: process.env.MAIL_PASS,
-//   },
-// });
-
 const createEmail = (email, token) => {
   return {
     from: process.env.MAIL_FROM,
@@ -246,6 +235,40 @@ const updateBookingConfirmation = (emailTo, updatedBookingDetails) => {
         </div>
 
         <p style="margin-top: 20px;">Thank you for reading this update. If you have any questions or need further assistance, feel free to contact us.</p>
+
+        <p style="margin-top: 20px;">Customer Service Team!</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+  };
+};
+
+const cancelOrderConfirmation = (emailTo, cancelOrderDetails) => {
+  const { orderId, title, name, country, orderApproveDate } = cancelOrderDetails;
+
+  return {
+    from: process.env.MAIL_FROM,
+    to: emailTo,
+    subject: 'Order Cancellation Confirmation',
+    html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #FF0000;">Order Cancellation Confirmation</h2>
+        <p>Dear Admin,</p>
+        <p>An order has been canceled. Please find the details below:</p>
+
+        <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 20px;">
+          <h3>Canceled Order Details:</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Order Number:</strong> ${orderId}</li>
+            <li><strong>Order Approve Date:</strong> ${orderApproveDate}</li>
+            <li><strong>Product Title:</strong> ${title}</li>
+            <li><strong>Customer Name:</strong> ${name}</li>
+            <li><strong>Customer Country:</strong> ${country}</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 20px;">Thank you for handling this cancellation. If you have any questions or need further assistance, feel free to contact us.</p>
 
         <p style="margin-top: 20px;">Customer Service Team!</p>
 
@@ -505,10 +528,10 @@ const sendBankPaymentToAdmin = (email, paymentDetails) => {
   });
 };
 
-const sendBookingOfferingToAdmin = (email, paymentDetails) => {
+const sendBookingOfferingToAdmin = (email, bookingDetails) => {
   return new Promise((resolve, reject) => {
     transporter.sendMail(
-      bookingConfirmationAdmin(email, paymentDetails),
+      bookingConfirmationAdmin(email, bookingDetails),
       (err, info) => {
         if (err) {
           console.log(err);
@@ -522,10 +545,10 @@ const sendBookingOfferingToAdmin = (email, paymentDetails) => {
   });
 };
 
-const sendUpdateBookingOfferingToAdmin = (email, paymentDetails) => {
+const sendUpdateBookingOfferingToAdmin = (email, bookingDetails) => {
   return new Promise((resolve, reject) => {
     transporter.sendMail(
-      updateBookingConfirmation(email, paymentDetails),
+      updateBookingConfirmation(email, bookingDetails),
       (err, info) => {
         if (err) {
           console.log(err);
@@ -538,6 +561,23 @@ const sendUpdateBookingOfferingToAdmin = (email, paymentDetails) => {
     );
   });
 };
+
+const sendOrderCancelToAdmin = (email, orderDetais) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(
+      cancelOrderConfirmation(email, orderDetais),
+      (err, info) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log('Email sent (sendPayment): ' + info.response);
+          resolve(true);
+        }
+      }
+    );
+  })
+}
 
 export {
   sendMail,
@@ -549,4 +589,5 @@ export {
   sendBankPaymentToAdmin,
   sendBookingOfferingToAdmin,
   sendUpdateBookingOfferingToAdmin,
+  sendOrderCancelToAdmin,
 };

@@ -34,20 +34,21 @@ const sequelize = new Sequelize(
 
 export default sequelize;
 
-// const sequelize = new Sequelize({
-//   dialect: process.env.DB_DIALECT, 
-//   host: process.env.DB_HOST,    
-//   username: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD, 
-//   database: process.env.DB_NAME, 
-//   port: process.env.DB_PORT,           
-//   define: {
-//     timestamps: true,    
-//     underscored: true,   
-//   },
+// PLANET SCALE
+
+// const sequelize = new Sequelize(process.env.DATABASE_URL, {
+//   logging:
+//     process.env.NODE_ENV === 'development'
+//       ? (...msg) => console.log(msg)
+//       : false,
+//   logging: false,
 //   dialectOptions: {
-//     requestTimeout: 3000000,
-//     encrypt: true, 
+//     // requestTimeout: 3000000,
+//     // encrypt: true,
+//     // useUTC: false, // for reading from database
+//     ssl: {
+//       rejectUnauthorized: true,
+//     },
 //     dateStrings: true,
 //     typeCast(field, next) {
 //       // for reading from database
@@ -56,7 +57,18 @@ export default sequelize;
 //       }
 //       return next();
 //     },
-//   }
+//   },
+//   //timezone: 'Asia/Jakarta',
+//   insecureAuth: true,
 // });
+
+// sequelize
+//   .authenticate()
+//   .then(() => {
+//     console.log('DB connection established successfully');
+//   })
+//   .catch((err) => {
+//     console.log('Unable to connect to DB', err);
+//   });
 
 // export default sequelize;

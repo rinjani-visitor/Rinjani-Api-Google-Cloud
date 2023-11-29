@@ -2,6 +2,8 @@ import Order from '../models/orderModel.js';
 import Product from '../models/productModel.js';
 import User from '../models/userModel.js';
 import { getUserIdFromAccessToken } from '../utils/jwt.js';
+import sequelize from '../utils/db.js';
+import { sendOrderCancelToAdmin } from '../utils/sendMail.js';
 
 const getAllOrder = async (req, res, next) => {
   try {
@@ -105,9 +107,20 @@ const cancelOrder = async (req, res, next) => {
     const order_id = req.params.orderId;
 
     const order = await Order.findOne({
+      attributes: ['orderId', 'productId', 'userId', 'createdAt'],
       where: {
         orderId: order_id,
       },
+      include: [
+        {
+          model: Product,
+          attributes: ['title'],
+        },
+        {
+          model: User,
+          attributes: ['name', 'country'],
+        }
+      ]
     });
 
     if (!order) {
@@ -125,7 +138,6 @@ const cancelOrder = async (req, res, next) => {
       {
         where: {
           orderId: order_id,
-          userId: user_id,
         },
       }
     );
@@ -133,7 +145,26 @@ const cancelOrder = async (req, res, next) => {
     if (result[0] == 0) {
       await t.rollback();
       return res.status(404).json({
-        errors: ['Order not found'],
+        errors: ['Order not found, already canceled, or on journey'],
+        message: 'Cancel Order Failed',
+        data: null,
+      });
+    }
+
+    const message = {
+      name: order.User.name,
+      country: order.User.country,
+      title: order.Product.title,
+      orderId: order_id,
+      orderApproveDate: order.createdAt,
+    };
+
+    const sendCancelOrder = await sendOrderCancelToAdmin(process.env.ADMIN_EMAIL, message);
+
+    if (!sendCancelOrder) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Send Email to Admin Failed'],
         message: 'Cancel Order Failed',
         data: null,
       });
@@ -143,7 +174,7 @@ const cancelOrder = async (req, res, next) => {
 
     return res.status(200).json({
       errors: [],
-      message: 'Cancel Order Success',
+      message: 'Cancel Order Success and Send Email to Admin',
       data: null,
     });
   } catch (error) {
