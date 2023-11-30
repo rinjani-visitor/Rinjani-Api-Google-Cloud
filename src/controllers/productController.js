@@ -215,7 +215,7 @@ const getAllProducts = async (req, res, next) => {
       productId: product.productId,
       title: product.title,
       status: product.status,
-      rating: product.rating? product.rating : 0,
+      rating: product.rating ? product.rating : 0,
       location: product.location,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
@@ -1162,17 +1162,58 @@ const getEventDetail = async (req, res, next) => {
   }
 };
 
+const getProductDetail = async (req, res, next) => {
+  try {
+    const id_product = req.params.product_id;
+
+    const checkCategory = await Product.findOne({
+      attributes: ['categoryId'],
+      where: {
+        productId: id_product,
+      },
+      include: [
+        {
+          model: Category,
+        },
+      ],
+    });
+
+    if (!checkCategory) {
+      return res.status(404).json({
+        errors: ['Product not found'],
+        message: 'Get Product Detail Failed',
+        data: null,
+      });
+    }
+
+    const getCategory = checkCategory.category.category;
+
+    if (getCategory == 'rinjani') {
+      return getRinjaniDetail(req, res, next);
+    } else if (getCategory == 'homestay') {
+      return getHomeStayDetail(req, res, next);
+    } else if (getCategory == 'culture' || getCategory == 'landscape') {
+      return getWisataDetail(req, res, next);
+    } else if (getCategory == 'event') {
+      return getEventDetail(req, res, next);
+    }
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:productDetail - ' + error.message
+      )
+    );
+  }
+};
+
 export {
   setProduct,
   updateProduct,
-  setRinjani,
-  getAllProducts,
   deleteProduct,
-  getRinjaniDetail,
+  getAllProducts,
+  setRinjani,
   setHomeStay,
-  getHomeStayDetail,
   setWisata,
-  getWisataDetail,
   setEvent,
-  getEventDetail,
+  getProductDetail,
 };

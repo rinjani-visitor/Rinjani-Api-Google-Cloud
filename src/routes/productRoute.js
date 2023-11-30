@@ -3,10 +3,7 @@ import { autenticate } from '../controllers/errorHandlingController.js';
 import {
   deleteProduct,
   getAllProducts,
-  getEventDetail,
-  getHomeStayDetail,
-  getRinjaniDetail,
-  getWisataDetail,
+  getProductDetail,
   setEvent,
   setHomeStay,
   setProduct,
@@ -53,28 +50,10 @@ productRouter.patch(
   updateFotoProduct
 ); //admin
 
-productRouter.delete('/admin/products/:id', autenticate, deleteProduct);//admin
+productRouter.delete('/admin/products/:id', autenticate, deleteProduct); //admin
 
 productRouter.get('/products', getAllProducts);
 
-productRouter.get(
-  '/products/rinjani/:product_id',
-  getRinjaniDetail
-);
-
-productRouter.get(
-  '/products/homestay/:product_id',
-  getHomeStayDetail
-);
-
-productRouter.get(
-  '/products/wisata/:product_id',
-  getWisataDetail
-);
-
-productRouter.get(
-  '/products/event/:product_id',
-  getEventDetail
-);
+productRouter.get('/products/:product_id', getProductDetail);
 
 export default productRouter;
