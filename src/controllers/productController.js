@@ -186,7 +186,7 @@ const getAllProducts = async (req, res, next) => {
       whereCondition = {
         ...whereCondition,
         '$Product.title$': {
-          [Op.like]: `${titleFilter}%`, // Case-insensitive LIKE query
+          [Op.like]: `%${titleFilter}%`, // Case-insensitive LIKE query
         },
       };
     }
