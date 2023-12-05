@@ -414,7 +414,7 @@ const getRinjaniDetail = async (req, res, next) => {
           include: [
             {
               model: User,
-              attributes: ['name', 'profilPicture'],
+              attributes: ['name', 'profilPicture', 'country'],
             },
           ],
         },
@@ -504,6 +504,7 @@ const getRinjaniDetail = async (req, res, next) => {
             messageReview: review.messageReview,
             createdAt: review.createdAt,
             name: review.User.name,
+            country: review.User.country,
             profilPicture: review.User.profilPicture,
           }))
         : Reviews,
@@ -626,7 +627,7 @@ const getHomeStayDetail = async (req, res, next) => {
           include: [
             {
               model: User,
-              attributes: ['name', 'profilPicture'],
+              attributes: ['name', 'profilPicture', 'country'],
             },
           ],
         },
@@ -713,6 +714,7 @@ const getHomeStayDetail = async (req, res, next) => {
             messageReview: review.messageReview,
             createdAt: review.createdAt,
             name: review.User.name,
+            country: review.User.country,
             profilPicture: review.User.profilPicture,
           }))
         : Reviews,
@@ -845,7 +847,7 @@ const getWisataDetail = async (req, res, next) => {
           include: [
             {
               model: User,
-              attributes: ['name', 'profilPicture'],
+              attributes: ['name', 'profilPicture', 'country'],
             },
           ],
         },
@@ -934,6 +936,7 @@ const getWisataDetail = async (req, res, next) => {
             messageReview: review.messageReview,
             createdAt: review.createdAt,
             name: review.User.name,
+            country: review.User.country,
             profilPicture: review.User.profilPicture,
           }))
         : Reviews,
@@ -1054,7 +1057,7 @@ const getEventDetail = async (req, res, next) => {
           include: [
             {
               model: User,
-              attributes: ['name', 'profilPicture'],
+              attributes: ['name', 'profilPicture', 'country'],
             },
           ],
         },
@@ -1143,6 +1146,7 @@ const getEventDetail = async (req, res, next) => {
             messageReview: review.messageReview,
             createdAt: review.createdAt,
             name: review.User.name,
+            country: review.User.country,
             profilPicture: review.User.profilPicture,
           }))
         : Reviews,
