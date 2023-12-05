@@ -497,8 +497,8 @@ const getRinjaniDetail = async (req, res, next) => {
       includeEndDateTime: false,
       createdAt,
       updatedAt,
-      Fotos,
-      Reviews: Review
+      fotos: Fotos,
+      reviews: Review
         ? Reviews.map((review) => ({
             rating: review.rating,
             messageReview: review.messageReview,
@@ -707,8 +707,8 @@ const getHomeStayDetail = async (req, res, next) => {
       includeEndDateTime: true,
       createdAt,
       updatedAt,
-      Fotos,
-      Reviews: Review
+      fotos: Fotos,
+      reviews: Review
         ? Reviews.map((review) => ({
             rating: review.rating,
             messageReview: review.messageReview,
@@ -929,8 +929,8 @@ const getWisataDetail = async (req, res, next) => {
       includeEndDateTime: false,
       createdAt,
       updatedAt,
-      Fotos,
-      Reviews: Review
+      fotos: Fotos,
+      reviews: Review
         ? Reviews.map((review) => ({
             rating: review.rating,
             messageReview: review.messageReview,
@@ -1139,8 +1139,8 @@ const getEventDetail = async (req, res, next) => {
       includeEndDateTime: false,
       createdAt,
       updatedAt,
-      Fotos,
-      Reviews: Review
+      fotos: Fotos,
+      reviews: Review
         ? Reviews.map((review) => ({
             rating: review.rating,
             messageReview: review.messageReview,
