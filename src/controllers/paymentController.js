@@ -405,7 +405,7 @@ const getAllPaymentAdmin = async (req, res, next) => {
       include: [
         {
           model: Booking,
-          attributes: ['productId', 'userId'],
+          attributes: ['bookingId', 'productId', 'userId'],
           include: [
             {
               model: User,
@@ -430,6 +430,7 @@ const getAllPaymentAdmin = async (req, res, next) => {
 
     const formattedPayment = result.map((payment) => ({
       paymentId: payment.paymentId,
+      bookingId: payment.Booking.bookingId ? payment.Booking.bookingId : null,
       title: payment.Booking.Product ? payment.Booking.Product.title : null,
       total: payment.total,
       method: payment.method,
@@ -438,6 +439,7 @@ const getAllPaymentAdmin = async (req, res, next) => {
       customerCountry: payment.Booking.User
         ? payment.Booking.User.country
         : null,
+      paymentData: payment.createdAt,
     }));
 
     return res.status(200).json({
@@ -469,6 +471,7 @@ const getPaymentDetailAdmin = async (req, res, next) => {
         'total',
         'method',
         'paymentStatus',
+        'createdAt',
       ],
       include: [
         {
@@ -511,6 +514,7 @@ const getPaymentDetailAdmin = async (req, res, next) => {
         customerCountry: resultPayment.Booking.User
           ? resultPayment.Booking.User.country
           : null,
+        paymentDate: resultPayment.createdAt ? resultPayment.createdAt : null,
       };
 
       return res.status(200).json({

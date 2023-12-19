@@ -63,13 +63,13 @@ Booking.belongsTo(Product, {
 
 User.hasMany(Booking, {
   foreignKey: 'userId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 Booking.belongsTo(User, {
   foreignKey: 'userId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 })
 

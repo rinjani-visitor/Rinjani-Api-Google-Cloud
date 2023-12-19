@@ -1,3 +1,4 @@
+import moment from 'moment';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import Booking from '../models/bookingModel.js';
@@ -8,6 +9,7 @@ import { isExists } from '../validation/sanitization.js';
 import Payment from '../models/paymentModel.js';
 import 'dotenv/config';
 import {
+  sendBookingOfferingToAdmin,
   // sendBookingOfferingToAdmin,
   sendPayment,
   // sendUpdateBookingOfferingToAdmin,
@@ -134,8 +136,8 @@ const setBooking = async (req, res, next) => {
       offeringPrice: newBooking.offeringPrice,
       addOns: newBooking.addOns,
       totalPersons: newBooking.totalPersons,
-      createdAt: newBooking.createdAt,
-      updatedAt: newBooking.updatedAt,
+      createdAt: moment(newBooking.createdAt).format('YYYY-MM-DD HH:mm:ss'),
+      updatedAt: moment(newBooking.updatedAt).format('YYYY-MM-DD HH:mm:ss'),
       bookingStatus: newBooking.bookingStatus,
       note: note.offering,
     };

@@ -35,37 +35,37 @@ const Order = sequelize.define(
 
 Payment.hasOne(Order, {
   foreignKey: 'paymentId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 Order.belongsTo(Payment, {
   foreignKey: 'paymentId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 User.hasMany(Order, {
   foreignKey: 'userId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 Order.belongsTo(User, {
   foreignKey: 'userId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 })
 
 Product.hasMany(Order, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 
 Order.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
+  onDelete: 'CASCADE',
   onUpdate: 'RESTRICT',
 });
 

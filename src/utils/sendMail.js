@@ -180,10 +180,10 @@ const bookingConfirmationAdmin = (emailTo, bookingDetails) => {
             <li><strong>Customer Name:</strong> ${name}</li>
             <li><strong>Customer Country:</strong> ${country}</li>
             <li><strong>Customer Email:</strong> ${email}</li>
-            <li><strong>Customer Phone Number:</strong> ${phoneNumber}</li>
+            ${phoneNumber ? `<li><strong>Customer Phone Number:</strong> ${phoneNumber}</li>` : ''}
             <li><strong>Booking ID:</strong> ${bookingId}</li>
             <li><strong>Start Date and Time:</strong> ${startDateTime}</li>
-            <li><strong>End Date and Time:</strong> ${endDateTime}</li>
+            ${endDateTime ? `<li><strong>End Date and Time:</strong> ${endDateTime}</li>` : ''}
             <li><strong>Offering Price:</strong> ${offeringPrice}</li>
             <li><strong>AddOns:</strong> ${addOns}</li>
             <li><strong>Total Persons:</strong> ${totalPersons}</li>
@@ -421,6 +421,30 @@ const bankPaymentConfirmation = (email, paymentDetails) => {
   };
 };
 
+const createMessage = (email, name, subject, message) => ({
+  from: email,
+  to: process.env.ADMIN_EMAIL,
+  subject: `${subject} - Rinjani Visitor`,
+  html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #32823A;">${subject}</h2>
+        <p>Hi admin, you have a new message from <strong>${name}</strong> <i>(${email})</i></p>
+
+        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
+          <table style="width: 100%;">
+            <tr>
+              <td>${message}</td>
+            </tr>
+          </table>
+        </div>
+
+        <p style="margin-top: 20px;">If you have any questions or need assistance, feel free to contact us.</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+});
+
 const sendMail = (email, token) => {
   return new Promise((resolve, reject) => {
     transporter.sendMail(createEmail(email, token), (err, info) => {
@@ -579,6 +603,18 @@ const sendOrderCancelToAdmin = (email, orderDetais) => {
   })
 }
 
+const sendMailMessage = (email, name, subject, message) => new Promise((resolve, reject) => {
+  transporter.sendMail(createMessage(email, name, subject, message), (err, info) => {
+    if (err) {
+      console.error('Error sending email:', err);
+      reject(err);
+    } else {
+      console.log(`Email sent (sendMail): ${info.response}`);
+      resolve(true);
+    }
+  });
+});
+
 export {
   sendMail,
   sendPassword,
@@ -590,4 +626,5 @@ export {
   sendBookingOfferingToAdmin,
   sendUpdateBookingOfferingToAdmin,
   sendOrderCancelToAdmin,
+  sendMailMessage,
 };

@@ -1,0 +1,51 @@
+ [LOGGER] 2023-12-16 02:14:51.868 PM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as post] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:43:12
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-16 02:15:04.897 PM error : uncaughtException: sendMessage is not defined
+ReferenceError: sendMessage is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:43:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-16 02:15:10.680 PM error : uncaughtException: send is not defined
+ReferenceError: send is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:43:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-16 02:15:12.896 PM error : uncaughtException: sendMe is not defined
+ReferenceError: sendMe is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:43:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-16 02:34:46.069 PM error : uncaughtException: Cannot read properties of undefined (reading 'length')
+TypeError: Cannot read properties of undefined (reading 'length')
+    at pathtoRegexp (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/path-to-regexp/index.js:63:49)
+    at new Layer (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/layer.js:45:17)
+    at Function.route (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:505:15)
+    at proto.<computed> [as delete] (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/express/lib/router/index.js:520:22)
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:46:18
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-16 02:34:53.572 PM error : uncaughtException: remo is not defined
+ReferenceError: remo is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:46:42
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-16 02:39:01.969 PM error : controllers/bookingController.js:setBooking - sendBookingOfferingToAdmin is not defined
+ [LOGGER] 2023-12-16 03:06:09.672 PM error : controllers/bookingController.js:setBooking - moment is not defined
+ [LOGGER] 2023-12-16 03:06:28.297 PM error : controllers/bookingController.js:setBooking - moment is not defined
+ [LOGGER] 2023-12-16 04:00:55.643 PM error : controllers/bookingController.js:updateBookingAdmin - Operation timeout
+ [LOGGER] 2023-12-16 04:01:51.300 PM error : uncaughtException: Operation timeout
+SequelizeConnectionAcquireTimeoutError: Operation timeout
+    at ConnectionManager.getConnection (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:206:15)
+    at async Transaction.prepareEnvironment (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/transaction.js:85:24)
+    at async Sequelize.transaction (/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/node_modules/sequelize/lib/sequelize.js:500:7)
+    at async updateBookingAdmin (file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/bookingController.js:440:13)
+ [LOGGER] 2023-12-16 04:11:04.362 PM error : controllers/userController.js:removeUserAccount - WHERE parameter "id" has invalid "undefined" value
+ [LOGGER] 2023-12-16 04:11:52.727 PM error : controllers/userController.js:removeUserAccount - WHERE parameter "user_id" has invalid "undefined" value
+ [LOGGER] 2023-12-16 04:11:55.405 PM error : controllers/userController.js:removeUserAccount - WHERE parameter "user_id" has invalid "undefined" value
+ [LOGGER] 2023-12-16 04:12:58.551 PM error : controllers/userController.js:removeUserAccount - Cannot delete or update a parent row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-12-16 04:13:40.810 PM error : controllers/userController.js:removeUserAccount - Cannot delete or update a parent row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-12-16 04:13:41.986 PM error : controllers/userController.js:removeUserAccount - Cannot delete or update a parent row: a foreign key constraint fails (`rinjani_visitor_test`.`booking`, CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-12-16 04:17:38.776 PM error : controllers/userController.js:removeUserAccount - Cannot delete or update a parent row: a foreign key constraint fails (`rinjani_visitor_test`.`payment`, CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`booking_id`) REFERENCES `booking` (`booking_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-12-16 04:19:32.047 PM error : controllers/userController.js:removeUserAccount - Cannot delete or update a parent row: a foreign key constraint fails (`rinjani_visitor_test`.`order`, CONSTRAINT `order_ibfk_1` FOREIGN KEY (`payment_id`) REFERENCES `payment` (`payment_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)
+ [LOGGER] 2023-12-16 04:24:40.814 PM error : controllers/userController.js:removeUserAccount - Cannot delete or update a parent row: a foreign key constraint fails (`rinjani_visitor_test`.`order`, CONSTRAINT `order_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT)

@@ -12,6 +12,8 @@ import {
   forgotPassword,
   favorite,
   getAllFavoriteUser,
+  sendMessage,
+  removeUserAccount,
 } from '../controllers/userController.js';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import upload from '../middleware/multer.js';
@@ -39,5 +41,9 @@ userRouter.post('/users/forgot-password', forgotPassword);
 
 userRouter.get('/users/favorite/all', autenticate, getAllFavoriteUser);
 userRouter.post('/users/favorite', autenticate, favorite);
+
+userRouter.post('/send-message', sendMessage);
+
+userRouter.delete('/users', autenticate, removeUserAccount);
 
 export default userRouter;

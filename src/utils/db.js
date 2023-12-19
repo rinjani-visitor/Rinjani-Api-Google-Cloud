@@ -27,7 +27,7 @@ const sequelize = new Sequelize(
         return next();
       },
     },
-    //timezone: 'Asia/Jakarta',
+    timezone: '+08:00',
     insecureAuth: true,
   }
 );

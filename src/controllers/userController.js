@@ -2,7 +2,7 @@ import 'dotenv/config';
 import moment from 'moment-timezone';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
-import { sendMail, sendPassword } from '../utils/sendMail.js';
+import { sendMail, sendMailMessage, sendPassword } from '../utils/sendMail.js';
 import User from '../models/userModel.js';
 import { Op } from 'sequelize';
 import { compare } from '../utils/bcrypt.js';
@@ -86,7 +86,7 @@ const setUser = async (req, res, next) => {
     const newUser = await User.create(
       {
         ...user.data,
-        expireTime: moment().add(1, 'hours').tz('Asia/Makassar').toDate(),
+        expireTime: moment().utcOffset('+08:00').add(1, 'hours').toDate(),
       },
       {
         transaction: t,
@@ -101,8 +101,6 @@ const setUser = async (req, res, next) => {
         data: null,
       });
     }
-
-    console.log('id user' + newUser.userId);
 
     const result = await sendMail(newUser.email, newUser.userId);
 
@@ -122,7 +120,7 @@ const setUser = async (req, res, next) => {
           userId: newUser.userId,
           name: newUser.name,
           email: newUser.email,
-          expireTime: moment(newUser.expireTime).format(),
+          expireTime: moment(newUser.expireTime).format('YYYY-MM-DD HH:mm:ss'),
         },
       });
     }
@@ -685,6 +683,108 @@ const getAllFavoriteUser = async (req, res, next) => {
   }
 };
 
+const sendMessage = async (req, res, next) => {
+  const valid = {
+    email: 'required,isEmail',
+    name: 'required',
+    subject: 'required',
+    message: 'required',
+  };
+  try {
+    const dataSender = await dataValid(valid, req.body);
+
+    if (dataSender.message.length > 0) {
+      return res.status(400).json({
+        errors: dataSender.message,
+        message: 'Failed Send Message Email',
+        data: null,
+      });
+    }
+
+    const {
+      email, name, subject, message,
+    } = dataSender.data;
+
+    const sendMailVariable = await sendMailMessage(email, name, subject, message);
+
+    if (!sendMailVariable) {
+      return res.status(400).json({
+        errors: ['Failed Send Message Email'],
+        message: 'Failed Send Message Email',
+        data: null,
+      });
+    }
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Success Send Message Email',
+      data: null,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        `controllers/userController.js:sendMessage - ${error.message}`,
+      ),
+    );
+  }
+};
+
+const removeUserAccount = async (req, res, next) => {
+  const transaction = await sequelize.transaction();
+  try {
+    const authHeader = req.headers.authorization;
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const { userId } = tokenInfo;
+
+    const user = await User.findOne({
+      where: {
+        userId,
+      },
+    });
+
+    if (!user) {
+      return res.status(404).json({
+        errors: ['User not found'],
+        message: 'Remove User Account Failed',
+        data: null,
+      });
+    }
+
+    const result = await User.destroy({
+      where: {
+        userId,
+      },
+      transaction,
+    });
+
+    if(!result) {
+      await transaction.rollback();
+      return res.status(404).json({
+        errors: ['Failed to remove user account'],
+        message: 'Remove User Account Failed',
+        data: null,
+      });
+    }
+
+    await transaction.commit();
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Remove User Account Success',
+      data: null,
+    });
+  } catch (error) {
+    await transaction.rollback();
+    next(
+      new Error(
+        `controllers/userController.js:removeUserAccount - ${error.message}`,
+      ),
+    );
+  }
+};
+
+
 export {
   setUser,
   setActivateUser,
@@ -698,4 +798,6 @@ export {
   forgotPassword,
   favorite,
   getAllFavoriteUser,
+  sendMessage,
+  removeUserAccount,
 };
