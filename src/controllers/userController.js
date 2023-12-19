@@ -368,6 +368,9 @@ const updateUser = async (req, res, next) => {
     if (isExists(req.body.phoneNumber)) {
       valid.phoneNumber = 'required';
     }
+    if (isExists(req.body.profilPicture)) {
+      valid.profilPicture = 'required';
+    }
     const user = await dataValid(valid, req.body);
     if (
       isExists(user.data.password) &&

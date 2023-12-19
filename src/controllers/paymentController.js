@@ -84,6 +84,7 @@ const setBankPayment = async (req, res, next) => {
     bookingId: 'required',
     bankName: 'required',
     bankAccountName: 'required',
+    imageProofTransfer: 'required',
   };
   try {
     const bankPayment = await dataValid(valid, req.body);
@@ -125,110 +126,97 @@ const setBankPayment = async (req, res, next) => {
       });
     }
 
-    const proofTransfer = req.file.filename;
+    const result = await BankPayment.create(
+      {
+        ...bankPayment.data,
+        paymentId: getPaymentId.paymentId,
+      },
+      {
+        transaction: t,
+      }
+    );
 
-    if (!proofTransfer) {
-      return res.status(400).json({
-        errors: ['Image Proof Transfer is required'],
+    if (!result) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Failed to save data to database'],
+        message: 'Update Failed',
+        data: null,
+      });
+    }
+
+    const updateBookingStatus = await Booking.update(
+      {
+        bookingStatus: statusBooking[3],
+      },
+      {
+        where: {
+          bookingId: bankPayment.data.bookingId,
+        },
+      }
+    );
+
+    if (!updateBookingStatus) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Booking not found'],
         message: 'Payment via Bank Failed',
         data: null,
       });
-    } else {
-      const finalName =
-        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
-        '/images/payment/bank/' +
-        proofTransfer;
-      const result = await BankPayment.create(
-        {
-          bankName: bankPayment.data.bankName,
-          bankAccountName: bankPayment.data.bankAccountName,
-          imageProofTransfer: finalName,
+    }
+
+    const updatePaymentStatus = await Payment.update(
+      {
+        paymentStatus: 'Need a Review',
+      },
+      {
+        where: {
           paymentId: getPaymentId.paymentId,
         },
-        {
-          transaction: t,
-        }
-      );
-      if (result[0] == 0) {
-        await t.rollback();
-        return res.status(404).json({
-          errors: ['Failed to save url photo to database'],
-          message: 'Update Failed',
-          data: null,
-        });
-      } else {
-        await t.commit();
-
-        const updateBookingStatus = await Booking.update(
-          {
-            bookingStatus: statusBooking[3],
-          },
-          {
-            where: {
-              bookingId: bankPayment.data.bookingId,
-            },
-          }
-        );
-
-        if (!updateBookingStatus) {
-          return res.status(404).json({
-            errors: ['Booking not found'],
-            message: 'Payment via Bank Failed',
-            data: null,
-          });
-        }
-
-        const updatePaymentStatus = await Payment.update(
-          {
-            paymentStatus: 'Need a Review',
-          },
-          {
-            where: {
-              paymentId: getPaymentId.paymentId,
-            },
-          }
-        );
-
-        if (!updatePaymentStatus) {
-          return res.status(404).json({
-            errors: ['Payment not found'],
-            message: 'Payment via Bank Failed',
-            data: null,
-          });
-        }
-
-        const formattedPayment = {
-          paymentId: result.paymentId,
-          bookingId: bankPayment.data.bookingId,
-          method: 'Bank',
-          bankName: result.bankName,
-          bankAccountName: result.bankAccountName,
-          imageProofTransfer: result.imageProofTransfer,
-          createAt: result.createAt,
-        };
-
-        const sendPaymentMail = await sendBankPaymentToAdmin(
-          process.env.ADMIN_EMAIL,
-          formattedPayment
-        );
-
-        if (!sendPaymentMail) {
-          await t.rollback();
-          return res.status(404).json({
-            errors: ['Email payment confirmation failed to send to Admin'],
-            message: 'Update Booking Admin Failed',
-            data: null,
-          });
-        }
-
-        return res.status(201).json({
-          errors: [],
-          message:
-            'Payment via Bank has been send successfully, please check booking details',
-          data: formattedPayment,
-        });
       }
+    );
+
+    if (!updatePaymentStatus) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Payment not found'],
+        message: 'Payment via Bank Failed',
+        data: null,
+      });
     }
+
+    const formattedPayment = {
+      paymentId: result.paymentId,
+      bookingId: bankPayment.data.bookingId,
+      method: 'Bank',
+      bankName: result.bankName,
+      bankAccountName: result.bankAccountName,
+      imageProofTransfer: result.imageProofTransfer,
+      createAt: result.createAt,
+    };
+
+    const sendPaymentMail = await sendBankPaymentToAdmin(
+      process.env.ADMIN_EMAIL,
+      formattedPayment
+    );
+
+    if (!sendPaymentMail) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Email payment confirmation failed to send to Admin'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
+
+    await t.commit();
+
+    return res.status(201).json({
+      errors: [],
+      message:
+        'Payment via Bank has been send successfully, please check booking details',
+      data: formattedPayment,
+    });
   } catch (error) {
     next(
       new Error(
@@ -244,6 +232,7 @@ const setWisePayment = async (req, res, next) => {
     bookingId: 'required',
     wiseEmail: 'required,isEmail',
     wiseAccountName: 'required',
+    imageProofTransfer: 'required',
   };
   try {
     const wisePayment = await dataValid(valid, req.body);
@@ -284,111 +273,96 @@ const setWisePayment = async (req, res, next) => {
         data: null,
       });
     }
+    const result = await WisePayment.create(
+      {
+        ...wisePayment.data,
+        paymentId: getPaymentId.paymentId,
+      },
+      {
+        transaction: t,
+      }
+    );
+    if (!result) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Failed to save url photo to database'],
+        message: 'Update Failed',
+        data: null,
+      });
+    } 
 
-    const proofTransfer = req.file.filename;
+    const updateBookingStatus = await Booking.update(
+      {
+        bookingStatus: statusBooking[3],
+      },
+      {
+        where: {
+          bookingId: wisePayment.data.bookingId,
+        },
+      }
+    );
 
-    if (!proofTransfer) {
-      return res.status(400).json({
-        errors: ['Image Proof Transfer is required'],
+    if (!updateBookingStatus) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Booking not found'],
         message: 'Payment via Wise Failed',
         data: null,
       });
-    } else {
-      const finalName =
-        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
-        '/images/payment/wise/' +
-        proofTransfer;
-      const result = await WisePayment.create(
-        {
-          wiseEmail: wisePayment.data.wiseEmail,
-          wiseAccountName: wisePayment.data.wiseAccountName,
-          imageProofTransfer: finalName,
+    }
+
+    const updatePaymentStatus = await Payment.update(
+      {
+        paymentStatus: 'Need a Review',
+      },
+      {
+        where: {
           paymentId: getPaymentId.paymentId,
         },
-        {
-          transaction: t,
-        }
-      );
-      if (result[0] == 0) {
-        await t.rollback();
-        return res.status(404).json({
-          errors: ['Failed to save url photo to database'],
-          message: 'Update Failed',
-          data: null,
-        });
-      } else {
-        await t.commit();
-
-        const updateBookingStatus = await Booking.update(
-          {
-            bookingStatus: statusBooking[3],
-          },
-          {
-            where: {
-              bookingId: wisePayment.data.bookingId,
-            },
-          }
-        );
-
-        if (!updateBookingStatus) {
-          return res.status(404).json({
-            errors: ['Booking not found'],
-            message: 'Payment via Wise Failed',
-            data: null,
-          });
-        }
-
-        const updatePaymentStatus = await Payment.update(
-          {
-            paymentStatus: 'Need a Review',
-          },
-          {
-            where: {
-              paymentId: getPaymentId.paymentId,
-            },
-          }
-        );
-
-        if (!updatePaymentStatus) {
-          return res.status(404).json({
-            errors: ['Payment not found'],
-            message: 'Payment via Wise Failed',
-            data: null,
-          });
-        }
-
-        const formattedPayment = {
-          paymentId: result.paymentId,
-          bookingId: wisePayment.data.bookingId,
-          method: 'Wise',
-          wiseEmail: result.wiseEmail,
-          wiseAccountName: result.wiseAccountName,
-          imageProofTransfer: result.imageProofTransfer,
-          createdAt: result.createdAt,
-        };
-
-        const sendPaymentMail = await sendWisePaymentToAdmin(
-          process.env.ADMIN_EMAIL,
-          formattedPayment
-        );
-
-        if (!sendPaymentMail) {
-          await t.rollback();
-          return res.status(404).json({
-            errors: ['Email payment confirmation failed to send to Admin'],
-            message: 'Update Booking Admin Failed',
-            data: null,
-          });
-        }
-
-        return res.status(201).json({
-          errors: [],
-          message:
-            'Payment via Wise has been send successfully, please check booking details',
-          data: formattedPayment,
-        });
       }
+    );
+
+    if (!updatePaymentStatus) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Payment not found'],
+        message: 'Payment via Wise Failed',
+        data: null,
+      });
     }
+
+    const formattedPayment = {
+      paymentId: result.paymentId,
+      bookingId: wisePayment.data.bookingId,
+      method: 'Wise',
+      wiseEmail: result.wiseEmail,
+      wiseAccountName: result.wiseAccountName,
+      imageProofTransfer: result.imageProofTransfer,
+      createdAt: result.createdAt,
+    };
+
+    const sendPaymentMail = await sendWisePaymentToAdmin(
+      process.env.ADMIN_EMAIL,
+      formattedPayment
+    );
+
+    if (!sendPaymentMail) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Email payment confirmation failed to send to Admin'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
+
+    await t.commit();
+
+    return res.status(201).json({
+      errors: [],
+      message:
+        'Payment via Wise has been send successfully, please check booking details',
+      data: formattedPayment,
+    });
   } catch (error) {
     next(
       new Error(
