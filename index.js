@@ -10,7 +10,8 @@ import url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
-const PORT = process.env.PORT || 9001;
+const PORT = process.env.PORT || 8080;
+const serverRun = process.env.BASE_URL || 'localhost';
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -50,7 +51,7 @@ app.use(appMiddleware);
 //FOR DEV
 
 app.listen(PORT, () => {
-  console.log(`Server running on ${process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL}`);
+  console.log(`Server running on ${serverRun}:${PORT}`);
 });
 
 //FOR PROD
