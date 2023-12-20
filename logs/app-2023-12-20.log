@@ -1,0 +1,8 @@
+ [LOGGER] 2023-12-20 12:52:17.852 PM error : controllers/userController.js:setUser - Cannot read properties of undefined (reading 'expireTime')
+ [LOGGER] 2023-12-20 12:53:41.834 PM error : controllers/userController.js:setUser - Cannot read properties of undefined (reading 'expireTime')
+ [LOGGER] 2023-12-20 01:03:33.699 PM error : controllers/userController.js:setUser - moment(...).tz(...).date(...).add is not a function
+ [LOGGER] 2023-12-20 01:06:44.271 PM error : controllers/userController.js:setActivateUser - moment(...).tz(...).toDate(...).format is not a function
+ [LOGGER] 2023-12-20 01:14:34.383 PM error : uncaughtException: defaultValue is not defined
+ReferenceError: defaultValue is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/models/userModel.js:44:7
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)

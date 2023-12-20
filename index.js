@@ -10,7 +10,7 @@ import url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 9000;
 const serverRun = process.env.BASE_URL || 'localhost';
 
 app.use(bodyParser.json());

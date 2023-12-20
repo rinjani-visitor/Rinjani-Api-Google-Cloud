@@ -63,7 +63,7 @@ const setUser = async (req, res, next) => {
     } else if (
       userExists.length > 0 &&
       !userExists[0].isActive &&
-      moment(userExists[0].expireTime).isAfter(moment().tz('Asia/Makassar'))
+      moment(userExists[0].expireTime).isAfter(moment().tz("Asia/Singapore").format('YYYY-MM-DD HH:mm:ss'))
     ) {
       return res.status(400).json({
         errors: ['Email already registered, please check your email'],
@@ -86,7 +86,6 @@ const setUser = async (req, res, next) => {
     const newUser = await User.create(
       {
         ...user.data,
-        expireTime: moment().utcOffset('+08:00').add(1, 'hours').toDate(),
       },
       {
         transaction: t,
@@ -120,7 +119,7 @@ const setUser = async (req, res, next) => {
           userId: newUser.userId,
           name: newUser.name,
           email: newUser.email,
-          expireTime: moment(newUser.expireTime).format('YYYY-MM-DD HH:mm:ss'),
+          expireTime: newUser.expireTime,
         },
       });
     }
@@ -138,7 +137,7 @@ const setActivateUser = async (req, res, next) => {
         userId: user_id,
         isActive: false,
         expireTime: {
-          [Op.gte]: moment().tz('Asia/Makassar').toDate(),
+          [Op.gte]: moment().tz('Asia/Taipei').format('YYYY-MM-DD HH:mm:ss'),
         },
       },
     });
