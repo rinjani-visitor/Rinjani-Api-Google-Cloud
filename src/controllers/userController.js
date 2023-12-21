@@ -63,7 +63,7 @@ const setUser = async (req, res, next) => {
     } else if (
       userExists.length > 0 &&
       !userExists[0].isActive &&
-      moment(userExists[0].expireTime).isAfter(moment().tz("Asia/Singapore").format('YYYY-MM-DD HH:mm:ss'))
+      moment(userExists[0].expireTime).isAfter(moment().tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'))
     ) {
       return res.status(400).json({
         errors: ['Email already registered, please check your email'],
@@ -137,7 +137,7 @@ const setActivateUser = async (req, res, next) => {
         userId: user_id,
         isActive: false,
         expireTime: {
-          [Op.gte]: moment().tz('Asia/Taipei').format('YYYY-MM-DD HH:mm:ss'),
+          [Op.gte]: moment().tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'),
         },
       },
     });

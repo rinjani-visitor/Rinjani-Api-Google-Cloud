@@ -1,6 +1,9 @@
+import { v4 as uuidv4 } from 'uuid';
+import { promisify } from 'util';
 import sequelize from '../utils/db.js';
 import Product from '../models/productModel.js';
 import Foto from '../models/fotoModel.js';
+import { bucket } from '../middleware/multer_firebase.js';
 
 const setFotoProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -25,15 +28,55 @@ const setFotoProduct = async (req, res, next) => {
     if (uploadedFiles && uploadedFiles.length > 0) {
       const uploadedFilesData = [];
 
+      const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
+
       for (const file of uploadedFiles) {
-        const suffixName = file.filename;
-        const originalName = file.originalname;
-        const finalName =
-          process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL + '/images/fotoproduct/' + suffixName;
+        if (!allowedImageFormats.includes(file.mimetype)) {
+          return res.status(400).json({
+            errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
+            message: 'Update Avatar Failed',
+            data: null,
+          });
+        }
+
+        const folderName = 'fotoproduct-rinjani';
+        const fileName = `${uuidv4()}-${file.originalname}`;
+        const filePath = `${folderName}/${fileName}`;
+
+        const metadata = {
+          metadata: {
+            firebaseStorageDownloadTokens: uuidv4(),
+          },
+          contentType: file.mimetype,
+          cacheControl: 'public, max-age=31536000',
+        };
+
+        const blob = bucket.file(filePath);
+        const blobStream = blob.createWriteStream({
+          metadata,
+          gzip: true,
+        });
+
+        blobStream.on('error', (error) => res.status(500).json({
+          errors: [error.message],
+          message: 'Update Avatar Failed',
+          data: null,
+        }));
+
+        let urlphoto;
+        blobStream.on('finish', async () => {
+          urlphoto = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(filePath)}?alt=media`;
+        });
+
+        const blobStreamEnd = promisify(blobStream.end).bind(blobStream);
+
+        await blobStreamEnd(file.buffer);
+
+        const filePhotoName = file.originalname;
 
         uploadedFilesData.push({
-          url: finalName,
-          originalName: originalName,
+          url: urlphoto,
+          originalName: filePhotoName,
           productId: product_id,
         });
       }
@@ -85,7 +128,7 @@ const updateFotoProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
     const product_id = req.params.product_id;
-    const product = await Foto.findAll({
+    const product = await Foto.findOne({
       where: {
         productId: product_id,
       },
@@ -115,12 +158,54 @@ const updateFotoProduct = async (req, res, next) => {
       });
     };
 
-    const uploadedFileName = req.file.filename;
+    const uploadedFileName = req.file;
+
     if (uploadedFileName) {
-      const finalName = process.env.BASE_URL + '/images/fotoproduct/' + uploadedFileName;
+      const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
+      if (!allowedImageFormats.includes(req.file.mimetype)) {
+        return res.status(400).json({
+          errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
+          message: 'Update Avatar Failed',
+          data: null,
+        });
+      }
+
+      const folderName = 'fotoproduct-rinjani';
+      const fileName = `${uuidv4()}-${req.file.originalname}`;
+      const filePath = `${folderName}/${fileName}`;
+
+      const metadata = {
+        metadata: {
+          firebaseStorageDownloadTokens: uuidv4(),
+        },
+        contentType: req.file.mimetype,
+        cacheControl: 'public, max-age=31536000',
+      };
+
+      const blob = bucket.file(filePath);
+      const blobStream = blob.createWriteStream({
+        metadata,
+        gzip: true,
+      });
+
+      blobStream.on('error', (error) => res.status(500).json({
+        errors: [error.message],
+        message: 'Update Avatar Failed',
+        data: null,
+      }));
+
+      let urlphoto;
+      blobStream.on('finish', async () => {
+        urlphoto = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(filePath)}?alt=media`;
+      });
+
+      const blobStreamEnd = promisify(blobStream.end).bind(blobStream);
+
+      await blobStreamEnd(req.file.buffer);
+
       const result = await Foto.update(
         {
-          url: finalName,
+          url: urlphoto,
           originalName: req.file.originalname,
         },
         {
