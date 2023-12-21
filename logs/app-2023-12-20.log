@@ -1,0 +1,74 @@
+ [LOGGER] 2023-12-20 03:40:43.818 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:42:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:41:38.366 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:42:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:42:45.877 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:42:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:42:47.487 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:42:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:42:51.791 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:42:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:43:29.255 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:49:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:43:47.184 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:48:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:43:57.267 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:49:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:43:59.621 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:49:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:44:01.541 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:49:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:45:37.394 PM error : uncaughtException: storage is not defined
+ReferenceError: storage is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/middleware/multer_firebase.js:6:25
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:45:38.801 PM error : uncaughtException: storage is not defined
+ReferenceError: storage is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/middleware/multer_firebase.js:6:24
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:45:47.641 PM error : uncaughtException: storage is not defined
+ReferenceError: storage is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/middleware/multer_firebase.js:6:24
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:45:57.825 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:49:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:48:06.924 PM error : uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/productRoute.js:49:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:50:32.397 PM error : controllers/productController.js:setProduct - uuid is not defined
+ [LOGGER] 2023-12-20 03:52:49.720 PM error : controllers/productController.js:setProduct - promisify is not defined
+ [LOGGER] 2023-12-20 03:53:25.614 PM error : uncaughtException: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+ReferenceError: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/productController.js:2:23
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-20 03:53:27.551 PM error : uncaughtException: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+ReferenceError: require is not defined in ES module scope, you can use import instead
+This file is being treated as an ES module because it has a '.js' file extension and '/Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/package.json' contains "type": "module". To treat it as a CommonJS script, rename it to use the '.cjs' file extension.
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/controllers/productController.js:2:23
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)

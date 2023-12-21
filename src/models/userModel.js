@@ -41,13 +41,10 @@ const User = sequelize.define(
     },
     expireTime: {
       type: Sequelize.DATE,
-      set(value) {
-        if (value !== null) {
-          this.setDataValue('expireTime', moment(value).add(1, 'hours'));
-        } else {
-          this.setDataValue('expireTime', null);
-        }
-      },
+      defaultValue: moment()
+        .tz('Asia/Singapore')
+        .add(1, 'hours')
+        .format('YYYY-MM-DD HH:mm:ss'),
     },
     country: {
       type: Sequelize.STRING,

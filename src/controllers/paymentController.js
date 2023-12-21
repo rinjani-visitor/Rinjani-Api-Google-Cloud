@@ -134,15 +134,53 @@ const setBankPayment = async (req, res, next) => {
         data: null,
       });
     } else {
-      const finalName =
-        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
-        '/images/payment/bank/' +
-        proofTransfer;
+      const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
+      if (!allowedImageFormats.includes(req.file.mimetype)) {
+        return res.status(400).json({
+          errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
+          message: 'Update Avatar Failed',
+          data: null,
+        });
+      }
+
+      const folderName = 'paymentbank-rinjani';
+      const fileName = `${uuidv4()}-${req.file.originalname}`;
+      const filePath = `${folderName}/${fileName}`;
+
+      const metadata = {
+        metadata: {
+          firebaseStorageDownloadTokens: uuidv4(),
+        },
+        contentType: req.file.mimetype,
+        cacheControl: 'public, max-age=31536000',
+      };
+
+      const blob = bucket.file(filePath);
+      const blobStream = blob.createWriteStream({
+        metadata,
+        gzip: true,
+      });
+
+      blobStream.on('error', (error) => res.status(500).json({
+        errors: [error.message],
+        message: 'Update Avatar Failed',
+        data: null,
+      }));
+
+      let url;
+      blobStream.on('finish', async () => {
+        url = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(filePath)}?alt=media`;
+      });
+
+      const blobStreamEnd = promisify(blobStream.end).bind(blobStream);
+
+      await blobStreamEnd(req.file.buffer);
+
       const result = await BankPayment.create(
         {
           bankName: bankPayment.data.bankName,
           bankAccountName: bankPayment.data.bankAccountName,
-          imageProofTransfer: finalName,
+          imageProofTransfer: url,
           paymentId: getPaymentId.paymentId,
         },
         {
@@ -294,10 +332,48 @@ const setWisePayment = async (req, res, next) => {
         data: null,
       });
     } else {
-      const finalName =
-        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
-        '/images/payment/wise/' +
-        proofTransfer;
+      const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
+      if (!allowedImageFormats.includes(req.file.mimetype)) {
+        return res.status(400).json({
+          errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
+          message: 'Update Avatar Failed',
+          data: null,
+        });
+      }
+
+      const folderName = 'paymentwise-rinjani';
+      const fileName = `${uuidv4()}-${req.file.originalname}`;
+      const filePath = `${folderName}/${fileName}`;
+
+      const metadata = {
+        metadata: {
+          firebaseStorageDownloadTokens: uuidv4(),
+        },
+        contentType: req.file.mimetype,
+        cacheControl: 'public, max-age=31536000',
+      };
+
+      const blob = bucket.file(filePath);
+      const blobStream = blob.createWriteStream({
+        metadata,
+        gzip: true,
+      });
+
+      blobStream.on('error', (error) => res.status(500).json({
+        errors: [error.message],
+        message: 'Update Avatar Failed',
+        data: null,
+      }));
+
+      let url;
+      blobStream.on('finish', async () => {
+        url = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(filePath)}?alt=media`;
+      });
+
+      const blobStreamEnd = promisify(blobStream.end).bind(blobStream);
+
+      await blobStreamEnd(req.file.buffer);
+
       const result = await WisePayment.create(
         {
           wiseEmail: wisePayment.data.wiseEmail,

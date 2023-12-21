@@ -15,14 +15,14 @@ import {
   updateFotoProduct,
   setFotoProduct,
 } from '../controllers/fotoController.js';
-import upload from '../middleware/multer.js';
+import { upload } from '../middleware/multer_firebase.js';
 
 const productRouter = express.Router();
 
 productRouter.post(
   '/admin/products',
   autenticate,
-  upload('./public/images/thumbnail').single('thumbnail'),
+  upload.single('thumbnail'),
   setProduct
 ); //admin
 
@@ -39,14 +39,14 @@ productRouter.post('/admin/products/event', autenticate, setEvent); //admin
 productRouter.post(
   '/admin/products/foto/:product_id',
   autenticate,
-  upload('./public/images/fotoproduct').array('fotoproduct', 5),
+  upload.array('fotoproduct', 5),
   setFotoProduct
 ); //admin
 
 productRouter.patch(
   '/admin/products/foto/:product_id/:foto_id',
   autenticate,
-  upload('./public/images/fotoproduct').single('fotoproduct'),
+  upload.single('fotoproduct'),
   updateFotoProduct
 ); //admin
 
