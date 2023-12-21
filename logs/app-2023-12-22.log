@@ -1,0 +1,12 @@
+ [LOGGER] 2023-12-22 01:05:27.381 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:05:48.763 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:05:53.194 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:05:55.752 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:06:18.871 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:06:42.891 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:07:50.600 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:08:32.156 AM error : controllers/paymentController.js:getPaymentDetailAdmin - Unknown column 'Payment.createdAt' in 'field list'
+ [LOGGER] 2023-12-22 01:13:44.825 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:16:06.696 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:16:33.596 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587
+ [LOGGER] 2023-12-22 01:17:53.116 AM error : controllers/paymentController.js:updatePaymentAdmin - connect ECONNREFUSED 127.0.0.1:587

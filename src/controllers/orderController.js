@@ -4,6 +4,7 @@ import User from '../models/userModel.js';
 import { getUserIdFromAccessToken } from '../utils/jwt.js';
 import sequelize from '../utils/db.js';
 import { sendOrderCancelToAdmin } from '../utils/sendMail.js';
+import Review from '../models/reviewModel.js';
 
 const getAllOrder = async (req, res, next) => {
   try {
@@ -21,6 +22,10 @@ const getAllOrder = async (req, res, next) => {
           model: Product,
           attributes: ['title', 'rating', 'location'],
         },
+        {
+          model: Review,
+          attributes: ['rating', 'messageReview', 'createdAt'],
+        }
       ],
     });
 
@@ -34,11 +39,13 @@ const getAllOrder = async (req, res, next) => {
 
     const formattedOrder = order.map((order) => ({
       title: order.Product.title,
-      rating: order.Product.rating ? order.Product.rating : 0,
       location: order.Product.location,
       status: order.orderStatus,
       orderId: order.orderId,
       orderApproveDate: order.createdAt,
+      messageReview: order.Review ? order.Review.messageReview : undefined,
+      rating: order.Review ? order.Review.rating : undefined,
+      reviewCreatedAt: order.Review ? order.Review.createdAt : undefined,
     }));
 
     return res.status(200).json({

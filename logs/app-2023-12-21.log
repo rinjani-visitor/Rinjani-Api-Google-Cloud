@@ -8,3 +8,12 @@
  [LOGGER] 2023-12-21 09:16:42.959 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
  [LOGGER] 2023-12-21 09:21:25.810 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
  [LOGGER] 2023-12-21 09:23:37.076 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:53:30.293 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 142.251.175.108:465
+ [LOGGER] 2023-12-21 09:53:44.402 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 142.251.175.108:465
+ [LOGGER] 2023-12-21 09:54:30.399 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 142.251.175.108:465
+ [LOGGER] 2023-12-21 09:58:59.654 PM error : controllers/bookingController.js:updateBookingAdmin - connect ECONNREFUSED 142.251.175.108:465
+ [LOGGER] 2023-12-21 10:00:06.161 PM error : controllers/bookingController.js:updateBookingAdmin - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 10:17:50.589 PM error : controllers/bookingController.js:setBankPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 10:18:44.975 PM error : controllers/bookingController.js:setBankPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 10:20:20.555 PM error : controllers/bookingController.js:setBankPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 10:26:33.273 PM error : controllers/bookingController.js:setBankPayment - connect ECONNREFUSED 142.251.10.109:465

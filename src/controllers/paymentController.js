@@ -104,6 +104,8 @@ const setBankPayment = async (req, res, next) => {
       },
     });
 
+    console.log(getPaymentId.paymentId);
+
     if (!getPaymentId) {
       return res.status(404).json({
         errors: ['Get Payment ID fail'],
@@ -126,15 +128,12 @@ const setBankPayment = async (req, res, next) => {
       });
     }
 
-    const result = await BankPayment.create(
-      {
-        ...bankPayment.data,
-        paymentId: getPaymentId.paymentId,
-      },
-      {
-        transaction: t,
-      }
-    );
+    const result = await BankPayment.create({
+      bankName: bankPayment.data.bankName,
+      bankAccountName: bankPayment.data.bankAccountName,
+      imageProofTransfer: bankPayment.data.imageProofTransfer,
+      paymentId: getPaymentId.paymentId,
+    });
 
     if (!result) {
       await t.rollback();
@@ -153,6 +152,9 @@ const setBankPayment = async (req, res, next) => {
         where: {
           bookingId: bankPayment.data.bookingId,
         },
+      },
+      {
+        transaction: t,
       }
     );
 
@@ -173,6 +175,9 @@ const setBankPayment = async (req, res, next) => {
         where: {
           paymentId: getPaymentId.paymentId,
         },
+      },
+      {
+        transaction: t,
       }
     );
 
@@ -192,7 +197,7 @@ const setBankPayment = async (req, res, next) => {
       bankName: result.bankName,
       bankAccountName: result.bankAccountName,
       imageProofTransfer: result.imageProofTransfer,
-      createAt: result.createAt,
+      createAt: result.createdAt,
     };
 
     const sendPaymentMail = await sendBankPaymentToAdmin(
@@ -275,13 +280,13 @@ const setWisePayment = async (req, res, next) => {
     }
 
     console.log(wisePaymentBody.data);
-    
-    const result = await WisePayment.create(
-      {
-        ...wisePaymentBody.data,
-        paymentId: getPaymentId.paymentId,
-      },
-    );
+
+    const result = await WisePayment.create({
+      wiseEmail: wisePaymentBody.data.wiseEmail,
+      wiseAccountName: wisePaymentBody.data.wiseAccountName,
+      imageProofTransfer: wisePaymentBody.data.imageProofTransfer,
+      paymentId: getPaymentId.paymentId,
+    });
 
     console.log(result);
 
@@ -292,7 +297,7 @@ const setWisePayment = async (req, res, next) => {
         message: 'Update Failed',
         data: null,
       });
-    } 
+    }
 
     const updateBookingStatus = await Booking.update(
       {
@@ -448,7 +453,6 @@ const getPaymentDetailAdmin = async (req, res, next) => {
         'total',
         'method',
         'paymentStatus',
-        'createdAt',
       ],
       include: [
         {
