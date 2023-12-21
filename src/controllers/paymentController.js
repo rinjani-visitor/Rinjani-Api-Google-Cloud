@@ -235,11 +235,11 @@ const setWisePayment = async (req, res, next) => {
     imageProofTransfer: 'required',
   };
   try {
-    const wisePayment = await dataValid(valid, req.body);
+    const wisePaymentBody = await dataValid(valid, req.body);
 
-    if (wisePayment.message.length > 0) {
+    if (wisePaymentBody.message.length > 0) {
       return res.status(400).json({
-        errors: wisePayment.message,
+        errors: wisePaymentBody.message,
         message: 'Payment via Wise Failed',
         data: null,
       });
@@ -247,7 +247,7 @@ const setWisePayment = async (req, res, next) => {
 
     const getPaymentId = await Payment.findOne({
       where: {
-        bookingId: wisePayment.data.bookingId,
+        bookingId: wisePaymentBody.data.bookingId,
         method: 'Wise',
       },
     });
@@ -273,15 +273,18 @@ const setWisePayment = async (req, res, next) => {
         data: null,
       });
     }
+
+    console.log(wisePaymentBody.data);
+    
     const result = await WisePayment.create(
       {
-        ...wisePayment.data,
+        ...wisePaymentBody.data,
         paymentId: getPaymentId.paymentId,
       },
-      {
-        transaction: t,
-      }
     );
+
+    console.log(result);
+
     if (!result) {
       await t.rollback();
       return res.status(404).json({
@@ -297,7 +300,7 @@ const setWisePayment = async (req, res, next) => {
       },
       {
         where: {
-          bookingId: wisePayment.data.bookingId,
+          bookingId: wisePaymentBody.data.bookingId,
         },
       }
     );
@@ -333,7 +336,7 @@ const setWisePayment = async (req, res, next) => {
 
     const formattedPayment = {
       paymentId: result.paymentId,
-      bookingId: wisePayment.data.bookingId,
+      bookingId: wisePaymentBody.data.bookingId,
       method: 'Wise',
       wiseEmail: result.wiseEmail,
       wiseAccountName: result.wiseAccountName,

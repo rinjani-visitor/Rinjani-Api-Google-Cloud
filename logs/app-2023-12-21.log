@@ -1,2 +1,10 @@
  [LOGGER] 2023-12-21 05:57:48.115 PM error : Unexpected field
  [LOGGER] 2023-12-21 05:58:01.813 PM error : Unexpected field
+ [LOGGER] 2023-12-21 09:01:00.103 PM error : controllers/bookingController.js:setPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:01:50.103 PM error : controllers/bookingController.js:setPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:03:09.022 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:07:57.053 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:12:02.198 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:16:42.959 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:21:25.810 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-21 09:23:37.076 PM error : controllers/bookingController.js:setWisePayment - Lock wait timeout exceeded; try restarting transaction
