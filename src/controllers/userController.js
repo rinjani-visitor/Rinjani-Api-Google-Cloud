@@ -3,6 +3,8 @@ import moment from 'moment-timezone';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
 import { sendMail, sendMailMessage, sendPassword } from '../utils/sendMail.js';
+import { v4 as uuidv4 } from 'uuid';
+import { promisify } from 'util';
 import User from '../models/userModel.js';
 import { Op } from 'sequelize';
 import { compare } from '../utils/bcrypt.js';
@@ -21,6 +23,7 @@ import { isExists } from '../validation/sanitization.js';
 import { Entropy, charset32 } from 'entropy-string';
 import Favorites from '../models/favoritesModel.js';
 import Product from '../models/productModel.js';
+import { bucket } from '../middleware/multer_firebase.js';
 
 const setUser = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -433,15 +436,55 @@ const avatarUser = async (req, res, next) => {
     const tokenInfo = getUserIdFromAccessToken(token);
     const user_id = tokenInfo.userId;
 
-    const uploadedFileName = req.file.filename;
+    const uploadedFileName = req.file;
+
     if (uploadedFileName) {
-      const finalName =
-        process.env.GOOGLE_CLOUD_RUN_EXTERNAL_URL +
-        '/images/avatar/' +
-        uploadedFileName;
+      
+      const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
+      if (!allowedImageFormats.includes(req.file.mimetype)) {
+        return res.status(400).json({
+          errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
+          message: 'Update Avatar Failed',
+          data: null,
+        });
+      }
+
+      const folderName = 'avatar-rinjani';
+      const fileName = `${uuidv4()}-${req.file.originalname}`;
+      const filePath = `${folderName}/${fileName}`;
+
+      const metadata = {
+        metadata: {
+          firebaseStorageDownloadTokens: uuidv4(),
+        },
+        contentType: req.file.mimetype,
+        cacheControl: 'public, max-age=31536000',
+      };
+
+      const blob = bucket.file(filePath);
+      const blobStream = blob.createWriteStream({
+        metadata,
+        gzip: true,
+      });
+
+      blobStream.on('error', (error) => res.status(500).json({
+        errors: [error.message],
+        message: 'Update Avatar Failed',
+        data: null,
+      }));
+
+      let urlphoto;
+      blobStream.on('finish', async () => {
+        urlphoto = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(filePath)}?alt=media`;
+      });
+
+      const blobStreamEnd = promisify(blobStream.end).bind(blobStream);
+
+      await blobStreamEnd(req.file.buffer);
+
       const result = await User.update(
         {
-          profilPicture: finalName,
+          profilPicture: urlphoto,
         },
         {
           where: {

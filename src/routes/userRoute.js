@@ -16,7 +16,7 @@ import {
   removeUserAccount,
 } from '../controllers/userController.js';
 import { autenticate } from '../controllers/errorHandlingController.js';
-import upload from '../middleware/multer.js';
+import { upload } from '../middleware/multer_firebase.js';
 const userRouter = express.Router();
 
 userRouter.post('/users', setUser);
@@ -33,7 +33,7 @@ userRouter.patch('/users', autenticate, updateUser);
 userRouter.patch(
   '/users/avatar',
   autenticate,
-  upload('./public/images/avatar').single('avatar'),
+  upload.single('avatar'),
   avatarUser
 );
 userRouter.delete('/users/:id', autenticate, deleteUser);

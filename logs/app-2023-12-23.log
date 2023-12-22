@@ -31,3 +31,7 @@ ReferenceError: getAllPayment is not defined
 ReferenceError: getAllPayment is not defined
     at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/paymentRoute.js:37:44
     at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2023-12-23 03:08:02.517 AM error : uncaughtException: upload.single is not a function
+TypeError: upload.single is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/API/Rest-API-Rinjani/src/routes/userRoute.js:36:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
