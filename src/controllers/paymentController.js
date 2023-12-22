@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+import { promisify } from 'util';
 import 'dotenv/config';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
@@ -9,6 +11,7 @@ import WisePayment from '../models/wisePaymentModel.js';
 import User from '../models/userModel.js';
 import Product from '../models/productModel.js';
 import Order from '../models/orderModel.js';
+import { bucket } from '../middleware/multer_firebase.js';
 import {
   sendBookingSuccess,
   sendBookingFailed,
@@ -187,6 +190,7 @@ const setBankPayment = async (req, res, next) => {
           transaction: t,
         }
       );
+
       if (result[0] == 0) {
         await t.rollback();
         return res.status(404).json({
@@ -194,78 +198,86 @@ const setBankPayment = async (req, res, next) => {
           message: 'Update Failed',
           data: null,
         });
-      } else {
-        await t.commit();
-
-        const updateBookingStatus = await Booking.update(
-          {
-            bookingStatus: statusBooking[3],
+      } 
+      
+      const updateBookingStatus = await Booking.update(
+        {
+          bookingStatus: statusBooking[3],
+        },
+        {
+          where: {
+            bookingId: bankPayment.data.bookingId,
           },
-          {
-            where: {
-              bookingId: bankPayment.data.bookingId,
-            },
-          }
-        );
-
-        if (!updateBookingStatus) {
-          return res.status(404).json({
-            errors: ['Booking not found'],
-            message: 'Payment via Bank Failed',
-            data: null,
-          });
+        },
+        {
+          transaction: t,
         }
+      );
 
-        const updatePaymentStatus = await Payment.update(
-          {
-            paymentStatus: 'Need a Review',
-          },
-          {
-            where: {
-              paymentId: getPaymentId.paymentId,
-            },
-          }
-        );
-
-        if (!updatePaymentStatus) {
-          return res.status(404).json({
-            errors: ['Payment not found'],
-            message: 'Payment via Bank Failed',
-            data: null,
-          });
-        }
-
-        const formattedPayment = {
-          paymentId: result.paymentId,
-          bookingId: bankPayment.data.bookingId,
-          method: 'Bank',
-          bankName: result.bankName,
-          bankAccountName: result.bankAccountName,
-          imageProofTransfer: result.imageProofTransfer,
-          createAt: result.createAt,
-        };
-
-        const sendPaymentMail = await sendBankPaymentToAdmin(
-          process.env.ADMIN_EMAIL,
-          formattedPayment
-        );
-
-        if (!sendPaymentMail) {
-          await t.rollback();
-          return res.status(404).json({
-            errors: ['Email payment confirmation failed to send to Admin'],
-            message: 'Update Booking Admin Failed',
-            data: null,
-          });
-        }
-
-        return res.status(201).json({
-          errors: [],
-          message:
-            'Payment via Bank has been send successfully, please check booking details',
-          data: formattedPayment,
+      if (!updateBookingStatus) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Booking not found'],
+          message: 'Payment via Bank Failed',
+          data: null,
         });
       }
+
+      const updatePaymentStatus = await Payment.update(
+        {
+          paymentStatus: 'Need a Review',
+        },
+        {
+          where: {
+            paymentId: getPaymentId.paymentId,
+          },
+        },
+        {
+          transaction: t,
+        }
+      );
+
+      if (!updatePaymentStatus) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Payment not found'],
+          message: 'Payment via Bank Failed',
+          data: null,
+        });
+      }
+
+      const formattedPayment = {
+        paymentId: result.paymentId,
+        bookingId: bankPayment.data.bookingId,
+        method: 'Bank',
+        bankName: result.bankName,
+        bankAccountName: result.bankAccountName,
+        imageProofTransfer: result.imageProofTransfer,
+        createdAt: result.createdAt,
+      };
+
+      const sendPaymentMail = await sendBankPaymentToAdmin(
+        process.env.ADMIN_EMAIL,
+        formattedPayment
+      );
+
+      if (!sendPaymentMail) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Email payment confirmation failed to send to Admin'],
+          message: 'Update Booking Admin Failed',
+          data: null,
+        });
+      }
+
+      await t.commit();
+
+      return res.status(201).json({
+        errors: [],
+        message:
+          'Payment via Bank has been send successfully, please check booking details',
+        data: formattedPayment,
+      });
     }
   } catch (error) {
     next(
@@ -378,7 +390,7 @@ const setWisePayment = async (req, res, next) => {
         {
           wiseEmail: wisePayment.data.wiseEmail,
           wiseAccountName: wisePayment.data.wiseAccountName,
-          imageProofTransfer: finalName,
+          imageProofTransfer: url,
           paymentId: getPaymentId.paymentId,
         },
         {
@@ -393,7 +405,6 @@ const setWisePayment = async (req, res, next) => {
           data: null,
         });
       } else {
-        await t.commit();
 
         const updateBookingStatus = await Booking.update(
           {
@@ -456,6 +467,8 @@ const setWisePayment = async (req, res, next) => {
             data: null,
           });
         }
+
+        await t.commit();
 
         return res.status(201).json({
           errors: [],

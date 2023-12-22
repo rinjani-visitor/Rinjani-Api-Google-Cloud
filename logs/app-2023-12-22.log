@@ -1,0 +1,6 @@
+ [LOGGER] 2023-12-22 07:16:18.145 AM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 142.251.10.108:465
+ [LOGGER] 2023-12-22 07:20:52.621 AM error : controllers/bookingController.js:setBankPayment - uuidv4 is not defined
+ [LOGGER] 2023-12-22 07:25:32.017 AM error : controllers/bookingController.js:setBankPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-22 07:26:14.132 AM error : controllers/bookingController.js:setPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-22 07:27:03.883 AM error : controllers/bookingController.js:setPayment - Lock wait timeout exceeded; try restarting transaction
+ [LOGGER] 2023-12-22 07:35:46.887 AM error : controllers/bookingController.js:setBankPayment - Lock wait timeout exceeded; try restarting transaction
