@@ -151,7 +151,7 @@ const countRating = async (id_product) => {
   const averageRating =
     ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length;
 
-  const updateRatingProduct = await Product.update(
+  await Product.update(
     {
       rating: averageRating,
     },

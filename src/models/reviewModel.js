@@ -18,7 +18,7 @@ const Review = sequelize.define(
       allowNull: false,
     },
     rating: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.FLOAT,
       allowNull: false,
     },
   },

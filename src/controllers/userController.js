@@ -350,6 +350,14 @@ const updateUser = async (req, res, next) => {
     const tokenInfo = getUserIdFromAccessToken(token);
     const user_id = tokenInfo.userId;
 
+    if (!req.body.name && !req.body.email && !req.body.password && !req.body.country && !req.body.phoneNumber && !req.body.profilPicture) {
+      return res.status(200).json({
+        errors: [],
+        message: 'No data to update',
+        data: null,
+      });
+    }
+
     const valid = {};
     if (isExists(req.body.name)) {
       valid.name = 'required';
@@ -397,7 +405,7 @@ const updateUser = async (req, res, next) => {
         },
       }
     );
-    
+
     if (result[0] == 0) {
       return res.status(404).json({
         errors: ['User not found'],
