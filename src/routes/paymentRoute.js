@@ -2,6 +2,7 @@ import express from 'express';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import {
   getAllPaymentAdmin,
+  getPaymentById,
   getPaymentDetailAdmin,
   setBankPayment,
   setWisePayment,
@@ -32,5 +33,7 @@ paymentRouter.get(
   getPaymentDetailAdmin
 ); //admin
 paymentRouter.post('/admin/payment/:paymentId', autenticate, updatePaymentAdmin); //admin
+
+paymentRouter.get('/payment/:bookingId', autenticate, getPaymentById);
 
 export default paymentRouter;

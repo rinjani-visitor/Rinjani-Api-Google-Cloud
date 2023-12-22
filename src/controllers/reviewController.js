@@ -118,8 +118,7 @@ const setReview = async (req, res, next) => {
 
     await t.commit();
 
-    const ratingAll = await countRating(getProductId.productId);
-    console.log('ratingAll', ratingAll);
+    await countRating(getProductId.productId);
 
     return res.status(201).json({
       errors: [],
@@ -151,9 +150,11 @@ const countRating = async (id_product) => {
   const averageRating =
     ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length;
 
+  const ratingFinal = Number(averageRating.toFixed(1));
+
   await Product.update(
     {
-      rating: averageRating,
+      rating: ratingFinal,
     },
     {
       where: {

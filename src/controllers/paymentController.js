@@ -15,6 +15,7 @@ import {
   sendWisePaymentToAdmin,
   sendBankPaymentToAdmin,
 } from '../utils/sendMail.js';
+import { getUserIdFromAccessToken } from '../utils/jwt.js';
 
 const updateBankWiseMethodPayment = async (req, res, next) => {
   const valid = {
@@ -195,7 +196,7 @@ const setBankPayment = async (req, res, next) => {
       bankName: result.bankName,
       bankAccountName: result.bankAccountName,
       imageProofTransfer: result.imageProofTransfer,
-      createAt: result.createdAt,
+      createdAt: result.createdAt,
     };
 
     const sendPaymentMail = await sendBankPaymentToAdmin(
@@ -378,6 +379,66 @@ const setWisePayment = async (req, res, next) => {
   }
 };
 
+const getPaymentById = async (req, res, next) => {
+  try {
+
+    const booking_id = req.params.bookingId;
+
+    const result = await Payment.findOne({
+      where: {
+        bookingId: booking_id
+      },
+      include: [
+        {
+          model: Booking,
+          attributes: ['bookingId', 'productId'],
+          include: [
+            {
+              model: Product,
+              attributes: ['title', 'rating', 'location', 'thumbnail'],
+            },
+          ],
+        },
+      ],
+    });
+
+    if (!result) {
+      return res.status(404).json({
+        errors: ['Payment not found'],
+        message: 'Get Payment by booking id failed',
+        data: null,
+      });
+    }
+
+    const formatResult = {
+      paymentId: result.paymentId,
+      tax: result.tax,
+      subTotal: result.subTotal,
+      total: result.total,
+      method: result.method,
+      paymentStatus: result.paymentStatus,
+      bookingId: result.Booking.bookingId,
+      productId: result.Booking.Product.productId,
+      title: result.Booking.Product.title,
+      rating: result.Booking.Product.rating,
+      location: result.Booking.Product.location,
+      thumbnail: result.Booking.Product.thumbnail,
+    }
+
+    return res.status(200).json({
+      errors: [],
+      message: 'Get Payment by booking id successfully',
+      data: formatResult,
+    })
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/paymentController.js:getPaymentById - ' + error.message
+      )
+    )
+  }
+}
+
 const getAllPaymentAdmin = async (req, res, next) => {
   try {
     const result = await Payment.findAll({
@@ -419,7 +480,7 @@ const getAllPaymentAdmin = async (req, res, next) => {
       customerCountry: payment.Booking.User
         ? payment.Booking.User.country
         : null,
-      paymentData: payment.createdAt,
+      paymentDate: payment.createdAt,
     }));
 
     return res.status(200).json({
@@ -835,6 +896,7 @@ export {
   updateBankWiseMethodPayment,
   setBankPayment,
   setWisePayment,
+  getPaymentById,
   getAllPaymentAdmin,
   getPaymentDetailAdmin,
   updatePaymentAdmin,
