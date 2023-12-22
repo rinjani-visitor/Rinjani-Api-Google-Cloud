@@ -1,3 +1,4 @@
+import moment from 'moment';
 import 'dotenv/config';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
@@ -196,7 +197,7 @@ const setBankPayment = async (req, res, next) => {
       bankName: result.bankName,
       bankAccountName: result.bankAccountName,
       imageProofTransfer: result.imageProofTransfer,
-      createdAt: result.createdAt,
+      createdAt: moment(result.createdAt).format('YYYY-MM-DD HH:mm:ss'),
     };
 
     const sendPaymentMail = await sendBankPaymentToAdmin(
@@ -345,7 +346,7 @@ const setWisePayment = async (req, res, next) => {
       wiseEmail: result.wiseEmail,
       wiseAccountName: result.wiseAccountName,
       imageProofTransfer: result.imageProofTransfer,
-      createdAt: result.createdAt,
+      createdAt: moment(result.createdAt).format('YYYY-MM-DD HH:mm:ss'),
     };
 
     const sendPaymentMail = await sendWisePaymentToAdmin(
