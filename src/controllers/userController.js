@@ -367,9 +367,7 @@ const updateUser = async (req, res, next) => {
     if (isExists(req.body.phoneNumber)) {
       valid.phoneNumber = 'required';
     }
-    if (isExists(req.body.profilPicture)) {
-      valid.profilPicture = 'required';
-    }
+
     const user = await dataValid(valid, req.body);
     if (
       isExists(user.data.password) &&
@@ -384,16 +382,22 @@ const updateUser = async (req, res, next) => {
         data: null,
       });
     }
-    const result = await User.update(
-      {
-        ...user.data,
-      },
-      {
+
+    const updateData = {
+      ...user.data,
+    };
+
+    if (isExists(req.body.profilPicture)) {
+      updateData.profilPicture = req.body.profilPicture;
+    }
+
+    const result = await User.update(updateData, {
         where: {
           userId: user_id,
         },
       }
     );
+    
     if (result[0] == 0) {
       return res.status(404).json({
         errors: ['User not found'],

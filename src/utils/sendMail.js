@@ -10,9 +10,17 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const createEmail = (email, token) => {
+const transporterKedua = nodemailer.createTransport({
+  service: process.env.MAIL_SERVICE_2,
+  auth: {
+    user: process.env.MAIL_USER_2,
+    pass: process.env.MAIL_PASS_2,
+  },
+});
+
+const createEmail = (email, userId) => {
   return {
-    from: process.env.MAIL_FROM,
+    from: process.env.MAIL_USER_2,
     to: email,
     subject: 'Account Activation - Confirmation',
     html: `
@@ -21,12 +29,12 @@ const createEmail = (email, token) => {
         <p>Welcome to Rinjani Visitor! To activate your account, please click the link below:</p>
 
         <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
-          <a href="${base_url}/api/users/activate/${token}" style="display: inline-block; padding: 10px 20px; background-color: #32823A; color: #ffffff; text-decoration: none; border-radius: 3px;">Activate Your Account</a>
+          <a href="${base_url}/api/users/activate/${userId}" style="display: inline-block; padding: 10px 20px; background-color: #32823A; color: #ffffff; text-decoration: none; border-radius: 3px;">Activate Your Account</a>
         </div>
 
         <p style="margin-top: 20px;">If the button above does not work, you can also activate your account by copying and pasting the following link into your browser:</p>
 
-        <p>${base_url}/api/users/activate/${token}</p>
+        <p>${base_url}/api/users/activate/${userId}</p>
 
         <p style="margin-top: 20px;">Thank you for joining our community. If you have any questions or need assistance, feel free to contact us.</p>
 
@@ -447,7 +455,7 @@ const createMessage = (email, name, subject, message) => ({
 
 const sendMail = (email, token) => {
   return new Promise((resolve, reject) => {
-    transporter.sendMail(createEmail(email, token), (err, info) => {
+    transporterKedua.sendMail(createEmail(email, token), (err, info) => {
       if (err) {
         console.error('Error sending email:', err);
         reject(err);
@@ -461,7 +469,7 @@ const sendMail = (email, token) => {
 
 const sendPassword = (email, password) => {
   return new Promise((resolve, reject) => {
-    transporter.sendMail(contentPwd(email, password), (err, info) => {
+    transporterKedua.sendMail(contentPwd(email, password), (err, info) => {
       if (err) {
         console.log(err);
         reject(err);
@@ -475,7 +483,7 @@ const sendPassword = (email, password) => {
 
 const sendBookingSuccess = (email, bookingDetails) => {
   return new Promise((resolve, reject) => {
-    transporter.sendMail(bookingSuccess(email, bookingDetails), (err, info) => {
+    transporterKedua.sendMail(bookingSuccess(email, bookingDetails), (err, info) => {
       if (err) {
         console.log(err);
         reject(err);
@@ -489,7 +497,7 @@ const sendBookingSuccess = (email, bookingDetails) => {
 
 const sendBookingFailed = (email, bookingDetails) => {
   return new Promise((resolve, reject) => {
-    transporter.sendMail(bookingFailed(email, bookingDetails), (err, info) => {
+    transporterKedua.sendMail(bookingFailed(email, bookingDetails), (err, info) => {
       if (err) {
         console.log(err);
         reject(err);
@@ -503,7 +511,7 @@ const sendBookingFailed = (email, bookingDetails) => {
 
 const sendPayment = (email, paymentDetails) => {
   return new Promise((resolve, reject) => {
-    transporter.sendMail(
+    transporterKedua.sendMail(
       waitingForPaymentMail(email, paymentDetails),
       (err, info) => {
         if (err) {
@@ -604,7 +612,7 @@ const sendOrderCancelToAdmin = (email, orderDetais) => {
 }
 
 const sendMailMessage = (email, name, subject, message) => new Promise((resolve, reject) => {
-  transporter.sendMail(createMessage(email, name, subject, message), (err, info) => {
+  transporterKedua.sendMail(createMessage(email, name, subject, message), (err, info) => {
     if (err) {
       console.error('Error sending email:', err);
       reject(err);

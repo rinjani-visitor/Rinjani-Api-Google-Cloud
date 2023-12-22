@@ -33,7 +33,7 @@ const Product = sequelize.define(
       allowNull: false,
     },
     thumbnail: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: false,
     },
   },

@@ -55,7 +55,7 @@ const User = sequelize.define(
       allowNull: true,
     },
     profilPicture: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: true,
       defaultValue: process.env.USER_PROFILE_PICTURE,
     },

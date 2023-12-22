@@ -12,7 +12,7 @@ const Foto = sequelize.define(
       allowNull: false,
     },
     url: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: false,
     },
     originalName: {

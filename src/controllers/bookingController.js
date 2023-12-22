@@ -10,9 +10,8 @@ import Payment from '../models/paymentModel.js';
 import 'dotenv/config';
 import {
   sendBookingOfferingToAdmin,
-  // sendBookingOfferingToAdmin,
   sendPayment,
-  // sendUpdateBookingOfferingToAdmin,
+  sendUpdateBookingOfferingToAdmin,
 } from '../utils/sendMail.js';
 import { getUserIdFromAccessToken } from '../utils/jwt.js';
 
@@ -699,33 +698,33 @@ const updateBooking = async (req, res, next) => {
       ],
     });
 
-    // const formatBooking = {
-    //   title: data.Product.title,
-    //   name: data.User.name,
-    //   country: data.User.country ? data.User.country : null,
-    //   email: data.User.email,
-    //   phoneNumber: data.User.phoneNumber ? data.User.phoneNumber : null,
-    //   bookingId: data.bookingId,
-    //   startDateTime: data.startDateTime,
-    //   endDateTime: data.endDateTime ? data.endDateTime : null,
-    //   offeringPrice: data.offeringPrice,
-    //   addOns: data.addOns,
-    //   totalPersons: data.totalPersons,
-    // };
+    const formatBooking = {
+      title: data.Product.title,
+      name: data.User.name,
+      country: data.User.country ? data.User.country : null,
+      email: data.User.email,
+      phoneNumber: data.User.phoneNumber ? data.User.phoneNumber : null,
+      bookingId: data.bookingId,
+      startDateTime: data.startDateTime,
+      endDateTime: data.endDateTime ? data.endDateTime : null,
+      offeringPrice: data.offeringPrice,
+      addOns: data.addOns,
+      totalPersons: data.totalPersons,
+    };
 
-    // const sendPaymentMail = await sendUpdateBookingOfferingToAdmin(
-    //   process.env.ADMIN_EMAIL,
-    //   formatBooking
-    // );
+    const sendPaymentMail = await sendUpdateBookingOfferingToAdmin(
+      process.env.ADMIN_EMAIL,
+      formatBooking
+    );
 
-    // if (!sendPaymentMail) {
-    //   await t.rollback();
-    //   return res.status(404).json({
-    //     errors: ['Email payment confirmation failed to send to Admin'],
-    //     message: 'Update Booking Admin Failed',
-    //     data: null,
-    //   });
-    // }
+    if (!sendPaymentMail) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Email payment confirmation failed to send to Admin'],
+        message: 'Update Booking Admin Failed',
+        data: null,
+      });
+    }
 
     return res.status(200).json({
       errors: [],

@@ -12,7 +12,7 @@ const BankPayment = sequelize.define(
       allowNull: false,
     },
     imageProofTransfer: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: false,
     },
     bankName: {

@@ -1,4 +1,5 @@
 import express from 'express';
+import 'dotenv/config';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import {
   setBooking,

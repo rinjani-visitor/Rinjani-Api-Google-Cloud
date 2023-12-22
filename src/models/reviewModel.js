@@ -31,38 +31,38 @@ const Review = sequelize.define(
 
 Order.hasOne(Review, {
   foreignKey: 'orderId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 Review.belongsTo(Order, {
   foreignKey: 'orderId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 })
 
 Product.hasMany(Review, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 Review.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 User.hasMany(Review, {
   foreignKey: 'userId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 Review.belongsTo(User, {
   foreignKey: 'userId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 sequelize.sync();

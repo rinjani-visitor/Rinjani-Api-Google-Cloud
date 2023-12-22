@@ -104,8 +104,6 @@ const setBankPayment = async (req, res, next) => {
       },
     });
 
-    console.log(getPaymentId.paymentId);
-
     if (!getPaymentId) {
       return res.status(404).json({
         errors: ['Get Payment ID fail'],
@@ -131,7 +129,7 @@ const setBankPayment = async (req, res, next) => {
     const result = await BankPayment.create({
       bankName: bankPayment.data.bankName,
       bankAccountName: bankPayment.data.bankAccountName,
-      imageProofTransfer: bankPayment.data.imageProofTransfer,
+      imageProofTransfer: req.body.imageProofTransfer,
       paymentId: getPaymentId.paymentId,
     });
 
@@ -284,7 +282,7 @@ const setWisePayment = async (req, res, next) => {
     const result = await WisePayment.create({
       wiseEmail: wisePaymentBody.data.wiseEmail,
       wiseAccountName: wisePaymentBody.data.wiseAccountName,
-      imageProofTransfer: wisePaymentBody.data.imageProofTransfer,
+      imageProofTransfer: req.body.imageProofTransfer,
       paymentId: getPaymentId.paymentId,
     });
 
