@@ -29,14 +29,14 @@ const Foto = sequelize.define(
 
 Product.hasMany(Foto, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 })
 
 Foto.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 })
 
 sequelize.sync();

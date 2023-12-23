@@ -441,6 +441,7 @@ const avatarUser = async (req, res, next) => {
     if (uploadedFileName) {
       
       const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
+
       if (!allowedImageFormats.includes(req.file.mimetype)) {
         return res.status(400).json({
           errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
