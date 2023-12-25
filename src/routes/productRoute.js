@@ -7,6 +7,7 @@ import {
   setEvent,
   setHomeStay,
   setProduct,
+  setProductJson,
   setRinjani,
   setWisata,
   updateProduct,
@@ -24,6 +25,12 @@ productRouter.post(
   autenticate,
   upload.single('thumbnail'),
   setProduct
+); //admin
+
+productRouter.post(
+  '/admin/add-products',
+  autenticate,
+  setProductJson
 ); //admin
 
 productRouter.patch('/admin/products/:id', autenticate, updateProduct); //admin
@@ -53,6 +60,8 @@ productRouter.patch(
 productRouter.delete('/admin/products/:id', autenticate, deleteProduct); //admin
 
 productRouter.get('/products', getAllProducts);
+
+productRouter.get('/admin/products', getAllProducts); //admin
 
 productRouter.get('/products/:product_id', getProductDetail);
 

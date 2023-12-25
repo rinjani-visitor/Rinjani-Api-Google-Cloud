@@ -27,6 +27,7 @@ const getAllOrder = async (req, res, next) => {
           attributes: ['rating', 'messageReview', 'createdAt'],
         }
       ],
+      order: [['createdAt', 'DESC']],
     });
 
     if (!order) {
@@ -48,10 +49,14 @@ const getAllOrder = async (req, res, next) => {
       reviewCreatedAt: order.Review ? order.Review.createdAt : undefined,
     }));
 
+    const sortedOrders = formattedOrder.sort((a, b) => {
+      return new Date(b.orderApproveDate) - new Date(a.orderApproveDate);
+    });
+
     return res.status(200).json({
       errors: [],
       message: 'Get Order Success',
-      data: formattedOrder,
+      data: sortedOrders,
     });
   } catch (error) {
     next(
@@ -73,6 +78,7 @@ const getAllOrderAdmin = async (req, res, next) => {
           attributes: ['name', 'country'],
         },
       ],
+      order: [['createdAt', 'DESC']],
     });
 
     if (!order) {
@@ -94,10 +100,14 @@ const getAllOrderAdmin = async (req, res, next) => {
       customerCountry: order.User.country,
     }));
 
+    const sortedOrders = formattedOrder.sort((a, b) => {
+      return new Date(b.orderApproveDate) - new Date(a.orderApproveDate);
+    });
+
     return res.status(200).json({
       errors: [],
       message: 'Get Order Success',
-      data: formattedOrder,
+      data: sortedOrders,
     });
   } catch (error) {
     next(

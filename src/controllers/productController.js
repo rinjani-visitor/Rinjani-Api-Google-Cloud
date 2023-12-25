@@ -131,6 +131,69 @@ const setProduct = async (req, res, next) => {
   }
 };
 
+const setProductJson = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  const valid = {
+    title: 'required',
+    categoryId: 'required, isDecimal',
+    location: 'required',
+    lowestPrice: 'required',
+  };
+  try {
+    const product = await dataValid(valid, req.body);
+    if (product.message.length > 0) {
+      return res.status(400).json({
+        errors: product.message,
+        message: 'Product Failed',
+        data: null,
+      });
+    }
+
+    let subCategoryId = req.body.subCategoryId;
+    if (!subCategoryId) {
+      subCategoryId = null;
+    }
+
+    const productDataFormat = {
+      ...product.data,
+    };
+
+    if (isExists(req.body.thumbnail)) {
+      productDataFormat.thumbnail = req.body.thumbnail;
+    }
+
+    const result = await Product.create(productDataFormat, {
+        subCategoryId,
+      },
+      {
+        transaction: t,
+      }
+    );
+    
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['Failed to save url photo to database'],
+        message: 'Update Failed',
+        data: null,
+      });
+    } else {
+      await t.commit();
+      return res.status(201).json({
+        errors: [],
+        message: 'Product created successfully',
+        data: result,
+      });
+    }
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/productController.js:setProductJson - ' + error.message
+      )
+    );
+  }
+};
+
 const updateProduct = async (req, res, next) => {
   try {
     const product_id = req.params.id;
@@ -1255,6 +1318,7 @@ const getProductDetail = async (req, res, next) => {
 
 export {
   setProduct,
+  setProductJson,
   updateProduct,
   deleteProduct,
   getAllProducts,

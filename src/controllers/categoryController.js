@@ -261,6 +261,36 @@ const getAllCategoriesandSubCategories = async (req, res, next) => {
   }
 };
 
+const getAllCategories = async (req, res, next) => {
+  try {
+    const result = await Category.findAll();
+    return res.status(200).json({
+      errors: [],
+      message: 'Get all categories successfully',
+      data: result,
+    });
+  } catch (error) {
+    next(
+      new Error('controllers/categoryController.js:getAllCategories - ' + error)
+    );
+  }
+}
+
+const getAllSubCategories = async (req, res, next) => {
+  try {
+    const result = await SubCategory.findAll();
+    return res.status(200).json({
+      errors: [],
+      message: 'Get all sub categories successfully',
+      data: result,
+    });
+  } catch (error) {
+    next(
+      new Error('controllers/categoryController.js:getAllSubCategories - ' + error)
+    );
+  }
+}
+
 const updateSubCategory = async (req, res, next) => {
   const t = await sequelize.transaction();
   const valid = {
@@ -386,6 +416,8 @@ export {
   deleteCategory,
   setSubCategory,
   getAllCategoriesandSubCategories,
+  getAllCategories,
+  getAllSubCategories,
   updateSubCategory,
   deleteSubCategory,
 };

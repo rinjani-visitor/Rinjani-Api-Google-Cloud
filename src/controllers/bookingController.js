@@ -188,6 +188,7 @@ const getAllBooking = async (req, res, next) => {
           attributes: ['title', 'rating', 'location', 'thumbnail'],
         },
       ],
+      order: [['createdAt', 'DESC']],
     });
 
     if (!result) {
@@ -216,7 +217,11 @@ const getAllBooking = async (req, res, next) => {
         })
       );
 
-      return bookings;
+      const sortedBookings = bookings.sort((a, b) => {
+        return new Date(b.bookingDate) - new Date(a.bookingDate);
+      });
+    
+      return sortedBookings;
     };
 
     const resultFormattedBooking = await formattedBooking();
@@ -322,6 +327,7 @@ const getAllBookingAdmin = async (req, res, next) => {
             attributes: ['name', 'country'],
           },
         ],
+        order: [['createdAt', 'DESC']],
       });
     } else {
       result = await Booking.findAll({
@@ -336,6 +342,7 @@ const getAllBookingAdmin = async (req, res, next) => {
             attributes: ['name', 'country'],
           },
         ],
+        order: [['createdAt', 'DESC']],
       });
     }
 
@@ -358,10 +365,14 @@ const getAllBookingAdmin = async (req, res, next) => {
       customerCountry: booking.User ? booking.User.country : null,
     }));
 
+    const sortedBookings = formattedBooking.sort((a, b) => {
+      return new Date(b.bookingDate) - new Date(a.bookingDate);
+    });
+
     return res.status(200).json({
       errors: [],
       message: 'Get All Booking Admin successfully',
-      data: formattedBooking,
+      data: sortedBookings,
     });
   } catch (error) {
     next(

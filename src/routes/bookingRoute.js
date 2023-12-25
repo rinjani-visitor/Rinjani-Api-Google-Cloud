@@ -16,7 +16,8 @@ const bookingRouter = express.Router();
 bookingRouter.post('/booking', autenticate, setBooking);
 bookingRouter.get('/booking', autenticate, getAllBooking);
 bookingRouter.delete('/booking/:bookingId', autenticate, deleteBooking);
-bookingRouter.get('/booking/:bookingId', autenticate, getBookingDetail); //admin and user
+bookingRouter.get('/booking/:bookingId', autenticate, getBookingDetail); 
+bookingRouter.get('/admin/booking/:bookingId', autenticate, getBookingDetail); //admin
 bookingRouter.patch('/booking/:bookingId', autenticate, updateBooking);
 bookingRouter.get('/admin/booking', autenticate, getAllBookingAdmin); //admin
 bookingRouter.patch(

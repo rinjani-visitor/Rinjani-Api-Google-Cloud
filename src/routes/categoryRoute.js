@@ -3,7 +3,9 @@ import { autenticate } from '../controllers/errorHandlingController.js';
 import {
   deleteCategory,
   deleteSubCategory,
+  getAllCategories,
   getAllCategoriesandSubCategories,
+  getAllSubCategories,
   setCategory,
   setSubCategory,
   updateCategory,
@@ -21,9 +23,21 @@ categoryRouter.patch('/admin/subcategories', autenticate, updateSubCategory); //
 categoryRouter.delete('/admin/subcategories', autenticate, deleteSubCategory); //admin
 
 categoryRouter.get(
-  '/admin/categories',
+  '/admin/categoriesAndSubCategories',
   autenticate,
   getAllCategoriesandSubCategories
 );
+
+categoryRouter.get(
+  '/admin/categories',
+  autenticate,
+  getAllCategories
+)
+
+categoryRouter.get(
+  '/admin/subCategories',
+  autenticate,
+  getAllSubCategories
+)
 
 export default categoryRouter;
