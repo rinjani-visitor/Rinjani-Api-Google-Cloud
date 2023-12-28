@@ -36,24 +36,10 @@ const setUser = async (req, res, next) => {
   };
 
   try {
-    const user = await dataValid(valid, req.body);
-
-    // Cek password
-    if (user.data.password !== user.data.confirmPassword) {
-      user.message.push('Password does not match');
-    }
-
-    if (user.message.length > 0) {
-      return res.status(400).json({
-        errors: user.message,
-        message: 'Register Failed',
-        data: null,
-      });
-    }
 
     const userExists = await User.findAll({
       where: {
-        email: user.data.email,
+        email: req.body.email,
       },
     });
 
@@ -77,7 +63,7 @@ const setUser = async (req, res, next) => {
       User.destroy(
         {
           where: {
-            email: user.data.email,
+            email: req.body.email,
           },
         },
         {
@@ -86,9 +72,16 @@ const setUser = async (req, res, next) => {
       );
     }
 
+    const userData = {
+      name: req.body.name,
+      email: req.body.email,
+      country: req.body.country,
+      password: req.body.password,
+    }
+
     const newUser = await User.create(
       {
-        ...user.data,
+        ...userData,
       },
       {
         transaction: t,
