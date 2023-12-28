@@ -197,7 +197,7 @@ const setBankPayment = async (req, res, next) => {
       bankName: result.bankName,
       bankAccountName: result.bankAccountName,
       imageProofTransfer: result.imageProofTransfer,
-      createdAt: moment(result.createdAt).format('YYYY-MM-DD HH:mm:ss'),
+      createdAt: moment(result.createdAt).tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'),
     };
 
     const sendPaymentMail = await sendBankPaymentToAdmin(
@@ -346,7 +346,7 @@ const setWisePayment = async (req, res, next) => {
       wiseEmail: result.wiseEmail,
       wiseAccountName: result.wiseAccountName,
       imageProofTransfer: result.imageProofTransfer,
-      createdAt: moment(result.createdAt).format('YYYY-MM-DD HH:mm:ss'),
+      createdAt: moment(result.createdAt).tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'),
     };
 
     const sendPaymentMail = await sendWisePaymentToAdmin(
