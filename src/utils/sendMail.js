@@ -453,6 +453,31 @@ const createMessage = (email, name, subject, message) => ({
     `,
 });
 
+const confirmDeleteAccountUserByAdmin = (email) => {
+  return {
+    from: process.env.MAIL_FROM,
+    to: email,
+    subject: 'Delete Account Confirmation',
+    html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #32823A;">Delete Account Confirmation</h2>
+      
+        <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
+          <table style="width: 100%;">
+            <tr>
+              <td style="width: 30%;"><strong>Hi ${email},</strong><br><p>We received a request to delete your account and your account has been successfully deleted</p></td>
+            </tr>
+          </table>
+        </div>
+
+        <p style="margin-top: 20px;">Thank you for using our service. If you have any questions or need further assistance, feel free to contact us.</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+  };
+};
+
 const sendMail = (email, token) => {
   return new Promise((resolve, reject) => {
     transporterKedua.sendMail(createEmail(email, token), (err, info) => {
@@ -623,6 +648,18 @@ const sendMailMessage = (email, name, subject, message) => new Promise((resolve,
   });
 });
 
+const sendConfirmDeleteAccountUserByAdmin = (email) => new Promise((resolve, reject) => {
+  transporter.sendMail(confirmDeleteAccountUserByAdmin(email), (err, info) => {
+    if (err) {
+      console.error('Error sending email:', err);
+      reject(err);
+    } else {
+      console.log(`Email sent (sendConfirmDeleteAccountUserByAdmin): ${info.response}`);
+      resolve(true);
+    }
+  });
+})
+
 export {
   sendMail,
   sendPassword,
@@ -635,4 +672,5 @@ export {
   sendUpdateBookingOfferingToAdmin,
   sendOrderCancelToAdmin,
   sendMailMessage,
+  sendConfirmDeleteAccountUserByAdmin,
 };

@@ -443,7 +443,7 @@ const getPaymentById = async (req, res, next) => {
 const getAllPaymentAdmin = async (req, res, next) => {
   try {
     const result = await Payment.findAll({
-      attributes: ['paymentId', 'total', 'method', 'paymentStatus'],
+      attributes: ['paymentId', 'total', 'method', 'paymentStatus', 'updatedAt'],
       include: [
         {
           model: Booking,
@@ -460,6 +460,7 @@ const getAllPaymentAdmin = async (req, res, next) => {
           ],
         },
       ],
+      order: [['updatedAt', 'DESC']],
     });
 
     if (!result) {
@@ -481,13 +482,17 @@ const getAllPaymentAdmin = async (req, res, next) => {
       customerCountry: payment.Booking.User
         ? payment.Booking.User.country
         : null,
-      paymentDate: payment.createdAt,
+      updatePaymentDate: payment.updatedAt,
     }));
+
+    const sortedPayments = formattedPayment.sort((a, b) => {
+      return new Date(b.updatePaymentDate) - new Date(a.updatePaymentDate);
+    });
 
     return res.status(200).json({
       errors: [],
       message: 'Get All Payment Admin Success',
-      data: formattedPayment,
+      data: sortedPayments,
     });
   } catch (error) {
     next(

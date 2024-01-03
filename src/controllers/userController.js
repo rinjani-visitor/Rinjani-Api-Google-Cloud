@@ -2,7 +2,7 @@ import 'dotenv/config';
 import moment from 'moment-timezone';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
-import { sendMail, sendMailMessage, sendPassword } from '../utils/sendMail.js';
+import { sendConfirmDeleteAccountUserByAdmin, sendMail, sendMailMessage, sendPassword } from '../utils/sendMail.js';
 import { v4 as uuidv4 } from 'uuid';
 import { promisify } from 'util';
 import User from '../models/userModel.js';
@@ -534,6 +534,52 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
+const deleteUserByAdmin = async (req, res, next) => {
+  try {
+    const user_id = req.params.id;
+
+    const getEmail = await User.findOne({
+      attributes: ['email', 'userId'],
+      where: {
+        userId: user_id,
+      },
+    });
+
+    const usrDelete = User.destroy({
+      where: {
+        userId: user_id,
+      },
+    });
+    if (!usrDelete) {
+      return res.status(404).json({
+        errors: ['User not found'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    }
+
+    const sendMail = await sendConfirmDeleteAccountUserByAdmin(getEmail.email);
+
+    if (!sendMail) {
+      return res.status(500).json({
+        errors: ['Failed to send email confirmation'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    }
+
+    return res.status(200).json({
+      errors: [],
+      message: 'User deleted successfully',
+      data: null,
+    });
+  } catch (error) {
+    next(
+      new Error('controllers/userController.js:deleteUser - ' + error.message)
+    );
+  }
+};
+
 const forgotPassword = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
@@ -846,6 +892,7 @@ export {
   updateUser,
   avatarUser,
   deleteUser,
+  deleteUserByAdmin,
   forgotPassword,
   favorite,
   getAllFavoriteUser,

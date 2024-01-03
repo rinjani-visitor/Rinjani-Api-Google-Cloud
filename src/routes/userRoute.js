@@ -14,6 +14,7 @@ import {
   getAllFavoriteUser,
   sendMessage,
   removeUserAccount,
+  deleteUserByAdmin,
 } from '../controllers/userController.js';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import { upload } from '../middleware/multer_firebase.js';
@@ -37,6 +38,9 @@ userRouter.patch(
   avatarUser
 );
 userRouter.delete('/users/:id', autenticate, deleteUser);
+
+userRouter.delete('/admin/users/:id', autenticate, deleteUserByAdmin); //admin
+
 userRouter.post('/users/forgot-password', forgotPassword);
 
 userRouter.get('/users/favorite/all', autenticate, getAllFavoriteUser);
