@@ -14,7 +14,6 @@ const setReview = async (req, res, next) => {
     orderId: 'required',
   };
   try {
-
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
     const tokenInfo = getUserIdFromAccessToken(token);
@@ -168,4 +167,49 @@ const countRating = async (id_product) => {
   return averageRating;
 };
 
-export default setReview;
+const getAllReview = async (req, res, next) => {
+  try {
+    const allReview = await Review.findAll({
+      attributes: ['rating', 'messageReview', 'createdAt'],
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'profilPicture', 'country'],
+        },
+      ],
+      order: [['createdAt', 'DESC']],
+      limit: 10,
+    });
+
+    if (!allReview) {
+      return res.status(400).json({
+        errors: ['Get All Review Fail'],
+        message: 'Review not found',
+        data: null,
+      });
+    }
+
+    const formattedReview = allReview.map((review) => ({
+      review: review.review,
+      messageReview: review.messageReview,
+      createdAt: review.createdAt,
+      name: review.User ? review.User.name : null,
+      profilPicture: review.User ? review.User.profilPicture : null,
+      country: review.User ? review.User.country : null,
+    }));
+
+    return res.status(201).json({
+      errors: [],
+      message: 'Get all review successfully',
+      data: formattedReview,
+    });
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/raviewController.js:getAllReview - ' + error.message
+      )
+    );
+  }
+};
+
+export { setReview, getAllReview };
