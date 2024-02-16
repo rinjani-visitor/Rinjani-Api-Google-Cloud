@@ -1,0 +1,6 @@
+ [LOGGER] 2024-02-15 12:15:11.879 PM error : controllers/userController.js:setLogin - secretOrPrivateKey must have a value
+ [LOGGER] 2024-02-15 05:55:04.344 PM error : uncaughtException: imprt is not defined
+ReferenceError: imprt is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/src/controllers/dasboardController.js:6:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2024-02-15 05:59:24.976 PM error : controllers/fotoController.js:getDashboard - sequelize is not defined

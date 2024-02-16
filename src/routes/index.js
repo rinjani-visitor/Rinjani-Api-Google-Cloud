@@ -9,6 +9,7 @@ import bookingRouter from './bookingRoute.js';
 import paymentRouter from './paymentRoute.js';
 import orderRouter from './orderRoute.js';
 import addOnsRouter from './addOnsRoute.js';
+import dashboardRouter from './dashboard.js';
 
 const route = express.Router();
 
@@ -21,6 +22,7 @@ route.use('/api', bookingRouter);
 route.use('/api', paymentRouter);
 route.use('/api', orderRouter);
 route.use('/api', reviewRouter);
+route.use('/api', dashboardRouter);
 
 route.use('*', errorrHandling);
 route.use("*", (req, res) => {

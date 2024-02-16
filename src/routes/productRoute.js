@@ -14,7 +14,11 @@ import {
 } from '../controllers/productController.js';
 import {
   updateFotoProduct,
+  updateFotoProductJson,
+  setFotoProductJson,
   setFotoProduct,
+  deleteFotoProduct,
+  getAllFotoProduct,
 } from '../controllers/fotoController.js';
 import { upload } from '../middleware/multer_firebase.js';
 
@@ -50,6 +54,10 @@ productRouter.post(
   setFotoProduct
 ); //admin
 
+productRouter.post('/admin/products/fotos/:product_id', autenticate, setFotoProductJson); //admin
+
+productRouter.delete('/admin/products/foto/:product_id/:foto_id', autenticate, deleteFotoProduct); //admin
+
 productRouter.patch(
   '/admin/products/foto/:product_id/:foto_id',
   autenticate,
@@ -57,7 +65,11 @@ productRouter.patch(
   updateFotoProduct
 ); //admin
 
+productRouter.patch('/admin/products/fotos/:product_id/:foto_id', autenticate, updateFotoProductJson); //admin
+
 productRouter.delete('/admin/products/:id', autenticate, deleteProduct); //admin
+
+productRouter.get('/admin/products/fotos/:product_id', autenticate, getAllFotoProduct); //admin
 
 productRouter.get('/products', getAllProducts);
 
