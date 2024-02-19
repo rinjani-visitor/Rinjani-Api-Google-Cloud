@@ -17,6 +17,7 @@ import {
   sendBankPaymentToAdmin,
 } from '../utils/sendMail.js';
 import { getUserIdFromAccessToken } from '../utils/jwt.js';
+import { adminEmails } from '../utils/emailAdmin.js';
 
 const updateBankWiseMethodPayment = async (req, res, next) => {
   const valid = {
@@ -200,12 +201,20 @@ const setBankPayment = async (req, res, next) => {
       createdAt: moment(result.createdAt).tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'),
     };
 
-    const sendPaymentMail = await sendBankPaymentToAdmin(
-      process.env.ADMIN_EMAIL,
-      formattedPayment
-    );
+    let sendPaymentMails = [];
+    for (const adminEmail of adminEmails) {
+      const sendPaymentMail = sendBankPaymentToAdmin(
+        adminEmail,
+        formattedPayment
+      ); // Menghapus await di sini agar pengiriman email dilakukan secara paralel
+      sendPaymentMails.push(sendPaymentMail); // Menambahkan promise ke array
+    }
 
-    if (!sendPaymentMail) {
+    // Menunggu semua email terkirim atau gagal
+    const results = await Promise.all(sendPaymentMails);
+
+    // Memeriksa apakah setidaknya satu email gagal terkirim
+    if (results.some((result) => !result)) {
       await t.rollback();
       return res.status(404).json({
         errors: ['Email payment confirmation failed to send to Admin'],
@@ -349,12 +358,20 @@ const setWisePayment = async (req, res, next) => {
       createdAt: moment(result.createdAt).tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'),
     };
 
-    const sendPaymentMail = await sendWisePaymentToAdmin(
-      process.env.ADMIN_EMAIL,
-      formattedPayment
-    );
+    let sendPaymentMails = [];
+    for (const adminEmail of adminEmails) {
+      const sendPaymentMail = sendBankPaymentToAdmin(
+        adminEmail,
+        formattedPayment
+      ); // Menghapus await di sini agar pengiriman email dilakukan secara paralel
+      sendPaymentMails.push(sendPaymentMail); // Menambahkan promise ke array
+    }
 
-    if (!sendPaymentMail) {
+    // Menunggu semua email terkirim atau gagal
+    const results = await Promise.all(sendPaymentMails);
+
+    // Memeriksa apakah setidaknya satu email gagal terkirim
+    if (results.some((result) => !result)) {
       await t.rollback();
       return res.status(404).json({
         errors: ['Email payment confirmation failed to send to Admin'],

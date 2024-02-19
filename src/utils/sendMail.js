@@ -152,6 +152,55 @@ const bookingFailed = (email, bookingDetails) => {
   };
 };
 
+const bookingDeclinedConfirmation = (emailTo, bookingDetails) => {
+  const {
+    title,
+    name,
+    bookingId,
+    offeringPrice,
+    addOns,
+    totalPersons,
+    createdAt,
+    updatedAt,
+    bookingStatus,
+    note,
+  } = bookingDetails;
+
+  return {
+    from: process.env.MAIL_FROM,
+    to: emailTo,
+    subject: 'Booking Confirmation - Reservation Successful',
+    html: `
+      <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #32823A;">Booking Decline Confirmation</h2>
+        <p>Dear ${name},</p>
+        <p>Booking has been declined.</p>
+
+        <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; margin-top: 20px;">
+          <h3>Booking Details:</h3>
+          <ul style="list-style-type: none; padding: 0;">
+            <li><strong>Product Title:</strong> ${title}</li>
+            <li><strong>Booking ID:</strong> ${bookingId}</li>
+            <li><strong>Offering Price:</strong> ${offeringPrice}</li>
+            ${addOns ? `<li><strong>AddOns:</strong> ${addOns}</li>` : ''}
+            <li><strong>Total Persons:</strong> ${totalPersons}</li>
+            <li><strong>Created At:</strong> ${createdAt}</li>
+            <li><strong>Updated At:</strong> ${updatedAt}</li>
+            <li><strong>Booking Status:</strong> ${bookingStatus}</li>
+            <li><strong>Note:</strong> ${note}</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 20px;">You can book again with consider about note from admin or you can cancel the booking.</p>
+
+        <p style="margin-top: 20px;">Customer Service Team!</p>
+
+        <p style="margin-top: 40px; color: #888;">Best Regards,<br>Rinjani Visitor</p>
+      </div>
+    `,
+  };
+}
+
 const bookingConfirmationAdmin = (emailTo, bookingDetails) => {
   const {
     title,
@@ -235,7 +284,7 @@ const updateBookingConfirmation = (emailTo, updatedBookingDetails) => {
             <li><strong>Customer Email:</strong> ${email}</li>
             <li><strong>Customer Phone Number:</strong> ${phoneNumber}</li>
             <li><strong>Start Date and Time:</strong> ${startDateTime}</li>
-            <li><strong>End Date and Time:</strong> ${endDateTime}</li>
+            ${endDateTime ? `<li><strong>End Date and Time:</strong> ${endDateTime}</li>` : ''}
             <li><strong>AddOns:</strong> ${addOns}</li>
             <li><strong>Offering Price:</strong> ${offeringPrice}</li>
             <li><strong>Total Persons:</strong> ${totalPersons}</li>
@@ -602,6 +651,23 @@ const sendBookingOfferingToAdmin = (email, bookingDetails) => {
   });
 };
 
+const sendBookingDeclinedConfirmation = (email, bookingDetails) => {
+  return new Promise((resolve, reject) => {
+    transporter.sendMail(
+      bookingDeclinedConfirmation(email, bookingDetails),
+      (err, info) => {
+        if (err) {
+          console.log(err);
+          reject(err);
+        } else {
+          console.log('Email sent (sendPayment): ' + info.response);
+          resolve(true);
+        }
+      }
+    );
+  });
+}
+
 const sendUpdateBookingOfferingToAdmin = (email, bookingDetails) => {
   return new Promise((resolve, reject) => {
     transporter.sendMail(
@@ -670,6 +736,7 @@ export {
   sendBankPaymentToAdmin,
   sendBookingOfferingToAdmin,
   sendUpdateBookingOfferingToAdmin,
+  sendBookingDeclinedConfirmation,
   sendOrderCancelToAdmin,
   sendMailMessage,
   sendConfirmDeleteAccountUserByAdmin,

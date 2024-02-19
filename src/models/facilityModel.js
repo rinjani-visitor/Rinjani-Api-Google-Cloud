@@ -27,8 +27,8 @@ Product.belongsToMany(Facility, {
   through: 'product_facility',
   foreignKey: 'productId',
   otherKey: 'facilityId',
-  onUpdate: 'RESTRICT',
-  onDelete: 'RESTRICT',
+  onUpdate: 'CASCADE',
+  onDelete: 'CASCADE',
   timestamps: false,
 });
 
@@ -36,8 +36,8 @@ Facility.belongsToMany(Product, {
   through: 'product_facility',
   foreignKey: 'facilityId',
   otherKey: 'productId',
-  onUpdate: 'RESTRICT',
-  onDelete: 'RESTRICT',
+  onUpdate: 'CASCADE',
+  onDelete: 'CASCADE',
   timestamps: false,
 });
 

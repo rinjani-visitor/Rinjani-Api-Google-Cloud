@@ -9,11 +9,13 @@ import { isExists } from '../validation/sanitization.js';
 import Payment from '../models/paymentModel.js';
 import 'dotenv/config';
 import {
+  sendBookingDeclinedConfirmation,
   sendBookingOfferingToAdmin,
   sendPayment,
   sendUpdateBookingOfferingToAdmin,
 } from '../utils/sendMail.js';
 import { getUserIdFromAccessToken } from '../utils/jwt.js';
+import { adminEmails } from '../utils/emailAdmin.js';
 
 const note = {
   offering:
@@ -130,23 +132,39 @@ const setBooking = async (req, res, next) => {
       email: user.email,
       phoneNumber: user.phoneNumber ? user.phoneNumber : null,
       bookingId: newBooking.bookingId,
-      startDateTime: moment(newBooking.startDateTime).format('YYYY-MM-DD HH:mm:ss'),
-      endDateTime: newBooking.endDateTime ? moment(newBooking.endDateTime).format('YYYY-MM-DD HH:mm:ss') : null,
+      startDateTime: moment(newBooking.startDateTime).format(
+        'YYYY-MM-DD HH:mm:ss'
+      ),
+      endDateTime: newBooking.endDateTime
+        ? moment(newBooking.endDateTime).format('YYYY-MM-DD HH:mm:ss')
+        : null,
       offeringPrice: newBooking.offeringPrice,
       addOns: newBooking.addOns,
       totalPersons: newBooking.totalPersons,
-      createdAt: moment(newBooking.createdAt).tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'),
-      updatedAt: moment(newBooking.updatedAt).tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'),
+      createdAt: moment(newBooking.createdAt)
+        .tz('Asia/Singapore')
+        .format('YYYY-MM-DD HH:mm:ss'),
+      updatedAt: moment(newBooking.updatedAt)
+        .tz('Asia/Singapore')
+        .format('YYYY-MM-DD HH:mm:ss'),
       bookingStatus: newBooking.bookingStatus,
       note: note.offering,
     };
 
-    const sendPaymentMail = await sendBookingOfferingToAdmin(
-      process.env.ADMIN_EMAIL,
-      formatBooking
-    );
+    let sendPaymentMails = [];
+    for (const adminEmail of adminEmails) {
+      const sendPaymentMail = sendBookingOfferingToAdmin(
+        adminEmail,
+        formatBooking
+      ); // Menghapus await di sini agar pengiriman email dilakukan secara paralel
+      sendPaymentMails.push(sendPaymentMail); // Menambahkan promise ke array
+    }
 
-    if (!sendPaymentMail) {
+    // Menunggu semua email terkirim atau gagal
+    const results = await Promise.all(sendPaymentMails);
+
+    // Memeriksa apakah setidaknya satu email gagal terkirim
+    if (results.some((result) => !result)) {
       await t.rollback();
       return res.status(404).json({
         errors: ['Email booking confirmation failed to send to Admin'],
@@ -220,7 +238,7 @@ const getAllBooking = async (req, res, next) => {
       const sortedBookings = bookings.sort((a, b) => {
         return new Date(b.bookingDate) - new Date(a.bookingDate);
       });
-    
+
       return sortedBookings;
     };
 
@@ -603,13 +621,63 @@ const updateBookingAdmin = async (req, res, next) => {
           total: payment.total,
         },
       });
-    }
+    } else if (checkBookingStatus.bookingStatus == 'Declined') {
 
-    return res.status(200).json({
-      errors: [],
-      message: 'Update Booking Admin successfully',
-      data: booking.data,
-    });
+      const userData = await Booking.findOne({
+        attributes: ['userId', 'productId', 'createdAt', 'updatedAt', 'offeringPrice', 'totalPersons', 'addOns', 'adminMessage', 'bookingStatus'],
+        where: {
+          bookingId: idBooking,
+        },
+        include: [
+          {
+            model: User,
+            attributes: ['name', 'email'],
+          },
+          {
+            model: Product,
+            attributes: ['title'],
+          },
+        ],
+      });
+
+      const dataUserBooking = {
+        name: userData.User.name,
+        title: userData.Product.title,
+        bookingId: idBooking,
+        createdAt: userData.createdAt,
+        updatedAt: userData.updatedAt,
+        offeringPrice: userData.offeringPrice,
+        addOns: userData.addOns ? userData.addOns : '',
+        totalPerson: userData.totalPerson,
+        bookingStatus: userData.bookingStatus,
+        note: booking.data.adminMessage,
+      };
+
+      const sendPaymentMail = await sendBookingDeclinedConfirmation(
+        userData.User.email,
+        dataUserBooking
+      );
+
+      if (!sendPaymentMail) {
+        await t.rollback();
+        return res.status(404).json({
+          errors: ['Email booking declined failed to send to Customer'],
+          message: 'Update Booking Admin Failed',
+          data: null,
+        });
+      }
+
+      await t.commit();
+
+      return res.status(200).json({
+        errors: [],
+        message:
+          'Update Booking Admin successfully. Email booking declined has been send to customer.',
+        data: {
+          ...booking.data,
+        },
+      });
+    }
   } catch (error) {
     next(
       new Error(
@@ -723,12 +791,20 @@ const updateBooking = async (req, res, next) => {
       totalPersons: data.totalPersons,
     };
 
-    const sendPaymentMail = await sendUpdateBookingOfferingToAdmin(
-      process.env.ADMIN_EMAIL,
-      formatBooking
-    );
+    let sendPaymentMails = [];
+    for (const adminEmail of adminEmails) {
+      const sendPaymentMail = sendUpdateBookingOfferingToAdmin(
+        adminEmail,
+        formatBooking
+      ); // Menghapus await di sini agar pengiriman email dilakukan secara paralel
+      sendPaymentMails.push(sendPaymentMail); // Menambahkan promise ke array
+    }
 
-    if (!sendPaymentMail) {
+    // Menunggu semua email terkirim atau gagal
+    const results = await Promise.all(sendPaymentMails);
+
+    // Memeriksa apakah setidaknya satu email gagal terkirim
+    if (results.some((result) => !result)) {
       await t.rollback();
       return res.status(404).json({
         errors: ['Email payment confirmation failed to send to Admin'],

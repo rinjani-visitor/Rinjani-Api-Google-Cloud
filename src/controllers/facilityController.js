@@ -76,9 +76,16 @@ const getAllFacility = async (req, res, next) => {
 };
 
 const addFacility = async (req, res, next) => {
-  const t = await sequelize.transaction();
+  let t;
   try {
-    const { idproduct, idfacility } = req.body;
+    t = await sequelize.transaction();
+
+    let { idproduct, idfacilities } = req.body;
+
+    // Ensure idfacilities is an array
+    if (!Array.isArray(idfacilities)) {
+      idfacilities = [idfacilities];
+    }
 
     const checkProduct = await Product.findOne({
       where: {
@@ -94,63 +101,63 @@ const addFacility = async (req, res, next) => {
       });
     }
 
-    const checkFacility = await Facility.findOne({
-      where: {
-        facilityId: idfacility,
-      },
-    });
-
-    if (!checkFacility) {
-      return res.status(404).json({
-        errors: ['Facility not found'],
-        message: 'Get Facility Failed',
-        data: null,
+    // Check each facility in the array
+    for (const facilityId of idfacilities) {
+      const checkFacility = await Facility.findOne({
+        where: {
+          facilityId: facilityId,
+        },
       });
-    }
 
-    const checkProductFacility = await sequelize.models.product_facility.findOne({
-      where: {
-        productId: idproduct,
-        facilityId: idfacility,
-      },
-    });
-
-    if (checkProductFacility) {
-      return res.status(400).json({
-        errors: ['Facility already exists'],
-        message: 'Update Failed',
-        data: null,
-      });
-    };
-
-    const result = await sequelize.models.product_facility.create(
-      {
-        productId: idproduct,
-        facilityId: idfacility,
-      },
-      {
-        transaction: t,
+      if (!checkFacility) {
+        return res.status(404).json({
+          errors: ['Facility not found'],
+          message: 'Get Facility Failed',
+          data: null,
+        });
       }
-    );
 
-    if (result[0] == 0) {
-      await t.rollback();
-      return res.status(404).json({
-        errors: ['Failed to save facility to database'],
-        message: 'Update Failed',
-        data: null,
-      });
+      const checkProductFacility =
+        await sequelize.models.product_facility.findOne({
+          where: {
+            productId: idproduct,
+            facilityId: facilityId,
+          },
+        });
+
+      if (checkProductFacility) {
+        return res.status(400).json({
+          errors: ['Facility already exists'],
+          message: 'Update Failed',
+          data: null,
+        });
+      }
+
+      // Create product facility
+      await sequelize.models.product_facility.create(
+        {
+          productId: idproduct,
+          facilityId: facilityId,
+        },
+        {
+          transaction: t,
+        }
+      );
     }
 
+    // Commit transaction
     await t.commit();
 
     return res.status(201).json({
       errors: [],
       message: 'Facility created successfully',
-      data: result,
+      data: null,
     });
   } catch (error) {
-    await t.rollback();
+    // Rollback transaction if an error occurs
+    if (t) {
+      await t.rollback();
+    }
     next(
       new Error(
         'controllers/facilityController.js:addFacility - ' + error.message
@@ -206,17 +213,32 @@ const updateFacility = async (req, res, next) => {
 const deleteFacility = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idfacility } = req.body;
+    const { idproduct, idfacilities } = req.body;
 
-    const result = await sequelize.models.product_facility.destroy({
-      where: {
-        productId: idproduct,
-        facilityId: idfacility,
-      },
-      transaction: t,
-    });
+    // Ensure idfacilities is an array
+    if (!Array.isArray(idfacilities)) {
+      return res.status(400).json({
+        errors: ['idfacilities must be an array'],
+        message: 'Invalid Request',
+        data: null,
+      });
+    }
 
-    if (result[0] == 0) {
+    const results = [];
+
+    for (const idfacility of idfacilities) {
+      const result = await sequelize.models.product_facility.destroy({
+        where: {
+          productId: idproduct,
+          facilityId: idfacility,
+        },
+        transaction: t,
+      });
+      results.push(result);
+    }
+
+    // Check if any facility was deleted
+    if (results.every(result => result === 0)) {
       await t.rollback();
       return res.status(404).json({
         errors: ['Failed to delete facility from database'],
@@ -230,9 +252,10 @@ const deleteFacility = async (req, res, next) => {
     return res.status(201).json({
       errors: [],
       message: 'Delete facility successfully',
-      data: result,
+      data: null,
     });
   } catch (error) {
+    await t.rollback();
     next(
       new Error(
         'controllers/facilityController.js:deleteFacility - ' + error.message
