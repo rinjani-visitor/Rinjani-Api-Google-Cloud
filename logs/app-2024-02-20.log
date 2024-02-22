@@ -1,0 +1,12 @@
+ [LOGGER] 2024-02-20 12:23:13.464 PM error : controllers/productController.js:getAllProducts - subCategory is associated to Product using an alias. You've included an alias (subcategory), but it does not match the alias(es) defined in your association (subCategory).
+ [LOGGER] 2024-02-20 01:13:10.975 PM error : controllers/userController.js:setLogin - secretOrPrivateKey must have a value
+ [LOGGER] 2024-02-20 11:33:08.764 PM error : uncaughtException: deleteFacilityL is not defined
+ReferenceError: deleteFacilityL is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/src/routes/facilityRoute.js:16:57
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2024-02-20 11:37:27.319 PM error : controllers/facilityController.js:addFacility - WHERE parameter "facility_id" has invalid "undefined" value
+ [LOGGER] 2024-02-20 11:37:42.426 PM error : controllers/facilityController.js:addFacility - WHERE parameter "facility_id" has invalid "undefined" value
+ [LOGGER] 2024-02-20 11:38:39.213 PM error : controllers/facilityController.js:addFacility - WHERE parameter "facility_id" has invalid "undefined" value
+ [LOGGER] 2024-02-20 11:39:08.102 PM error : controllers/facilityController.js:addFacility - WHERE parameter "facility_id" has invalid "undefined" value
+ [LOGGER] 2024-02-20 11:45:05.208 PM error : controllers/facilityController.js:deleteFacilityList - WHERE parameter "facility_id" has invalid "undefined" value
+ [LOGGER] 2024-02-20 11:50:23.050 PM error : controllers/facilityController.js:deleteAddOnsList - Cannot read properties of undefined (reading 'destroy')

@@ -51,26 +51,26 @@ const Booking = sequelize.define(
 
 Product.hasMany(Booking, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 Booking.belongsTo(Product, {
   foreignKey: 'productId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 User.hasMany(Booking, {
   foreignKey: 'userId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 Booking.belongsTo(User, {
   foreignKey: 'userId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 })
 
 sequelize.sync();

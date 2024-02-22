@@ -27,8 +27,8 @@ Product.belongsToMany(AddOnsModel, {
   through: 'product_addons',
   foreignKey: 'productId',
   otherKey: 'addOnsId',
-  onUpdate: 'RESTRICT',
-  onDelete: 'RESTRICT',
+  onUpdate: 'CASCADE',
+  onDelete: 'CASCADE',
   timestamps: false,
 });
 
@@ -36,8 +36,8 @@ AddOnsModel.belongsToMany(Product, {
   through: 'product_addons',
   foreignKey: 'addOnsId',
   otherKey: 'productId',
-  onUpdate: 'RESTRICT',
-  onDelete: 'RESTRICT',
+  onUpdate: 'CASCADE',
+  onDelete: 'CASCADE',
   timestamps: false,
 });
 

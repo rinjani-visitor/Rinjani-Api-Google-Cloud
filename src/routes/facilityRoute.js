@@ -6,14 +6,16 @@ import {
   addFacility,
   updateFacility,
   deleteFacility,
+  deleteFacilityList,
 } from '../controllers/facilityController.js';
 
 const facilityRouter = express.Router();
 
 facilityRouter.post('/admin/facilities', autenticate, setFacility); //admin
-facilityRouter.post('/admin/facilities/add', autenticate, addFacility); //admin
-facilityRouter.patch('/admin/facilities', autenticate, updateFacility); //admin
-facilityRouter.delete('/admin/facilities', autenticate, deleteFacility); //admin
+facilityRouter.post('/admin/facilities/:productId', autenticate, addFacility); //admin
+facilityRouter.patch('/admin/facilities/:productId', autenticate, updateFacility); //admin
+facilityRouter.delete('/admin/facilities/:productId', autenticate, deleteFacility); //admin
+facilityRouter.delete('/admin/facilities', autenticate, deleteFacilityList); //admin
 facilityRouter.get('/admin/facilities', autenticate, getAllFacility); //admin
 
 export default facilityRouter;

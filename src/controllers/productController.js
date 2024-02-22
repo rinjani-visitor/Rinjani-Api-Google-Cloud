@@ -56,7 +56,9 @@ const setProduct = async (req, res, next) => {
       const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
       if (!allowedImageFormats.includes(req.file.mimetype)) {
         return res.status(400).json({
-          errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
+          errors: [
+            'Invalid file format. Only JPEG, JPG, and PNG images are allowed.',
+          ],
           message: 'Update Avatar Failed',
           data: null,
         });
@@ -80,15 +82,19 @@ const setProduct = async (req, res, next) => {
         gzip: true,
       });
 
-      blobStream.on('error', (error) => res.status(500).json({
-        errors: [error.message],
-        message: 'Update Avatar Failed',
-        data: null,
-      }));
+      blobStream.on('error', (error) =>
+        res.status(500).json({
+          errors: [error.message],
+          message: 'Update Avatar Failed',
+          data: null,
+        })
+      );
 
       let url;
       blobStream.on('finish', async () => {
-        url = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(filePath)}?alt=media`;
+        url = `https://firebasestorage.googleapis.com/v0/b/${
+          bucket.name
+        }/o/${encodeURIComponent(filePath)}?alt=media`;
       });
 
       const blobStreamEnd = promisify(blobStream.end).bind(blobStream);
@@ -105,7 +111,7 @@ const setProduct = async (req, res, next) => {
           transaction: t,
         }
       );
-      
+
       if (result[0] == 0) {
         return res.status(404).json({
           errors: ['Failed to save url photo to database'],
@@ -162,14 +168,16 @@ const setProductJson = async (req, res, next) => {
       productDataFormat.thumbnail = req.body.thumbnail;
     }
 
-    const result = await Product.create(productDataFormat, {
+    const result = await Product.create(
+      productDataFormat,
+      {
         subCategoryId,
       },
       {
         transaction: t,
       }
     );
-    
+
     if (result[0] == 0) {
       return res.status(404).json({
         errors: ['Failed to save url photo to database'],
@@ -212,6 +220,10 @@ const updateProduct = async (req, res, next) => {
     }
 
     const product = await dataValid(valid, req.body);
+
+    if (isExists(req.body.thumbnail)) {
+      product.data.thumbnail = req.body.thumbnail;
+    }
 
     if (product.message.length > 0) {
       return res.status(400).json({
@@ -305,6 +317,11 @@ const getAllProducts = async (req, res, next) => {
           as: 'category', // Adjust alias to match the association
           where: whereCondition,
         },
+        {
+          model: SubCategory,
+          attributes: ['subCategory'], // Exclude category attributes from result
+          where: whereCondition,
+        },
       ],
       where: whereCondition,
     });
@@ -315,18 +332,44 @@ const getAllProducts = async (req, res, next) => {
         message: 'Get All Product Failed',
         data: null,
       });
-    }
+    };
 
+    const getModelByCategory = async (product) => {
+      switch (product.category.category) {
+        case 'rinjani':
+          return await ModelRinjani.findOne({ where: { productId: product.productId } });
+        case 'event':
+          return await EventModel.findOne({ where: { productId: product.productId } });
+        case 'homestay':
+          return await HomeStay.findOne({ where: { productId: product.productId } });
+        case 'landscape':
+        case 'culture':
+          return await Wisata.findOne({ where: { productId: product.productId } });
+        default:
+          return null;
+      }
+    };
+    
+    for (const product of products) {
+      const isHaveDetail = await getModelByCategory(product);
+      product.dataValues.isHaveDetail = !!isHaveDetail;
+    }
+    
     const formattedProducts = products.map((product) => ({
       productId: product.productId,
       title: product.title,
       status: product.status,
-      rating: product.rating ? product.rating : 0,
+      rating: product.rating || 0,
       location: product.location,
       thumbnail: product.thumbnail,
       lowestPrice: product.lowestPrice,
       category: product.category.category,
+      categoryId: product.categoryId,
+      subCategory: product.subCategory.subCategory,
+      subCategoryId: product.subCategoryId,
+      isHaveDetail: product.dataValues.isHaveDetail
     }));
+    
 
     return res.status(200).json({
       errors: [],
@@ -468,6 +511,64 @@ const setRinjani = async (req, res, next) => {
   }
 };
 
+const updateRinjani = async (req, res, next) => {
+  try {
+    const product_id = req.params.productId;
+    const valid = {};
+    if (isExists(req.body.description)) {
+      valid.description = 'required';
+    }
+    if (isExists(req.body.duration)) {
+      valid.duration = 'required';
+    }
+    if (isExists(req.body.program)) {
+      valid.program = 'required';
+    }
+    if (isExists(req.body.note)) {
+      valid.note = 'required';
+    }
+
+    const product = await dataValid(valid, req.body);
+
+    if (product.message.length > 0) {
+      return res.status(400).json({
+        errors: product.message,
+        message: 'Update Failed',
+        data: null,
+      });
+    }
+    const result = await ModelRinjani.update(
+      {
+        ...product.data,
+      },
+      {
+        where: {
+          productId: product_id,
+        },
+      }
+    );
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['Rinjani not found'],
+        message: 'Update Failed',
+        data: null,
+      });
+    } else {
+      return res.status(200).json({
+        errors: [],
+        message: 'Rinjani updated successfully',
+        data: product.data,
+      });
+    }
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:updateRinjani - ' + error.message
+      )
+    );
+  }
+};
+
 const getRinjaniDetail = async (req, res, next) => {
   try {
     const id_product = req.params.product_id;
@@ -506,12 +607,12 @@ const getRinjaniDetail = async (req, res, next) => {
         },
         {
           model: Facility,
-          attributes: ['facilityName'],
+          attributes: ['facilityName', 'facilityId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
           model: AddOnsModel,
-          attributes: ['addOnsName'],
+          attributes: ['addOnsName', 'addOnsId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
@@ -598,7 +699,9 @@ const getRinjaniDetail = async (req, res, next) => {
       favoritedCount: favoriteCount,
       userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
+      facilitiesId: facilities.map((facility) => facility.facilityId),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
+      addOnsId: AddOnsModels.map((addOns) => addOns.addOnsId),
       note: RinjaniModel.note,
       includeEndDateTime: false,
       createdAt,
@@ -681,6 +784,58 @@ const setHomeStay = async (req, res, next) => {
   }
 };
 
+const updateHomeStay = async (req, res, next) => {
+  try {
+    const product_id = req.params.productId;
+    const valid = {};
+    if (isExists(req.body.description)) {
+      valid.description = 'required';
+    }
+    if (isExists(req.body.note)) {
+      valid.note = 'required';
+    }
+
+    const product = await dataValid(valid, req.body);
+
+    if (product.message.length > 0) {
+      return res.status(400).json({
+        errors: product.message,
+        message: 'Update Failed',
+        data: null,
+      });
+    }
+    const result = await HomeStay.update(
+      {
+        ...product.data,
+      },
+      {
+        where: {
+          productId: product_id,
+        },
+      }
+    );
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['HomeStay not found'],
+        message: 'Update Failed',
+        data: null,
+      });
+    } else {
+      return res.status(200).json({
+        errors: [],
+        message: 'HomeStay updated successfully',
+        data: product.data,
+      });
+    }
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:updateHomeStay - ' + error.message
+      )
+    );
+  }
+};
+
 const getHomeStayDetail = async (req, res, next) => {
   try {
     const id_product = req.params.product_id;
@@ -719,12 +874,12 @@ const getHomeStayDetail = async (req, res, next) => {
         },
         {
           model: Facility,
-          attributes: ['facilityName'],
+          attributes: ['facilityName', 'facilityId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
           model: AddOnsModel,
-          attributes: ['addOnsName'],
+          attributes: ['addOnsName', 'addOnsId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
@@ -808,7 +963,9 @@ const getHomeStayDetail = async (req, res, next) => {
       favoritedCount: favoriteCount.count,
       userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
+      facilitiesId: facilities.map((facility) => facility.facilityId),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
+      addOnsId: AddOnsModels.map((addOns) => addOns.addOnsId),
       note: HomeStays.length > 0 ? HomeStays[0].note : null,
       includeEndDateTime: true,
       createdAt,
@@ -901,6 +1058,61 @@ const setWisata = async (req, res, next) => {
   }
 };
 
+const updateWisata = async (req, res, next) => {
+  try {
+    const product_id = req.params.productId;
+    const valid = {};
+    if (isExists(req.body.description)) {
+      valid.description = 'required';
+    }
+    if (isExists(req.body.route)) {
+      valid.route = 'required';
+    }
+    if (isExists(req.body.note)) {
+      valid.note = 'required';
+    }
+
+    const product = await dataValid(valid, req.body);
+
+    if (product.message.length > 0) {
+      return res.status(400).json({
+        errors: product.message,
+        message: 'Update Failed',
+        data: null,
+      });
+    }
+    const result = await Wisata.update(
+      {
+        ...product.data,
+      },
+      {
+        where: {
+          productId: product_id,
+        },
+      }
+    );
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['Wisata not found'],
+        message: 'Update Failed',
+        data: null,
+      });
+    } else {
+      return res.status(200).json({
+        errors: [],
+        message: 'Wisata updated successfully',
+        data: product.data,
+      });
+    }
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:updateWisata - ' + error.message
+      )
+    );
+  }
+};
+
 const getWisataDetail = async (req, res, next) => {
   try {
     const id_product = req.params.product_id;
@@ -939,12 +1151,12 @@ const getWisataDetail = async (req, res, next) => {
         },
         {
           model: Facility,
-          attributes: ['facilityName'],
+          attributes: ['facilityName', 'facilityId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
           model: AddOnsModel,
-          attributes: ['addOnsName'],
+          attributes: ['addOnsName', 'addOnsId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
@@ -1029,7 +1241,9 @@ const getWisataDetail = async (req, res, next) => {
       favoritedCount: favoriteCount.count,
       userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
+      facilitiesId: facilities.map((facility) => facility.facilityId),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
+      addOnsId: AddOnsModels.map((addOns) => addOns.addOnsId),
       note: WisataAtributs.length > 0 ? WisataAtributs[0].note : null,
       route: WisataAtributs.length > 0 ? WisataAtributs[0].route : null,
       includeEndDateTime: false,
@@ -1126,6 +1340,64 @@ const setEvent = async (req, res, next) => {
   }
 };
 
+const updateEvent = async (req, res, next) => {
+  try {
+    const product_id = req.params.productId;
+    const valid = {};
+    if (isExists(req.body.description)) {
+      valid.description = 'required';
+    }
+    if (isExists(req.body.startDate)) {
+      valid.startDate = 'required';
+    }
+    if (isExists(req.body.endDate)) {
+      valid.endDate = 'required';
+    }
+    if (isExists(req.body.note)) {
+      valid.note = 'required';
+    }
+
+    const product = await dataValid(valid, req.body);
+
+    if (product.message.length > 0) {
+      return res.status(400).json({
+        errors: product.message,
+        message: 'Update Failed',
+        data: null,
+      });
+    }
+    const result = await EventModel.update(
+      {
+        ...product.data,
+      },
+      {
+        where: {
+          productId: product_id,
+        },
+      }
+    );
+    if (result[0] == 0) {
+      return res.status(404).json({
+        errors: ['Event not found'],
+        message: 'Update Failed',
+        data: null,
+      });
+    } else {
+      return res.status(200).json({
+        errors: [],
+        message: 'Event updated successfully',
+        data: product.data,
+      });
+    }
+  } catch (error) {
+    next(
+      new Error(
+        'controllers/productController.js:updateEvent - ' + error.message
+      )
+    );
+  }
+};
+
 const getEventDetail = async (req, res, next) => {
   try {
     const id_product = req.params.product_id;
@@ -1149,12 +1421,12 @@ const getEventDetail = async (req, res, next) => {
         },
         {
           model: Facility,
-          attributes: ['facilityName'],
+          attributes: ['facilityName', 'facilityId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
           model: AddOnsModel,
-          attributes: ['addOnsName'],
+          attributes: ['addOnsName', 'addOnsId'],
           through: { attributes: [] }, // Exclude join table attributes
         },
         {
@@ -1238,7 +1510,9 @@ const getEventDetail = async (req, res, next) => {
       favoritedCount: favoriteCount.count,
       userFavorited: favorited,
       facilities: facilities.map((facility) => facility.facilityName),
+      facilitiesId: facilities.map((facility) => facility.facilityId),
       addOns: AddOnsModels.map((addOns) => addOns.addOnsName),
+      addOnsId: AddOnsModels.map((addOns) => addOns.addOnsId),
       note: eventData.length > 0 ? eventData[0].note : null,
       startDate: eventData.length > 0 ? eventData[0].startDate : null,
       endDate: eventData.length > 0 ? eventData[0].endDate : null,
@@ -1323,8 +1597,12 @@ export {
   deleteProduct,
   getAllProducts,
   setRinjani,
+  updateRinjani,
   setHomeStay,
+  updateHomeStay,
   setWisata,
+  updateWisata,
   setEvent,
+  updateEvent,
   getProductDetail,
 };

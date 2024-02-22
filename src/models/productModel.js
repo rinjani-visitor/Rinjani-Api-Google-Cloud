@@ -46,26 +46,26 @@ const Product = sequelize.define(
 
 Category.hasMany(Product, {
   foreignKey: 'categoryId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 Product.belongsTo(Category, {
   foreignKey: 'categoryId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 SubCategory.hasMany(Product, {
   foreignKey: 'subCategoryId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 Product.belongsTo(SubCategory, {
   foreignKey: 'subCategoryId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 })
 
 sequelize.sync();

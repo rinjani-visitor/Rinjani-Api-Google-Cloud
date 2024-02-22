@@ -42,13 +42,13 @@ const EventModel = sequelize.define(
 Product.hasMany(EventModel, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 EventModel.belongsTo(Product, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 sequelize.sync();

@@ -38,13 +38,13 @@ const ModelRinjani = sequelize.define(
 Product.hasOne(ModelRinjani, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 ModelRinjani.belongsTo(Product, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 sequelize.sync();

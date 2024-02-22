@@ -1,0 +1,2 @@
+ [LOGGER] 2024-02-22 01:51:17.964 PM error : controllers/userController.js:setLogin - secretOrPrivateKey must have a value
+ [LOGGER] 2024-02-22 01:52:00.678 PM error : controllers/userController.js:setLogin - secretOrPrivateKey must have a value

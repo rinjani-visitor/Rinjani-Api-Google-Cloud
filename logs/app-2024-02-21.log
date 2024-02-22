@@ -1,0 +1,5 @@
+ [LOGGER] 2024-02-21 12:36:51.676 AM error : uncaughtException: productRouter.pa is not a function
+TypeError: productRouter.pa is not a function
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/src/routes/productRoute.js:44:15
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2024-02-21 02:54:54.225 PM error : controllers/userController.js:setLogin - secretOrPrivateKey must have a value

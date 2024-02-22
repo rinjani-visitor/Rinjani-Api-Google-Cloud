@@ -80,7 +80,8 @@ const addFacility = async (req, res, next) => {
   try {
     t = await sequelize.transaction();
 
-    let { idproduct, idfacilities } = req.body;
+    let { idfacilities } = req.body;
+    const idproduct = req.params.productId;
 
     // Ensure idfacilities is an array
     if (!Array.isArray(idfacilities)) {
@@ -169,7 +170,8 @@ const addFacility = async (req, res, next) => {
 const updateFacility = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idfacility, updateidfacility } = req.body;
+    const { idfacility, updateidfacility } = req.body;
+    const idproduct = req.params.productId;
 
     const result = await sequelize.models.product_facility.update(
       {
@@ -213,7 +215,8 @@ const updateFacility = async (req, res, next) => {
 const deleteFacility = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idfacilities } = req.body;
+    const { idfacilities } = req.body;
+    const idproduct = req.params.productId;
 
     // Ensure idfacilities is an array
     if (!Array.isArray(idfacilities)) {
@@ -238,7 +241,7 @@ const deleteFacility = async (req, res, next) => {
     }
 
     // Check if any facility was deleted
-    if (results.every(result => result === 0)) {
+    if (results.every((result) => result === 0)) {
       await t.rollback();
       return res.status(404).json({
         errors: ['Failed to delete facility from database'],
@@ -264,10 +267,50 @@ const deleteFacility = async (req, res, next) => {
   }
 };
 
+const deleteFacilityList = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  try {
+    const { idfacility } = req.body;
+
+    const result = await sequelize.models.facility.destroy({
+      where: {
+        facilityId: idfacility,
+      },
+      transaction: t,
+    });
+
+    if(result === 0) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Failed to delete facility from database'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    }
+
+    await t.commit();
+
+    return res.status(201).json({
+      errors: [],
+      message: 'Delete facility successfully',
+      data: null,
+    });
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/facilityController.js:deleteFacilityList - ' +
+          error.message
+      )
+    );
+  }
+};
+
 export {
   setFacility,
   getAllFacility,
   addFacility,
   updateFacility,
   deleteFacility,
+  deleteFacilityList,
 };

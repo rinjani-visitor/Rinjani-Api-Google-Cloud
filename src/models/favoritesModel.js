@@ -23,25 +23,25 @@ const Favorites = sequelize.define(
 Product.hasMany(Favorites, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 Favorites.belongsTo(Product, {
   foreignKey: 'productId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 User.hasMany(Favorites, {
   foreignKey: 'userId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 Favorites.belongsTo(User, {
   foreignKey: 'userId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 sequelize.sync();

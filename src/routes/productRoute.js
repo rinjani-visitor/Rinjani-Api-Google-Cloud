@@ -10,7 +10,11 @@ import {
   setProductJson,
   setRinjani,
   setWisata,
+  updateEvent,
+  updateHomeStay,
   updateProduct,
+  updateRinjani,
+  updateWisata,
 } from '../controllers/productController.js';
 import {
   updateFotoProduct,
@@ -41,11 +45,19 @@ productRouter.patch('/admin/products/:id', autenticate, updateProduct); //admin
 
 productRouter.post('/admin/products/rinjani', autenticate, setRinjani); //admin
 
+productRouter.patch('/admin/products/rinjani/:productId', autenticate, updateRinjani); //admin
+
 productRouter.post('/admin/products/homestay', autenticate, setHomeStay); //admin
+
+productRouter.patch('/admin/products/homestay/:productId', autenticate, updateHomeStay); //admin
 
 productRouter.post('/admin/products/wisata', autenticate, setWisata); //admin
 
+productRouter.patch('/admin/products/wisata/:productId', autenticate, updateWisata); //admin
+
 productRouter.post('/admin/products/event', autenticate, setEvent); //admin
+
+productRouter.patch('/admin/products/event/:productId', autenticate, updateEvent); //admin
 
 productRouter.post(
   '/admin/products/foto/:product_id',

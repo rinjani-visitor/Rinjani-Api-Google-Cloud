@@ -76,9 +76,17 @@ const getAllAddOns = async (req, res, next) => {
 };
 
 const addAddOns = async (req, res, next) => {
-  const t = await sequelize.transaction();
+  let t;
   try {
-    const { idproduct, idaddons } = req.body;
+    t = await sequelize.transaction();
+
+    let { idaddons } = req.body;
+    const idproduct = req.params.productId;
+
+    // Ensure idaddons is an array
+    if (!Array.isArray(idaddons)) {
+      idaddons = [idaddons];
+    }
 
     const checkProduct = await Product.findOne({
       where: {
@@ -94,63 +102,63 @@ const addAddOns = async (req, res, next) => {
       });
     }
 
-    const checkAddOns = await AddOnsModel.findOne({
-      where: {
-        addOnsId: idaddons,
-      },
-    });
-
-    if (!checkAddOns) {
-      return res.status(404).json({
-        errors: ['AddOns not found'],
-        message: 'Get AddOns Failed',
-        data: null,
+    // Check each facility in the array
+    for (const idaddon of idaddons) {
+      const checkAddOns = await AddOnsModel.findOne({
+        where: {
+          addOnsId: idaddon,
+        },
       });
-    }
 
-    const checkProductAddOns = await sequelize.models.product_addons.findOne({
-      where: {
-        productId: idproduct,
-        addOnsId: idaddons,
-      },
-    });
-
-    if (checkProductAddOns) {
-      return res.status(400).json({
-        errors: ['AddOns already exist'],
-        message: 'AddOns Failed',
-        data: null,
-      });
-    }
-
-    const result = await sequelize.models.product_addons.create(
-      {
-        productId: idproduct,
-        addOnsId: idaddons,
-      },
-      {
-        transaction: t,
+      if (!checkAddOns) {
+        return res.status(404).json({
+          errors: ['AddOns not found'],
+          message: 'Get AddOns Failed',
+          data: null,
+        });
       }
-    );
 
-    if (result[0] == 0) {
-      await t.rollback();
-      return res.status(404).json({
-        errors: ['Failed to save AddOns to database'],
-        message: 'Update Failed',
-        data: null,
-      });
+      const checkProductAddOns =
+        await sequelize.models.product_addons.findOne({
+          where: {
+            productId: idproduct,
+            addOnsId: idaddon,
+          },
+        });
+
+      if (checkProductAddOns) {
+        return res.status(400).json({
+          errors: ['AddOns already exists'],
+          message: 'Update Failed',
+          data: null,
+        });
+      }
+
+      // Create product addons
+      await sequelize.models.product_addons.create(
+        {
+          productId: idproduct,
+          addOnsId: idaddon,
+        },
+        {
+          transaction: t,
+        }
+      );
     }
 
+    // Commit transaction
     await t.commit();
 
     return res.status(201).json({
       errors: [],
       message: 'AddOns created successfully',
-      data: result,
+      data: null,
     });
   } catch (error) {
-    await t.rollback();
+    // Rollback transaction if an error occurs
+    if (t) {
+      await t.rollback();
+    }
     next(
       new Error(
         'controllers/facilityController.js:addAddOns - ' + error.message
@@ -162,28 +170,18 @@ const addAddOns = async (req, res, next) => {
 const updateAddOns = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idaddons, updateidaddons } = req.body;
+    const { idaddon, updateidaddon } = req.body;
+    const idproduct = req.params.productId;
 
-    const checkProduct = await sequelize.models.product_addons.findOne({
-      where: {
+    const result = await sequelize.models.product_addons.update(
+      {
         productId: idproduct,
-        addOnsId: idaddons,
+        addOnsId: updateidaddon,
       },
-    });
-
-    if (!checkProduct) {
-      return res.status(404).json({
-        errors: ['AddOns not found'],
-        message: 'Get AddOns Failed',
-        data: null,
-      });
-    }
-
-    const result = await sequelize.models.product_addons.destroy(
       {
         where: {
           productId: idproduct,
-          addOnsId: idaddons,
+          addOnsId: idaddon,
         },
         transaction: t,
       }
@@ -208,26 +206,118 @@ const updateAddOns = async (req, res, next) => {
   } catch (error) {
     next(
       new Error(
-        'controllers/facilityController.js:updateaddOns - ' + error.message
+        'controllers/facilityController.js:updateAddOns - ' + error.message
       )
     );
   }
 };
 
+// const deleteAddOns = async (req, res, next) => {
+//   const t = await sequelize.transaction();
+//   try {
+//     const { idproduct, idaddons } = req.body;
+
+//     const result = await sequelize.models.product_addons.destroy({
+//       where: {
+//         productId: idproduct,
+//         addOnsId: idaddons,
+//       },
+//       transaction: t,
+//     });
+
+//     if (result[0] == 0) {
+//       await t.rollback();
+//       return res.status(404).json({
+//         errors: ['Failed to delete addOns from database'],
+//         message: 'Delete Failed',
+//         data: null,
+//       });
+//     }
+
+//     await t.commit();
+
+//     return res.status(201).json({
+//       errors: [],
+//       message: 'Delete addOns successfully',
+//       data: result,
+//     });
+//   } catch (error) {
+//     next(
+//       new Error(
+//         'controllers/facilityController.js:deleteAddOns - ' + error.message
+//       )
+//     );
+//   }
+// };
+
 const deleteAddOns = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const { idproduct, idaddons } = req.body;
+    const { idaddons } = req.body;
+    const idproduct = req.params.productId;
 
-    const result = await sequelize.models.product_addons.destroy({
+    // Ensure idfacilities is an array
+    if (!Array.isArray(idaddons)) {
+      return res.status(400).json({
+        errors: ['idaddons must be an array'],
+        message: 'Invalid Request',
+        data: null,
+      });
+    }
+
+    const results = [];
+
+    for (const idaddon of idaddons) {
+      const result = await sequelize.models.product_addons.destroy({
+        where: {
+          productId: idproduct,
+          addOnsId: idaddon,
+        },
+        transaction: t,
+      });
+      results.push(result);
+    }
+
+    // Check if any AddOns was deleted
+    if (results.every((result) => result === 0)) {
+      await t.rollback();
+      return res.status(404).json({
+        errors: ['Failed to delete AddOns from database'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    }
+
+    await t.commit();
+
+    return res.status(201).json({
+      errors: [],
+      message: 'Delete AddOns successfully',
+      data: null,
+    });
+  } catch (error) {
+    await t.rollback();
+    next(
+      new Error(
+        'controllers/facilityController.js:deleteAddOns - ' + error.message
+      )
+    );
+  }
+};
+
+const deleteAddOnsList = async (req, res, next) => {
+  const t = await sequelize.transaction();
+  try {
+    const { idaddons } = req.body;
+
+    const result = await sequelize.models.AddOnsModel.destroy({
       where: {
-        productId: idproduct,
         addOnsId: idaddons,
       },
       transaction: t,
     });
 
-    if (result[0] == 0) {
+    if(result === 0) {
       await t.rollback();
       return res.status(404).json({
         errors: ['Failed to delete addOns from database'],
@@ -241,15 +331,17 @@ const deleteAddOns = async (req, res, next) => {
     return res.status(201).json({
       errors: [],
       message: 'Delete addOns successfully',
-      data: result,
+      data: null,
     });
   } catch (error) {
+    await t.rollback();
     next(
       new Error(
-        'controllers/facilityController.js:deleteAddOns - ' + error.message
+        'controllers/facilityController.js:deleteAddOnsList - ' +
+          error.message
       )
     );
   }
 };
 
-export { setAddOns, getAllAddOns, addAddOns, updateAddOns, deleteAddOns };
+export { setAddOns, getAllAddOns, addAddOns, updateAddOns, deleteAddOns, deleteAddOnsList };

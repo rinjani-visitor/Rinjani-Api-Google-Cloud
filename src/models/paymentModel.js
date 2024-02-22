@@ -50,13 +50,13 @@ const Payment = sequelize.define(
 Booking.hasOne(Payment, {
   foreignKey: 'bookingId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 Payment.belongsTo(Booking, {
   foreignKey: 'bookingId',
   onDelete: 'CASCADE',
-  onUpdate: 'RESTRICT',
+  onUpdate: 'CASCADE',
 });
 
 sequelize.sync();

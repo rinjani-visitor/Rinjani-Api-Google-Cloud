@@ -26,14 +26,14 @@ const SubCategory = sequelize.define(
 Category.hasMany(SubCategory, {
   as: 'SubCategories',
   foreignKey: 'categoryId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 SubCategory.belongsTo(Category, {
   foreignKey: 'categoryId',
-  onDelete: 'RESTRICT',
-  onUpdate: 'RESTRICT',
+  onDelete: 'CASCADE',
+  onUpdate: 'CASCADE',
 });
 
 sequelize.sync();
