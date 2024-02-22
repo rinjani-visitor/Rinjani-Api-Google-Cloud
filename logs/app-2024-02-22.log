@@ -1,2 +1,25 @@
  [LOGGER] 2024-02-22 01:51:17.964 PM error : controllers/userController.js:setLogin - secretOrPrivateKey must have a value
  [LOGGER] 2024-02-22 01:52:00.678 PM error : controllers/userController.js:setLogin - secretOrPrivateKey must have a value
+ [LOGGER] 2024-02-22 05:04:45.257 PM error : controllers/userController.js:sendMessage - connect ECONNREFUSED ::1:587
+ [LOGGER] 2024-02-22 05:05:02.748 PM error : controllers/userController.js:sendMessage - connect ECONNREFUSED ::1:587
+ [LOGGER] 2024-02-22 05:17:13.551 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:17:42.916 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:17:52.921 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:18:19.819 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:20:45.649 PM error : controllers/userController.js:sendMessage - email is not defined
+ [LOGGER] 2024-02-22 05:21:00.202 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:21:45.582 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:21:46.680 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:21:47.470 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:23:03.671 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:24:05.493 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:24:34.483 PM error : controllers/userController.js:sendMessage - emailAdmin is not defined
+ [LOGGER] 2024-02-22 05:25:14.017 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:26:01.976 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:26:26.280 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:27:19.594 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:28:13.263 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:28:18.326 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:29:51.655 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:30:06.059 PM error : controllers/userController.js:sendMessage - emailUser is not defined
+ [LOGGER] 2024-02-22 05:30:20.855 PM error : controllers/userController.js:sendMessage - emailUser is not defined

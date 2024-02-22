@@ -43,4 +43,25 @@ const getDashboard = async (req, res, next) => {
   }
 };
 
-export { getDashboard };
+const getDashboardUser = async (req, res, next) => {
+  try {
+    const productCount = await Product.count();
+    const userCount = await User.count();
+    const averageRatingResult = await Review.findAll({
+      attributes: [[sequelize.fn('AVG', sequelize.col('rating')), 'rating']],
+    });
+    const averageRating = parseFloat(averageRatingResult[0].rating).toFixed(2);
+
+    res.status(200).json({
+      productCount,
+      userCount,
+      averageRating: parseFloat(averageRating),
+    });
+  } catch (error) {
+    next(
+      new Error('controllers/fotoController.js:getDashboardUser - ' + error.message)
+    );
+  }
+};
+
+export { getDashboard, getDashboardUser };

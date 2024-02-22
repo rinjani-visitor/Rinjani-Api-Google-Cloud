@@ -478,14 +478,14 @@ const bankPaymentConfirmation = (email, paymentDetails) => {
   };
 };
 
-const createMessage = (email, name, subject, message) => ({
-  from: email,
-  to: process.env.ADMIN_EMAIL,
+const createMessage = (email, emailUser, name, subject, message) => ({
+  from: process.env.MAIL_FROM,
+  to: email,
   subject: `${subject} - Rinjani Visitor`,
   html: `
       <div style="font-family: 'Arial', sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #32823A;">${subject}</h2>
-        <p>Hi admin, you have a new message from <strong>${name}</strong> <i>(${email})</i></p>
+        <p>Hi admin, you have a new message from <strong>${name}</strong> <i>(${emailUser})</i></p>
 
         <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-top: 20px;">
           <table style="width: 100%;">
@@ -702,8 +702,8 @@ const sendOrderCancelToAdmin = (email, orderDetais) => {
   })
 }
 
-const sendMailMessage = (email, name, subject, message) => new Promise((resolve, reject) => {
-  transporterKedua.sendMail(createMessage(email, name, subject, message), (err, info) => {
+const sendMailMessage = (email, emailUser, name, subject, message) => new Promise((resolve, reject) => {
+  transporter.sendMail(createMessage(email, emailUser, name, subject, message), (err, info) => {
     if (err) {
       console.error('Error sending email:', err);
       reject(err);

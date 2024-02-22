@@ -2,7 +2,12 @@ import 'dotenv/config';
 import moment from 'moment-timezone';
 import sequelize from '../utils/db.js';
 import { dataValid } from '../validation/dataValidation.js';
-import { sendConfirmDeleteAccountUserByAdmin, sendMail, sendMailMessage, sendPassword } from '../utils/sendMail.js';
+import {
+  sendConfirmDeleteAccountUserByAdmin,
+  sendMail,
+  sendMailMessage,
+  sendPassword,
+} from '../utils/sendMail.js';
 import { v4 as uuidv4 } from 'uuid';
 import { promisify } from 'util';
 import User from '../models/userModel.js';
@@ -24,6 +29,7 @@ import { Entropy, charset32 } from 'entropy-string';
 import Favorites from '../models/favoritesModel.js';
 import Product from '../models/productModel.js';
 import { bucket } from '../middleware/multer_firebase.js';
+import { adminEmails } from '../utils/emailAdmin.js';
 
 const setUser = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -36,7 +42,6 @@ const setUser = async (req, res, next) => {
   };
 
   try {
-
     const userExists = await User.findAll({
       where: {
         email: req.body.email,
@@ -52,7 +57,9 @@ const setUser = async (req, res, next) => {
     } else if (
       userExists.length > 0 &&
       !userExists[0].isActive &&
-      moment(userExists[0].expireTime).isAfter(moment().tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss'))
+      moment(userExists[0].expireTime).isAfter(
+        moment().tz('Asia/Singapore').format('YYYY-MM-DD HH:mm:ss')
+      )
     ) {
       return res.status(400).json({
         errors: ['Email already registered, please check your email'],
@@ -77,7 +84,7 @@ const setUser = async (req, res, next) => {
       email: req.body.email,
       country: req.body.country,
       password: req.body.password,
-    }
+    };
 
     const newUser = await User.create(
       {
@@ -247,7 +254,7 @@ const setLogin = async (req, res, next) => {
       };
 
       //khusus admin login
-      const adminEmails = [process.env.ADMIN_EMAIL, process.env.ADMIN_EMAIL1]; 
+      const adminEmails = [process.env.ADMIN_EMAIL, process.env.ADMIN_EMAIL1];
       if (req.url.includes('/admin') && adminEmails.includes(usr.email)) {
         usr.role = 'admin';
       }
@@ -274,7 +281,6 @@ const setLogin = async (req, res, next) => {
     );
   }
 };
-
 
 const setRefreshToken = async (req, res, next) => {
   try {
@@ -347,7 +353,14 @@ const updateUser = async (req, res, next) => {
     const tokenInfo = getUserIdFromAccessToken(token);
     const user_id = tokenInfo.userId;
 
-    if (!req.body.name && !req.body.email && !req.body.password && !req.body.country && !req.body.phoneNumber && !req.body.profilPicture) {
+    if (
+      !req.body.name &&
+      !req.body.email &&
+      !req.body.password &&
+      !req.body.country &&
+      !req.body.phoneNumber &&
+      !req.body.profilPicture
+    ) {
       return res.status(200).json({
         errors: [],
         message: 'No data to update',
@@ -397,11 +410,10 @@ const updateUser = async (req, res, next) => {
     }
 
     const result = await User.update(updateData, {
-        where: {
-          userId: user_id,
-        },
-      }
-    );
+      where: {
+        userId: user_id,
+      },
+    });
 
     if (result[0] == 0) {
       return res.status(404).json({
@@ -433,12 +445,13 @@ const avatarUser = async (req, res, next) => {
     const uploadedFileName = req.file;
 
     if (uploadedFileName) {
-      
       const allowedImageFormats = ['image/jpeg', 'image/jpg', 'image/png'];
 
       if (!allowedImageFormats.includes(req.file.mimetype)) {
         return res.status(400).json({
-          errors: ['Invalid file format. Only JPEG, JPG, and PNG images are allowed.'],
+          errors: [
+            'Invalid file format. Only JPEG, JPG, and PNG images are allowed.',
+          ],
           message: 'Update Avatar Failed',
           data: null,
         });
@@ -462,15 +475,19 @@ const avatarUser = async (req, res, next) => {
         gzip: true,
       });
 
-      blobStream.on('error', (error) => res.status(500).json({
-        errors: [error.message],
-        message: 'Update Avatar Failed',
-        data: null,
-      }));
+      blobStream.on('error', (error) =>
+        res.status(500).json({
+          errors: [error.message],
+          message: 'Update Avatar Failed',
+          data: null,
+        })
+      );
 
       let urlphoto;
       blobStream.on('finish', async () => {
-        urlphoto = `https://firebasestorage.googleapis.com/v0/b/${bucket.name}/o/${encodeURIComponent(filePath)}?alt=media`;
+        urlphoto = `https://firebasestorage.googleapis.com/v0/b/${
+          bucket.name
+        }/o/${encodeURIComponent(filePath)}?alt=media`;
       });
 
       const blobStreamEnd = promisify(blobStream.end).bind(blobStream);
@@ -783,7 +800,7 @@ const getAllFavoriteUser = async (req, res, next) => {
 
 const sendMessage = async (req, res, next) => {
   const valid = {
-    email: 'required,isEmail',
+    emailUser: 'required,isEmail',
     name: 'required',
     subject: 'required',
     message: 'required',
@@ -799,14 +816,27 @@ const sendMessage = async (req, res, next) => {
       });
     }
 
-    const {
-      email, name, subject, message,
-    } = dataSender.data;
+    const { emailUser, name, subject, message } = dataSender.data;
 
-    const sendMailVariable = await sendMailMessage(email, name, subject, message);
+    let sendPaymentMails = [];
+    for (const email of adminEmails) {
+      const sendPaymentMail = sendMailMessage(
+        email,
+        emailUser,
+        name,
+        subject,
+        message
+      ); // Menghapus await di sini agar pengiriman email dilakukan secara paralel
+      sendPaymentMails.push(sendPaymentMail); // Menambahkan promise ke array
+    }
 
-    if (!sendMailVariable) {
-      return res.status(400).json({
+    // Menunggu semua email terkirim atau gagal
+    const results = await Promise.all(sendPaymentMails);
+
+    // Memeriksa apakah setidaknya satu email gagal terkirim
+    if (results.some((result) => !result)) {
+      await t.rollback();
+      return res.status(404).json({
         errors: ['Failed Send Message Email'],
         message: 'Failed Send Message Email',
         data: null,
@@ -820,9 +850,7 @@ const sendMessage = async (req, res, next) => {
     });
   } catch (error) {
     next(
-      new Error(
-        `controllers/userController.js:sendMessage - ${error.message}`,
-      ),
+      new Error(`controllers/userController.js:sendMessage - ${error.message}`)
     );
   }
 };
@@ -856,7 +884,7 @@ const removeUserAccount = async (req, res, next) => {
       transaction,
     });
 
-    if(!result) {
+    if (!result) {
       await transaction.rollback();
       return res.status(404).json({
         errors: ['Failed to remove user account'],
@@ -876,12 +904,11 @@ const removeUserAccount = async (req, res, next) => {
     await transaction.rollback();
     next(
       new Error(
-        `controllers/userController.js:removeUserAccount - ${error.message}`,
-      ),
+        `controllers/userController.js:removeUserAccount - ${error.message}`
+      )
     );
   }
 };
-
 
 export {
   setUser,
