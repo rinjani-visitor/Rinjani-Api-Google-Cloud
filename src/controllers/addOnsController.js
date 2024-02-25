@@ -256,13 +256,9 @@ const deleteAddOns = async (req, res, next) => {
     const { idaddons } = req.body;
     const idproduct = req.params.productId;
 
-    // Ensure idfacilities is an array
-    if (!Array.isArray(idaddons)) {
-      return res.status(400).json({
-        errors: ['idaddons must be an array'],
-        message: 'Invalid Request',
-        data: null,
-      });
+     // Ensure idaddons is an array
+     if (!Array.isArray(idaddons)) {
+      idaddons = [idaddons];
     }
 
     const results = [];

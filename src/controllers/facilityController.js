@@ -220,11 +220,7 @@ const deleteFacility = async (req, res, next) => {
 
     // Ensure idfacilities is an array
     if (!Array.isArray(idfacilities)) {
-      return res.status(400).json({
-        errors: ['idfacilities must be an array'],
-        message: 'Invalid Request',
-        data: null,
-      });
+      idfacilities = [idfacilities];
     }
 
     const results = [];

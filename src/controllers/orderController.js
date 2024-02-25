@@ -20,7 +20,7 @@ const getAllOrder = async (req, res, next) => {
       include: [
         {
           model: Product,
-          attributes: ['title', 'rating', 'location'],
+          attributes: ['productId', 'title', 'rating', 'location'],
         },
         {
           model: Review,
@@ -39,6 +39,7 @@ const getAllOrder = async (req, res, next) => {
     }
 
     const formattedOrder = order.map((order) => ({
+      productId: order.Product.productId,
       title: order.Product.title,
       location: order.Product.location,
       status: order.orderStatus,

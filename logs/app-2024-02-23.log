@@ -1,0 +1,648 @@
+ [LOGGER] 2024-02-23 03:49:07.625 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.630 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.631 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.632 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.633 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.635 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.636 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.637 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.640 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.641 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.642 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.643 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.643 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.644 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.644 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.645 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.645 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:49:07.645 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.595 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.599 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.600 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.601 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.602 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.602 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.603 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.603 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.606 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.606 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.607 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.607 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.608 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.608 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.609 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.609 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.609 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:50:49.610 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.209 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.213 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.214 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.215 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.216 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.217 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.218 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.219 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.221 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.222 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.223 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.223 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.223 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.224 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.224 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.225 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.225 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:51:55.225 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.840 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.845 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.846 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.847 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.848 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.850 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.851 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.852 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.855 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.857 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.858 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.858 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.859 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.859 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.859 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.860 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.860 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:52:28.861 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.044 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.046 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.047 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.047 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.047 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.048 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.048 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.048 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.049 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.050 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.050 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.050 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.050 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.051 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.051 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.052 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.052 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:02.052 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.117 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.119 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.120 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.120 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.120 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.120 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.121 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.121 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.123 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.124 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.126 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.126 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.126 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.127 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.127 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.128 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.128 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+ [LOGGER] 2024-02-23 03:53:39.129 PM error : uncaughtException: connect ETIMEDOUT
+SequelizeConnectionError: connect ETIMEDOUT
+    at ConnectionManager.connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (/Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:222:24)
+    at async /Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32

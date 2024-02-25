@@ -41,6 +41,10 @@ const Booking = sequelize.define(
       type: Sequelize.STRING,
       allowNull: true,
     },
+    userMessage: {
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
   },
   {
     tableName: 'booking',
@@ -71,7 +75,7 @@ Booking.belongsTo(User, {
   foreignKey: 'userId',
   onDelete: 'CASCADE',
   onUpdate: 'CASCADE',
-})
+});
 
 sequelize.sync();
 

@@ -442,6 +442,8 @@ const getBookingDetail = async (req, res, next) => {
       bookingStatus: result.bookingStatus,
       adminMessage:
         result.adminMessage !== null ? result.adminMessage : undefined,
+      userMessage:
+        result.userMessage !== null ? result.userMessage : undefined,
       note: bookingNote,
       title: result.Product ? result.Product.title : null,
       rating: result.Product ? result.Product.rating : null,
@@ -502,6 +504,7 @@ const updateBookingAdmin = async (req, res, next) => {
     const result = await Booking.update(
       {
         ...booking.data,
+        userMessage: null,
       },
       {
         where: {
@@ -648,9 +651,9 @@ const updateBookingAdmin = async (req, res, next) => {
         updatedAt: userData.updatedAt,
         offeringPrice: userData.offeringPrice,
         addOns: userData.addOns ? userData.addOns : '',
-        totalPerson: userData.totalPerson,
+        totalPersons: userData.totalPersons,
         bookingStatus: userData.bookingStatus,
-        note: booking.data.adminMessage,
+        adminMessage: booking.data.adminMessage,
       };
 
       const sendPaymentMail = await sendBookingDeclinedConfirmation(
@@ -708,7 +711,7 @@ const updateBooking = async (req, res, next) => {
       valid.startDateTime = 'required';
     }
 
-    if (isExists(req.body.adminMessage)) {
+    if (isExists(req.body.endDateTime)) {
       valid.endDateTime = 'required';
     }
 
@@ -722,6 +725,10 @@ const updateBooking = async (req, res, next) => {
 
     if (isExists(req.body.totalPersons)) {
       valid.totalPersons = 'required';
+    }
+
+    if (isExists(req.body.userMessage)) {
+      valid.userMessage = 'required';
     }
 
     const booking = await dataValid(valid, req.body);
@@ -777,6 +784,8 @@ const updateBooking = async (req, res, next) => {
       ],
     });
 
+    console.log(booking);
+
     const formatBooking = {
       title: data.Product.title,
       name: data.User.name,
@@ -789,6 +798,7 @@ const updateBooking = async (req, res, next) => {
       offeringPrice: data.offeringPrice,
       addOns: data.addOns,
       totalPersons: data.totalPersons,
+      userMessage: data.userMessage,
     };
 
     let sendPaymentMails = [];
@@ -807,7 +817,7 @@ const updateBooking = async (req, res, next) => {
     if (results.some((result) => !result)) {
       await t.rollback();
       return res.status(404).json({
-        errors: ['Email payment confirmation failed to send to Admin'],
+        errors: ['Update booking confirmation failed to send to Admin'],
         message: 'Update Booking Admin Failed',
         data: null,
       });

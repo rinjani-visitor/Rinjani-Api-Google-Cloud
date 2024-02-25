@@ -163,7 +163,7 @@ const bookingDeclinedConfirmation = (emailTo, bookingDetails) => {
     createdAt,
     updatedAt,
     bookingStatus,
-    note,
+    adminMessage,
   } = bookingDetails;
 
   return {
@@ -187,11 +187,11 @@ const bookingDeclinedConfirmation = (emailTo, bookingDetails) => {
             <li><strong>Created At:</strong> ${createdAt}</li>
             <li><strong>Updated At:</strong> ${updatedAt}</li>
             <li><strong>Booking Status:</strong> ${bookingStatus}</li>
-            <li><strong>Note:</strong> ${note}</li>
+            <li><strong>Admin Message:</strong> ${adminMessage}</li>
           </ul>
         </div>
 
-        <p style="margin-top: 20px;">You can book again with consider about note from admin or you can cancel the booking.</p>
+        <p style="margin-top: 20px;">You can book again with consider about <strong>Admin Message</strong> from admin or you can cancel the booking.</p>
 
         <p style="margin-top: 20px;">Customer Service Team!</p>
 
@@ -262,7 +262,7 @@ const bookingConfirmationAdmin = (emailTo, bookingDetails) => {
 };
 
 const updateBookingConfirmation = (emailTo, updatedBookingDetails) => {
-  const { title, name, country, email, phoneNumber, startDateTime, endDateTime, addOns, offeringPrice, totalPersons } =
+  const { title, name, country, email, phoneNumber, startDateTime, endDateTime, addOns, offeringPrice, totalPersons, userMessage } =
     updatedBookingDetails;
 
   return {
@@ -288,6 +288,7 @@ const updateBookingConfirmation = (emailTo, updatedBookingDetails) => {
             <li><strong>AddOns:</strong> ${addOns}</li>
             <li><strong>Offering Price:</strong> ${offeringPrice}</li>
             <li><strong>Total Persons:</strong> ${totalPersons}</li>
+            <li><strong>User Message:</strong> ${userMessage}</li>
           </ul>
         </div>
 
