@@ -20,6 +20,7 @@ import User from '../models/userModel.js';
 import { Op } from 'sequelize';
 import { getUserIdFromAccessToken, verifyAccessToken } from '../utils/jwt.js';
 import { bucket } from '../middleware/multer_firebase.js';
+import { status } from './bookingController.js';
 
 const setProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
@@ -390,25 +391,29 @@ const deleteProduct = async (req, res, next) => {
   try {
     const product_id = req.params.id;
 
-    const checkBooking = await Booking.findOne({
-      where: {
-        productId: product_id,
-      },
-    });
-
-    if (checkBooking) {
-      return res.status(400).json({
-        errors: ['Product has booking'],
-        message: 'Delete Failed',
-        data: null,
-      });
-    }
-
     const checkProduct = await Product.findByPk(product_id);
 
     if (!checkProduct) {
       return res.status(404).json({
         errors: ['Product not found'],
+        message: 'Delete Failed',
+        data: null,
+      });
+    }
+
+    const checkBooking = await Booking.findOne({
+      where: {
+        productId: product_id,
+        bookingStatus: {
+          [Op.or]: [status[0], status[1], status[3], status[4]],
+        }
+      },
+    });
+
+
+    if (checkBooking) {
+      return res.status(400).json({
+        errors: ['Product has booking'],
         message: 'Delete Failed',
         data: null,
       });
