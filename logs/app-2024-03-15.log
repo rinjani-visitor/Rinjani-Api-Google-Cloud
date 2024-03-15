@@ -1,0 +1,2 @@
+ [LOGGER] 2024-03-15 03:37:57.123 PM error : controllers/productController.js:getAllProducts - product is not defined
+ [LOGGER] 2024-03-15 03:37:58.375 PM error : controllers/productController.js:getAllProducts - product is not defined

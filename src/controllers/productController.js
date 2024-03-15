@@ -333,29 +333,46 @@ const getAllProducts = async (req, res, next) => {
         message: 'Get All Product Failed',
         data: null,
       });
-    };
+    }
 
     const getModelByCategory = async (product) => {
       switch (product.category.category) {
         case 'rinjani':
-          return await ModelRinjani.findOne({ where: { productId: product.productId } });
+          return await ModelRinjani.findOne({
+            where: { productId: product.productId },
+          });
         case 'event':
-          return await EventModel.findOne({ where: { productId: product.productId } });
+          return await EventModel.findOne({
+            where: { productId: product.productId },
+          });
         case 'homestay':
-          return await HomeStay.findOne({ where: { productId: product.productId } });
+          return await HomeStay.findOne({
+            where: { productId: product.productId },
+          });
         case 'landscape':
         case 'culture':
-          return await Wisata.findOne({ where: { productId: product.productId } });
+          return await Wisata.findOne({
+            where: { productId: product.productId },
+          });
         default:
           return null;
       }
     };
-    
+
     for (const product of products) {
       const isHaveDetail = await getModelByCategory(product);
+
+      // Check if isHaveDetail is true and the category is 'event'
+      if (isHaveDetail && product.category.category === 'event') {
+        const eventModel = await EventModel.findOne({
+          where: { productId: product.productId },
+        });
+        product.dataValues.eventModel = eventModel;
+      }
+
       product.dataValues.isHaveDetail = !!isHaveDetail;
     }
-    
+
     const formattedProducts = products.map((product) => ({
       productId: product.productId,
       title: product.title,
@@ -368,9 +385,10 @@ const getAllProducts = async (req, res, next) => {
       categoryId: product.categoryId,
       subCategory: product.subCategory.subCategory,
       subCategoryId: product.subCategoryId,
-      isHaveDetail: product.dataValues.isHaveDetail
+      isHaveDetail: product.dataValues.isHaveDetail,
+      startDate: product.dataValues.eventModel?.startDate,
+      endDate: product.dataValues.eventModel?.endDate,
     }));
-    
 
     return res.status(200).json({
       errors: [],
@@ -389,11 +407,10 @@ const getAllProducts = async (req, res, next) => {
 const deleteProduct = async (req, res, next) => {
   const t = await sequelize.transaction();
   try {
-    const product_id = req.params.id;
+    const productId = req.params.id; // Menggunakan camelCase untuk penamaan variabel
+    const product = await Product.findByPk(productId); // Menggunakan nama variabel yang lebih deskriptif
 
-    const checkProduct = await Product.findByPk(product_id);
-
-    if (!checkProduct) {
+    if (!product) {
       return res.status(404).json({
         errors: ['Product not found'],
         message: 'Delete Failed',
@@ -401,17 +418,16 @@ const deleteProduct = async (req, res, next) => {
       });
     }
 
-    const checkBooking = await Booking.findOne({
+    const booking = await Booking.findOne({
       where: {
-        productId: product_id,
+        productId: productId,
         bookingStatus: {
           [Op.or]: [status[0], status[1], status[3], status[4]],
-        }
+        },
       },
     });
 
-
-    if (checkBooking) {
+    if (booking) {
       return res.status(400).json({
         errors: ['Product has booking'],
         message: 'Delete Failed',
@@ -421,12 +437,12 @@ const deleteProduct = async (req, res, next) => {
 
     const result = await Product.destroy({
       where: {
-        productId: product_id,
+        productId: productId,
       },
       transaction: t,
     });
 
-    if (result[0] == 0) {
+    if (result === 0) {
       return res.status(404).json({
         errors: ['Product not found'],
         message: 'Delete Failed',
@@ -436,18 +452,15 @@ const deleteProduct = async (req, res, next) => {
 
     await t.commit();
 
-    return res.status(201).json({
+    return res.status(200).json({
+      // Mengubah status response menjadi 200
       errors: [],
       message: 'Product deleted successfully',
       data: result,
     });
   } catch (error) {
     await t.rollback();
-    next(
-      new Error(
-        'controllers/productController.js:deleteProduct - ' + error.message
-      )
-    );
+    next(new Error(`Failed to delete product: ${error.message}`)); // Pesan kesalahan yang lebih spesifik
   }
 };
 
