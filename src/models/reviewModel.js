@@ -14,7 +14,7 @@ const Review = sequelize.define(
       allowNull: false,
     },
     messageReview: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: false,
     },
     rating: {

@@ -16,7 +16,7 @@ const Wisata = sequelize.define(
       allowNull: false,
     },
     route: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: true,
     },
     note: {

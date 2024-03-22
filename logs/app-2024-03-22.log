@@ -1,0 +1,4 @@
+ [LOGGER] 2024-03-22 10:01:24.940 PM error : uncaughtException: isLo is not defined
+ReferenceError: isLo is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/src/routes/userRoute.js:27:42
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)

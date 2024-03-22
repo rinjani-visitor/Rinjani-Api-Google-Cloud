@@ -15,6 +15,7 @@ import {
   sendMessage,
   removeUserAccount,
   deleteUserByAdmin,
+  isLoggedIn,
 } from '../controllers/userController.js';
 import { autenticate } from '../controllers/errorHandlingController.js';
 import { upload } from '../middleware/multer_firebase.js';
@@ -24,6 +25,7 @@ userRouter.post('/users', setUser);
 userRouter.get('/users/refresh', setRefreshToken);
 userRouter.get('/admin/users', autenticate, getUser); //admin get all user
 userRouter.get('/users', autenticate, getUserById);
+userRouter.get('/users/me', autenticate, isLoggedIn);
 userRouter.get('/users/activate/:id', setActivateUser);
 userRouter.post('/users/login', setLogin);
 

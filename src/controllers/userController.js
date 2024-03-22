@@ -217,6 +217,41 @@ const getUserById = async (req, res, next) => {
   }
 };
 
+const isLoggedIn = async (req, res, next) => {
+  try {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    const tokenInfo = getUserIdFromAccessToken(token);
+    const user_id = tokenInfo.userId;
+
+    const user = await User.findOne({
+      where: {
+        userId: user_id,
+      },
+    });
+    if (!user) {
+      return res.status(404).json({
+        errors: ['User not found'],
+        message: 'User retrieved Failed',
+        data: null,
+      });
+    }
+    return res.status(200).json({
+      errors: [],
+      message: 'User retrieved successfully',
+      data: {
+        userId: user.userId,
+        name: user.name,
+        email: user.email,
+      },
+    });
+  } catch (error) {
+    next(
+      new Error('controllers/userController.js:isLoggedIn - ' + error.message)
+    );
+  }
+};
+
 const setLogin = async (req, res, next) => {
   try {
     const valid = {
@@ -254,7 +289,7 @@ const setLogin = async (req, res, next) => {
       };
 
       //khusus admin login
-      const adminEmails = [process.env.ADMIN_EMAIL, process.env.ADMIN_EMAIL1];
+      const adminEmails = [process.env.ADMIN_EMAIL, process.env.ADMIN_EMAIL1, process.env.ADMIN_EMAIL2, process.env.ADMIN_EMAIL3];
       if (req.url.includes('/admin') && adminEmails.includes(usr.email)) {
         usr.role = 'admin';
       }
@@ -915,6 +950,7 @@ export {
   setActivateUser,
   getUser,
   getUserById,
+  isLoggedIn,
   setLogin,
   setRefreshToken,
   updateUser,

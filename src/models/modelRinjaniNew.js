@@ -20,7 +20,7 @@ const ModelRinjani = sequelize.define(
       allowNull: false,
     },
     program: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
       allowNull: false,
     },
     note: {
