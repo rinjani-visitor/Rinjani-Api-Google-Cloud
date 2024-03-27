@@ -139,7 +139,7 @@ const setBooking = async (req, res, next) => {
         ? moment(newBooking.endDateTime).format('YYYY-MM-DD HH:mm:ss')
         : null,
       offeringPrice: newBooking.offeringPrice,
-      addOns: newBooking.addOns,
+      addOns: newBooking.addOns ? newBooking.addOns : "No Add Ons",
       totalPersons: newBooking.totalPersons,
       createdAt: moment(newBooking.createdAt)
         .tz('Asia/Singapore')
@@ -150,6 +150,8 @@ const setBooking = async (req, res, next) => {
       bookingStatus: newBooking.bookingStatus,
       note: note.offering,
     };
+
+    console.log(formatBooking);
 
     let sendPaymentMails = [];
     for (const adminEmail of adminEmails) {

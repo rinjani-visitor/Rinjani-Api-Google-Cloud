@@ -1,0 +1,8 @@
+ [LOGGER] 2024-03-27 03:07:55.822 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 64.233.170.109:465
+ [LOGGER] 2024-03-27 03:08:41.263 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 64.233.170.109:465
+ [LOGGER] 2024-03-27 03:10:09.375 PM error : controllers/bookingController.js:setBooking - Expected a string but received a number
+ [LOGGER] 2024-03-27 03:10:16.561 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 64.233.170.109:465
+ [LOGGER] 2024-03-27 03:11:06.739 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 64.233.170.109:465
+ [LOGGER] 2024-03-27 03:12:02.495 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 64.233.170.109:465
+ [LOGGER] 2024-03-27 03:15:40.950 PM error : controllers/bookingController.js:setBooking - connect ECONNREFUSED 64.233.170.109:465
+ [LOGGER] 2024-03-27 03:16:22.592 PM error : controllers/bookingController.js:setBooking - No recipients defined

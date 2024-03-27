@@ -6,9 +6,9 @@
     "auditLog": "logs\\.27d2dc2802ae5225246d6e59f000f10d5a9bddf2-audit.json",
     "files": [
         {
-            "date": 1711116085977,
-            "name": "logs/app-2024-03-22.log",
-            "hash": "c4bd31d42c0f5a054d56811cfe4f04032ac6180ae64c262279cfc321b12cfe4d"
+            "date": 1711524906007,
+            "name": "logs/app-2024-03-27.log",
+            "hash": "bb8cbd6823b1ff8d3b97a6cb1fd34ba84cd55a776370f87b652f5742d9f6a9cd"
         }
     ],
     "hashType": "sha256"

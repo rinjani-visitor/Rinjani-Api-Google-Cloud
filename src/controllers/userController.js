@@ -289,8 +289,8 @@ const setLogin = async (req, res, next) => {
       };
 
       //khusus admin login
-      const adminEmails = [process.env.ADMIN_EMAIL, process.env.ADMIN_EMAIL1, process.env.ADMIN_EMAIL2, process.env.ADMIN_EMAIL3];
-      if (req.url.includes('/admin') && adminEmails.includes(usr.email)) {
+      const adminEmailsList = adminEmails;
+      if (req.url.includes('/admin') && adminEmailsList.includes(usr.email)) {
         usr.role = 'admin';
       }
 
