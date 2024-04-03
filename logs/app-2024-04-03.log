@@ -1,0 +1,9 @@
+ [LOGGER] 2024-04-03 12:59:12.630 AM error : controllers/userController.js:forgotPassword - Operation timeout
+ [LOGGER] 2024-04-03 01:27:51.451 AM error : uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/src/routes/userRoute.js:38:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
+ [LOGGER] 2024-04-03 01:27:59.809 AM error : uncaughtException: upload is not defined
+ReferenceError: upload is not defined
+    at file:///Users/muh.firdaus/Documents/Daus/Skripsi/APP/API/Rest-API-Rinjani/src/routes/userRoute.js:37:3
+    at ModuleJob.run (node:internal/modules/esm/module_job:194:25)
