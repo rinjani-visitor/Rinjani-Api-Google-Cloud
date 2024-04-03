@@ -13,10 +13,8 @@ import Order from '../models/orderModel.js';
 import {
   sendBookingSuccess,
   sendBookingFailed,
-  sendWisePaymentToAdmin,
   sendBankPaymentToAdmin,
 } from '../utils/sendMail.js';
-import { getUserIdFromAccessToken } from '../utils/jwt.js';
 import { adminEmails } from '../utils/emailAdmin.js';
 
 const updateBankWiseMethodPayment = async (req, res, next) => {
