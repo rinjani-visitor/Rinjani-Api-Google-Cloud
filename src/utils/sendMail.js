@@ -695,7 +695,7 @@ const sendOrderCancelToAdmin = (email, orderDetais) => {
           console.log(err);
           reject(err);
         } else {
-          console.log('Email sent (sendPayment): ' + info.response);
+          console.log('Email sent (send Cancel Order Email): ' + info.response);
           resolve(true);
         }
       }

@@ -5,6 +5,7 @@ import { getUserIdFromAccessToken } from '../utils/jwt.js';
 import sequelize from '../utils/db.js';
 import { sendOrderCancelToAdmin } from '../utils/sendMail.js';
 import Review from '../models/reviewModel.js';
+import { adminEmails } from '../utils/emailAdmin.js';
 
 const getAllOrder = async (req, res, next) => {
   try {
@@ -169,7 +170,7 @@ const cancelOrder = async (req, res, next) => {
       });
     }
 
-    const message = {
+    const orderCancel = {
       name: order.User.name,
       country: order.User.country,
       title: order.Product.title,
@@ -177,17 +178,28 @@ const cancelOrder = async (req, res, next) => {
       orderApproveDate: order.createdAt,
     };
 
-    const sendCancelOrder = await sendOrderCancelToAdmin(process.env.ADMIN_EMAIL, message);
+    let sendPaymentMails = [];
+    for (const adminEmail of adminEmails) {
+      const sendPaymentMail = sendOrderCancelToAdmin(
+        adminEmail,
+        orderCancel
+      ); // Menghapus await di sini agar pengiriman email dilakukan secara paralel
+      sendPaymentMails.push(sendPaymentMail); // Menambahkan promise ke array
+    }
 
-    if (!sendCancelOrder) {
+    // Menunggu semua email terkirim atau gagal
+    const results = await Promise.all(sendPaymentMails);
+
+    // Memeriksa apakah setidaknya satu email gagal terkirim
+    if (results.some((result) => !result)) {
       await t.rollback();
       return res.status(404).json({
-        errors: ['Send Email to Admin Failed'],
-        message: 'Cancel Order Failed',
+        errors: ['Email order cancelation failed to send to Admin'],
+        message: 'Cancel order Failed',
         data: null,
       });
     }
-
+    
     await t.commit();
 
     return res.status(200).json({

@@ -151,8 +151,6 @@ const setBooking = async (req, res, next) => {
       note: note.offering,
     };
 
-    console.log(formatBooking);
-
     let sendPaymentMails = [];
     for (const adminEmail of adminEmails) {
       const sendPaymentMail = sendBookingOfferingToAdmin(
