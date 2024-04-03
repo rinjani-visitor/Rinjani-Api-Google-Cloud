@@ -48,8 +48,8 @@ userRouter.post('/users/forgot-password', forgotPassword);
 userRouter.get('/users/favorite/all', autenticate, getAllFavoriteUser);
 userRouter.post('/users/favorite', autenticate, favorite);
 
-userRouter.post('/send-message', sendMessage);
-
 userRouter.delete('/users', autenticate, removeUserAccount);
+
+userRouter.post('/send-message', sendMessage);
 
 export default userRouter;
